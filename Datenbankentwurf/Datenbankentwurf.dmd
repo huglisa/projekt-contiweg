@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Datenbankentwurf" id="EE4764F7-F4FB-755F-CE4A-CBD60053F530" version="3.5">
+<createdBy>Lisa</createdBy>
+<createdTime>2013-11-07 12:36:55 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>EE4764F7-F4FB-755F-CE4A-CBD60053F530</designId>
+</OSDM_Design>
