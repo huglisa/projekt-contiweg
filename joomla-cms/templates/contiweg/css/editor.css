@@ -1,14 +1,6 @@
 body
 {
-  background: #FCD383;
-  background: linear-gradient(top, #FFFFFF 0, #F9A806 1154px, #EFA106 1200px) no-repeat;
-  background: -webkit-linear-gradient(top, #FFFFFF 0, #F9A806 1154px, #EFA106 1200px) no-repeat;
-  background: -moz-linear-gradient(top, #FFFFFF 0, #F9A806 1154px, #EFA106 1200px) no-repeat;
-  background: -o-linear-gradient(top, #FFFFFF 0, #F9A806 1154px, #EFA106 1200px) no-repeat;
-  background: -ms-linear-gradient(top, #FFFFFF 0, #F9A806 1154px, #EFA106 1200px) no-repeat;
-  background: linear-gradient(top, #FFFFFF 0, #F9A806 1154px, #EFA106 1200px) no-repeat;
-  -svg-background: linear-gradient(top, #FFFFFF 0, #F9A806 1154px, #EFA106 1200px) no-repeat;
-  background-attachment: fixed !important;
+  background: #F9FAFB;
   margin: 0 auto;
   font-size: 13px;
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
@@ -63,26 +55,26 @@ a, a:link
 {
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
-  color: #7D2B03;
+  color: #F55505;
 }
 
 a:visited, a.visited
 {
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
-  color: #3B4E63;
+  color: #8098B3;
 }
 
 a:hover, a.hover
 {
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: underline;
-  color: #9B3603;
+  color: #FB7837;
 }
 
 h1
 {
-  color: #364049;
+  color: #6A7D90;
   margin: 10px 0 0;
   font-size: 26px;
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
@@ -96,7 +88,7 @@ h1 a, h1 a:link, h1 a:hover, h1 a:visited
 
 h2
 {
-  color: #434F5B;
+  color: #8A99A8;
   margin: 10px 0 0;
   font-size: 22px;
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
@@ -110,7 +102,7 @@ h2 a, h2 a:link, h2 a:hover, h2 a:visited
 
 h3
 {
-  color: #9B3603;
+  color: #FB7837;
   margin: 10px 0 0;
   font-size: 20px;
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
@@ -124,7 +116,7 @@ h3 a, h3 a:link, h3 a:hover, h3 a:visited
 
 h4
 {
-  color: #303F50;
+  color: #4D6580;
   margin: 10px 0 0;
   font-size: 18px;
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
@@ -138,7 +130,7 @@ h4 a, h4 a:link, h4 a:hover, h4 a:visited
 
 h5
 {
-  color: #303F50;
+  color: #4D6580;
   margin: 10px 0 0;
   font-size: 15px;
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
@@ -152,7 +144,7 @@ h5 a, h5 a:link, h5 a:hover, h5 a:visited
 
 h6
 {
-  color: #496079;
+  color: #9FB2C6;
   margin: 10px 0 0;
   font-size: 13px;
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
@@ -198,7 +190,7 @@ body
 {
   padding: 0;
   margin: 0;
-  color: #1D2630;
+  color: #2E3D4C;
 }
 
 .clearfix:after
@@ -458,31 +450,31 @@ blockquote p, blockquote p
 {
   position: relative;
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-  color: #38424C;
+  color: #627384;
 }
 
 .Sorter a:link
 {
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-  color: #38424C;
+  color: #627384;
 }
 
 .Sorter a:visited, .Sorter a.visited
 {
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-  color: #38424C;
+  color: #627384;
 }
 
 .Sorter a:hover, .Sorter a.hover
 {
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-  color: #2B333B;
+  color: #4A5764;
 }
 
 .Sorter
 {
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-  color: #21262C;
+  color: #343D46;
 }
 
 /* Created by Artisteer vundefined.undefined.undefined.undefined */

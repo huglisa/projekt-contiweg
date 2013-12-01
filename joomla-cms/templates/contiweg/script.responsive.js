@@ -334,23 +334,6 @@ jQuery(window).bind("responsiveResize", (function ($) {
 })(jQuery));
 
 
-var responsiveNav = (function ($) {
-    "use strict";
-    return function (responsiveDesign) {
-        var nav = $("nav.art-nav"), header, headerMarginTop;
-        if (responsiveDesign.isResponsive && nav.parents(".art-header").length > 0) {
-            header = $(".art-header");
-            var otherElement = header.children("*:not(nav.art-nav):first");
-            if (otherElement.length > 0)
-                nav.appendTo(header);
-        }
-    };
-})(jQuery);
-
-jQuery(window).bind("responsive", function (event, responsiveDesign) {
-    "use strict";
-    responsiveNav(responsiveDesign);
-});
 
 
 
@@ -369,16 +352,6 @@ jQuery(function($) {
         e.preventDefault();
     });
 });
-
-jQuery(window).bind("responsiveNav", (function ($) {
-    /*global menuExtendedCreate */
-    "use strict";
-    return function (event, options) {
-        if (options.isDesktopNav && $("li.ext").length > 0) {
-            menuExtendedCreate();
-        }
-    };
-})(jQuery));
 
 /*global jQuery, responsiveDesign*/
 

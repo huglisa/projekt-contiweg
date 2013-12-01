@@ -2,7 +2,7 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="2.5" client="site" type="template" method="upgrade">
     <name>Contiweg</name>
-    <creationDate>2013-11-07</creationDate>
+    <creationDate>2013-11-21</creationDate>
     <version>1.0</version>
     <author/>
     <authorUrl/>
@@ -55,6 +55,7 @@
         <position>position-28</position>
         <position>position-29</position>
         <position>position-30</position>
+        <position>position-31</position>
     </positions>
     <config>
         <fields name="params">

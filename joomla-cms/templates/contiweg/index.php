@@ -41,22 +41,52 @@ JHtml::_('behavior.framework', true);
     <link rel="stylesheet" href="<?php echo $templateUrl; ?>/css/template.css" media="screen">
     <!--[if lte IE 7]><link rel="stylesheet" href="<?php echo $templateUrl; ?>/css/template.ie7.css" media="screen" /><![endif]-->
     <link rel="stylesheet" href="<?php echo $templateUrl; ?>/css/template.responsive.css" media="all">
+	
+     <script>
+        if ('undefined' != typeof jQuery)
+        {
+            document._artxJQueryBackup = jQuery;
+        }
+		
 
-
-    <script>if ('undefined' != typeof jQuery) document._artxJQueryBackup = jQuery;</script>
+</script>
     <script src="<?php echo $templateUrl; ?>/jquery.js"></script>
     <script>jQuery.noConflict();</script>
 
     <script src="<?php echo $templateUrl; ?>/script.js"></script>
     <?php $view->includeInlineScripts() ?>
-    <script>if (document._artxJQueryBackup) jQuery = document._artxJQueryBackup;</script>
+    <script>if (document._artx
+Backup) jQuery = document._artxJQueryBackup;</script>
     <script src="<?php echo $templateUrl; ?>/script.responsive.js"></script>
 </head>
 <body>
 
 <div id="art-main">
-    <div class="art-sheet clearfix">
 <header class="art-header"><?php echo $view->position('position-30', 'art-nostyle'); ?>
+<div class="art-slider art-slidecontainerheader" data-width="1728" data-height="200">
+    <div class="art-slider-inner">
+<div class="art-slide-item art-slideheader0">
+
+</div>
+<div class="art-slide-item art-slideheader1">
+
+</div>
+<div class="art-slide-item art-slideheader2">
+
+</div>
+<div class="art-slide-item art-slideheader3">
+
+</div>
+<div class="art-slide-item art-slideheader4">
+
+</div>
+
+    </div>
+</div>
+<div class="art-slidenavigator art-slidenavigatorheader" data-left="53.56">
+<a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a>
+</div>
+
 
 
     <div class="art-shapes">
@@ -66,6 +96,10 @@ JHtml::_('behavior.framework', true);
 
 
 
+                
+                    
+</header>
+<div class="art-sheet clearfix">
 <?php if ($view->containsModules('position-1', 'position-28', 'position-29')) : ?>
 <nav class="art-nav">
     
@@ -79,9 +113,6 @@ JHtml::_('behavior.framework', true);
  
     </nav>
 <?php endif; ?>
-
-                    
-</header>
 <?php echo $view->position('position-15', 'art-nostyle'); ?>
 <?php echo $view->positions(array('position-16' => 33, 'position-17' => 33, 'position-18' => 34), 'art-block'); ?>
 <div class="art-layout-wrapper">
@@ -132,17 +163,21 @@ JHtml::_('behavior.framework', true);
 <?php echo $view->position('position-26', 'art-nostyle'); ?>
 
 <footer class="art-footer">
-<?php if ($view->containsModules('position-27')) : ?>
-    <?php echo $view->position('position-27', 'art-nostyle'); ?>
+<div class="art-content-layout">
+    <div class="art-content-layout-row">
+    <div class="art-layout-cell layout-item-0" style="width: 100%">
+<?php if ($view->containsModules('position-31')) : ?>
+    <?php echo $view->position('position-31', 'art-nostyle'); ?>
 <?php else: ?>
-<p><br></p>
-<?php endif; ?>
+        <p><br></p>
+    <?php endif; ?>
+</div>
+    </div>
+</div>
+
 </footer>
 
     </div>
-    <p class="art-page-footer">
-        <span id="art-footnote-links"><a href="http://www.artisteer.com/?p=joomla_templates" target="_blank">Joomla template</a> created with Artisteer.</span>
-    </p>
 </div>
 
 
