@@ -25,11 +25,436 @@ div.alles > a > span
 	font-weight: bold;
 }
 
+/* Angebot */
+div.angebot_alles{
+	position:relative;
+	height: 204px;
+	width: 329px;
+	margin:auto;
+}
+
+a#angebot_allgemeineinfos{
+	background-color: #FF0000;
+    border: 1px solid #000000;
+    color: #000000;
+    height: 100px;
+    line-height: 100px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    width: 175px;
+	font-weight: bold;
+}
+
+a#angebot_unterstufe{
+	background-color: #FF0000;
+    height: 100px;
+    position: absolute;
+    width: 150px;
+	left: 177px;
+	top:50px;
+	text-align: center;
+	border: 1px solid black;
+	border-left:none;
+	line-height: 100px;
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;
+}
+
+a#angebot_oberstufe{
+	background-color: #FF0000;
+    height: 100px;
+    position: absolute;
+    width: 125px;
+	left: 50px;
+	top:102px;
+	text-align: center;
+	border: 1px solid black;
+	border-top: none;
+	line-height: 100px;
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;	
+}
+
+/*schulteam*/
+div.schulteam_alles{
+	position:relative;
+	height: 613px;
+	width:254px;
+	margin:auto;
+}
+
+div.schulteam_alles > a
+{
+	height: 50px;
+	width:125px;
+	border: 1px solid black;
+	text-align: center;
+	position: absolute;
+	text-transform: uppercase;
+	color: black !important;	
+}
+
+a#schulteam_direktion{
+	background-color: #FFFF00;
+	line-height: 50px;
+}
+
+a#schulteam_lehrerinnen{
+	background-color: #FFFF00;
+	left:127px;
+	top:56px;
+	line-height: 50px;
+}
+
+a#schulteam_schuelerinnen{
+	background-color: #FFFF00;
+	top:112px;
+	line-height: 50px;
+}
+
+a#schulteam_sekretariat{
+	background-color: #FFFF00;
+	left:127px;
+	top:168px;
+	line-height: 50px;
+}
+
+a#schulteam_schulwart{
+background-color: #FFFF00;
+	top:224px;
+	line-height: 50px;
+}
+
+a#schulteam_psychologin{
+	background-color: #FFFF00;
+	left:127px;
+	top:280px;
+	line-height: 50px;
+}
+
+a#schulteam_schulaerztin{
+	background-color: #FFFF00;
+	top:336px;
+	line-height: 50px;
+}
+
+a#schulteam_betreuungslehrerin{
+	background-color: #FFFF00;
+	left:127px;
+	top:392px;
+}
+
+a#schulteam_bildungslehrerin{
+	background-color: #FFFF00;
+	top:448px;
+}
+
+a#schulteam_bildungsberaterinnen{
+	background-color: #FFFF00;
+	left:127px;
+	top:504px;
+}
+
+a#schulteam_absolventinnen{
+	background-color: #FFFF00;
+	top:560px;
+}
+
+/*anbegot/allgemeine infos*/
+div.allgemeine_infos_alles{
+	position:relative;
+	height: 220px;
+	width:254px;
+	margin:auto;
+}
+
+div.allgemeine_infos_alles > a
+{
+	height: 50px;
+	width:125px;
+	border: 1px solid black;
+	text-align: center;
+	position: absolute;
+	text-transform: uppercase;
+	color: black !important;	
+}
+
+a#allgemeine_infos_angebot{
+	background-color: #ff0000;
+	line-height: 50px;
+}
+
+a#allgemeine_infos_schulform{
+	background-color: #ff0000;
+	left:127px;
+	top:56px;
+	line-height: 50px;
+}
+
+a#allgemeine_infos_schulgebaeude{
+	background-color: #ff0000;
+	top:112px;
+	line-height: 50px;
+}
+
+a#allgemeine_infos_padgrundsaetze{
+	background-color: #ff0000;
+	left:127px;
+	top:168px;
+}
+
+a#allgemeine_infos_wirgestaltenschule{
+	background-color: #ff0000;
+	top:224px;
+}
 
 
+/*angebot/unterstufe*/
+div.unterstufe_alles{
+	position:relative;
+	height: 388px;
+	width:254px;
+	margin:auto;
+}
+
+div.unterstufe_alles > a
+{
+	height: 50px;
+	width:125px;
+	border: 1px solid black;
+	text-align: center;
+	position: absolute;
+	text-transform: uppercase;
+	color: black !important;	
+}
+
+a#unterstufe_angebot{
+	background-color: #ff0000;
+	line-height: 50px;
+}
+
+a#unterstufe_wasistdiewms{
+	background-color: #ff0000;
+	left:127px;
+	top:56px;
+	line-height: 50px;
+}
+
+a#unterstufe_besonderheiten{
+	background-color: #ff0000;
+	top:112px;
+	line-height: 50px;
+}
+
+a#unterstufe_berufsorientierung{
+	background-color: #ff0000;
+	left:127px;
+	top:168px;
+}
+
+a#unterstufe_stundentafel{
+background-color: #ff0000;
+	top:224px;
+	line-height: 50px;
+}
+
+a#unterstufe_tagesbetreuung{
+	background-color: #ff0000;
+	left:127px;
+	top:280px;
+	line-height: 50px;
+}
+
+a#unterstufe_mittagsbetreuung{
+	background-color: #ff0000;
+	top:336px;
+}
+
+/*angebot/oberstufe*/
+div.oberstufe_alles{
+	position:relative;
+	height: 220px;
+	width:254px;
+	margin:auto;
+}
+
+div.oberstufe_alles > a
+{
+	height: 50px;
+	width:125px;
+	border: 1px solid black;
+	text-align: center;
+	position: absolute;
+	text-transform: uppercase;
+	color: black !important;	
+}
+
+a#oberstufe_angebot{
+	background-color: #ff0000;
+	line-height: 50px;
+}
+
+a#oberstufe_unsere_oberstufe{
+	background-color: #ff0000;
+	left:127px;
+	top:56px;
+}
+
+a#oberstufe_stundentafel{
+	background-color: #ff0000;
+	top:112px;
+	line-height: 50px;
+}
+
+a#oberstufe_zentrale_reifepruefung{
+	background-color: #ff0000;
+	left:127px;
+	top:168px;
+}
+
+/* Schulpartner */
+div.schulpartner_alles{
+	position:relative;
+	height: 164px;
+	width:254px;
+	margin:auto;
+}
+
+div.schulpartner_alles > a
+{
+	height: 50px;
+	width:125px;
+	border: 1px solid black;
+	text-align: center;
+	position: absolute;
+	text-transform: uppercase;
+	color: black !important;	
+}
+
+a#schulpartner_sga{
+	background-color: #00c459;
+	line-height: 50px;
+}
+
+a#schulpartner_sponsoren{
+	background-color: #00c459;
+	left:127px;
+	top:56px;
+	line-height: 50px;
+}
+
+a#schulpartner_links{
+	background-color: #00c459;
+	top:112px;
+	line-height: 50px;
+}
+
+/* Bibliothek */
+
+div.bibliothek_alles{
+	position:relative;
+	height: 164px;
+	width:254px;
+	margin:auto;
+}
+
+div.bibliothek_alles > a
+{
+	height: 50px;
+	width:125px;
+	border: 1px solid black;
+	text-align: center;
+	position: absolute;
+	text-transform: uppercase;
+	color: black !important;	
+}
+
+a#bibliothek_allgemeine_informationen{
+	background-color: #b3a2c7;
+}
+
+a#bibliothek_buchderwoche{
+	background-color: #b3a2c7;
+	left:127px;
+	top:56px;
+}
+
+a#bibliothek_oeffnungszeiten{
+	background-color: #b3a2c7;
+	top:112px;
+	line-height: 50px;
+}
+
+/*service*/
+
+div.service_alles{
+	position:relative;
+	height: 388px;
+	width:254px;
+	margin:auto;
+}
+
+div.service_alles > a
+{
+	height: 50px;
+	width:125px;
+	border: 1px solid black;
+	text-align: center;
+	position: absolute;
+	text-transform: uppercase;
+	color: black !important;	
+}
+
+a#service_kontakt{
+	background-color: #00ffff;
+	line-height: 50px;
+}
+
+a#service_termine{
+	background-color: #00ffff;
+	left:127px;
+	top:56px;
+	line-height: 50px;
+}
+
+a#service_sprechstunden{
+	background-color: #00ffff;
+	top:112px;
+	line-height: 50px;
+}
+
+a#service_formulare{
+	background-color: #00ffff;
+	left:127px;
+	top:168px;
+}
+
+a#service_hausordnung{
+background-color: #00ffff;
+	top:224px;
+	line-height: 50px;
+}
+
+a#service_massnahmenkatalog{
+	background-color: #00ffff;
+	left:127px;
+	top:280px;
+}
+
+a#service_impressum{
+	background-color: #00ffff;
+	top:336px;
+	line-height:50px;
+}
+
+
+/* Startseite */
 a#angebot {
 	
-background-color: #FF0000;
+	background-color: #FF0000;
     height: 100px;
     position: absolute;
     width: 175px;
@@ -170,57 +595,58 @@ a#contiuni {
     width: 180px;
 	text-align: center;
 }
+/* Startseite ENDE*/
 
 /* Service */
-.item-471 a {
+.item-141 a {
 	background-color:#00ffff !important;
 	color: black !important;
 	font-weight: bold !important;
 }
 
 /*Bibliothek */
-.item-470 a {
+.item-137 a {
 	background-color: #b3a2c7 !important;
 	color: black !important;
 	font-weight: bold !important;
 }
 
 /* Schulteam */
-.item-469 a {
+.item-121 a {
 	background-color:#ffff00 !important;
 	color: black !important;
 	font-weight: bold !important;
 }
 
 /* Angebot */
-.item-468 a {
+.item-103 a {
 	background-color:#ff0000 !important;
 	color: black !important;
 	font-weight: bold !important;
 }
 
 /* Schulpartner */
-.item-467 a {
+.item-133 a {
 	background-color:#00c459 !important;
 	color: black !important;
 	font-weight: bold !important;
 }
 
 /* Aktuelles */
-.item-466 a {
+.item-102 a {
 	background-color:#ff66cc !important;
 	color: black !important;
 	font-weight: bold !important;
 }
 
 /* Erfolge */
-.item-465 a {
+.item-120 a {
 	background-color: #ff0066 !important;
 	color: black !important;
 	font-weight: bold !important;
 }
 /* Home */
-.item-435 a {
+.item-101 a {
 	background-color:#f69f2b !important;
 	color: black !important;
 	font-weight: bold !important;
