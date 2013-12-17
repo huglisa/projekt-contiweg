@@ -50,8 +50,164 @@ JHtml::_('behavior.framework', true);
         }
 
 		function resize() {
-			jQuery("div.random-image>img").width(jQuery(document).width() + (jQuery(document).width()/10));/*jQuery(document).width());*/
+			jQuery("div.random-image>img").width(jQuery(".art-hmenu").width());/*jQuery(document).width());*/
+			jQuery("div.random-image").css('margin-left', (jQuery(document).width() - (jQuery(".art-hmenu").width()))/2);
 			jQuery("div.random-image>img").height(jQuery(".art-header").height());
+			
+			//Startseite vergrößen wenn menüleistenbreite größer als 1300px ist
+			if (jQuery(".art-hmenu").width() > 1300) //größer als 1300
+			{
+				jQuery(".alles").css('width', 735);
+				jQuery(".alles").css('height', 475);
+			
+				jQuery("#angebot").css('width', 200);
+				jQuery("#angebot").css('height', 125);
+				jQuery("#angebot").css('left', 125);
+				jQuery("#angebot>span").css('line-height',10);
+				
+				jQuery("#aktuelles").css('height', 125);
+				jQuery("#aktuelles").css('width', 175);
+				jQuery("#aktuelles").css('top', 125);
+				jQuery("#aktuelles>span").css('line-height',10);
+				
+				jQuery("#wueu").css('height', 150);
+				jQuery("#wueu").css('width', 150);
+				jQuery("#wueu").css('top', 125);
+				jQuery("#wueu").css('left', 175);
+				jQuery("#wueu>span").css('line-height',12);
+				
+				jQuery("#wsv").css('height', 125);
+				jQuery("#wsv").css('width', 175);
+				jQuery("#wsv").css('top', 50);
+				jQuery("#wsv").css('left', 325);
+				jQuery("#wsv>span").css('line-height',10);
+				
+				jQuery("#erfolge").css('height', 150);
+				jQuery("#erfolge").css('width', 175);
+				jQuery("#erfolge").css('top', 25);
+				jQuery("#erfolge").css('left', 500);
+				jQuery("#erfolge>span").css('line-height',12);
+				
+				jQuery("#service").css('height', 100);
+				jQuery("#service").css('width', 200);
+				jQuery("#service").css('top', 175);
+				jQuery("#service").css('left', 325);
+				jQuery("#service>span").css('line-height',8);
+				
+				jQuery("#schulteam").css('height', 125);
+				jQuery("#schulteam").css('width', 175);
+				jQuery("#schulteam").css('top', 175);
+				jQuery("#schulteam").css('left', 525);
+				jQuery("#schulteam>span").css('line-height',10);
+				
+				jQuery("#bibliothek").css('height', 100);
+				jQuery("#bibliothek").css('width', 175);
+				jQuery("#bibliothek").css('top', 275);
+				jQuery("#bibliothek").css('left', 175);
+				jQuery("#bibliothek>span").css('line-height',8);
+				
+				jQuery("#simongasse").css('height', 100);
+				jQuery("#simongasse").css('width', 175);
+				jQuery("#simongasse").css('top', 375);
+				jQuery("#simongasse").css('left', 175);
+				jQuery("#simongasse>span").css('line-height',8);
+				
+				jQuery("#schulpartner").css('height', 150);
+				jQuery("#schulpartner").css('width', 175);
+				jQuery("#schulpartner").css('top', 275);
+				jQuery("#schulpartner").css('left', 350);
+				jQuery("#schulpartner>span").css('line-height',12);
+				
+				jQuery("#contiuni").css('height', 90);
+				jQuery("#contiuni").css('width', 210);
+				jQuery("#contiuni").css('top', 300);
+				jQuery("#contiuni").css('left', 525);
+				jQuery("#contiuni>span").css('line-height',7);
+				
+				jQuery("#eklabu").css('height', 40);
+				jQuery("#eklabu").css('width', 150);
+				jQuery("#eklabu").css('top', 250);
+				jQuery("#eklabu").css('left', 25);
+				jQuery("#eklabu").css('padding-top', 50);
+				jQuery("#eklabu").css('padding-bottom', 50);
+				
+			}
+			else if(jQuery(".art-hmenu").width() < 1300)//kleiner als 1300 STANDARDEINSTELLUNGEN
+			{
+				jQuery(".alles").css('width', 630);
+				jQuery(".alles").css('height', 380);
+				
+			    jQuery("#angebot").css('width', 175);
+				jQuery("#angebot").css('height', 100);
+				jQuery("#angebot").css('left', 100);
+				jQuery("#angebot>span").css('line-height',8);
+				 
+				jQuery("#aktuelles").css('height', 100);
+				jQuery("#aktuelles").css('width', 150);
+				jQuery("#aktuelles").css('top', 100);
+				jQuery("#aktuelles>span").css('line-height',8);
+				 
+				jQuery("#wueu").css('height', 125);
+				jQuery("#wueu").css('width', 125);
+				jQuery("#wueu").css('top', 100);
+				jQuery("#wueu").css('left', 150);
+				jQuery("#wueu>span").css('line-height',10);
+				 
+				jQuery("#wsv").css('height', 100);
+				jQuery("#wsv").css('width', 150);
+				jQuery("#wsv").css('top', 50);
+				jQuery("#wsv").css('left', 275);
+				jQuery("#wsv>span").css('line-height',8);
+				
+				jQuery("#erfolge").css('height', 125);
+				jQuery("#erfolge").css('width', 125);
+				jQuery("#erfolge").css('top', 25);
+				jQuery("#erfolge").css('left', 425);
+				jQuery("#erfolge>span").css('line-height',10);
+				
+				jQuery("#service").css('height', 75);
+				jQuery("#service").css('width', 175);
+				jQuery("#service").css('top', 150);
+				jQuery("#service").css('left', 275);
+				jQuery("#service>span").css('line-height',6);
+				
+				jQuery("#schulteam").css('height', 100);
+				jQuery("#schulteam").css('width', 125);
+				jQuery("#schulteam").css('top', 150);
+				jQuery("#schulteam").css('left', 450);
+				jQuery("#schulteam>span").css('line-height',8);
+				
+				jQuery("#bibliothek").css('height', 75);
+				jQuery("#bibliothek").css('width', 150);
+				jQuery("#bibliothek").css('top', 225);
+				jQuery("#bibliothek").css('left', 150);
+				jQuery("#bibliothek>span").css('line-height',6);
+				
+				jQuery("#simongasse").css('height', 80);
+				jQuery("#simongasse").css('width', 150);
+				jQuery("#simongasse").css('top', 300);
+				jQuery("#simongasse").css('left', 150);
+				jQuery("#simongasse>span").css('line-height',6);
+				
+				jQuery("#schulpartner").css('height', 125);
+				jQuery("#schulpartner").css('width', 150);
+				jQuery("#schulpartner").css('top', 225);
+				jQuery("#schulpartner").css('left', 300);
+				jQuery("#schulpartner>span").css('line-height',10);
+				
+				jQuery("#contiuni").css('height', 65);
+				jQuery("#contiuni").css('width', 180);
+				jQuery("#contiuni").css('top', 250);
+				jQuery("#contiuni").css('left', 450);
+				jQuery("#contiuni>span").css('line-height',5);
+				
+				jQuery("#eklabu").css('height', 35);
+				jQuery("#eklabu").css('width', 125);
+				jQuery("#eklabu").css('top', 200);
+				jQuery("#eklabu").css('left', 25);
+				jQuery("#eklabu").css('padding-top', 40);
+				jQuery("#eklabu").css('padding-bottom', 50);
+			}
 		}
 
 		onresize = resize;
