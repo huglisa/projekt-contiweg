@@ -41,52 +41,37 @@ JHtml::_('behavior.framework', true);
     <link rel="stylesheet" href="<?php echo $templateUrl; ?>/css/template.css" media="screen">
     <!--[if lte IE 7]><link rel="stylesheet" href="<?php echo $templateUrl; ?>/css/template.ie7.css" media="screen" /><![endif]-->
     <link rel="stylesheet" href="<?php echo $templateUrl; ?>/css/template.responsive.css" media="all">
-	
-     <script>
+
+
+   <script>
         if ('undefined' != typeof jQuery)
         {
             document._artxJQueryBackup = jQuery;
         }
-		
 
-</script>
+		function resize() {
+			jQuery("div.random-image>img").width(jQuery(document).width() + (jQuery(document).width()/10));/*jQuery(document).width());*/
+			jQuery("div.random-image>img").height(jQuery(".art-header").height());
+		}
+
+		onresize = resize;
+
+		jQuery(resize);
+
+
+		</script>
     <script src="<?php echo $templateUrl; ?>/jquery.js"></script>
     <script>jQuery.noConflict();</script>
 
     <script src="<?php echo $templateUrl; ?>/script.js"></script>
     <?php $view->includeInlineScripts() ?>
-    <script>if (document._artx
-Backup) jQuery = document._artxJQueryBackup;</script>
+    <script>if (document._artxJQueryBackup) jQuery = document._artxJQueryBackup;</script>
     <script src="<?php echo $templateUrl; ?>/script.responsive.js"></script>
 </head>
 <body>
 
 <div id="art-main">
 <header class="art-header"><?php echo $view->position('position-30', 'art-nostyle'); ?>
-<div class="art-slider art-slidecontainerheader" data-width="1728" data-height="200">
-    <div class="art-slider-inner">
-<div class="art-slide-item art-slideheader0">
-
-</div>
-<div class="art-slide-item art-slideheader1">
-
-</div>
-<div class="art-slide-item art-slideheader2">
-
-</div>
-<div class="art-slide-item art-slideheader3">
-
-</div>
-<div class="art-slide-item art-slideheader4">
-
-</div>
-
-    </div>
-</div>
-<div class="art-slidenavigator art-slidenavigatorheader" data-left="53.56">
-<a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a>
-</div>
-
 
 
     <div class="art-shapes">
@@ -96,7 +81,7 @@ Backup) jQuery = document._artxJQueryBackup;</script>
 
 
 
-                
+                        
                     
 </header>
 <div class="art-sheet clearfix">

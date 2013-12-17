@@ -1,3 +1,7 @@
+div.random-image{
+		margin-left: -5%;
+}
+
 a{
 	color: white;
 	text-decoration: none;
@@ -9,6 +13,11 @@ body {
 
 h1{
 	color:orange
+}
+
+div.alles a:hover
+{
+	text-decoration: none;
 }
 
 div.alles
@@ -34,7 +43,7 @@ div.angebot_alles{
 }
 
 a#angebot_allgemeineinfos{
-	background-color: #FF0000;
+	background-color: #f69f2b;
     border: 1px solid #000000;
     color: #000000;
     height: 100px;
@@ -47,7 +56,7 @@ a#angebot_allgemeineinfos{
 }
 
 a#angebot_unterstufe{
-	background-color: #FF0000;
+	background-color: #f69f2b;
     height: 100px;
     position: absolute;
     width: 150px;
@@ -63,7 +72,7 @@ a#angebot_unterstufe{
 }
 
 a#angebot_oberstufe{
-	background-color: #FF0000;
+	background-color: #f69f2b;
     height: 100px;
     position: absolute;
     width: 125px;
@@ -103,63 +112,63 @@ a#schulteam_direktion{
 }
 
 a#schulteam_lehrerinnen{
-	background-color: #FFFF00;
+	background-color: #ffff12;
 	left:127px;
 	top:56px;
 	line-height: 50px;
 }
 
 a#schulteam_schuelerinnen{
-	background-color: #FFFF00;
+	background-color: #ffff24;
 	top:112px;
 	line-height: 50px;
 }
 
 a#schulteam_sekretariat{
-	background-color: #FFFF00;
+	background-color: #ffff36;
 	left:127px;
 	top:168px;
 	line-height: 50px;
 }
 
 a#schulteam_schulwart{
-background-color: #FFFF00;
+background-color: #ffff47;
 	top:224px;
 	line-height: 50px;
 }
 
 a#schulteam_psychologin{
-	background-color: #FFFF00;
+	background-color: #ffff59;
 	left:127px;
 	top:280px;
 	line-height: 50px;
 }
 
 a#schulteam_schulaerztin{
-	background-color: #FFFF00;
+	background-color: #ffff6b;
 	top:336px;
 	line-height: 50px;
 }
 
 a#schulteam_betreuungslehrerin{
-	background-color: #FFFF00;
+	background-color: #ffff7d;
 	left:127px;
 	top:392px;
 }
 
 a#schulteam_bildungslehrerin{
-	background-color: #FFFF00;
+	background-color: #ffff8f;
 	top:448px;
 }
 
 a#schulteam_bildungsberaterinnen{
-	background-color: #FFFF00;
+	background-color: #ffffa1;
 	left:127px;
 	top:504px;
 }
 
 a#schulteam_absolventinnen{
-	background-color: #FFFF00;
+	background-color: #ffffb3;
 	top:560px;
 }
 
@@ -183,31 +192,31 @@ div.allgemeine_infos_alles > a
 }
 
 a#allgemeine_infos_angebot{
-	background-color: #ff0000;
+	background-color: #f69f2b;
 	line-height: 50px;
 }
 
 a#allgemeine_infos_schulform{
-	background-color: #ff0000;
+	background-color: #f6a942;
 	left:127px;
 	top:56px;
 	line-height: 50px;
 }
 
 a#allgemeine_infos_schulgebaeude{
-	background-color: #ff0000;
+	background-color: #f6b45b;
 	top:112px;
 	line-height: 50px;
 }
 
 a#allgemeine_infos_padgrundsaetze{
-	background-color: #ff0000;
+	background-color: #f6be74;
 	left:127px;
 	top:168px;
 }
 
 a#allgemeine_infos_wirgestaltenschule{
-	background-color: #ff0000;
+	background-color: #f6c98c;
 	top:224px;
 }
 
@@ -232,44 +241,44 @@ div.unterstufe_alles > a
 }
 
 a#unterstufe_angebot{
-	background-color: #ff0000;
+	background-color: #f69f2b;
 	line-height: 50px;
 }
 
 a#unterstufe_wasistdiewms{
-	background-color: #ff0000;
+	background-color: #f6a942;
 	left:127px;
 	top:56px;
 	line-height: 50px;
 }
 
 a#unterstufe_besonderheiten{
-	background-color: #ff0000;
+	background-color: #f6b45b;
 	top:112px;
 	line-height: 50px;
 }
 
 a#unterstufe_berufsorientierung{
-	background-color: #ff0000;
+	background-color: #f6be74;
 	left:127px;
 	top:168px;
 }
 
 a#unterstufe_stundentafel{
-background-color: #ff0000;
+background-color: #f6c98c;
 	top:224px;
 	line-height: 50px;
 }
 
 a#unterstufe_tagesbetreuung{
-	background-color: #ff0000;
+	background-color: #f6d09d;
 	left:127px;
 	top:280px;
 	line-height: 50px;
 }
 
 a#unterstufe_mittagsbetreuung{
-	background-color: #ff0000;
+	background-color: #f6d8b1;
 	top:336px;
 }
 
@@ -293,24 +302,24 @@ div.oberstufe_alles > a
 }
 
 a#oberstufe_angebot{
-	background-color: #ff0000;
+	background-color: #f69f2b;
 	line-height: 50px;
 }
 
 a#oberstufe_unsere_oberstufe{
-	background-color: #ff0000;
+	background-color: #f6a942;
 	left:127px;
 	top:56px;
 }
 
 a#oberstufe_stundentafel{
-	background-color: #ff0000;
+	background-color: #f6b45b;
 	top:112px;
 	line-height: 50px;
 }
 
 a#oberstufe_zentrale_reifepruefung{
-	background-color: #ff0000;
+	background-color: #f6be74;
 	left:127px;
 	top:168px;
 }
@@ -340,14 +349,14 @@ a#schulpartner_sga{
 }
 
 a#schulpartner_sponsoren{
-	background-color: #00c459;
+	background-color: #27c46e;
 	left:127px;
 	top:56px;
 	line-height: 50px;
 }
 
 a#schulpartner_links{
-	background-color: #00c459;
+	background-color: #4ec484;
 	top:112px;
 	line-height: 50px;
 }
@@ -377,13 +386,13 @@ a#bibliothek_allgemeine_informationen{
 }
 
 a#bibliothek_buchderwoche{
-	background-color: #b3a2c7;
+	background-color: #bcb3c7;
 	left:127px;
 	top:56px;
 }
 
 a#bibliothek_oeffnungszeiten{
-	background-color: #b3a2c7;
+	background-color: #c2bdc7;
 	top:112px;
 	line-height: 50px;
 }
@@ -414,38 +423,38 @@ a#service_kontakt{
 }
 
 a#service_termine{
-	background-color: #00ffff;
+	background-color: #1cffff;
 	left:127px;
 	top:56px;
 	line-height: 50px;
 }
 
 a#service_sprechstunden{
-	background-color: #00ffff;
+	background-color: #38ffff;
 	top:112px;
 	line-height: 50px;
 }
 
 a#service_formulare{
-	background-color: #00ffff;
+	background-color: #54ffff;
 	left:127px;
 	top:168px;
 }
 
 a#service_hausordnung{
-background-color: #00ffff;
+background-color: #70ffff;
 	top:224px;
 	line-height: 50px;
 }
 
 a#service_massnahmenkatalog{
-	background-color: #00ffff;
+	background-color: #8cffff;
 	left:127px;
 	top:280px;
 }
 
 a#service_impressum{
-	background-color: #00ffff;
+	background-color: #a8ffff;
 	top:336px;
 	line-height:50px;
 }
@@ -454,7 +463,7 @@ a#service_impressum{
 /* Startseite */
 a#angebot {
 	
-	background-color: #FF0000;
+	background-color: #f69f2b;
     height: 100px;
     position: absolute;
     width: 175px;
@@ -620,7 +629,7 @@ a#contiuni {
 
 /* Angebot */
 .item-103 a {
-	background-color:#ff0000 !important;
+	background-color:#f69f2b !important;
 	color: black !important;
 	font-weight: bold !important;
 }
@@ -647,7 +656,7 @@ a#contiuni {
 }
 /* Home */
 .item-101 a {
-	background-color:#f69f2b !important;
+	background-color:#e00000 !important;
 	color: black !important;
 	font-weight: bold !important;
 }
@@ -745,6 +754,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
 .art-postcontent  a:hover, .art-postcontent a.hover
 {
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  text-decoration: underline;
   color: #FB7837;
 }
 
@@ -1007,183 +1017,6 @@ li p, .art-postcontent li p, .art-blockcontent li p
   margin-right: 0 !important;
 }
 
-.art-slidecontainerheader
-{
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.art-slidecontainerheader .art-slide-item
-{
-  -webkit-transition: 1000ms ease-in-out opacity;
-  -moz-transition: 1000ms ease-in-out opacity;
-  -ms-transition: 1000ms ease-in-out opacity;
-  -o-transition: 1000ms ease-in-out opacity;
-  transition: 1000ms ease-in-out opacity;
-  position: absolute;
-  display: none;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.art-slidecontainerheader .active, .art-slidecontainerheader .next, .art-slidecontainerheader .prev
-{
-  display: block;
-}
-
-.art-slidecontainerheader .active
-{
-  opacity: 1;
-}
-
-.art-slidecontainerheader .next, .art-slidecontainerheader .prev
-{
-  width: 100%;
-}
-
-.art-slidecontainerheader .next.forward, .art-slidecontainerheader .prev.back
-{
-  opacity: 1;
-}
-
-.art-slidecontainerheader .active.forward
-{
-  opacity: 0;
-}
-
-.art-slidecontainerheader .active.back
-{
-  opacity: 0;
-}
-
-.art-slideheader0
-{
-  background-image: url('../images/slideheader0.jpg');
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-
-.art-slideheader1
-{
-  background-image: url('../images/slideheader1.jpg');
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-
-.art-slideheader2
-{
-  background-image: url('../images/slideheader2.jpg');
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-
-.art-slideheader3
-{
-  background-image: url('../images/slideheader3.jpg');
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-
-.art-slideheader4
-{
-  background-image: url('../images/slideheader4.jpg');
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-
-.art-slidenavigatorheader
-{
-  display: inline-block;
-  position: absolute;
-  direction: ltr !important;
-  top: 0px;
-  left: 53.56%;
-  z-index: 101;
-  line-height: 0 !important;
-  -webkit-background-origin: border !important;
-  -moz-background-origin: border !important;
-  background-origin: border-box !important;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.art-slidenavigatorheader
-{
-  background: #B9C2CB;
-  background: linear-gradient(top, rgba(232, 235, 238, 0.6) 0, rgba(138, 153, 168, 0.6) 100%) no-repeat;
-  background: -webkit-linear-gradient(top, rgba(232, 235, 238, 0.6) 0, rgba(138, 153, 168, 0.6) 100%) no-repeat;
-  background: -moz-linear-gradient(top, rgba(232, 235, 238, 0.6) 0, rgba(138, 153, 168, 0.6) 100%) no-repeat;
-  background: -o-linear-gradient(top, rgba(232, 235, 238, 0.6) 0, rgba(138, 153, 168, 0.6) 100%) no-repeat;
-  background: -ms-linear-gradient(top, rgba(232, 235, 238, 0.6) 0, rgba(138, 153, 168, 0.6) 100%) no-repeat;
-  background: linear-gradient(top, rgba(232, 235, 238, 0.6) 0, rgba(138, 153, 168, 0.6) 100%) no-repeat;
-  -svg-background: linear-gradient(top, rgba(232, 235, 238, 0.6) 0, rgba(138, 153, 168, 0.6) 100%) no-repeat;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  padding: 7px;
-}
-
-.art-slidenavigatorheader > a
-{
-  background: #728597;
-  background: #728597;
-  background: #728597;
-  background: #728597;
-  background: #728597;
-  background: #728597;
-  background: #728597;
-  -svg-background: #728597;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  margin: 0 10px 0 0;
-  width: 10px;
-  height: 10px;
-}
-
-.art-slidenavigatorheader > a.active
-{
-  background: #FA681E;
-  background: #FA681E;
-  background: #FA681E;
-  background: #FA681E;
-  background: #FA681E;
-  background: #FA681E;
-  background: #FA681E;
-  -svg-background: #FA681E;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  margin: 0 10px 0 0;
-  width: 10px;
-  height: 10px;
-}
-
-.art-slidenavigatorheader > a:hover
-{
-  background: #455B73;
-  background: #455B73;
-  background: #455B73;
-  background: #455B73;
-  background: #455B73;
-  background: #455B73;
-  background: #455B73;
-  -svg-background: #455B73;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  margin: 0 10px 0 0;
-  width: 10px;
-  height: 10px;
-}
-
 .art-footer .layout-item-0
 {
   padding-right: 10px;
@@ -1205,21 +1038,27 @@ li p, .art-postcontent li p, .art-blockcontent li p
 .art-header
 {
   margin: 0 auto;
+  position: relative;
   height: 200px;
-  background-image: none;
-  background-position: 0 0;
+  background-image: url('../images/header.png');
+  background-position: center top;
   background-repeat: no-repeat;
+}
+
+.responsive .art-header
+{
+  background-image: url('../images/header.png');
+  background-position: center center;
+}
+
+.art-header-inner
+{
   position: relative;
   min-width: 700px;
   max-width: 1728px;
   width: 99%;
   z-index: auto !important;
-}
-
-.responsive .art-header
-{
-  background-image: none;
-  background-position: center center;
+  margin: 0 auto;
 }
 
 .art-header>div.art-nostyle, .art-header>div.art-block, .art-header>div.art-post
@@ -1298,7 +1137,6 @@ ul.art-hmenu, ul.art-hmenu ul
 
 ul.art-hmenu
 {
-  display: inline-block;
   vertical-align: bottom;
 }
 
@@ -1335,6 +1173,7 @@ ul.art-hmenu
 ul.art-hmenu>li
 {
   margin-left: 0;
+  width: 12.5%;
 }
 
 ul.art-hmenu>li:first-child
@@ -1358,7 +1197,7 @@ ul.art-hmenu>li>a
   text-decoration: none;
   color: #6F8295;
   line-height: 34px;
-  text-align: center;
+  text-align: center !important; 
 }
 
 .art-hmenu a, .art-hmenu a:link, .art-hmenu a:visited, .art-hmenu a.active, .art-hmenu a:hover
@@ -1412,7 +1251,7 @@ ul.art-hmenu>li>a:hover, .desktop ul.art-hmenu>li:hover>a
 {
   color: #FFF5F0;
   text-decoration: none;
-} */
+}*/
 
 ul.art-hmenu li li a
 {
@@ -3304,18 +3143,19 @@ blockquote p, .art-postcontent blockquote p, .art-blockcontent blockquote p, .ar
 .art-content-layout .art-sidebar1
 {
   margin: 0 auto;
-  width: 200px;
+  width: 25%;
 }
 
 .art-content-layout .art-content
 {
   margin: 0 auto;
+  width: 50%;
 }
 
 .art-content-layout .art-sidebar2
 {
   margin: 0 auto;
-  width: 200px;
+  width: 25%;
 }
 
 fieldset

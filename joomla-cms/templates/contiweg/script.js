@@ -1143,36 +1143,27 @@ jQuery(function () {
 
 
 
-jQuery(function($) {
-    'use strict';
-    if ($.fn.slider) {
-        $(".art-slidecontainerheader").each(function () {
-            var slideContainer = $(this), tmp;
-            var inner = $(".art-slider-inner", slideContainer);
-            var helper = null;
-
-            if ($.support.transition) {
-                helper = new BackgroundHelper();
-                helper.init("fade", "next", $(".art-slide-item", inner).first().css($.support.transition.prefix + "transition-duration"));
-                inner.children().each(function () {
-                    helper.processSlide($(this));
-                });
-
-            }
-
-
-            inner.children().eq(0).addClass("active");
-            slideContainer.slider({
-                pause: 8000,
-                speed: 1000,
-                repeat: true,
-                animation: "fade",
-                direction: "next",
-                navigator: slideContainer.siblings(".art-slidenavigatorheader"),
-                helper: helper                
-            });
+jQuery(window).bind("resize", (function ($) {
+    /*global responsiveDesign */
+    "use strict";
+    return function () {
+        if (typeof responsiveDesign !== "undefined" && responsiveDesign.isResponsive) {
+            $("header.art-header .art-shapes").children().css("left", "");
+            return;
+        }
+        var sheetWidth = $(".art-sheet").width();
+        var sheetLeft = $(".art-sheet").offset().left;
+        $("header.art-header .art-shapes>*, header.art-header>.art-textblock, header.art-header>.art-headline, header.art-header>.art-slogan").each(function () {
+            var object = $(this);
+            var objectLeft = sheetWidth * parseFloat(object.attr("data-left") || "0") / 100 + sheetLeft;
+            object.css("left", objectLeft + "px");
         });
-    }
+    };
+})(jQuery));
+
+jQuery(function ($) {
+    "use strict";
+    $(window).trigger("resize"); 
 });
 jQuery(function ($) {
     "use strict";
@@ -1202,8 +1193,8 @@ var processHeaderMultipleBg = (function ($) {
             }
             header.append("<div style=\"position:absolute;top:0;left:0;width:100%;height:100%;background:" + bgimage + " " + bgpositions[i] + " no-repeat\">");
         }
-        header.css('background-image', "none".replace(/(url\(['"]?)/i, "$1" + path));
-        header.css('background-position', "0 0");
+        header.css('background-image', "url('images/header.png')".replace(/(url\(['"]?)/i, "$1" + path));
+        header.css('background-position', "center top");
     });
 })(jQuery);
 
