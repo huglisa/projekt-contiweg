@@ -8,7 +8,7 @@ a{
 }
 body {
 	right:0% !important;
-	overflow: hidden;
+	overflow: scroll;
 }
 
 h1{
@@ -666,14 +666,14 @@ a#contiuni {
 
 #art-main
 {
-  background: #F9FAFB;
+  background: white;
   margin: 0 auto;
   font-size: 13px;
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   position: relative;
-  width: 100%;
+  width: 70%;
   min-height: 100%;
   left: 0;
   top: 0;
@@ -1188,7 +1188,6 @@ ul.art-hmenu>li:last-child, ul.art-hmenu>li.last-child
 
 ul.art-hmenu>li>a
 {
-  padding: 0 12px;
   margin: 0 auto;
   position: relative;
   display: block;

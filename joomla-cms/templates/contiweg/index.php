@@ -41,21 +41,50 @@ JHtml::_('behavior.framework', true);
     <link rel="stylesheet" href="<?php echo $templateUrl; ?>/css/template.css" media="screen">
     <!--[if lte IE 7]><link rel="stylesheet" href="<?php echo $templateUrl; ?>/css/template.ie7.css" media="screen" /><![endif]-->
     <link rel="stylesheet" href="<?php echo $templateUrl; ?>/css/template.responsive.css" media="all">
-
+	
+	<script src="<?php echo $templateUrl; ?>/jquery.js"></script>
+    
 
    <script>
         if ('undefined' != typeof jQuery)
         {
             document._artxJQueryBackup = jQuery;
         }
-
+		
+		var i = 1;
+		var menu = jQuery(".art-hmenu").width();
+		var size = 200;
+		
+		
+		
 		function resize() {
-			jQuery("div.random-image>img").width(jQuery(".art-hmenu").width());/*jQuery(document).width());*/
-			jQuery("div.random-image").css('margin-left', (jQuery(document).width() - (jQuery(".art-hmenu").width()))/2);
+			jQuery("div.random-image>img").width(jQuery(".art-hmenu").width());
+			jQuery("div.random-image").css('margin-left', -(jQuery(document).width() - (jQuery(".art-hmenu").width()))/2);
 			jQuery("div.random-image>img").height(jQuery(".art-header").height());
 			
+			if(jQuery(".art-hmenu").width() < 1500) {
+				size = jQuery("div.random-image>img").height() - (i * 10);
+				if(menu > jQuery(".art-hmenu").width()){ 
+					jQuery("div.random-image>img").height(size);
+					jQuery(".art-header").css('height', size);
+					i = i + 1;
+				}else{
+					jQuery("div.random-image>img").height(size);
+					jQuery(".art-header").css('height', size);
+					i = i - 1;
+				}
+				
+				menu = jQuery(".art-hmenu").width();
+			}else{
+				jQuery("div.random-image>img").height(jQuery(".art-header").height());
+				size = 200;
+				i = 1;
+			}
+			//jQuery(".art-header").height(jQuery("div.random-image>img").height);
+			
+			
 			//Startseite vergrößen wenn menüleistenbreite größer als 1300px ist
-			if (jQuery(".art-hmenu").width() > 1300) //größer als 1300
+			if (jQuery(".art-hmenu").width() > 1000) //größer als 1300
 			{
 				jQuery(".alles").css('width', 735);
 				jQuery(".alles").css('height', 475);
@@ -131,8 +160,162 @@ JHtml::_('behavior.framework', true);
 				jQuery("#eklabu").css('padding-top', 50);
 				jQuery("#eklabu").css('padding-bottom', 50);
 				
+				if(jQuery(".art-hmenu").width() > 1400)
+				{
+					jQuery(".alles").css('width', 840);
+					jQuery(".alles").css('height', 525);
+				
+					jQuery("#angebot").css('width', 225);
+					jQuery("#angebot").css('height', 150);
+					jQuery("#angebot").css('left', 150);
+					jQuery("#angebot>span").css('line-height',12);
+				 
+					jQuery("#aktuelles").css('height', 150);
+					jQuery("#aktuelles").css('width', 200);
+					jQuery("#aktuelles").css('top', 150);
+					jQuery("#aktuelles>span").css('line-height',12);
+				 
+					jQuery("#wueu").css('height', 175);
+					jQuery("#wueu").css('width', 175);
+					jQuery("#wueu").css('top', 150);
+					jQuery("#wueu").css('left', 200);
+					jQuery("#wueu>span").css('line-height',14);
+				 
+					jQuery("#wsv").css('height', 150);
+					jQuery("#wsv").css('width', 200);
+					jQuery("#wsv").css('top', 50);
+					jQuery("#wsv").css('left', 375);
+					jQuery("#wsv>span").css('line-height',12);
+				
+					jQuery("#erfolge").css('height', 175);
+					jQuery("#erfolge").css('width', 200);
+					jQuery("#erfolge").css('top', 25);
+					jQuery("#erfolge").css('left', 575);
+					jQuery("#erfolge>span").css('line-height',14);
+				
+					jQuery("#service").css('height', 125);
+					jQuery("#service").css('width', 225);
+					jQuery("#service").css('top', 200);
+					jQuery("#service").css('left', 375);
+					jQuery("#service>span").css('line-height',10);
+				
+					jQuery("#schulteam").css('height', 150);
+					jQuery("#schulteam").css('width', 200);
+					jQuery("#schulteam").css('top', 200);
+					jQuery("#schulteam").css('left', 600);
+					jQuery("#schulteam>span").css('line-height',12);
+				
+					jQuery("#bibliothek").css('height', 100);
+					jQuery("#bibliothek").css('width', 200);
+					jQuery("#bibliothek").css('top', 325);
+					jQuery("#bibliothek").css('left', 200);
+					jQuery("#bibliothek>span").css('line-height',8);
+				
+					jQuery("#simongasse").css('height', 100);
+					jQuery("#simongasse").css('width', 200);
+					jQuery("#simongasse").css('top', 425);
+					jQuery("#simongasse").css('left', 200);
+					jQuery("#simongasse>span").css('line-height',8);
+				
+					jQuery("#schulpartner").css('height', 175);
+					jQuery("#schulpartner").css('width', 200);
+					jQuery("#schulpartner").css('top', 325);
+					jQuery("#schulpartner").css('left', 400);
+					jQuery("#schulpartner>span").css('line-height',14);
+				
+					jQuery("#contiuni").css('height', 100);
+					jQuery("#contiuni").css('width', 240);
+					jQuery("#contiuni").css('top', 350);
+					jQuery("#contiuni").css('left', 600);
+					jQuery("#contiuni>span").css('line-height',8);
+				
+					jQuery("#eklabu").css('height', 45);
+					jQuery("#eklabu").css('width', 175);
+					jQuery("#eklabu").css('top', 300);
+					jQuery("#eklabu").css('left', 25);
+					jQuery("#eklabu").css('padding-top', 50);
+					jQuery("#eklabu").css('padding-bottom', 50);
+				}
+				
+				if(jQuery(".art-hmenu").width() > 1700)
+				{
+					jQuery(".alles").css('width', 1075);
+					jQuery(".alles").css('height', 725);
+				
+					jQuery("#angebot").css('width', 325);
+					jQuery("#angebot").css('height', 200);
+					jQuery("#angebot").css('left', 150);
+					jQuery("#angebot>span").css('line-height',16);
+				 
+					jQuery("#aktuelles").css('height', 200);
+					jQuery("#aktuelles").css('width', 250);
+					jQuery("#aktuelles").css('top', 200);
+					jQuery("#aktuelles>span").css('line-height',16);
+				 
+					jQuery("#wueu").css('height', 225);
+					jQuery("#wueu").css('width', 225);
+					jQuery("#wueu").css('top', 200);
+					jQuery("#wueu").css('left', 250);
+					jQuery("#wueu>span").css('line-height',18);
+				 
+					jQuery("#wsv").css('height', 200);
+					jQuery("#wsv").css('width', 250);
+					jQuery("#wsv").css('top', 50);
+					jQuery("#wsv").css('left', 475);
+					jQuery("#wsv>span").css('line-height',16);
+				
+					jQuery("#erfolge").css('height', 225);
+					jQuery("#erfolge").css('width', 250);
+					jQuery("#erfolge").css('top', 25);
+					jQuery("#erfolge").css('left', 725);
+					jQuery("#erfolge>span").css('line-height',17);
+				
+					jQuery("#service").css('height', 175);
+					jQuery("#service").css('width', 300);
+					jQuery("#service").css('top', 250);
+					jQuery("#service").css('left', 475);
+					jQuery("#service>span").css('line-height',14);
+				
+					jQuery("#schulteam").css('height', 200);
+					jQuery("#schulteam").css('width', 250);
+					jQuery("#schulteam").css('top', 250);
+					jQuery("#schulteam").css('left', 775);
+					jQuery("#schulteam>span").css('line-height',16);
+				
+					jQuery("#bibliothek").css('height', 150);
+					jQuery("#bibliothek").css('width', 250);
+					jQuery("#bibliothek").css('top', 425);
+					jQuery("#bibliothek").css('left', 250);
+					jQuery("#bibliothek>span").css('line-height',12);
+				
+					jQuery("#simongasse").css('height', 150);
+					jQuery("#simongasse").css('width', 250);
+					jQuery("#simongasse").css('top', 575);
+					jQuery("#simongasse").css('left', 250);
+					jQuery("#simongasse>span").css('line-height',12);
+				
+					jQuery("#schulpartner").css('height', 225);
+					jQuery("#schulpartner").css('width', 275);
+					jQuery("#schulpartner").css('top', 425);
+					jQuery("#schulpartner").css('left', 500);
+					jQuery("#schulpartner>span").css('line-height',18);
+				
+					jQuery("#contiuni").css('height', 150);
+					jQuery("#contiuni").css('width', 300);
+					jQuery("#contiuni").css('top', 450);
+					jQuery("#contiuni").css('left', 775);
+					jQuery("#contiuni>span").css('line-height',12);
+				
+					jQuery("#eklabu").css('height', 65);
+					jQuery("#eklabu").css('width', 225);
+					jQuery("#eklabu").css('top', 400);
+					jQuery("#eklabu").css('left', 25);
+					jQuery("#eklabu").css('padding-top', 70);
+					jQuery("#eklabu").css('padding-bottom', 50);
+				}
+				
 			}
-			else if(jQuery(".art-hmenu").width() < 1300)//kleiner als 1300 STANDARDEINSTELLUNGEN
+			else if(jQuery(".art-hmenu").width() < 1000)//kleiner als 1300 STANDARDEINSTELLUNGEN
 			{
 				jQuery(".alles").css('width', 630);
 				jQuery(".alles").css('height', 380);
@@ -208,21 +391,27 @@ JHtml::_('behavior.framework', true);
 				jQuery("#eklabu").css('padding-top', 40);
 				jQuery("#eklabu").css('padding-bottom', 50);
 			}
+			
 		}
-
+		
 		onresize = resize;
 
 		jQuery(resize);
 
-
+		/*function resize_i(){
+			jQuery("div.random-image>img").height(size);
+			i = 1;
+		}
+		
+		onload = resize_i;*/
 		</script>
-    <script src="<?php echo $templateUrl; ?>/jquery.js"></script>
-    <script>jQuery.noConflict();</script>
-
-    <script src="<?php echo $templateUrl; ?>/script.js"></script>
+    
+<script>jQuery.noConflict();</script>
+	<script src="<?php echo $templateUrl; ?>/script.js"></script>
     <?php $view->includeInlineScripts() ?>
     <script>if (document._artxJQueryBackup) jQuery = document._artxJQueryBackup;</script>
     <script src="<?php echo $templateUrl; ?>/script.responsive.js"></script>
+    
 </head>
 <body>
 
