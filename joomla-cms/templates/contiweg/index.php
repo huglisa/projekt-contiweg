@@ -82,6 +82,23 @@ JHtml::_('behavior.framework', true);
 			}
 			//jQuery(".art-header").height(jQuery("div.random-image>img").height);
 			
+			//Überprüfen wie breit die menüleiste und der gesamte Bilschirm ist um die Breite der Homepage festzulegen
+			if((jQuery("#art-main").width() < 850)||(jQuery(document).width() < 850))
+			{
+				jQuery("#art-main").css('width',"100%");
+			}
+			else
+			{
+				jQuery("#art-main").css('width',"70%");
+			}
+			
+			if((jQuery(document).width() > 850))
+			{
+				if((jQuery("#art-main").width() < 850))
+				{
+					jQuery("#art-main").css('width',"100%");
+				}
+			}
 			
 			// Startseite und Bilder links und rechts anpassen
 			if (jQuery(".art-hmenu").width() > 1000) 
@@ -162,6 +179,7 @@ JHtml::_('behavior.framework', true);
 				
 				jQuery(".customlinks>p>img").css('width', 240);
 				jQuery(".customrechts>p>img").css('width', 240);
+				jQuery(".art-hmenu>li>a").css('font-size', 13);
 				
 				if(jQuery(".art-hmenu").width() > 1400)
 				{
@@ -241,6 +259,7 @@ JHtml::_('behavior.framework', true);
 					
 					jQuery(".customlinks>p>img").css('width', 320);
 					jQuery(".customrechts>p>img").css('width', 320);
+					jQuery(".art-hmenu>li>a").css('font-size', 13);
 				}
 				
 				if(jQuery(".art-hmenu").width() > 1700)
@@ -321,10 +340,11 @@ JHtml::_('behavior.framework', true);
 					
 					jQuery(".customlinks>p>img").css('width', 400);
 					jQuery(".customrechts>p>img").css('width', 400);
+					jQuery(".art-hmenu>li>a").css('font-size', 13);
 				}
 				
 			}
-			else if(jQuery(".art-hmenu").width() < 1000)//kleiner als 1300 STANDARDEINSTELLUNGEN
+			else if(jQuery(".art-hmenu").width() < 1000)
 			{
 				jQuery(".alles").css('width', 630);
 				jQuery(".alles").css('height', 380);
@@ -402,6 +422,14 @@ JHtml::_('behavior.framework', true);
 				
 				jQuery(".customlinks>p>img").css('width', 200);
 				jQuery(".customrechts>p>img").css('width', 200);
+				jQuery(".art-hmenu>li>a").css('font-size', 13);
+				
+				if(jQuery(".art-hmenu").width() < 800)
+				{
+					jQuery(".customlinks>p>img").css('width', 170);
+					jQuery(".customrechts>p>img").css('width', 170);
+					jQuery(".art-hmenu>li>a").css('font-size', 11);
+				}
 			}
 			
 		}
