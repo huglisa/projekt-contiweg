@@ -83,8 +83,8 @@ JHtml::_('behavior.framework', true);
 			//jQuery(".art-header").height(jQuery("div.random-image>img").height);
 			
 			
-			//Startseite vergrößen wenn menüleistenbreite größer als 1300px ist
-			if (jQuery(".art-hmenu").width() > 1000) //größer als 1300
+			// Startseite und Bilder links und rechts anpassen
+			if (jQuery(".art-hmenu").width() > 1000) 
 			{
 				jQuery(".alles").css('width', 735);
 				jQuery(".alles").css('height', 475);
@@ -159,6 +159,9 @@ JHtml::_('behavior.framework', true);
 				jQuery("#eklabu").css('left', 25);
 				jQuery("#eklabu").css('padding-top', 50);
 				jQuery("#eklabu").css('padding-bottom', 50);
+				
+				jQuery(".customlinks>p>img").css('width', 240);
+				jQuery(".customrechts>p>img").css('width', 240);
 				
 				if(jQuery(".art-hmenu").width() > 1400)
 				{
@@ -235,6 +238,9 @@ JHtml::_('behavior.framework', true);
 					jQuery("#eklabu").css('left', 25);
 					jQuery("#eklabu").css('padding-top', 50);
 					jQuery("#eklabu").css('padding-bottom', 50);
+					
+					jQuery(".customlinks>p>img").css('width', 320);
+					jQuery(".customrechts>p>img").css('width', 320);
 				}
 				
 				if(jQuery(".art-hmenu").width() > 1700)
@@ -312,6 +318,9 @@ JHtml::_('behavior.framework', true);
 					jQuery("#eklabu").css('left', 25);
 					jQuery("#eklabu").css('padding-top', 70);
 					jQuery("#eklabu").css('padding-bottom', 50);
+					
+					jQuery(".customlinks>p>img").css('width', 400);
+					jQuery(".customrechts>p>img").css('width', 400);
 				}
 				
 			}
@@ -390,6 +399,9 @@ JHtml::_('behavior.framework', true);
 				jQuery("#eklabu").css('left', 25);
 				jQuery("#eklabu").css('padding-top', 40);
 				jQuery("#eklabu").css('padding-bottom', 50);
+				
+				jQuery(".customlinks>p>img").css('width', 200);
+				jQuery(".customrechts>p>img").css('width', 200);
 			}
 			
 		}
