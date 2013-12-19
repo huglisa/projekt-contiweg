@@ -51,36 +51,29 @@ JHtml::_('behavior.framework', true);
             document._artxJQueryBackup = jQuery;
         }
 		
-		var i = 1;
-		var menu = jQuery(".art-hmenu").width();
-		var size = 200;
-		
-		
-		
 		function resize() {
 			jQuery("div.random-image>img").width(jQuery(".art-hmenu").width());
-			jQuery("div.random-image").css('margin-left', -(jQuery(document).width() - (jQuery(".art-hmenu").width()))/2);
+			jQuery("div.random-image").css('margin-left', (jQuery(".art-header").width() - (jQuery(".art-hmenu").width()))/2);
 			jQuery("div.random-image>img").height(jQuery(".art-header").height());
 			
-			if(jQuery(".art-hmenu").width() < 1500) {
-				size = jQuery("div.random-image>img").height() - (i * 10);
-				if(menu > jQuery(".art-hmenu").width()){ 
-					jQuery("div.random-image>img").height(size);
-					jQuery(".art-header").css('height', size);
-					i = i + 1;
-				}else{
-					jQuery("div.random-image>img").height(size);
-					jQuery(".art-header").css('height', size);
-					i = i - 1;
-				}
-				
-				menu = jQuery(".art-hmenu").width();
+			
+			//Höhe von Headerbild verringern wenn Seite kleiner wird
+			if(jQuery(".art-hmenu").width() < 850) {
+				jQuery("div.random-image>img").height(jQuery(".art-header").height()-50);
+				jQuery(".art-header").css('margin-bottom', -50);
 			}else{
 				jQuery("div.random-image>img").height(jQuery(".art-header").height());
-				size = 200;
-				i = 1;
+				jQuery(".art-header").css('margin-bottom', 0);
 			}
-			//jQuery(".art-header").height(jQuery("div.random-image>img").height);
+			
+			//Bilder auf linker und rechter Seite bei Content anpassen
+			jQuery(".customlinks p >img").width(jQuery(".art-layout-cell.art-sidebar1").width());
+			jQuery(".customrechts p >img").width(jQuery(".art-layout-cell.art-sidebar1").width());
+			
+			//Beide Bilder auf gleiche Höhe gebracht (linke und rechte Seite bei Content)
+			jQuery(".customlinks p >img").height(jQuery(".customrechts p >img").height());
+			
+		
 			
 			//Überprüfen wie breit die menüleiste und der gesamte Bilschirm ist um die Breite der Homepage festzulegen
 			if((jQuery("#art-main").width() < 850)||(jQuery(document).width() < 850))
@@ -431,7 +424,17 @@ JHtml::_('behavior.framework', true);
 					jQuery(".art-hmenu>li>a").css('font-size', 11);
 				}
 			}
+			jQuery("div.random-image>img").width(jQuery(".art-hmenu").width());
+			jQuery("div.random-image").css('margin-left', (jQuery(".art-header").width() - (jQuery(".art-hmenu").width()))/2);
+			jQuery("div.random-image>img").height(jQuery(".art-header").height());
 			
+			if(jQuery(".art-hmenu").width() < 850) {
+				jQuery("div.random-image>img").height(jQuery(".art-header").height()-50);
+				jQuery(".art-header").css('margin-bottom', -50);
+			}else{
+				jQuery("div.random-image>img").height(jQuery(".art-header").height());
+				jQuery(".art-header").css('margin-bottom', 0);
+			}
 		}
 		
 		onresize = resize;
