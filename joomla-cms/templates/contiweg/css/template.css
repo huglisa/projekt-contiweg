@@ -39,7 +39,7 @@ div.angebot_alles{
 	position:relative;
 	height: 204px;
 	width: 329px;
-	margin:auto;
+	margin: 100px auto auto;
 }
 
 a#angebot_allgemeineinfos{
@@ -175,8 +175,8 @@ a#schulteam_absolventinnen{
 /*anbegot/allgemeine infos*/
 div.allgemeine_infos_alles{
 	position:relative;
-	height: 220px;
-	width:254px;
+	height: 276px;
+	width:255px;
 	margin:auto;
 }
 
