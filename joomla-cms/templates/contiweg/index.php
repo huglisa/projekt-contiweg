@@ -71,15 +71,365 @@ JHtml::_('behavior.framework', true);
 					jQuery("#art-main").css('width',"100%");
 				}
 			}
+			// Untermenüpunkte von angebot/allgemeine infos anpassen
+			if (jQuery(".art-hmenu").width() > 1020) 
+			{
+				jQuery(".allgemeine_infos_alles").css('height', 613);
+				jQuery(".allgemeine_infos_alles").css('width', 254);
+				
+				jQuery(".allgemeine_infos_alles > a").css('height', 50);
+				jQuery(".allgemeine_infos_alles > a").css('width', 125);
+				jQuery(".allgemeine_infos_alles > a").css('font-size', 13);
+				
+				jQuery("#allgemeine_infos_angebot").css('line-height', 4);
+				
+				jQuery("#allgemeine_infos_schulform").css('line-height', 4);
+				jQuery("#allgemeine_infos_schulform").css('left', 127);
+				jQuery("#allgemeine_infos_schulform").css('top', 56);
+				
+				jQuery("#allgemeine_infos_schulgebaeude").css('line-height', 4);
+				jQuery("#allgemeine_infos_schulgebaeude").css('top', 112);
+				
+				jQuery("#allgemeine_infos_padgrundsaetze").css('left', 127);
+				jQuery("#allgemeine_infos_padgrundsaetze").css('top', 168);
+				jQuery("#allgemeine_infos_padgrundsaetze").css('padding-top', 0);
+				
+				jQuery("#allgemeine_infos_wirgestaltenschule").css('top', 224);
+				jQuery("#allgemeine_infos_wirgestaltenschule").css('padding-top', 0);
+				
+				
+				if(jQuery(".art-hmenu").width() > 1400)
+				{			
+					
+					jQuery(".allgemeine_infos_alles").css('height', 723);
+					jQuery(".allgemeine_infos_alles").css('width', 308);
+				
+					jQuery(".allgemeine_infos_alles > a").css('height', 60);
+					jQuery(".allgemeine_infos_alles > a").css('width', 150);
+					jQuery(".allgemeine_infos_alles > a").css('font-size', 13);
+				
+					jQuery("#allgemeine_infos_angebot").css('line-height', 4.5);
+				
+					jQuery("#allgemeine_infos_schulform").css('line-height', 4.5);
+					jQuery("#allgemeine_infos_schulform").css('left', 154);
+					jQuery("#allgemeine_infos_schulform").css('top', 66);
+				
+					jQuery("#allgemeine_infos_schulgebaeude").css('line-height', 4.5);
+					jQuery("#allgemeine_infos_schulgebaeude").css('top', 132);
+				
+					jQuery("#allgemeine_infos_padgrundsaetze").css('left', 154);
+					jQuery("#allgemeine_infos_padgrundsaetze").css('top', 198);
+					jQuery("#allgemeine_infos_padgrundsaetze").css('height', 52);
+					jQuery("#allgemeine_infos_padgrundsaetze").css('padding-top', 8);
+				
+					jQuery("#allgemeine_infos_wirgestaltenschule").css('top', 264);
+					jQuery("#allgemeine_infos_wirgestaltenschule").css('height', 52);
+					jQuery("#allgemeine_infos_wirgestaltenschule").css('padding-top', 8);
+				
+					if(jQuery(".art-hmenu").width() > 1700)
+					{
+						jQuery(".allgemeine_infos_alles").css('height', 945);
+						jQuery(".allgemeine_infos_alles").css('width', 411);
+				
+						jQuery(".allgemeine_infos_alles > a").css('height', 80);
+						jQuery(".allgemeine_infos_alles > a").css('width', 200);
+						jQuery(".allgemeine_infos_alles > a").css('font-size', 13);
+				
+						jQuery("#allgemeine_infos_angebot").css('line-height', 6);
+				
+						jQuery("#allgemeine_infos_schulform").css('line-height', 6);
+						jQuery("#allgemeine_infos_schulform").css('left', 207);
+						jQuery("#allgemeine_infos_schulform").css('top', 86);
+				
+						jQuery("#allgemeine_infos_schulgebaeude").css('line-height', 6);
+						jQuery("#allgemeine_infos_schulgebaeude").css('top', 172);
+				
+						jQuery("#allgemeine_infos_padgrundsaetze").css('left', 207);
+						jQuery("#allgemeine_infos_padgrundsaetze").css('top', 258);
+						jQuery("#allgemeine_infos_padgrundsaetze").css('height', 62);
+						jQuery("#allgemeine_infos_padgrundsaetze").css('padding-top', 18);
+				
+						jQuery("#allgemeine_infos_wirgestaltenschule").css('top', 344);
+						jQuery("#allgemeine_infos_wirgestaltenschule").css('height', 62);
+						jQuery("#allgemeine_infos_wirgestaltenschule").css('padding-top', 18);
+					
+					}
+				}
+				
+			}
+			else if(jQuery(".art-hmenu").width() < 1020)
+			{
+				
+				jQuery(".allgemeine_infos_alles").css('height', 564);
+				jQuery(".allgemeine_infos_alles").css('width', 204);
+				
+				jQuery(".allgemeine_infos_alles > a").css('height', 45);
+				jQuery(".allgemeine_infos_alles > a").css('width', 100);
+				jQuery(".allgemeine_infos_alles > a").css('font-size', 12);
+				
+				jQuery("#allgemeine_infos_angebot").css('line-height', 4);
+				
+				jQuery("#allgemeine_infos_schulform").css('line-height', 4);
+				jQuery("#allgemeine_infos_schulform").css('left', 102);
+				jQuery("#allgemeine_infos_schulform").css('top', 51);
+				
+				jQuery("#allgemeine_infos_schulgebaeude").css('line-height', 4);
+				jQuery("#allgemeine_infos_schulgebaeude").css('top', 102);
+				
+				jQuery("#allgemeine_infos_padgrundsaetze").css('left', 102);
+				jQuery("#allgemeine_infos_padgrundsaetze").css('top', 152);
+				jQuery("#allgemeine_infos_padgrundsaetze").css('padding-top', 0);
+				
+				jQuery("#allgemeine_infos_wirgestaltenschule").css('top', 204);
+				jQuery("#allgemeine_infos_wirgestaltenschule").css('padding-top', 0);
+				
+				
+				if(jQuery(".art-hmenu").width() < 800)
+				{
+					jQuery(".allgemeine_infos_alles").css('height', 564);
+					jQuery(".allgemeine_infos_alles").css('width', 184);
+				
+					jQuery(".allgemeine_infos_alles > a").css('height', 45);
+					jQuery(".allgemeine_infos_alles > a").css('width', 90);
+					jQuery(".allgemeine_infos_alles > a").css('font-size', 11);
+				
+					jQuery("#allgemeine_infos_angebot").css('line-height', 4);
+				
+					jQuery("#allgemeine_infos_schulform").css('line-height', 4);
+					jQuery("#allgemeine_infos_schulform").css('left', 92);
+					jQuery("#allgemeine_infos_schulform").css('top', 51);
+				
+					jQuery("#allgemeine_infos_schulgebaeude").css('line-height', 4);
+					jQuery("#allgemeine_infos_schulgebaeude").css('top', 102);
+				
+					jQuery("#allgemeine_infos_padgrundsaetze").css('left', 92);
+					jQuery("#allgemeine_infos_padgrundsaetze").css('top', 152);
+					jQuery("#allgemeine_infos_padgrundsaetze").css('height', 41);
+					jQuery("#allgemeine_infos_padgrundsaetze").css('padding-top', 4);
+				
+					jQuery("#allgemeine_infos_wirgestaltenschule").css('top', 204);
+					jQuery("#allgemeine_infos_wirgestaltenschule").css('height', 41);
+					jQuery("#allgemeine_infos_wirgestaltenschule").css('padding-top', 4);
+				
+				}
+			}
+			
+			// Untermenüpunkte von angebot/unterstufe anpassen
+			if (jQuery(".art-hmenu").width() > 1020) 
+			{
+				jQuery("#unterstufe_mittagsbetreuung").replaceWith('<a id="unterstufe_mittagsbetreuung">Mittags-betreuung</a>');
+				jQuery("#unterstufe_tagesbetreuung").replaceWith('<a id="unterstufe_tagesbetreuung">Tagesbetreuung</a>');
+				jQuery("#unterstufe_besonderheiten").replaceWith('<a id="unterstufe_besonderheiten">Besonderheiten</a>');
+			
+				jQuery(".unterstufe_alles").css('height', 613);
+				jQuery(".unterstufe_alles").css('width', 254);
+				
+				jQuery(".unterstufe_alles > a").css('height', 50);
+				jQuery(".unterstufe_alles > a").css('width', 125);
+				jQuery(".unterstufe_alles > a").css('font-size', 13);
+				
+				jQuery("#unterstufe_angebot").css('line-height', 4);
+				
+				jQuery("#unterstufe_wasistdiewms").css('line-height', 4);
+				jQuery("#unterstufe_wasistdiewms").css('left', 127);
+				jQuery("#unterstufe_wasistdiewms").css('top', 56);
+				
+				jQuery("#unterstufe_besonderheiten").css('line-height', 4);
+				jQuery("#unterstufe_besonderheiten").css('top', 112);
+				jQuery("#unterstufe_tagesbetreuung").css('padding-top', 0);
+				
+				jQuery("#unterstufe_berufsorientierung").css('left', 127);
+				jQuery("#unterstufe_berufsorientierung").css('top', 168);
+				jQuery("#unterstufe_berufsorientierung").css('padding-top', 0);
+				
+				jQuery("#unterstufe_stundentafel").css('line-height', 4);
+				jQuery("#unterstufe_stundentafel").css('top', 224);
+				
+				jQuery("#unterstufe_tagesbetreuung").css('line-height', 4);
+				jQuery("#unterstufe_tagesbetreuung").css('left', 127);
+				jQuery("#unterstufe_tagesbetreuung").css('top', 280);
+				jQuery("#unterstufe_tagesbetreuung").css('padding-top', 0);
+			
+				jQuery("#unterstufe_mittagsbetreuung").css('line-height', 2);
+				jQuery("#unterstufe_mittagsbetreuung").css('top', 336);
+				jQuery("#unterstufe_mittagsbetreuung").css('padding-top', 0);
+				
+				
+				
+				if(jQuery(".art-hmenu").width() > 1400)
+				{			
+					jQuery("#unterstufe_mittagsbetreuung").replaceWith('<a id="unterstufe_mittagsbetreuung">Mittagsbetreuung</a>');
+					
+					jQuery(".unterstufe_alles").css('height', 723);
+					jQuery(".unterstufe_alles").css('width', 308);
+				
+					jQuery(".unterstufe_alles > a").css('height', 60);
+					jQuery(".unterstufe_alles > a").css('width', 150);
+					jQuery(".unterstufe_alles > a").css('font-size', 13);
+				
+					jQuery("#unterstufe_angebot").css('line-height', 4.5);
+				
+					jQuery("#unterstufe_wasistdiewms").css('line-height', 4.5);
+					jQuery("#unterstufe_wasistdiewms").css('left', 154);
+					jQuery("#unterstufe_wasistdiewms").css('top', 66);
+				
+					jQuery("#unterstufe_besonderheiten").css('line-height', 4.5);
+					jQuery("#unterstufe_besonderheiten").css('top', 132);
+				
+					jQuery("#unterstufe_berufsorientierung").css('left', 154);
+					jQuery("#unterstufe_berufsorientierung").css('top', 198);
+					jQuery("#unterstufe_berufsorientierung").css('height', 52);
+					jQuery("#unterstufe_berufsorientierung").css('padding-top', 8);
+				
+					jQuery("#unterstufe_stundentafel").css('line-height', 4.5);
+					jQuery("#unterstufe_stundentafel").css('top', 264);
+				
+					jQuery("#unterstufe_tagesbetreuung").css('line-height', 4.5);
+					jQuery("#unterstufe_tagesbetreuung").css('left', 154);
+					jQuery("#unterstufe_tagesbetreuung").css('top', 330);
+				
+					jQuery("#unterstufe_mittagsbetreuung").css('line-height', 4.5);
+					jQuery("#unterstufe_mittagsbetreuung").css('top', 396);
+					jQuery("#unterstufe_mittagsbetreuung").css('height', 60);
+					jQuery("#unterstufe_mittagsbetreuung").css('padding-top', 0);
+					
+				
+				
+					if(jQuery(".art-hmenu").width() > 1700)
+					{
+						jQuery("#unterstufe_mittagsbetreuung").replaceWith('<a id="unterstufe_mittagsbetreuung">Mittagsbetreuung</a>');
+					
+						jQuery(".unterstufe_alles").css('height', 945);
+						jQuery(".unterstufe_alles").css('width', 411);
+				
+						jQuery(".unterstufe_alles > a").css('height', 80);
+						jQuery(".unterstufe_alles > a").css('width', 200);
+						jQuery(".unterstufe_alles > a").css('font-size', 13);
+				
+						jQuery("#unterstufe_angebot").css('line-height', 6);
+				
+						jQuery("#unterstufe_wasistdiewms").css('line-height', 6);
+						jQuery("#unterstufe_wasistdiewms").css('left', 207);
+						jQuery("#unterstufe_wasistdiewms").css('top', 86);
+				
+						jQuery("#unterstufe_besonderheiten").css('line-height', 6);
+						jQuery("#unterstufe_besonderheiten").css('top', 172);
+				
+						jQuery("#unterstufe_berufsorientierung").css('left', 207);
+						jQuery("#unterstufe_berufsorientierung").css('top', 258);
+						jQuery("#unterstufe_berufsorientierung").css('height', 62);
+						jQuery("#unterstufe_berufsorientierung").css('padding-top', 18);
+				
+						jQuery("#unterstufe_stundentafel").css('line-height', 6);
+						jQuery("#unterstufe_stundentafel").css('top', 344);
+					
+						jQuery("#unterstufe_tagesbetreuung").css('line-height', 6);
+						jQuery("#unterstufe_tagesbetreuung").css('left', 207);
+						jQuery("#unterstufe_tagesbetreuung").css('top', 430);
+				
+						jQuery("#unterstufe_mittagsbetreuung").css('line-height', 6);
+						jQuery("#unterstufe_mittagsbetreuung").css('top', 516);
+						jQuery("#unterstufe_mittagsbetreuung").css('height', 80);
+						jQuery("#unterstufe_mittagsbetreuung").css('padding-top', 0);
+					}
+				}
+				
+			}
+			else if(jQuery(".art-hmenu").width() < 1020)
+			{
+				jQuery("#unterstufe_tagesbetreuung").replaceWith('<a id="unterstufe_tagesbetreuung">Tages-betreuung</a>');
+				jQuery("#unterstufe_besonderheiten").replaceWith('<a id="unterstufe_besonderheiten">Besonder-heiten</a>');
+			
+				jQuery(".unterstufe_alles").css('height', 564);
+				jQuery(".unterstufe_alles").css('width', 204);
+				
+				jQuery(".unterstufe_alles > a").css('height', 45);
+				jQuery(".unterstufe_alles > a").css('width', 100);
+				jQuery(".unterstufe_alles > a").css('font-size', 12);
+				
+				jQuery("#unterstufe_angebot").css('line-height', 4);
+				
+				jQuery("#unterstufe_wasistdiewms").css('line-height', 2);
+				jQuery("#unterstufe_wasistdiewms").css('left', 102);
+				jQuery("#unterstufe_wasistdiewms").css('top', 51);
+				jQuery("#unterstufe_wasistdiewms").css('padding-top', 0);
+				
+				jQuery("#unterstufe_besonderheiten").css('line-height', 2);
+				jQuery("#unterstufe_besonderheiten").css('top', 102);
+				jQuery("#unterstufe_tagesbetreuung").css('padding-top', 0);
+				
+				jQuery("#unterstufe_berufsorientierung").css('left', 102);
+				jQuery("#unterstufe_berufsorientierung").css('top', 152);
+				jQuery("#unterstufe_berufsorientierung").css('padding-top', 0);
+				
+				jQuery("#unterstufe_stundentafel").css('line-height', 4);
+				jQuery("#unterstufe_stundentafel").css('top', 204);
+				
+				jQuery("#unterstufe_tagesbetreuung").css('line-height', 2);
+				jQuery("#unterstufe_tagesbetreuung").css('left', 102);
+				jQuery("#unterstufe_tagesbetreuung").css('top', 255);
+				jQuery("#unterstufe_tagesbetreuung").css('padding-top', 0);
+				
+				jQuery("#unterstufe_mittagsbetreuung").css('top', 307);
+				jQuery("#unterstufe_mittagsbetreuung").css('padding-top', 0);
+				
+				
+				if(jQuery(".art-hmenu").width() < 800)
+				{
+					jQuery("#unterstufe_tagesbetreuung").replaceWith('<a id="unterstufe_tagesbetreuung">Tages-betreuung</a>');
+					jQuery("#unterstufe_besonderheiten").replaceWith('<a id="unterstufe_besonderheiten">Besonder-heiten</a>');
+				
+					jQuery(".unterstufe_alles").css('height', 564);
+					jQuery(".unterstufe_alles").css('width', 184);
+				
+					jQuery(".unterstufe_alles > a").css('height', 45);
+					jQuery(".unterstufe_alles > a").css('width', 90);
+					jQuery(".unterstufe_alles > a").css('font-size', 11);
+				
+					jQuery("#unterstufe_angebot").css('line-height', 4);
+				
+					jQuery("#unterstufe_wasistdiewms").css('line-height', 2);
+					jQuery("#unterstufe_wasistdiewms").css('left', 92);
+					jQuery("#unterstufe_wasistdiewms").css('top', 51);
+					jQuery("#unterstufe_wasistdiewms").css('height', 41);
+					jQuery("#unterstufe_wasistdiewms").css('padding-top', 4);
+				
+					jQuery("#unterstufe_besonderheiten").css('line-height', 2);
+					jQuery("#unterstufe_besonderheiten").css('top', 102);
+					jQuery("#unterstufe_besonderheiten").css('height', 41);
+					jQuery("#unterstufe_besonderheiten").css('padding-top', 4)
+				
+					jQuery("#unterstufe_berufsorientierung").css('left', 92);
+					jQuery("#unterstufe_berufsorientierung").css('top', 152);
+					jQuery("#unterstufe_berufsorientierung").css('height', 41);
+					jQuery("#unterstufe_berufsorientierung").css('padding-top', 4);
+				
+					jQuery("#unterstufe_stundentafel").css('line-height', 4);
+					jQuery("#unterstufe_stundentafel").css('top', 204);
+				
+					jQuery("#unterstufe_tagesbetreuung").css('line-height', 2);
+					jQuery("#unterstufe_tagesbetreuung").css('left', 92);
+					jQuery("#unterstufe_tagesbetreuung").css('top', 255);
+					jQuery("#unterstufe_tagesbetreuung").css('height', 41);
+					jQuery("#unterstufe_tagesbetreuung").css('padding-top', 4);
+				
+					jQuery("#unterstufe_mittagsbetreuung").css('top', 307);
+					jQuery("#unterstufe_mittagsbetreuung").css('height', 41);
+					jQuery("#unterstufe_mittagsbetreuung").css('padding-top', 4);
+				
+				}
+			}
+			
 			
 			// Untermenüpunkte von Schulteam anpassen
-			if (jQuery(".art-hmenu").width() > 1000) 
+			if (jQuery(".art-hmenu").width() > 1020) 
 			{
 				jQuery(".schulteam_alles").css('height', 613);
 				jQuery(".schulteam_alles").css('width', 254);
 				
 				jQuery(".schulteam_alles > a").css('height', 50);
 				jQuery(".schulteam_alles > a").css('width', 125);
+				jQuery(".schulteam_alles > a").css('font-size', 13);
 				
 				jQuery("#schulteam_direktion").css('line-height', 4);
 				
@@ -106,13 +456,17 @@ JHtml::_('behavior.framework', true);
 				
 				jQuery("#schulteam_betreuungslehrerin").css('left', 127);
 				jQuery("#schulteam_betreuungslehrerin").css('top', 392);
+				jQuery("#schulteam_betreuungslehrerin").css('padding-top', 0);
 				
 				jQuery("#schulteam_bildungslehrerin").css('top', 448);
+				jQuery("#schulteam_bildungslehrerin").css('padding-top', 0);
 				
 				jQuery("#schulteam_bildungsberaterinnen").css('left', 127);
 				jQuery("#schulteam_bildungsberaterinnen").css('top', 504);
+				jQuery("#schulteam_bildungsberaterinnen").css('padding-top', 0);
 				
 				jQuery("#schulteam_absolventinnen").css('top', 560);
+				jQuery("#schulteam_absolventinnen").css('padding-top', 0);
 				
 				if(jQuery(".art-hmenu").width() > 1400)
 				{			
@@ -122,6 +476,7 @@ JHtml::_('behavior.framework', true);
 				
 					jQuery(".schulteam_alles > a").css('height', 60);
 					jQuery(".schulteam_alles > a").css('width', 150);
+					jQuery(".schulteam_alles > a").css('font-size', 13);
 				
 					jQuery("#schulteam_direktion").css('line-height', 4.5);
 				
@@ -166,17 +521,153 @@ JHtml::_('behavior.framework', true);
 				
 					if(jQuery(".art-hmenu").width() > 1700)
 					{
-						
+						jQuery(".schulteam_alles").css('height', 945);
+						jQuery(".schulteam_alles").css('width', 411);
+				
+						jQuery(".schulteam_alles > a").css('height', 80);
+						jQuery(".schulteam_alles > a").css('width', 200);
+						jQuery(".schulteam_alles > a").css('font-size', 13);
+				
+						jQuery("#schulteam_direktion").css('line-height', 6);
+				
+						jQuery("#schulteam_lehrerinnen").css('line-height', 6);
+						jQuery("#schulteam_lehrerinnen").css('left', 207);
+						jQuery("#schulteam_lehrerinnen").css('top', 86);
+				
+						jQuery("#schulteam_schuelerinnen").css('line-height', 6);
+						jQuery("#schulteam_schuelerinnen").css('top', 172);
+				
+						jQuery("#schulteam_sekretariat").css('line-height', 6);
+						jQuery("#schulteam_sekretariat").css('left', 207);
+						jQuery("#schulteam_sekretariat").css('top', 258);
+				
+						jQuery("#schulteam_schulwart").css('line-height', 6);
+						jQuery("#schulteam_schulwart").css('top', 344);
+					
+						jQuery("#schulteam_psychologin").css('line-height', 6);
+						jQuery("#schulteam_psychologin").css('left', 207);
+						jQuery("#schulteam_psychologin").css('top', 430);
+				
+						jQuery("#schulteam_schulaerztin").css('line-height', 6);
+						jQuery("#schulteam_schulaerztin").css('top', 516);
+				
+						jQuery("#schulteam_betreuungslehrerin").css('left', 207);
+						jQuery("#schulteam_betreuungslehrerin").css('top', 602);
+						jQuery("#schulteam_betreuungslehrerin").css('height', 62);
+						jQuery("#schulteam_betreuungslehrerin").css('padding-top', 18);
+				
+						jQuery("#schulteam_bildungslehrerin").css('top', 688);
+						jQuery("#schulteam_bildungslehrerin").css('height', 62);
+						jQuery("#schulteam_bildungslehrerin").css('padding-top', 18);
+					
+						jQuery("#schulteam_bildungsberaterinnen").css('left', 207);
+						jQuery("#schulteam_bildungsberaterinnen").css('top', 774);
+						jQuery("#schulteam_bildungsberaterinnen").css('height', 62);
+						jQuery("#schulteam_bildungsberaterinnen").css('padding-top', 18);
+				
+						jQuery("#schulteam_absolventinnen").css('top', 860);
+						jQuery("#schulteam_absolventinnen").css('height', 62);
+						jQuery("#schulteam_absolventinnen").css('padding-top', 18);
 					}
 				}
 				
 			}
-			else if(jQuery(".art-hmenu").width() < 1000)
+			else if(jQuery(".art-hmenu").width() < 1020)
 			{
+				
+				jQuery(".schulteam_alles").css('height', 564);
+				jQuery(".schulteam_alles").css('width', 204);
+				
+				jQuery(".schulteam_alles > a").css('height', 45);
+				jQuery(".schulteam_alles > a").css('width', 100);
+				jQuery(".schulteam_alles > a").css('font-size', 12);
+				
+				jQuery("#schulteam_direktion").css('line-height', 4);
+				
+				jQuery("#schulteam_lehrerinnen").css('line-height', 4);
+				jQuery("#schulteam_lehrerinnen").css('left', 102);
+				jQuery("#schulteam_lehrerinnen").css('top', 51);
+				
+				jQuery("#schulteam_schuelerinnen").css('line-height', 4);
+				jQuery("#schulteam_schuelerinnen").css('top', 102);
+				
+				jQuery("#schulteam_sekretariat").css('line-height', 4);
+				jQuery("#schulteam_sekretariat").css('left', 102);
+				jQuery("#schulteam_sekretariat").css('top', 152);
+				
+				jQuery("#schulteam_schulwart").css('line-height', 4);
+				jQuery("#schulteam_schulwart").css('top', 204);
+				
+				jQuery("#schulteam_psychologin").css('line-height', 4);
+				jQuery("#schulteam_psychologin").css('left', 102);
+				jQuery("#schulteam_psychologin").css('top', 255);
+				
+				jQuery("#schulteam_schulaerztin").css('line-height', 4);
+				jQuery("#schulteam_schulaerztin").css('top', 307);
+				
+				jQuery("#schulteam_betreuungslehrerin").css('left', 102);
+				jQuery("#schulteam_betreuungslehrerin").css('top', 362);
+				jQuery("#schulteam_betreuungslehrerin").css('padding-top', 0);
+				
+				jQuery("#schulteam_bildungslehrerin").css('top', 412);
+				jQuery("#schulteam_bildungslehrerin").css('padding-top', 0);
+				
+				jQuery("#schulteam_bildungsberaterinnen").css('left', 102);
+				jQuery("#schulteam_bildungsberaterinnen").css('top', 464);
+				jQuery("#schulteam_bildungsberaterinnen").css('padding-top', 0);
+				
+				jQuery("#schulteam_absolventinnen").css('top', 517);
+				jQuery("#schulteam_absolventinnen").css('padding-top', 0);
 				
 				if(jQuery(".art-hmenu").width() < 800)
 				{
-					
+					jQuery(".schulteam_alles").css('height', 564);
+					jQuery(".schulteam_alles").css('width', 184);
+				
+					jQuery(".schulteam_alles > a").css('height', 45);
+					jQuery(".schulteam_alles > a").css('width', 90);
+					jQuery(".schulteam_alles > a").css('font-size', 11);
+				
+					jQuery("#schulteam_direktion").css('line-height', 4);
+				
+					jQuery("#schulteam_lehrerinnen").css('line-height', 4);
+					jQuery("#schulteam_lehrerinnen").css('left', 92);
+					jQuery("#schulteam_lehrerinnen").css('top', 51);
+				
+					jQuery("#schulteam_schuelerinnen").css('line-height', 4);
+					jQuery("#schulteam_schuelerinnen").css('top', 102);
+				
+					jQuery("#schulteam_sekretariat").css('line-height', 4);
+					jQuery("#schulteam_sekretariat").css('left', 92);
+					jQuery("#schulteam_sekretariat").css('top', 152);
+				
+					jQuery("#schulteam_schulwart").css('line-height', 4);
+					jQuery("#schulteam_schulwart").css('top', 204);
+				
+					jQuery("#schulteam_psychologin").css('line-height', 4);
+					jQuery("#schulteam_psychologin").css('left', 92);
+					jQuery("#schulteam_psychologin").css('top', 255);
+				
+					jQuery("#schulteam_schulaerztin").css('line-height', 4);
+					jQuery("#schulteam_schulaerztin").css('top', 307);
+				
+					jQuery("#schulteam_betreuungslehrerin").css('left', 92);
+					jQuery("#schulteam_betreuungslehrerin").css('top', 362);
+					jQuery("#schulteam_betreuungslehrerin").css('height', 41);
+					jQuery("#schulteam_betreuungslehrerin").css('padding-top', 4);
+				
+					jQuery("#schulteam_bildungslehrerin").css('top', 412);
+					jQuery("#schulteam_bildungslehrerin").css('height', 41);
+					jQuery("#schulteam_bildungslehrerin").css('padding-top', 4);
+				
+					jQuery("#schulteam_bildungsberaterinnen").css('left', 92);
+					jQuery("#schulteam_bildungsberaterinnen").css('top', 464);
+					jQuery("#schulteam_bildungsberaterinnen").css('height', 41);
+					jQuery("#schulteam_bildungsberaterinnen").css('padding-top', 4);
+				
+					jQuery("#schulteam_absolventinnen").css('top', 517);
+					jQuery("#schulteam_absolventinnen").css('height', 41);
+					jQuery("#schulteam_absolventinnen").css('padding-top', 4);
 				}
 			}
 			
