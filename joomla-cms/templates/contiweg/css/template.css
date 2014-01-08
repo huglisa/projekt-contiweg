@@ -6,10 +6,6 @@ a{
 	color: white;
 	text-decoration: none;
 }
-body {
-	right:0% !important;
-	overflow: scroll;
-}
 
 h1{
 	color:orange
@@ -88,6 +84,7 @@ a#angebot_oberstufe{
 }
 
 /*schulteam*/
+
 div.schulteam_alles{
 	position:relative;
 	height: 613px;
@@ -666,7 +663,6 @@ a#contiuni {
 
 #art-main
 {
-  background: white;
   margin: 0 auto;
   font-size: 13px;
   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
@@ -920,6 +916,15 @@ body
   margin: 0;
   min-width: 700px;
   color: #2E3D4C;
+	right:0% !important;
+	overflow: auto;
+	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #F69F2B 200%);
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #F69F2B 200%);
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #F69F2B 200%); 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(2, #F69F2B));
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #F69F2B 200%);
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #F69F2B 200%);
+	background-repeat: repeat-x;
 }
 
 .art-header:before, #art-header-bg:before, .art-layout-cell:before, .art-layout-wrapper:before, .art-footer:before, .art-nav:before, #art-hmenu-bg:before, .art-sheet:before
@@ -1069,6 +1074,7 @@ li p, .art-postcontent li p, .art-blockcontent li p
 
 .art-sheet
 {
+  background: white !important;
   margin: 0 auto;
   position: relative;
   cursor: auto;

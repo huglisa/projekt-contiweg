@@ -1547,7 +1547,7 @@ JHtml::_('behavior.framework', true);
 			
 			if (jQuery(".art-hmenu").width() > 1100)
 			{
-				jQuery("div.random-image>img").css('height', 180);
+				jQuery("div.random-image>img").css('height', 160);
 				
 				if (jQuery(".art-hmenu").width() > 1400)
 				{
@@ -1555,26 +1555,31 @@ JHtml::_('behavior.framework', true);
 					
 					if (jQuery(".art-hmenu").width() > 1700)
 					{
-						jQuery("div.random-image>img").css('height', 220);
+						jQuery("div.random-image>img").css('height', 240);
 					}
 				}
 			}
 			
 			if(jQuery(".art-hmenu").width() < 1100)
 			{
-				jQuery("div.random-image>img").css('height', 170);
+				jQuery("div.random-image>img").css('height', 140);
 				
 				if(jQuery(".art-hmenu").width() < 1050)
 				{
-					jQuery("div.random-image>img").css('height', 160);
+					jQuery("div.random-image>img").css('height', 140);
 					
-					if(jQuery(".art-hmenu").width() < 900)
+					if(jQuery(".art-hmenu").width() < 980)
 					{		
-						jQuery("div.random-image>img").css('height', 140);
+						jQuery("div.random-image>img").css('height', 120);
 						
-						if(jQuery(".art-hmenu").width() < 800)
-						{
-							jQuery("div.random-image>img").css('height', 130);
+						if(jQuery(".art-hmenu").width() < 900)
+						{		
+							jQuery("div.random-image>img").css('height', 120);
+						
+							if(jQuery(".art-hmenu").width() < 800)
+							{
+								jQuery("div.random-image>img").css('height', 130);
+							}
 						}
 					}
 				}
