@@ -51,8 +51,19 @@ JHtml::_('behavior.framework', true);
             document._artxJQueryBackup = jQuery;
         }
 		
+		
 		function resize() 
-		{	
+		{		
+			//Bildschirmgröße kann klein sein, trotzdem wird alles richtig angezeigt
+			if (jQuery("#art-main").width() < 750)
+			{
+				jQuery("#art-main").css('width', 751);
+				jQuery(".art-content").css('width', '42%');
+			}
+			else
+			{
+				jQuery(".art-content").css('width', '48%');
+			}
 		
 			//Überprüfen wie breit die menüleiste und der gesamte Bilschirm ist um die Breite der Homepage festzulegen
 			if((jQuery("#art-main").width() < 850)||(jQuery(document).width() < 850))
@@ -1206,9 +1217,11 @@ JHtml::_('behavior.framework', true);
 				}
 			}
 			
-			// Startseite und Bilder links und rechts anpassen
+			// Startseite und Bilder links und rechts anpassen und height von art-post festlegen(scrollen des Textes)
 			if (jQuery(".art-hmenu").width() > 1000) 
 			{
+				jQuery(".art-post").css('height', 620);
+			
 				jQuery(".alles").css('width', 735);
 				jQuery(".alles").css('height', 475);
 			
@@ -1289,6 +1302,8 @@ JHtml::_('behavior.framework', true);
 				
 				if(jQuery(".art-hmenu").width() > 1400)
 				{
+					jQuery(".art-post").css('height', 770);
+					
 					jQuery(".alles").css('width', 840);
 					jQuery(".alles").css('height', 525);
 				
@@ -1370,6 +1385,8 @@ JHtml::_('behavior.framework', true);
 				
 					if(jQuery(".art-hmenu").width() > 1700)
 					{
+						jQuery(".art-post").css('height', 980);
+					
 						jQuery(".alles").css('width', 1075);
 						jQuery(".alles").css('height', 725);
 				
@@ -1453,6 +1470,8 @@ JHtml::_('behavior.framework', true);
 			}
 			else if(jQuery(".art-hmenu").width() < 1000)
 			{
+				jQuery(".art-post").css('height', 500);
+				
 				jQuery(".alles").css('width', 630);
 				jQuery(".alles").css('height', 380);
 				
@@ -1586,14 +1605,14 @@ JHtml::_('behavior.framework', true);
 			}
 			
 			jQuery(".art-header").css('height', jQuery("div.random-image>img").height());
+			
+					
 		}
 		
 		onresize = resize;
 
 		jQuery(resize);
 
-		//Suche verkleinern
-		//jQuery(".search").css('margin-left',100);
 		</script>
     
 <script>jQuery.noConflict();</script>

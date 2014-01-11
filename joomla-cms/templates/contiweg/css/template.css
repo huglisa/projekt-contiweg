@@ -912,18 +912,18 @@ html, body
 
 body
 {
-  padding: 0;
-  margin: 0;
-  min-width: 700px;
-  color: #2E3D4C;
+	padding: 0;
+	margin: 0;
+	min-width: 700px;
+	color: #2E3D4C;
 	right:0% !important;
 	overflow: auto;
-	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #F69F2B 200%);
-	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #F69F2B 200%);
-	background-image: -o-linear-gradient(top, #FFFFFF 0%, #F69F2B 200%); 
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(2, #F69F2B));
-	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #F69F2B 200%);
-	background-image: linear-gradient(to bottom, #FFFFFF 0%, #F69F2B 200%);
+	background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #F69F2B 100%);
+	background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #F69F2B 100%);
+	background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #F69F2B 100%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(1, #F69F2B));
+	background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #F69F2B 100%);
+	background-image: linear-gradient(to top, #FFFFFF 0%, #F69F2B 100%);
 	background-repeat: repeat-x;
 }
 
@@ -2415,7 +2415,9 @@ label.art-radiobutton.hovered:before
 
 .art-post
 {
-  padding: 5px;
+	padding: 5px;
+	overflow: auto;
+	height: 200px;
 }
 
 a img
@@ -3154,7 +3156,7 @@ blockquote p, .art-postcontent blockquote p, .art-blockcontent blockquote p, .ar
 .art-content-layout .art-content
 {
   margin: 0 auto;
-  width: 50%;
+  width: 48%;
 }
 
 .art-content-layout .art-sidebar2
