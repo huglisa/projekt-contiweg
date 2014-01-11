@@ -1606,7 +1606,17 @@ JHtml::_('behavior.framework', true);
 			
 			jQuery(".art-header").css('height', jQuery("div.random-image>img").height());
 			
-					
+			// Wenn Google Calender vorhanden ist (Termine) Höhe von art-post auf auto gesetzt
+			if (jQuery("#calender").length > 0)
+            {
+                jQuery('.art-post').css('height', "auto");
+            }
+			
+			// Wenn Countdown vorhanden ist (Absolventinnen) Höhe von art-post auf auto gesetzt
+			if (jQuery(".cdub_main").length > 0)
+            {
+                jQuery('.art-post').css('height', "auto");
+            }
 		}
 		
 		onresize = resize;
@@ -1614,6 +1624,7 @@ JHtml::_('behavior.framework', true);
 		jQuery(resize);
 
 		</script>
+		
     
 <script>jQuery.noConflict();</script>
 	<script src="<?php echo $templateUrl; ?>/script.js"></script>
