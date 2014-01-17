@@ -3,7 +3,7 @@
  * @package     Joomla.Legacy
  * @subpackage  Controller
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -256,6 +256,7 @@ class JControllerLegacy extends JObject
 			// Define the controller filename and path.
 			$file = self::createFileName('controller', array('name' => $type, 'format' => $format));
 			$path = $basePath . '/controllers/' . $file;
+			$backuppath = $basePath . '/controller/' . $file;
 
 			// Reset the task without the controller context.
 			$input->set('task', $task);
@@ -264,7 +265,6 @@ class JControllerLegacy extends JObject
 		{
 			// Base controller.
 			$type = null;
-			$task = $command;
 
 			// Define the controller filename and path.
 			$file       = self::createFileName('controller', array('name' => 'controller', 'format' => $format));

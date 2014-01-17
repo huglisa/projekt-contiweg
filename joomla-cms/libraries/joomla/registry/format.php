@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Registry
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -43,7 +43,7 @@ abstract class JRegistryFormat
 		// Only instantiate the object if it doesn't already exist.
 		if (!isset(self::$instances[$type]))
 		{
-			// Only load the file the class does not exist.
+			// Only load the file if the class does not exist.
 			$class = 'JRegistryFormat' . $type;
 			if (!class_exists($class))
 			{

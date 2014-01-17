@@ -3,7 +3,7 @@
  * @package     Joomla.Legacy
  * @subpackage  Table
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -15,6 +15,7 @@ defined('JPATH_PLATFORM') or die;
  * @package     Joomla.Legacy
  * @subpackage  Table
  * @since       11.1
+ * @deprecated  Class will be removed upon completion of transition to UCM
  */
 class JTableContent extends JTable
 {
@@ -28,6 +29,17 @@ class JTableContent extends JTable
 	public function __construct($db)
 	{
 		parent::__construct('#__content', 'id', $db);
+
+		/*
+		 * This is left here for reference:
+		 *
+		 * This would set up the tags observer in $this from here (so not entirely decoupled):
+		 * JTableObserverTags::createObserver($this, array('typeAlias' => 'com_content.article'));
+		 *
+		 * But this makes the relation between content and tags completely external to Content as JTable is observable:
+		 * So we are doing this only once in libraries/cms.php:
+		 * JObserverFactory::addObserverClassToClass('JTableObserverTags', 'JTableContent', array('typeAlias' => 'com_content.article'));
+		 */
 	}
 
 	/**
@@ -75,10 +87,10 @@ class JTableContent extends JTable
 		if ($this->catid)
 		{
 			// Build the query to get the asset id for the parent category.
-			$query = $this->_db->getQuery(true);
-			$query->select($this->_db->quoteName('asset_id'));
-			$query->from($this->_db->quoteName('#__categories'));
-			$query->where($this->_db->quoteName('id') . ' = ' . (int) $this->catid);
+			$query = $this->_db->getQuery(true)
+				->select($this->_db->quoteName('asset_id'))
+				->from($this->_db->quoteName('#__categories'))
+				->where($this->_db->quoteName('id') . ' = ' . (int) $this->catid);
 
 			// Get the asset id from the database.
 			$this->_db->setQuery($query);
@@ -104,7 +116,7 @@ class JTableContent extends JTable
 	 *
 	 * @param   array  $array   Named array
 	 * @param   mixed  $ignore  An optional array or space separated list of properties
-	 * to ignore while binding.
+	 *                          to ignore while binding.
 	 *
 	 * @return  mixed  Null if operation was satisfactory, otherwise returns an error string
 	 *
@@ -262,13 +274,17 @@ class JTableContent extends JTable
 				$this->created_by = $user->get('id');
 			}
 		}
+
 		// Verify that the alias is unique
 		$table = JTable::getInstance('Content', 'JTable');
+
 		if ($table->load(array('alias' => $this->alias, 'catid' => $this->catid)) && ($table->id != $this->id || $this->id == 0))
 		{
 			$this->setError(JText::_('JLIB_DATABASE_ERROR_ARTICLE_UNIQUE_ALIAS'));
+
 			return false;
 		}
+
 		return parent::store($updateNulls);
 	}
 
@@ -322,13 +338,11 @@ class JTableContent extends JTable
 			$checkin = ' AND (checked_out = 0 OR checked_out = ' . (int) $userId . ')';
 		}
 
-		// Get the JDatabaseQuery object
-		$query = $this->_db->getQuery(true);
-
 		// Update the publishing state for rows with the given primary keys.
-		$query->update($this->_db->quoteName($this->_tbl));
-		$query->set($this->_db->quoteName('state') . ' = ' . (int) $state);
-		$query->where('(' . $where . ')' . $checkin);
+		$query = $this->_db->getQuery(true)
+			->update($this->_db->quoteName($this->_tbl))
+			->set($this->_db->quoteName('state') . ' = ' . (int) $state)
+			->where('(' . $where . ')' . $checkin);
 		$this->_db->setQuery($query);
 
 		try

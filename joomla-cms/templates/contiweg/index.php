@@ -1224,6 +1224,7 @@ JHtml::_('behavior.framework', true);
 			
 				jQuery(".alles").css('width', 735);
 				jQuery(".alles").css('height', 475);
+				jQuery(".alles").css('margin-top', 100);
 			
 				jQuery("#angebot").css('width', 200);
 				jQuery("#angebot").css('height', 125);
@@ -1474,6 +1475,7 @@ JHtml::_('behavior.framework', true);
 				
 				jQuery(".alles").css('width', 630);
 				jQuery(".alles").css('height', 380);
+				jQuery(".alles").css('margin-top', 50);
 				
 			    jQuery("#angebot").css('width', 175);
 				jQuery("#angebot").css('height', 100);
@@ -1566,38 +1568,38 @@ JHtml::_('behavior.framework', true);
 			
 			if (jQuery(".art-hmenu").width() > 1100)
 			{
-				jQuery("div.random-image>img").css('height', 160);
+				jQuery("div.random-image>img").css('height', 235);
 				
 				if (jQuery(".art-hmenu").width() > 1400)
 				{
-					jQuery("div.random-image>img").css('height', 200);
+					jQuery("div.random-image>img").css('height', 300);
 					
 					if (jQuery(".art-hmenu").width() > 1700)
 					{
-						jQuery("div.random-image>img").css('height', 240);
+						jQuery("div.random-image>img").css('height', 365);
 					}
 				}
 			}
 			
 			if(jQuery(".art-hmenu").width() < 1100)
 			{
-				jQuery("div.random-image>img").css('height', 140);
+				jQuery("div.random-image>img").css('height', 235);
 				
 				if(jQuery(".art-hmenu").width() < 1050)
 				{
-					jQuery("div.random-image>img").css('height', 140);
+					jQuery("div.random-image>img").css('height', 225);
 					
 					if(jQuery(".art-hmenu").width() < 980)
 					{		
-						jQuery("div.random-image>img").css('height', 120);
+						jQuery("div.random-image>img").css('height', 210);
 						
 						if(jQuery(".art-hmenu").width() < 900)
 						{		
-							jQuery("div.random-image>img").css('height', 120);
+							jQuery("div.random-image>img").css('height', 190);
 						
 							if(jQuery(".art-hmenu").width() < 800)
 							{
-								jQuery("div.random-image>img").css('height', 130);
+								jQuery("div.random-image>img").css('height', 170);
 							}
 						}
 					}
@@ -1617,6 +1619,7 @@ JHtml::_('behavior.framework', true);
             {
                 jQuery('.art-post').css('height', "auto");
             }
+			
 		}
 		
 		onresize = resize;
@@ -1712,7 +1715,7 @@ JHtml::_('behavior.framework', true);
 <?php echo $view->positions(array('position-9' => 33, 'position-10' => 33, 'position-11' => 34), 'art-block'); ?>
 <?php echo $view->position('position-26', 'art-nostyle'); ?>
 
-<footer class="art-footer">
+<footer class="art-footer" style="display:none">
 <div class="art-content-layout">
     <div class="art-content-layout-row">
     <div class="art-layout-cell layout-item-0" style="width: 100%">

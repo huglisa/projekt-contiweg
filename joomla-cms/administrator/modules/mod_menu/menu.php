@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  mod_menu
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -58,6 +58,7 @@ class JAdminCssMenu extends JObject
 	public function addChild(JMenuNode &$node, $setCurrent = false)
 	{
 		$this->_current->addChild($node);
+
 		if ($setCurrent)
 		{
 			$this->_current = &$node;
@@ -93,29 +94,32 @@ class JAdminCssMenu extends JObject
 	{
 		$depth = 1;
 
-		if (!empty($id)) {
+		if (!empty($id))
+		{
 			$id = 'id="' . $id . '"';
 		}
 
-		if (!empty($class)) {
+		if (!empty($class))
+		{
 			$class = 'class="' . $class . '"';
 		}
 
-		/*
-		 * Recurse through children if they exist
-		 */
+		// Recurse through children if they exist
 		while ($this->_current->hasChildren())
 		{
-			echo "<ul ".$id." ".$class.">\n";
+			echo "<ul " . $id . " " . $class . ">\n";
+
 			foreach ($this->_current->getChildren() as $child)
 			{
 				$this->_current = & $child;
 				$this->renderLevel($depth++);
 			}
+
 			echo "</ul>\n";
 		}
 
-		if ($this->_css) {
+		if ($this->_css)
+		{
 			// Add style to document head
 			$doc = JFactory::getDocument();
 			$doc->addStyleDeclaration($this->_css);
@@ -124,10 +128,9 @@ class JAdminCssMenu extends JObject
 
 	public function renderLevel($depth)
 	{
-		/*
-		 * Build the CSS class suffix
-		 */
+		// Build the CSS class suffix
 		$class = '';
+
 		if ($this->_current->hasChildren())
 		{
 			$class = ' class="dropdown"';
@@ -151,56 +154,85 @@ class JAdminCssMenu extends JObject
 		/*
 		 * Print the item
 		 */
-		echo "<li".$class.">";
+		echo "<li" . $class . ">";
 
 		/*
 		 * Print a link if it exists
 		 */
 
-		$linkClass = '';
+		$linkClass = array();
 		$dataToggle = '';
 		$dropdownCaret = '';
 
-		if ($this->_current->hasChildren()) {
-				$linkClass = ' class="dropdown-toggle"';
-				$dataToggle = ' data-toggle="dropdown"';
-				if(!$this->_current->getParent()->hasParent())
-				{
-					$dropdownCaret = ' <span class="caret"></span>';
-				}
+		if ($this->_current->hasChildren())
+		{
+			$linkClass[] = 'dropdown-toggle';
+			$dataToggle = ' data-toggle="dropdown"';
+
+			if (!$this->_current->getParent()->hasParent())
+			{
+				$dropdownCaret = ' <span class="caret"></span>';
+			}
 		}
 
-		if ($this->_current->link != null && $this->_current->target != null) {
-			echo "<a".$linkClass." ".$dataToggle." href=\"".$this->_current->link."\" target=\"".$this->_current->target."\" >".$this->_current->title.$dropdownCaret."</a>";
-		} elseif ($this->_current->link != null && $this->_current->target == null) {
-			echo "<a".$linkClass." ".$dataToggle." href=\"".$this->_current->link."\">".$this->_current->title.$dropdownCaret."</a>";
-		} elseif ($this->_current->title != null) {
-			echo "<a".$linkClass." ".$dataToggle.">".$this->_current->title.$dropdownCaret."</a>";
-		} else {
+		if ($this->_current->link != null && $this->_current->getParent()->title != 'ROOT')
+		{
+			$iconClass = $this->getIconClass($this->_current->class);
+
+			if (!empty($iconClass))
+			{
+				$linkClass[] = $iconClass;
+			}
+		}
+
+		// Implode out $linkClass for rendering
+		$linkClass = ' class="' . implode(' ', $linkClass) . '"';
+
+		if ($this->_current->link != null && $this->_current->target != null)
+		{
+			echo "<a" . $linkClass . " " . $dataToggle . " href=\"" . $this->_current->link . "\" target=\"" . $this->_current->target . "\" >" . $this->_current->title . $dropdownCaret . "</a>";
+		}
+		elseif ($this->_current->link != null && $this->_current->target == null)
+		{
+			echo "<a" . $linkClass . " " . $dataToggle . " href=\"" . $this->_current->link . "\">" . $this->_current->title . $dropdownCaret . "</a>";
+		}
+		elseif ($this->_current->title != null)
+		{
+			echo "<a" . $linkClass . " " . $dataToggle . ">" . $this->_current->title . $dropdownCaret . "</a>";
+		}
+		else
+		{
 			echo "<span></span>";
 		}
 
-		/*
-		 * Recurse through children if they exist
-		 */
+		// Recurse through children if they exist
 		while ($this->_current->hasChildren())
 		{
-			if ($this->_current->class) {
+			if ($this->_current->class)
+			{
 				$id = '';
-				if (!empty($this->_current->id)) {
-					$id = ' id="menu-'.strtolower($this->_current->id).'"';
+
+				if (!empty($this->_current->id))
+				{
+					$id = ' id="menu-' . strtolower($this->_current->id) . '"';
 				}
-				echo '<ul'.$id.' class="dropdown-menu menu-component">'."\n";
-			} else {
-				echo '<ul class="dropdown-menu">'."\n";
+
+				echo '<ul' . $id . ' class="dropdown-menu menu-component">' . "\n";
 			}
+			else
+			{
+				echo '<ul class="dropdown-menu">' . "\n";
+			}
+
 			foreach ($this->_current->getChildren() as $child)
 			{
 				$this->_current = & $child;
 				$this->renderLevel($depth++);
 			}
+
 			echo "</ul>\n";
 		}
+
 		echo "</li>\n";
 	}
 
@@ -208,17 +240,19 @@ class JAdminCssMenu extends JObject
 	 * Method to get the CSS class name for an icon identifier or create one if
 	 * a custom image path is passed as the identifier
 	 *
-	 * @access	public
-	 * @param	string	$identifier	Icon identification string
-	 * @return	string	CSS class name
-	 * @since	1.5
+	 * @param   string  $identifier  Icon identification string
+	 *
+	 * @return  string	CSS class name
+	 *
+	 * @since   1.5
 	 */
 	public function getIconClass($identifier)
 	{
 		static $classes;
 
 		// Initialise the known classes array if it does not exist
-		if (!is_array($classes)) {
+		if (!is_array($classes))
+		{
 			$classes = array();
 		}
 
@@ -226,26 +260,33 @@ class JAdminCssMenu extends JObject
 		 * If we don't already know about the class... build it and mark it
 		 * known so we don't have to build it again
 		 */
-		if (!isset($classes[$identifier])) {
-			if (substr($identifier, 0, 6) == 'class:') {
+		if (!isset($classes[$identifier]))
+		{
+			if (substr($identifier, 0, 6) == 'class:')
+			{
 				// We were passed a class name
 				$class = substr($identifier, 6);
-				$classes[$identifier] = "icon-16-$class";
-			} else {
-				if ($identifier == null) {
+				$classes[$identifier] = "menu-$class";
+			}
+			else
+			{
+				if ($identifier == null)
+				{
 					return null;
 				}
+
 				// Build the CSS class for the icon
 				$class = preg_replace('#\.[^.]*$#', '', basename($identifier));
 				$class = preg_replace('#\.\.[^A-Za-z0-9\.\_\- ]#', '', $class);
 
-				$this->_css  .= "\n.icon-16-$class {\n" .
+				$this->_css  .= "\n.menu-$class {\n" .
 						"\tbackground: url($identifier) no-repeat;\n" .
 						"}\n";
 
-				$classes[$identifier] = "icon-16-$class";
+				$classes[$identifier] = "menu-$class";
 			}
 		}
+
 		return $classes[$identifier];
 	}
 }
@@ -255,8 +296,8 @@ class JAdminCssMenu extends JObject
  *
  * @package     Joomla.Administrator
  * @subpackage  mod_menu
- * @since       1.5
  * @see         JAdminCssMenu
+ * @since       1.5
  */
 class JMenuNode extends JObject
 {
@@ -305,18 +346,20 @@ class JMenuNode extends JObject
 
 	public function __construct($title, $link = null, $class = null, $active = false, $target = null, $titleicon = null)
 	{
-		$this->title	= $titleicon ? $title.$titleicon : $title;
+		$this->title	= $titleicon ? $title . $titleicon : $title;
 		$this->link		= JFilterOutput::ampReplace($link);
 		$this->class	= $class;
 		$this->active	= $active;
 
 		$this->id = null;
-		if (!empty($link) && $link !== '#') {
-			$uri = new JURI($link);
+
+		if (!empty($link) && $link !== '#')
+		{
+			$uri = new JUri($link);
 			$params = $uri->getQuery(true);
 			$parts = array();
 
-			foreach ($params as $name => $value)
+			foreach ($params as $value)
 			{
 				$parts[] = str_replace(array('.', '_'), '-', $value);
 			}
@@ -346,21 +389,24 @@ class JMenuNode extends JObject
 	 *
 	 * If the node already has a parent, the link is unset
 	 *
-	 * @param   JMenuNode   &$parent  The JMenuNode for parent to be set or null
+	 * @param   JMenuNode  &$parent  The JMenuNode for parent to be set or null
 	 *
 	 * @return  void
 	 */
 	public function setParent(JMenuNode &$parent = null)
 	{
 		$hash = spl_object_hash($this);
+
 		if (!is_null($this->_parent))
 		{
 			unset($this->_parent->children[$hash]);
 		}
+
 		if (!is_null($parent))
 		{
 			$parent->_children[$hash] = & $this;
 		}
+
 		$this->_parent = & $parent;
 	}
 

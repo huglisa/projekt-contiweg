@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_templates
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -11,8 +11,10 @@ defined('_JEXEC') or die;
 
 // Include the component HTML helpers.
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
-JHtml::_('behavior.tooltip');
+
+JHtml::_('bootstrap.tooltip');
 JHtml::_('behavior.modal');
+
 $canDo = TemplatesHelper::getActions();
 $input = JFactory::getApplication()->input;
 ?>
@@ -122,7 +124,7 @@ $input = JFactory::getApplication()->input;
 		method="post" name="adminForm" id="adminForm">
 	<fieldset class="adminform" id="template-manager-css">
 		<legend><?php echo JText::_('COM_TEMPLATES_TEMPLATE_COPY');?></legend>
-		<label id="new_name" class="hasTip"  title="<?php echo JText::_('COM_TEMPLATES_TEMPLATE_NEW_NAME_DESC'); ?>"><?php echo JText::_('COM_TEMPLATES_TEMPLATE_NEW_NAME_LABEL')?></label>
+		<label id="new_name" class="hasTooltip" title="<?php echo JHtml::tooltipText('COM_TEMPLATES_TEMPLATE_NEW_NAME_DESC'); ?>"><?php echo JText::_('COM_TEMPLATES_TEMPLATE_NEW_NAME_LABEL')?></label>
 		<input class="inputbox" type="text" id="new_name" name="new_name"  />
 		<button type="submit"><?php echo JText::_('COM_TEMPLATES_TEMPLATE_COPY'); ?></button>
 	</fieldset>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" version="3.2" client="site" method="upgrade">
+    <name>MOD_COUNT_DOWN_BIG</name>
+    <version>3-2</version>
+    <creationDate>2013-12-20</creationDate>
+    <license>http://www.gnu.org/licenses/gpl-3.0</license>
+    <copyright>Copyright 2013 Viktor Vogel. All rights reserved.</copyright>
+    <author>Viktor Vogel</author>
+    <authorEmail>admin@kubik-rubik.de</authorEmail>
+    <authorUrl>http://joomla-extensions.kubik-rubik.de/</authorUrl>
+    <description>MOD_COUNT_DOWN_BIG_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_count_down_big">mod_count_down_big.php</filename>
+        <filename module="mod_count_down_big">count_down_big.css</filename>
+        <filename module="mod_count_down_big">helper.php</filename>
+        <filename module="mod_count_down_big">index.html</filename>
+        <filename module="mod_count_down_big">tmpl/default.php</filename>
+        <filename module="mod_count_down_big">tmpl/index.html</filename>
+        <folder plugin="mod_count_down_big">fields</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_count_down_big.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_count_down_big.sys.ini</language>
+        <language tag="de-DE">language/de-DE/de-DE.mod_count_down_big.ini</language>
+        <language tag="de-DE">language/de-DE/de-DE.mod_count_down_big.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params" addfieldpath="/modules/mod_count_down_big/fields">
+            <fieldset name="CDUB_EVENTS">
+                <field type="krdonationcodecheck" />
+                <field name="ev_day" type="text" default="01" label="MOD_COUNT_DOWN_BIG_DAY" description="MOD_COUNT_DOWN_BIG_DAYDESC" />
+                <field name="ev_month" type="text" default="01" label="MOD_COUNT_DOWN_BIG_MONTH" description="MOD_COUNT_DOWN_BIG_MONTHDESC" />
+                <field name="ev_year" type="text" default="2015" label="MOD_COUNT_DOWN_BIG_YEAR" description="MOD_COUNT_DOWN_BIG_YEARDESC" />
+                <field name="ev_hour" type="text" default="00" label="MOD_COUNT_DOWN_BIG_HOUR" description="MOD_COUNT_DOWN_BIG_HOURDESC" />
+                <field name="ev_minute" type="text" default="00" label="MOD_COUNT_DOWN_BIG_MINUTE" description="MOD_COUNT_DOWN_BIG_MINUTEDESC" />
+                <field name="$ev_title" type="text" default="" label="MOD_COUNT_DOWN_BIG_EVENTTITLE" description="MOD_COUNT_DOWN_BIG_EVENTTITLEDESC" size="40" />
+                <field name="ev_text" type="textarea" cols="40" rows="5" default="" filter="raw" label="MOD_COUNT_DOWN_BIG_SHOWOWNTEXT" description="MOD_COUNT_DOWN_BIG_SHOWOWNTEXTDESC" />
+                <field name="ev_dates" type="textarea" value="" rows="5" cols="40" filter="raw" label="MOD_COUNT_DOWN_BIG_DATES" description="MOD_COUNT_DOWN_BIG_DATESDESC" />
+            </fieldset>
+            <fieldset name="CDUB_SETTINGS">
+				<field type="krdonationcodecheck" />
+                <field name="ev_displaytitle" type="list" default="1" label="MOD_COUNT_DOWN_BIG_SHOWEVENTTITLE" description="MOD_COUNT_DOWN_BIG_SHOWEVENTTITLEDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="ev_displaydate" type="list" default="1" label="MOD_COUNT_DOWN_BIG_DATEOFEVENT" description="MOD_COUNT_DOWN_BIG_DATEOFEVENTDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="ev_dhourshow" type="list" default="1" label="MOD_COUNT_DOWN_BIG_SHOWTIMEOFEVENT" description="MOD_COUNT_DOWN_BIG_SHOWTIMEOFEVENTDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="dynamic" type="list" default="1" label="MOD_COUNT_DOWN_BIG_COUNTDOWNDYNAMIC" description="MOD_COUNT_DOWN_BIG_COUNTDOWNDYNAMICDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="countup" type="list" default="1" label="MOD_COUNT_DOWN_BIG_COUNTUPAFTERCOUNTDOWN" description="MOD_COUNT_DOWN_BIG_COUNTUPAFTERCOUNTDOWNDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="ev_ddaysleft" type="list" default="1" label="MOD_COUNT_DOWN_BIG_SHOWSTILLANDSINCE" description="MOD_COUNT_DOWN_BIG_SHOWSTILLANDSINCEDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="showexpired" type="list" default="1" label="MOD_COUNT_DOWN_BIG_SHOWEXPIRED" description="MOD_COUNT_DOWN_BIG_SHOWEXPIREDDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="color" type="text" default="#000000" label="MOD_COUNT_DOWN_BIG_TEXTCOLOR" description="MOD_COUNT_DOWN_BIG_TEXTCOLORDESC" />
+                <field name="ev_displayurl" type="list" default="0" label="MOD_COUNT_DOWN_BIG_LINKTOEVENT" description="MOD_COUNT_DOWN_BIG_LINKTOEVENTDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="ev_urltitle" type="text" default="" label="MOD_COUNT_DOWN_BIG_LINKTEXT" description="MOD_COUNT_DOWN_BIG_LINKTEXTDESC" />
+                <field name="ev_url" type="text" default="http://" label="MOD_COUNT_DOWN_BIG_LINKURL" description="MOD_COUNT_DOWN_BIG_LINKURLDESC" />
+                <field name="newwindow" type="list" default="_blank" label="MOD_COUNT_DOWN_BIG_LINKNEWWINDOW" description="MOD_COUNT_DOWN_BIG_LINKNEWWINDOWDESC">
+                    <option value="_blank">JYES</option>
+                    <option value="_self">JNO</option>
+                </field>
+                <field name="ev_dlink_countup" type="list" default="1" label="MOD_COUNT_DOWN_BIG_LINKSHOWWITHCOUNTUP" description="MOD_COUNT_DOWN_BIG_LINKSHOWWITHCOUNTUPDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="ev_displayurl_end" type="list" default="0" label="MOD_COUNT_DOWN_BIG_LINKCOUNTUP" description="MOD_COUNT_DOWN_BIG_LINKCOUNTUPDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="ev_urltitle_end" type="text" default="" label="MOD_COUNT_DOWN_BIG_LINKTEXT" description="MOD_COUNT_DOWN_BIG_LINKTEXTDESC" />
+                <field name="ev_url_end" type="text" default="http://" label="MOD_COUNT_DOWN_BIG_LINKURL" description="Hier Adresse eingeben. Bitte mit http://" />
+                <field name="newwindow_end" type="list" default="_blank" label="MOD_COUNT_DOWN_BIG_LINKNEWWINDOW" description="MOD_COUNT_DOWN_BIG_LINKNEWWINDOWDESC">
+                    <option value="_blank">JYES</option>
+                    <option value="_self">JNO</option>
+                </field>
+                <field name="ev_displayday" type="list" default="1" label="MOD_COUNT_DOWN_BIG_SHOWONLYDAYS" description="MOD_COUNT_DOWN_BIG_SHOWONLYDAYSDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="datef" type="list" default="dmy" label="MOD_COUNT_DOWN_BIG_DATEFORMAT" description="MOD_COUNT_DOWN_BIG_DATEFORMATDESC">
+                    <option value="dmy">DD.MM.YY</option>
+                    <option value="mdy">MM.DD.YY</option>
+                    <option value="mdy_eng">MM/DD/YY</option>
+                    <option value="dmy_eng">DD/MM/YY</option>
+                </field>
+            </fieldset>
+            <fieldset name="advanced">
+				<field type="krdonationcodecheck" />
+                <field name="moduleclass_sfx" type="text" default="" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field name="poweredby" type="list" default="yes" label="MOD_COUNT_DOWN_BIG_LINKTOAUTHOR" description="MOD_COUNT_DOWN_BIG_LINKTOAUTHORDESC">
+                    <option value="yes">JYES</option>
+                    <option value="no">JNO</option>
+                </field>
+            </fieldset>
+            <fieldset name="donation">
+				<field type="krdonationcodecheck" />
+                <field name="donation_code" type="text" default="" size="40" label="KR_DONATION_CODE" description="KR_DONATION_CODEDESC" />
+                <field name="krtitle" type="krtitle" label="" />
+            </fieldset>
+            <fieldset name="versioncheck">
+				<field type="krdonationcodecheck" />
+                <field type="krversioncheck" name="krversioncheck" default="cdub|3-2" />
+                <field name="versioncheck_enable" type="list" default="1" label="KR_VERSION_CHECK" description="KR_VERSION_CHECKDESC">
+                    <option value="1">KR_VERSION_CHECK_ONCESESSION</option>
+                    <option value="2">KR_VERSION_CHECK_ONEVERYLOAD</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

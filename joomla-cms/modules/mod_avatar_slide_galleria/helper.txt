@@ -1,0 +1,68 @@
+SOURCE SETTING
+source		: flickr/picasa/folder
+Max image	: max image can be silded
+
+Flickr setting
+Flickr Search by (search method)
+	-search string
+	-user name	: Fetch a user’s public photos using the username like displayed in the URL (not user ID).
+	-tag		: Search Flickr for public photos using tags.
+	-Photo Set	: Get photos from a photoset by ID.
+	-Gallery ID	: Get photos from a gallery by ID.
+	-Group Search	: Search groups and fetch photos from the first group found Useful if you know the exact name of a group and want to show the groups photos.
+	-Group ID	: Get photos from a group by ID.
+		
+Picasa setting
+Picasa Search By
+	-user name		: Fetch a user’s public photos using the username like displayed in the URL (not user ID).
+	-user name/album	: Get photos from a user album
+Folder Setting
+	-Hold CTRL+click to multichoice folder
+	-Image folder
+
+Slide Setting
+	Set Height & Width like this : 100% or 100px. If you type 100, it's mean 100px
+
+FLICKR
+
+Flickr User ID :
+Sign in to Flickr , click You tag and see URL like :  http://www.flickr.com/photos/16883133@N05/ your Flickr acount id is "16883133@N05"
+
+
+Flickr Gallery ID
+
+Click http://www.flickr.com/services/api/explore/flickr.urls.lookupGallery 
+Copy and parse gallery URL to Arguments URL then click Call method button
+
+
+
+Flickr Group ID
+
+Click http://www.flickr.com/services/api/explore/flickr.urls.lookupGroup 
+Copy and parse group URL to Arguments URL then click Call method button
+
+See Flickr API here: http://www.flickr.com/services/api/
+
+
+Flickr PhotoSet
+Get photos from a photoset by ID. Note that the ‘sort’ option is not available in this API call, 
+see more here: http://www.flickr.com/services/api/flickr.photosets.getPhotos.html
+
+
+
+PICASA
+
+Picasa user ID
+
+To find your address, sign in to Picasa Web Albums, 
+Click the My Photos tab, and then click My Photos. see URL like like : https://picasaweb.google.com/116771399286983097230
+
+your picasa id is "116771399286983097230"
+
+
+
+Picasa user name/album
+
+To find your address, sign in to Picasa Web Albums, click the My Photos tab, and then click My Photos, click album want to be silde. See Url like :  https://picasaweb.google.com/116771399286983097230/youralbum
+
+put "116771399286983097230/youralbum" to string for search

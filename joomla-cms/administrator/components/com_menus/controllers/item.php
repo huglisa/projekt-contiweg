@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_menus
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -298,7 +298,6 @@ class MenusControllerItem extends JControllerForm
 
 		// Get the posted values from the request.
 		$data = $this->input->post->get('jform', array(), 'array');
-		$recordId = $this->input->getInt('id');
 
 		// Get the type.
 		$type = $data['type'];
@@ -321,7 +320,7 @@ class MenusControllerItem extends JControllerForm
 				$component = JComponentHelper::getComponent($type->request->option);
 				$data['component_id'] = $component->id;
 
-				$app->setUserState('com_menus.edit.item.link', 'index.php?' . JURI::buildQuery((array) $type->request));
+				$app->setUserState('com_menus.edit.item.link', 'index.php?' . JUri::buildQuery((array) $type->request));
 			}
 		}
 		// If the type is alias you just need the item id from the menu item referenced.

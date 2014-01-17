@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Cache
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -228,16 +228,6 @@ class JCacheStorageCachelite extends JCacheStorage
 	public function clean($group, $mode = null)
 	{
 		jimport('joomla.filesystem.folder');
-
-		if (trim($group) == '')
-		{
-			$clmode = 'notgroup';
-		}
-
-		if ($mode == null)
-		{
-			$clmode = 'group';
-		}
 
 		switch ($mode)
 		{

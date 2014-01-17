@@ -1,1 +1,0 @@
-Cufon.replace('.navigation a, h3,h2,.nivo-caption,.contentheading ', {hover:true });

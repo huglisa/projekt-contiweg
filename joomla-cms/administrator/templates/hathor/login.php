@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  Template.hathor
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -14,8 +14,8 @@ JHtml::_('behavior.noframes');
 $lang = JFactory::getLanguage();
 $doc	= JFactory::getDocument();
 
-// Load optional rtl bootstrap css and bootstrap bugfixes
-JHtmlBootstrap::loadCss($includeMaincss = false, $this->direction);
+// Load optional RTL Bootstrap CSS
+JHtml::_('bootstrap.loadCss', false, $this->direction);
 
 // Load system style CSS
 $doc->addStyleSheet('templates/system/css/system.css');
@@ -58,12 +58,10 @@ if ($this->params->get('boldText'))
 	$doc->addStyleSheet('templates/'.$this->template.'/css/boldtext.css');
 }
 
-// Load template javascript
-$doc->addScript('templates/'.$this->template.'/js/template.js', 'text/javascript');
 // Logo file
 if ($this->params->get('logoFile'))
 {
-	$logo = JURI::root() . $this->params->get('logoFile');
+	$logo = JUri::root() . $this->params->get('logoFile');
 }
 else
 {
@@ -83,6 +81,9 @@ else
 <!--[if lt IE 9]>
 	<script src="../media/jui/js/html5.js"></script>
 <![endif]-->
+
+<!-- Load Template JavaScript -->
+<script type="text/javascript" src="templates/<?php  echo  $this->template  ?>/js/template.js"></script>
 
 </head>
 <body id="login-page">
@@ -106,7 +107,7 @@ else
 					<div class="login-inst">
 					<p><?php echo JText::_('COM_LOGIN_VALID') ?></p>
 					<div id="lock"></div>
-					<a href="<?php echo JURI::root(); ?>"><?php echo JText::_('COM_LOGIN_RETURN_TO_SITE_HOME_PAGE') ?></a>
+					<a href="<?php echo JUri::root(); ?>"><?php echo JText::_('COM_LOGIN_RETURN_TO_SITE_HOME_PAGE') ?></a>
 					</div>
 
 					<!-- Login Component -->

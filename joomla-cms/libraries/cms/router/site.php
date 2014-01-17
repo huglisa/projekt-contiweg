@@ -3,7 +3,7 @@
  * @package     Joomla.Libraries
  * @subpackage  Router
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -23,7 +23,7 @@ class JRouterSite extends JRouter
 	/**
 	 * Function to convert a route to an internal URI
 	 *
-	 * @param   JURI  $uri  The uri.
+	 * @param   JUri  $uri  The uri.
 	 *
 	 * @return  array
 	 */
@@ -46,7 +46,7 @@ class JRouterSite extends JRouter
 		$path = urldecode($uri->getPath());
 
 		// Remove the base URI path.
-		$path = substr_replace($path, '', 0, strlen(JURI::base(true)));
+		$path = substr_replace($path, '', 0, strlen(JUri::base(true)));
 
 		// Check to see if a request to a specific entry point has been made.
 		if (preg_match("#.*?\.php#u", $path, $matches))
@@ -128,7 +128,7 @@ class JRouterSite extends JRouter
 		}
 
 		// Add basepath to the uri
-		$uri->setPath(JURI::base(true) . '/' . $route);
+		$uri->setPath(JUri::base(true) . '/' . $route);
 
 		return $uri;
 	}
@@ -136,7 +136,7 @@ class JRouterSite extends JRouter
 	/**
 	 * Function to convert a raw route to an internal URI
 	 *
-	 * @param   JURI  $uri  The raw route
+	 * @param   JUri  $uri  The raw route
 	 *
 	 * @return  array
 	 */
@@ -193,13 +193,12 @@ class JRouterSite extends JRouter
 	/**
 	 * Function to convert a sef route to an internal URI
 	 *
-	 * @param   JURI  $uri  The sef URI
+	 * @param   JUri  $uri  The sef URI
 	 *
 	 * @return  string  Internal URI
 	 */
 	protected function _parseSefRoute($uri)
 	{
-		$vars  = array();
 		$app   = JApplication::getInstance('site');
 		$menu  = $app->getMenu(true);
 		$route = $uri->getPath();
@@ -377,7 +376,7 @@ class JRouterSite extends JRouter
 	/**
 	 * Function to build a raw route
 	 *
-	 * @param   JURI  $uri  The internal URL
+	 * @param   JUri  $uri  The internal URL
 	 *
 	 * @return  string  Raw Route
 	 */
@@ -388,7 +387,7 @@ class JRouterSite extends JRouter
 	/**
 	 * Function to build a sef route
 	 *
-	 * @param   JURI  $uri  The uri
+	 * @param   JUri  $uri  The uri
 	 *
 	 * @return  void
 	 */
@@ -413,6 +412,7 @@ class JRouterSite extends JRouter
 		 */
 		$component = preg_replace('/[^A-Z0-9_\.-]/i', '', $query['option']);
 		$tmp       = '';
+		$itemID    = !empty($query['Itemid']) ? $query['Itemid'] : null;
 
 		// Use the component routing handler if it exists
 		$path = JPATH_SITE . '/components/' . $component . '/router.php';
@@ -450,7 +450,7 @@ class JRouterSite extends JRouter
 		 * Build the application route
 		 */
 		$built = false;
-		if (isset($query['Itemid']) && !empty($query['Itemid']))
+		if (!empty($query['Itemid']))
 		{
 			$item = $menu->getItem($query['Itemid']);
 			if (is_object($item) && $query['option'] == $item->component)
@@ -461,6 +461,11 @@ class JRouterSite extends JRouter
 				}
 				$built = true;
 			}
+		}
+
+		if (empty($query['Itemid']) && !empty($itemID))
+		{
+			$query['Itemid'] = $itemID;
 		}
 
 		if (!$built)
@@ -492,7 +497,7 @@ class JRouterSite extends JRouter
 	/**
 	 * Process the parsed router variables based on custom defined rules
 	 *
-	 * @param   JURI  $uri  The URI to parse
+	 * @param   JUri  $uri  The URI to parse
 	 *
 	 * @return  array  The array of processed URI variables
 	 */
@@ -517,7 +522,7 @@ class JRouterSite extends JRouter
 	/**
 	 * Process the build uri query data based on custom defined rules
 	 *
-	 * @param   JURI  $uri  The URI
+	 * @param   JUri  $uri  The URI
 	 *
 	 * @return  void
 	 */
@@ -548,8 +553,6 @@ class JRouterSite extends JRouter
 
 		if ($this->_mode == JROUTER_MODE_SEF && $route)
 		{
-			$app = JApplication::getInstance('site');
-
 			if ($limitstart = $uri->getVar('limitstart'))
 			{
 				$uri->setVar('start', (int) $limitstart);
@@ -565,7 +568,7 @@ class JRouterSite extends JRouter
 	 *
 	 * @param   string  $url  The URI
 	 *
-	 * @return  JURI
+	 * @return  JUri
 	 */
 	protected function _createURI($url)
 	{

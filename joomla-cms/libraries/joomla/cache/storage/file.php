@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Cache
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -93,7 +93,6 @@ class JCacheStorageFile extends JCacheStorage
 
 		foreach ($folders as $folder)
 		{
-			$files = array();
 			$files = $this->_filesInFolder($path . '/' . $folder);
 			$item = new JCacheStorageHelper($folder);
 

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" method="upgrade">
+    <name>Avatar Slide Galleria</name>
+    <author>Nam Chung Tran</author>
+    <version>1.4.9</version>
+	<creationDate>September 2012</creationDate>
+	<copyright>JoomAvatar.com</copyright>
+	<license>License GNU General Public License version 2 or later</license>
+	<authorEmail>chungtn@joomavatar.com</authorEmail>
+	<authorUrl>www.joomavatar.com</authorUrl>
+	<edition>Free</edition>
+    <description>AVATAR_SLIDE_GALLERIA_DESC</description>
+    <files>
+        <filename module="mod_avatar_slide_galleria">mod_avatar_slide_galleria.php</filename>
+        <filename>index.html</filename>
+        <filename>mod_avatar_slide_galleria.xml</filename>
+        <filename>helper.php</filename>
+        <filename>helper.txt</filename>
+        <folder>tmpl</folder>
+        <folder>assets</folder>
+        <folder>fields</folder>
+        <folder>classes</folder>
+    </files>
+    <languages>
+		<language tag="en-GB">en-GB.mod_avatar_slide_galleria.ini</language>
+		<language tag="en-GB">en-GB.mod_avatar_slide_galleria.sys.ini</language>
+	</languages>
+    <config>
+    	<fields name="params">
+    		<fieldset name="basic" label="AVATAR_MODULE_SETTING" addfieldpath="/modules/mod_avatar_slide_galleria/fields/">
+    			<field name="moduleclass_sfx" type="text"  default="" label="AVATAR_SUFFIX" description="" />
+    			<field name="jquery" type="text" default="latest" size="7" label="AVATAR_JQUERY" description="AVATAR_JQUERY_DESC"/>
+    			<field name="width" type="text" default="100%" label="AVATAR_GALLERIA_WIDTH" size="2" description="AVATAR_GALLERIA_WIDTH_DESC"/>
+    			<field name="height" type="text" default="0.4" label="AVATAR_GALLERIA_HEIGHT" size="2" description="AVATAR_GALLERIA_HEIGHT_DESC"/>
+    			<field name="Source" type="list" default="folder" label="AVATAR_GALLERIA_SOURCE" description="AVATAR_GALLERIA_SOURCE_DESC">
+					<option value="flickr">AVATAR_GALLERIA_FLICKR</option>
+					<option value="picasa">AVATAR_GALLERIA_PICASA</option>
+					<option value="folder">AVATAR_GALLERIA_FOLDER</option>
+				</field>
+    		</fieldset>
+    		<fieldset name="flickr" label="AVATAR_GALLERIA_FLICKR_SETTING">
+				<field name="flickrSearchBy" type="list" default="search" label="AVATAR_GALLERIA_FLICKR_SEARCH_BY" description="AVATAR_GALLERIA_FLICKR_SEARCH_BY_DESC">
+					<option value="search">AVATAR_GALLERIA_SEARCH</option>
+					<option value="tags">AVATAR_GALLERIA_TAGS</option>
+					<option value="user">AVATAR_GALLERIA_USER_NAME</option>
+					<option value="set">AVATAR_GALLERIA_PHOTO_SET</option>
+					<option value="gallery">AVATAR_GALLERIA_GALLERY_ID</option>
+					<option value="groupSearch">AVATAR_GALLERIA_GROUP_SEARCH</option>
+					<option value="groupId">AVATAR_GALLERIA_GROUP_ID</option>
+				</field>
+				<field name="stringFlickr" type="text" default="String,User Name,..." size="50" label="AVATAR_GALLERIA_STRING_FOR_FLICKR" description="AVATAR_GALLERIA_STRING_FOR_SEARCH_DESC" />
+				<field name="flickrSort" type="list" default="interestingness-desc" label="AVATAR_GALLERIA_FLICKR_SORT" description="AVATAR_GALLERIA_FLICKR_SORT_DESC">
+					<option value="date-posted-asc">AVATAR_GALLERIA_DATE-POSTED-ASC</option>
+					<option value="date-posted-desc">AVATAR_GALLERIA_DATE-POSTED-DESC</option>
+					<option value="date-taken-asc">AVATAR_GALLERIA_DATE_TAKEN_ASC</option>
+					<option value="date-taken-desc">AVATAR_GALLERIA_DATE_TAKEN_DESC</option>
+					<option value="interestingness-desc">AVATAR_GALLERIA_INTERESTINGNESS_DESC</option>
+					<option value="interestingness-asc">AVATAR_GALLERIA_INTERESTINGNESS_ASC</option>
+					<option value="relevance">AVATAR_GALLERIA_RELEVANCE</option>
+				</field>
+			</fieldset>
+    		<fieldset name="picasa" label="AVATAR_GALLERIA_PICASA_SETTING">
+				<field name="picasaSearchBy" type="list" default="search" label="AVATAR_GALLERIA_PICASA_SEARCH_BY" description="AVATAR_GALLERIA_PICASA_SEARCH_BY_DESC">
+					<option value="search">AVATAR_GALLERIA_SEARCH</option>
+					<option value="user">AVATAR_GALLERIA_USER_NAME</option>
+					<option value="useralbum">AVATAR_GALLERIA_USER_NAME_ALBUM_ID</option>
+				</field>
+				<field name="stringPicasa" type="text" default="String,User Name,..." size="50" label="AVATAR_GALLERIA_STRING_FOR_PICASA" description="AVATAR_GALLERIA_STRING_FOR_SEARCH_DESC" />
+			</fieldset>
+			<fieldset name="foldersetting" label="AVATAR_GALLERIA_FOLDER_SETTING" addfieldpath="/modules/mod_avatar_slide_galleria/fields/">
+				<field name="folder" type="jantdropboximagefolder" default="true" label="AVATAR_GALLERIA_SELECT_FOLDER" description="AVATAR_GALLERIA_SELECT_FOLDER_DESC" hide_none="true" hide_default="true" size="10" multiple="multiple"/>	
+				<field name="title" type="textarea" default="" label="AVATAR_IMAGES_TITLE" description="AVATAR_IMAGES_TITLE_DESC" rows="20" cols="40" />
+				<field name="description" type="textarea" default="" label="AVATAR_IMAGES_DESCRIPTION" description="AVATAR_IMAGES_DESCRIPTION_DESC" rows="20" cols="40" />
+				<field name="imageLink" type="textarea" default="" label="AVATAR_IMAGES_IMAGE_LINK" description="AVATAR_IMAGES_IMAGE_LINK_DESC" rows="20" cols="40" />
+			</fieldset>
+			<fieldset name="appearance" label="AVATAR_GALLERIA_APPEARANCE_SETTING" addfieldpath="/modules/mod_avatar_slide_galleria/fields">
+				<field name="theme" type="list" default="true" label="AVATAR_GALLERIA_THEME" description="AVATAR_GALLERIA_THEME_DESC">
+					<option value="classic">AVATAR_GALLERIA_CLASSIC</option>
+					<option value="august">AVATAR_GALLERIA_AUGUST</option>
+					<option value="september">AVATAR_GALLERIA_SEPTEMBER</option>
+				</field>
+				<field name="responsive" type="radio" default="true" label="AVATAR_GALLERIA_RESPONSIVE" description="AVATAR_GALLERIA_RESPONSIVE_DESC">
+					<option value="true">AVATAR_GALLERIA_YES</option>
+					<option value="false">AVATAR_GALLERIA_NO</option>
+				</field>
+				<field name="lightBox" type="radio" default="true" label="AVATAR_GALLERIA_LIGHTBOX" description="AVATAR_GALLERIA_LIGHTBOX_DESC">
+					<option value="true">AVATAR_GALLERIA_YES</option>
+					<option value="false">AVATAR_GALLERIA_NO</option>
+				</field>
+				<field name="showCounter" type="radio" default="true" label="AVATAR_GALLERIA_SHOW_COUNTER" description="AVATAR_GALLERIA_SHOW_COUNTER_DESC">	
+					<option value="true">AVATAR_GALLERIA_YES</option>
+					<option value="false">AVATAR_GALLERIA_NO</option>
+				</field>
+				<field name="showImageNav" type="radio" default="true" label="AVATAR_GALLERIA_SHOW_IMAGE_NAV" description="AVATAR_GALLERIA_SHOW_IMAGE_NAV_DESC">	
+					<option value="true">AVATAR_GALLERIA_YES</option>
+					<option value="false">AVATAR_GALLERIA_NO</option>
+				</field>
+				<field name="imgPan" type="radio" default="true" label="AVATAR_GALLERIA_IMAGE_PAN" description="AVATAR_GALLERIA_IMAGE_PAN_DESC">	
+					<option value="true">AVATAR_GALLERIA_YES</option>
+					<option value="false">AVATAR_GALLERIA_NO</option>
+				</field>
+				<field name="swipe" type="radio" default="true" label="AVATAR_GALLERIA_SWIPE" description="AVATAR_GALLERIA_SWIPE_DESC">	
+					<option value="true">AVATAR_GALLERIA_YES</option>
+					<option value="false">AVATAR_GALLERIA_NO</option>
+				</field>
+				<field name="fullscreenBtn" type="radio" default="true" label="AVATAR_GALLERIA_FULLSCREEN" description="AVATAR_GALLERIA_FULLSCREEN_DESC">	
+					<option value="true">AVATAR_GALLERIA_YES</option>
+					<option value="false">AVATAR_GALLERIA_NO</option>
+				</field>
+				<field name="progress" type="radio" default="true" label="AVATAR_GALLERIA_PROGRESS" description="AVATAR_GALLERIA_PROGRESS_DESC">	
+					<option value="true">AVATAR_GALLERIA_YES</option>
+					<option value="false">AVATAR_GALLERIA_NO</option>
+				</field>
+				<field name="imgPanSmoothness" type="text" default="3" label="AVATAR_GALLERIA_IMAGE_PAN_SMOOTHESS" description="AVATAR_GALLERIA_IMAGE_PAN_SMOOTHESS_DESC" />
+				<field name="imgCrop" type="list" default="true" label="AVATAR_GALLERIA_IMAGE_CROP" description="AVATAR_GALLERIA_IMAGE_CROP_DESC">
+					<option value="true">AVATAR_GALLERIA_TRUE</option>
+					<option value="false">AVATAR_GALLERIA_FALSE</option>
+					<option value="height">AVATAR_GALLERIA_HEIGHT</option>
+					<option value="width">AVATAR_GALLERIA_WIDTH</option>
+					<option value="landscape">AVATAR_GALLERIA_LANDSCAPE</option>
+					<option value="portrait">AVATAR_GALLERIA_PORTRAIT</option>
+				</field>
+				<field name="fullsreenCrop" type="list" default="true" label="AVATAR_GALLERIA_FULLSCREEN_CROP" description="AVATAR_GALLERIA_FULLSCREEN_CROP_DESC">
+					<option value="true">AVATAR_GALLERIA_TRUE</option>
+					<option value="false">AVATAR_GALLERIA_FALSE</option>
+					<option value="height">AVATAR_GALLERIA_HEIGHT</option>
+					<option value="width">AVATAR_GALLERIA_WIDTH</option>
+					<option value="landscape">AVATAR_GALLERIA_LANDSCAPE</option>
+					<option value="portrait">AVATAR_GALLERIA_PORTRAIT</option>
+				</field>
+				<field name="thumbnails" type="list" default="true" label="AVATAR_GALLERIA_THUMBNAILS" description="AVATAR_GALLERIA_THUMBNAILS_DESC">
+					<option value="true">AVATAR_GALLERIA_TRUE</option>
+					<option value="false">AVATAR_GALLERIA_FALSE</option>
+					<option value="empty">AVATAR_GALLERIA_EMPTY</option>
+					<option value="numbers">AVATAR_GALLERIA_NUMBERS</option>					
+				</field>
+				<field name="infoColor" type="radio" default="default" label="AVATAR_GALLERIA_INFO_COLOR" description="AVATAR_GALLERIA_INFO_COLOR_DESC">
+					<option value="default">AVATAR_GALLERIA_DEFAULT_COLOR</option>
+					<option value="color">AVATAR_GALLERIA_CUSTOMIZE_COLOR</option>
+				</field>
+				<field name="@sp4" type="spacer" default="" label="=== CUSTOMIZE COLOR ===" description="" />
+				<field name="background" type="radio" default="color" label="AVATAR_GALLERIA_BACKGROUND" description="AVATAR_GALLERIA_BACKGROUND_DESC">
+					<option value="color">AVATAR_GALLERIA_BACKGROUND_COLOR</option>
+					<option value="transparent">AVATAR_GALLERIA_BACKGROUND_TRANSPARENT</option>
+				</field>
+				<field name="bgColor" type="colorpicker" default="#000000" label="AVATAR_GALLERIA_SLIDER_BG_COLOR_SETTING" description="AVATAR_GALLERIA_SLIDER_BG_COLOR_SETTING_DESC" />
+				<field name="titleColor" type="colorpicker" default="#000000" label="AVATAR_GALLERIA_SLIDER_TITLE_COLOR_SETTING" description="AVATAR_GALLERIA_SLIDER_TITLE_COLOR_SETTING_DESC" />
+				<field name="desColor" type="colorpicker" default="#000000" label="AVATAR_GALLERIA_SLIDER_DES_COLOR_SETTING" description="AVATAR_GALLERIA_SLIDER_DES_COLOR_SETTING_DESC" />
+			</fieldset>
+    		<fieldset name="slide" label="AVATAR_GALLERIA_SLIDER_SETTING" addfieldpath="/modules/mod_avatar_slide_galleria/fields">
+				<field name="autoplay" type="radio" default="true" label="AVATAR_GALLERIA_AUTOPLAY" description="AVATAR_GALLERIA_AUTOPLAY_DESC">	
+					<option value="true">AVATAR_GALLERIA_YES</option>
+					<option value="false">AVATAR_GALLERIA_NO</option>
+				</field>
+				<field name="slideTime" type="text" default="5000" label="AVATAR_GALLERIA_SLIDING_TIME" description="AVATAR_GALLERIA_SLIDING_TIME_DESC" />	
+				<field name="transitionSpeed" type="text" default="500" label="AVATAR_GALLERIA_TRANSITION_SPEED" description="AVATAR_GALLERIA_TRANSITION_SPEED_DESC" />
+				<field name="imageQuality" type="list" default="original" label="AVATAR_GALLERIA_IMAGE_QUALITY" description="AVATAR_GALLERIA_IMAGE_QUALITY_DESC">
+					<option value="thumb">AVATAR_GALLERIA_LOW</option>
+					<option value="medium">AVATAR_GALLERIA_MEDIUM</option>
+					<option value="big">AVATAR_GALLERIA_HIGH</option>
+					<option value="original">AVATAR_GALLERIA_ORIGINAL</option>
+				</field>
+				<field name="dataSort" type="list" default="false" label="AVATAR_GALLERIA_DATA_SORT" description="AVATAR_GALLERIA_DATA_SORT_DESC">
+					<option value="false">AVATAR_GALLERIA_FALSE</option>
+					<option value="random">AVATAR_GALLERIA_RANDOM</option>
+				</field>
+				<field name="transition" type="list" default="slide" label="AVATAR_GALLERIA_IMAGE_TRANSITION" description="AVATAR_GALLERIA_IMAGE_TRANSITION_DESC">
+					<option value="fade">AVATAR_GALLERIA_FADE</option>
+					<option value="slide">AVATAR_GALLERIA_SLIDE</option>
+					<option value="pulse">AVATAR_GALLERIA_PULSE</option>
+					<option value="fadeslide">AVATAR_GALLERIA_FADESLIDE</option>
+				</field>
+				<field name="fullscreenTransition" type="list" default="slide" label="AVATAR_GALLERIA_FULLSCREEN_TRANSITION" description="AVATAR_GALLERIA_FULLSCREEN_TRANSITION_DESC">
+					<option value="fade">AVATAR_GALLERIA_FADE</option>
+					<option value="slide">AVATAR_GALLERIA_SLIDE</option>
+					<option value="pulse">AVATAR_GALLERIA_PULSE</option>
+					<option value="fadeslide">AVATAR_GALLERIA_FADESLIDE</option>
+				</field>
+			</fieldset>
+			<fieldset name="data" label="AVATAR_GALLERIA_DATA_SETTING" addfieldpath="/modules/mod_avatar_slide_galleria/fields">
+				<field name="showInfo" type="radio" default="true" label="AVATAR_GALLERIA_SHOW_INFO" description="AVATAR_GALLERIA_SHOW_INFO_DESC">	
+					<option value="true">AVATAR_GALLERIA_YES</option>
+					<option value="false">AVATAR_GALLERIA_NO</option>
+				</field>
+				<field name="showFileName" type="radio" default="false" label="AVATAR_GALLERIA_SHOW_FILENAME_AS_IMAGE_TITLE" description="AVATAR_GALLERIA_SHOW_FILENAME_AS_IMAGE_TITLE_DESC">	
+					<option value="true">AVATAR_GALLERIA_YES</option>
+					<option value="false">AVATAR_GALLERIA_NO</option>
+				</field>
+			</fieldset>
+    	</fields>	
+    </config>
+</extension>

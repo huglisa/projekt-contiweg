@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_media
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -23,27 +23,18 @@ class MediaViewMediaList extends JViewLegacy
 		// Do not allow cache
 		JResponse::allowCache(false);
 
-		$app	= JFactory::getApplication();
-		$style = $app->getUserStateFromRequest('media.list.layout', 'layout', 'thumbs', 'word');
-
-		$lang	= JFactory::getLanguage();
-
 		JHtml::_('behavior.framework', true);
 
-		$document = JFactory::getDocument();
-		/*
-		$document->addStyleSheet('../media/media/css/medialist-'.$style.'.css');
-		if ($lang->isRTL()) :
-			$document->addStyleSheet('../media/media/css/medialist-'.$style.'_rtl.css');
-		endif;
-		*/
-		$document->addScriptDeclaration("
-		window.addEvent('domready', function() {
+		JFactory::getDocument()->addScriptDeclaration("
+		window.addEvent('domready', function()
+		{
 			window.parent.document.updateUploader();
-			$$('a.img-preview').each(function(el) {
-				el.addEvent('click', function(e) {
-					new Event(e).stop();
+			$$('a.img-preview').each(function(el)
+			{
+				el.addEvent('click', function(e)
+				{
 					window.top.document.preview.fromElement(el);
+					return false;
 				});
 			});
 		});");
@@ -53,7 +44,7 @@ class MediaViewMediaList extends JViewLegacy
 		$folders = $this->get('folders');
 		$state = $this->get('state');
 
-		$this->baseURL = JURI::root();
+		$this->baseURL = JUri::root();
 		$this->images = &$images;
 		$this->documents = &$documents;
 		$this->folders = &$folders;
@@ -64,27 +55,36 @@ class MediaViewMediaList extends JViewLegacy
 
 	function setFolder($index = 0)
 	{
-		if (isset($this->folders[$index])) {
+		if (isset($this->folders[$index]))
+		{
 			$this->_tmp_folder = &$this->folders[$index];
-		} else {
+		}
+		else
+		{
 			$this->_tmp_folder = new JObject;
 		}
 	}
 
 	function setImage($index = 0)
 	{
-		if (isset($this->images[$index])) {
+		if (isset($this->images[$index]))
+		{
 			$this->_tmp_img = &$this->images[$index];
-		} else {
+		}
+		else
+		{
 			$this->_tmp_img = new JObject;
 		}
 	}
 
 	function setDoc($index = 0)
 	{
-		if (isset($this->documents[$index])) {
+		if (isset($this->documents[$index]))
+		{
 			$this->_tmp_doc = &$this->documents[$index];
-		} else {
+		}
+		else
+		{
 			$this->_tmp_doc = new JObject;
 		}
 	}

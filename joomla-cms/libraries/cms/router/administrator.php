@@ -3,7 +3,7 @@
  * @package     Joomla.Libraries
  * @subpackage  Router
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -23,7 +23,7 @@ class JRouterAdministrator extends JRouter
 	/**
 	 * Function to convert a route to an internal URI.
 	 *
-	 * @param   JURI  $uri  The uri.
+	 * @param   JUri  $uri  The uri.
 	 *
 	 * @return  array
 	 */
@@ -50,7 +50,7 @@ class JRouterAdministrator extends JRouter
 		$route = $uri->getPath();
 
 		// Add basepath to the uri
-		$uri->setPath(JURI::base(true) . '/' . $route);
+		$uri->setPath(JUri::base(true) . '/' . $route);
 
 		return $uri;
 	}

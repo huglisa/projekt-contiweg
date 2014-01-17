@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Environment
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -203,6 +203,7 @@ class JResponse
 		}
 
 		ob_start();
+
 		foreach (self::$body as $content)
 		{
 			echo $content;
@@ -297,7 +298,12 @@ class JResponse
 		$gzdata = gzencode($data, $level);
 
 		self::setHeader('Content-Encoding', $encoding);
-		self::setHeader('X-Content-Encoded-By', 'Joomla! 1.6');
+
+		// Header will be removed at 4.0
+		if (JFactory::getConfig()->get('MetaVersion', 0) && defined('JVERSION'))
+		{
+			self::setHeader('X-Content-Encoded-By', 'Joomla! ' . JVERSION);
+		}
 
 		return $gzdata;
 	}

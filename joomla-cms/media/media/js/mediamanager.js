@@ -1,5 +1,5 @@
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -62,7 +62,7 @@ var MediaManager = this.MediaManager = {
 			this.updatepaths.each(function(path){ path.value =folder; });
 			this.folderpath.value = basepath+'/'+folder;
 //			node = this.tree.get('node_'+folder);
-			node.toggle(false, true);
+//			node.toggle(false, true);
 		} else {
 			this.updatepaths.each(function(path){ path.value = ''; });
 			this.folderpath.value = basepath;

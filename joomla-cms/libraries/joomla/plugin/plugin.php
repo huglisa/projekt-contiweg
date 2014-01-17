@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Plugin
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -43,6 +43,14 @@ abstract class JPlugin extends JEvent
 	protected $_type = null;
 
 	/**
+	 * Affects constructor behavior. If true, language files will be loaded automatically.
+	 *
+	 * @var    boolean
+	 * @since  12.3
+	 */
+	protected $autoloadLanguage = false;
+
+	/**
 	 * Constructor
 	 *
 	 * @param   object  &$subject  The object to observe
@@ -80,6 +88,34 @@ abstract class JPlugin extends JEvent
 			$this->_type = $config['type'];
 		}
 
+		// Load the language files if needed.
+		if ($this->autoloadLanguage)
+		{
+			$this->loadLanguage();
+		}
+
+		if (property_exists($this, 'app'))
+		{
+			$reflection = new ReflectionClass($this);
+			$appProperty = $reflection->getProperty('app');
+
+			if ($appProperty->isPrivate() === false && is_null($this->app))
+			{
+				$this->app = JFactory::getApplication();
+			}
+		}
+
+		if (property_exists($this, 'db'))
+		{
+			$reflection = new ReflectionClass($this);
+			$dbProperty = $reflection->getProperty('db');
+
+			if ($dbProperty->isPrivate() === false && is_null($this->db))
+			{
+				$this->db = JFactory::getDbo();
+			}
+		}
+
 		parent::__construct($subject);
 	}
 
@@ -101,6 +137,7 @@ abstract class JPlugin extends JEvent
 		}
 
 		$lang = JFactory::getLanguage();
+
 		return $lang->load(strtolower($extension), $basePath, null, false, false)
 			|| $lang->load(strtolower($extension), JPATH_PLUGINS . '/' . $this->_type . '/' . $this->_name, null, false, false)
 			|| $lang->load(strtolower($extension), $basePath, $lang->getDefault(), false, false)
