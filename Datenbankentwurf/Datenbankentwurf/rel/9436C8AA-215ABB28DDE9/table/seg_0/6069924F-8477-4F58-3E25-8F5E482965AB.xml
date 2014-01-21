@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="6069924F-8477-4F58-3E25-8F5E482965AB" directorySegmentName="seg_0" name="person">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<generatorID>964C70B7-1860-A55E-8BC0-7B67F11E53FC</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<pkName>Person PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Titel</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Spalte</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datentyp</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK-Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK-Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK-Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Nicht null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Schlüssel</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="personenid" id="A1EE02A2-988F-BCE1-D171-FB572A7BFB00">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<generatorID>DCD34F60-9DA6-2FF0-8EF9-0F9C7ABCBFA1</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="vorname" id="7D9F6EFD-C012-1266-9DEC-CD9497AC7005">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<generatorID>0FF7A60E-66DD-65F7-112C-E9C44560A33A</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="nachname" id="39440AAC-8CC5-9BF0-03A0-8498CCD331B0">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<generatorID>A12AAB09-DCC4-2287-5FC7-05000D814693</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="email" id="1D55CA24-E209-D1FB-B2BC-1611BD3C449B">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<generatorID>64993771-3AB9-3BF5-725F-1AD10694ED26</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="A274278B-FA98-F983-FC0C-D5FE022E05CE" name="Person PK">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<generatorID>C4D5FBA7-CCF8-E833-6ECF-705CE3135F85</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="A1EE02A2-988F-BCE1-D171-FB572A7BFB00"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

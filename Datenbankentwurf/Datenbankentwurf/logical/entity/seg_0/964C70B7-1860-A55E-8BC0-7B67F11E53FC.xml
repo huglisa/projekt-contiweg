@@ -1,11 +1,11 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="964C70B7-1860-A55E-8BC0-7B67F11E53FC" directorySegmentName="seg_0" name="Person">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="964C70B7-1860-A55E-8BC0-7B67F11E53FC" directorySegmentName="seg_0" name="person">
 <createdBy>Lisa</createdBy>
 <createdTime>2013-11-07 12:40:14 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
-<item key="B12A98B7-0687-7B94-4769-BF1319EF05AF" value="true"/>
+<item key="F842C108-C0FB-7F60-9F90-94B8CB3CC82C" value="true"/>
 </engineerTo>
 <pkName>Person PK</pkName>
 <adequatelyNormalized>NO</adequatelyNormalized>
@@ -52,51 +52,51 @@
 </FontObject>
 </fonts>
 <attributes>
-<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="Person_ID" id="DCD34F60-9DA6-2FF0-8EF9-0F9C7ABCBFA1">
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="personenid" id="DCD34F60-9DA6-2FF0-8EF9-0F9C7ABCBFA1">
 <createdBy>Lisa</createdBy>
 <createdTime>2013-11-07 12:41:03 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
-<item key="B12A98B7-0687-7B94-4769-BF1319EF05AF" value="true"/>
+<item key="F842C108-C0FB-7F60-9F90-94B8CB3CC82C" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT027</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 </Attribute>
-<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="Vorname" id="0FF7A60E-66DD-65F7-112C-E9C44560A33A">
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="vorname" id="0FF7A60E-66DD-65F7-112C-E9C44560A33A">
 <createdBy>Lisa</createdBy>
 <createdTime>2013-11-07 12:41:18 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
-<item key="B12A98B7-0687-7B94-4769-BF1319EF05AF" value="true"/>
+<item key="F842C108-C0FB-7F60-9F90-94B8CB3CC82C" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT037</logicalDatatype>
-<dataTypeSize>128 CHAR</dataTypeSize>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
 </Attribute>
-<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="Nachname" id="A12AAB09-DCC4-2287-5FC7-05000D814693">
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="nachname" id="A12AAB09-DCC4-2287-5FC7-05000D814693">
 <createdBy>Lisa</createdBy>
 <createdTime>2013-11-07 12:41:34 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
-<item key="B12A98B7-0687-7B94-4769-BF1319EF05AF" value="true"/>
+<item key="F842C108-C0FB-7F60-9F90-94B8CB3CC82C" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT037</logicalDatatype>
-<dataTypeSize>128 CHAR</dataTypeSize>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
 </Attribute>
-<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="E-Mail" id="64993771-3AB9-3BF5-725F-1AD10694ED26">
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="email" id="64993771-3AB9-3BF5-725F-1AD10694ED26">
 <createdBy>Lisa</createdBy>
 <createdTime>2013-11-07 12:42:00 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
-<item key="B12A98B7-0687-7B94-4769-BF1319EF05AF" value="true"/>
+<item key="F842C108-C0FB-7F60-9F90-94B8CB3CC82C" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -111,7 +111,7 @@
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
-<item key="B12A98B7-0687-7B94-4769-BF1319EF05AF" value="true"/>
+<item key="F842C108-C0FB-7F60-9F90-94B8CB3CC82C" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

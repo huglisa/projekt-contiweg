@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="7CA3E5D1-5616-94F1-487C-80AF2C04D808" directorySegmentName="seg_0" name="schuelerkurs">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<pkName>schuelerkurs__IDX</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Titel</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Spalte</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datentyp</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK-Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK-Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK-Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Nicht null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Schlüssel</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="kursid" id="6CDCC6E2-E1BF-C0C0-121A-438DD03A4506">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>9C339A58-9453-F7CC-D571-D96F74B14DA5</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="67D24D58-6634-90E1-18BB-D45D64FAFDF7" referredColumn="9C339A58-9453-F7CC-D571-D96F74B14DA5"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="schuelerid" id="F7C77DAB-1524-948C-EF4B-1FC5049C0E0F">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>E5FE4AC0-BD03-E7CF-F70D-9C91B5ED3EA5</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="08FC05A0-A280-E5B5-1EB2-9F809A2934F6" referredColumn="E5FE4AC0-BD03-E7CF-F70D-9C91B5ED3EA5"/>
+</associations>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="5BC34E00-7101-6B23-4CE0-F9EC0CE9F808" name="schuelerkurs__IDX">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="6CDCC6E2-E1BF-C0C0-121A-438DD03A4506"/>
+<colUsage columnID="F7C77DAB-1524-948C-EF4B-1FC5049C0E0F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="020CBF2A-2226-B130-CECC-ED87665BA528" name="FK_ASS_5">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<generatorID>E8025810-55E0-AA4B-6366-579B3063B37C</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="6CDCC6E2-E1BF-C0C0-121A-438DD03A4506"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="E721AFBF-8DED-16F9-522A-38636C370FDB" name="FK_ASS_6">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<generatorID>E8025810-55E0-AA4B-6366-579B3063B37C</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="F7C77DAB-1524-948C-EF4B-1FC5049C0E0F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

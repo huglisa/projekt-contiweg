@@ -1,11 +1,11 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="EDD22A6B-276C-C0EA-D983-8F42F4DEE0EA" directorySegmentName="seg_0" name="Kurs_Leiter">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="EDD22A6B-276C-C0EA-D983-8F42F4DEE0EA" directorySegmentName="seg_0" name="kursleiter">
 <createdBy>Lisa</createdBy>
 <createdTime>2013-11-07 12:45:05 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
-<item key="B12A98B7-0687-7B94-4769-BF1319EF05AF" value="true"/>
+<item key="F842C108-C0FB-7F60-9F90-94B8CB3CC82C" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -52,13 +52,13 @@
 </FontObject>
 </fonts>
 <attributes>
-<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="is_kursleiter" id="4648D8D4-FCBF-F3BA-EFBE-F5CFFA404A7F">
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="iskursleiter" id="4648D8D4-FCBF-F3BA-EFBE-F5CFFA404A7F">
 <createdBy>Lisa</createdBy>
 <createdTime>2014-01-21 09:54:21 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
-<item key="B12A98B7-0687-7B94-4769-BF1319EF05AF" value="true"/>
+<item key="F842C108-C0FB-7F60-9F90-94B8CB3CC82C" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
