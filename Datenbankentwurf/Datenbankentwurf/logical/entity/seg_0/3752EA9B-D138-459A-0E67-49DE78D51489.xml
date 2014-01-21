@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="EDD22A6B-276C-C0EA-D983-8F42F4DEE0EA" directorySegmentName="seg_0" name="Kurs_Leiter">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="3752EA9B-D138-459A-0E67-49DE78D51489" directorySegmentName="seg_0" name="Administrator">
 <createdBy>Lisa</createdBy>
-<createdTime>2013-11-07 12:45:05 UTC</createdTime>
+<createdTime>2014-01-21 09:46:21 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
@@ -52,9 +52,9 @@
 </FontObject>
 </fonts>
 <attributes>
-<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="is_kursleiter" id="4648D8D4-FCBF-F3BA-EFBE-F5CFFA404A7F">
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="is_administrator" id="08A87C35-690F-97CB-19E5-FF7E8295E5BA">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 09:54:21 UTC</createdTime>
+<createdTime>2014-01-21 09:54:58 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
