@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="2.0" type="language" core="0" method="upgrade">
+    <name>German (Germany)</name>
+    <tag>de-DE</tag>
+    <version>2.3.4</version>
+    <creationDate>2014-02-25</creationDate>
+    <author>Hartmut Steuerwald</author>
+    <authorEmail>info@h-steuerwald.de</authorEmail>
+    <authorUrl>https://www.transifex.com/projects/p/jce/language/en/</authorUrl>
+    <copyright>© Copyright (C) 2006 - 2013 Widget Factory Limited. All rights reserved</copyright>
+    <license>GNU/GPL Version 2 - http://www.gnu.org/licenses/gpl-2.0.html</license>
+    <description>Deutsches Sprachpaket für den JCE 2.x</description>
+    <site folder="language/de-DE">
+		<file>de-DE.com_jce_caption.ini</file>
+		<file>de-DE.com_jce_emotions.ini</file>
+		<file>de-DE.com_jce_filemanager.ini</file>
+		<file>de-DE.com_jce_fullpage.ini</file>
+		<file>de-DE.com_jce_iframe.ini</file>
+		<file>de-DE.com_jce_imgmanager_ext.ini</file>
+		<file>de-DE.com_jce.ini</file>
+		<file>de-DE.com_jce_mediamanager.ini</file>
+		<file>de-DE.com_jce_microdata.ini</file>
+		<file>de-DE.com_jce_templatemanager.ini</file>
+    </site>
+    <administration folder="administrator/language/de-DE">
+		<file>de-DE.com_jce.ini</file>
+		<file>de-DE.com_jce.menu.ini</file>
+		<file>de-DE.com_jce.sys.ini</file>
+		<file>de-DE.plg_editors_jce.ini</file>
+		<file>de-DE.plg_editors_jce.sys.ini</file>
+		<file>de-DE.plg_quickicon_jcefilebrowser.ini</file>
+		<file>de-DE.plg_quickicon_jcefilebrowser.sys.ini</file>
+		<file>de-DE.plg_system_jcemediabox.ini</file>
+		<file>de-DE.plg_system_jcemediabox.sys.ini</file>
+    </administration>
+</install>

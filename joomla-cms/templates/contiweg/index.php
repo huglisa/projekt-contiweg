@@ -1691,6 +1691,7 @@ JHtml::_('behavior.framework', true);
   echo $view->positions(array('position-20' => 50, 'position-21' => 50), 'art-article');
   echo $view->position('position-12', 'art-nostyle');
   echo artxPost(array('content' => '<jdoc:include type="message" />', 'classes' => ' art-messages'));
+  echo '<jdoc:include type="message" />';
   echo '<jdoc:include type="component" />';
   echo $view->position('position-22', 'art-nostyle');
   echo $view->positions(array('position-23' => 50, 'position-24' => 50), 'art-article');
