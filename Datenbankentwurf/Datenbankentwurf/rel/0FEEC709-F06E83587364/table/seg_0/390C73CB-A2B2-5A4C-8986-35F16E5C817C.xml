@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" id="CCE026DE-761E-AD11-E6EF-F2BF96011F61" directorySegmentName="seg_0" name="kursleiter">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="390C73CB-A2B2-5A4C-8986-35F16E5C817C" directorySegmentName="seg_0" name="schuelerkurs">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
-<generatorID>EDD22A6B-276C-C0EA-D983-8F42F4DEE0EA</generatorID>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
-<pkName>kursleiter_PK</pkName>
+<pkName>schuelerkurs__IDX</pkName>
 <fonts>
 <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
 <foType>Titel</foType>
@@ -41,54 +41,68 @@
 </FontObject>
 </fonts>
 <columns>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="iskursleiter" id="19F55AA6-1170-8A4E-2F6F-A71DA69E1718">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="kurs_kursid" id="7A90F242-85DA-B140-3FE9-F90C609C4954">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
-<generatorID>4648D8D4-FCBF-F3BA-EFBE-F5CFFA404A7F</generatorID>
-<ownerDesignName>Datenbankentwurf</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1 CHAR</dataTypeSize>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="personenid" id="FAE3D831-3009-7510-444E-788D5E47439E">
-<createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<delegate>A1EE02A2-988F-BCE1-D171-FB572A7BFB00</delegate>
+<delegate>70F0E209-B6D5-A0D6-9B00-DA7BACF843FC</delegate>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="4220BF72-6266-9908-CF43-B1E8C6A017CE" referredColumn="A1EE02A2-988F-BCE1-D171-FB572A7BFB00"/>
+<colAssociation fkAssociation="E3980FEC-C1AB-2EF5-F3F2-F21DAB80A5E8" referredColumn="70F0E209-B6D5-A0D6-9B00-DA7BACF843FC"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="schueler_person_personenid" id="77884520-AFEC-3686-DD63-75093CB8AACC">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>3525B3F5-C54C-67B3-247D-455386FD6D1D</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="98FCBE7C-E897-7820-7009-EEA345403317" referredColumn="3525B3F5-C54C-67B3-247D-455386FD6D1D"/>
 </associations>
 </Column>
 </columns>
 <indexes>
-<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="CB259E51-9CFB-0DF7-EEF7-C8893338FE42" name="kursleiter_PK">
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="E2CB0E87-2E65-733D-5B09-06BD1F90E0B9" name="schuelerkurs__IDX">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <indexColumnUsage>
-<colUsage columnID="FAE3D831-3009-7510-444E-788D5E47439E"/>
+<colUsage columnID="7A90F242-85DA-B140-3FE9-F90C609C4954"/>
+<colUsage columnID="77884520-AFEC-3686-DD63-75093CB8AACC"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="C794C92F-6F07-6C77-2836-A63BADCF331F" name="FK_ASS_2">
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="3123A07D-D98F-E425-F647-E7DB3F40C79A" name="FK_ASS_6">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
-<generatorID>74D6924B-2322-2AEF-AAAD-D19878C03292</generatorID>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
+<generatorID>E8025810-55E0-AA4B-6366-579B3063B37C</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <indexColumnUsage>
-<colUsage columnID="FAE3D831-3009-7510-444E-788D5E47439E"/>
+<colUsage columnID="7A90F242-85DA-B140-3FE9-F90C609C4954"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="31B3C601-A59E-6F81-B896-F613E54A4047" name="FK_ASS_7">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
+<generatorID>E8025810-55E0-AA4B-6366-579B3063B37C</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="77884520-AFEC-3686-DD63-75093CB8AACC"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

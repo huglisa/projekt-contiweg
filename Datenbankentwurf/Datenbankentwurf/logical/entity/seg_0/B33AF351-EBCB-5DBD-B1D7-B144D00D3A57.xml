@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="964C70B7-1860-A55E-8BC0-7B67F11E53FC" directorySegmentName="seg_0" name="person">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="B33AF351-EBCB-5DBD-B1D7-B144D00D3A57" directorySegmentName="seg_0" name="klasse">
 <createdBy>Lisa</createdBy>
-<createdTime>2013-11-07 12:40:14 UTC</createdTime>
+<createdTime>2014-03-01 07:07:34 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
 <item key="9436C8AA-4891-20B5-9B08-215ABB28DDE9" value="true"/>
 </engineerTo>
-<pkName>Person PK</pkName>
+<pkName>klasse PK</pkName>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
-<fwdEngineeringStrategyName>Table for each entity</fwdEngineeringStrategyName>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
 <growthPercent>0</growthPercent>
 <growthType>Year</growthType>
 <maxVolumes>9999999</maxVolumes>
@@ -52,9 +52,9 @@
 </FontObject>
 </fonts>
 <attributes>
-<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="personenid" id="DCD34F60-9DA6-2FF0-8EF9-0F9C7ABCBFA1">
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="klassenID" id="B18E0AB7-35E1-7925-DFB4-2588E1F01614">
 <createdBy>Lisa</createdBy>
-<createdTime>2013-11-07 12:41:03 UTC</createdTime>
+<createdTime>2014-03-01 07:07:45 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
@@ -64,9 +64,9 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 </Attribute>
-<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="vorname" id="0FF7A60E-66DD-65F7-112C-E9C44560A33A">
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="klassenname" id="CC7EB1F5-C3D3-E56E-0AF9-221F3823BBD9">
 <createdBy>Lisa</createdBy>
-<createdTime>2013-11-07 12:41:18 UTC</createdTime>
+<createdTime>2014-03-01 07:08:08 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
@@ -75,52 +75,13 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>64 CHAR</dataTypeSize>
-</Attribute>
-<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="nachname" id="A12AAB09-DCC4-2287-5FC7-05000D814693">
-<createdBy>Lisa</createdBy>
-<createdTime>2013-11-07 12:41:34 UTC</createdTime>
-<generatorID>Benutzergeneriert</generatorID>
-<ownerDesignName>Datenbankentwurf</ownerDesignName>
-<engineerTo>
-<item key="9436C8AA-4891-20B5-9B08-215ABB28DDE9" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>64 CHAR</dataTypeSize>
-</Attribute>
-<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="email" id="64993771-3AB9-3BF5-725F-1AD10694ED26">
-<createdBy>Lisa</createdBy>
-<createdTime>2013-11-07 12:42:00 UTC</createdTime>
-<generatorID>Benutzergeneriert</generatorID>
-<ownerDesignName>Datenbankentwurf</ownerDesignName>
-<engineerTo>
-<item key="9436C8AA-4891-20B5-9B08-215ABB28DDE9" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>128 CHAR</dataTypeSize>
-</Attribute>
-<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="passwort" id="38ED5756-0050-0EC0-34FB-1A1CC8A44F8F">
-<createdBy>Lisa</createdBy>
-<createdTime>2014-03-01 07:06:59 UTC</createdTime>
-<generatorID>Benutzergeneriert</generatorID>
-<ownerDesignName>Datenbankentwurf</ownerDesignName>
-<engineerTo>
-<item key="9436C8AA-4891-20B5-9B08-215ABB28DDE9" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>64 CHAR</dataTypeSize>
+<dataTypeSize>16 CHAR</dataTypeSize>
 </Attribute>
 </attributes>
 <identifiers>
-<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="C4D5FBA7-CCF8-E833-6ECF-705CE3135F85" name="Person PK">
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="BC58302C-17CA-ECB8-8239-1FEC8D966E59" name="klasse PK">
 <createdBy>Lisa</createdBy>
-<createdTime>2013-11-07 12:41:11 UTC</createdTime>
+<createdTime>2014-03-01 07:08:02 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
@@ -128,7 +89,7 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>DCD34F60-9DA6-2FF0-8EF9-0F9C7ABCBFA1</attributeRef>
+<attributeRef>B18E0AB7-35E1-7925-DFB4-2588E1F01614</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

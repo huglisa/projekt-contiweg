@@ -5,7 +5,7 @@
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
-<item key="F842C108-C0FB-7F60-9F90-94B8CB3CC82C" value="true"/>
+<item key="9436C8AA-4891-20B5-9B08-215ABB28DDE9" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -52,18 +52,18 @@
 </FontObject>
 </fonts>
 <attributes>
-<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="klasse" id="4590D6A1-9E37-7E30-8331-27C5A15905A8">
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="klassenID" id="071A4AC7-796B-DF73-C0B0-DA74295B5A14">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 09:45:31 UTC</createdTime>
-<generatorID>Benutzergeneriert</generatorID>
+<createdTime>2014-03-01 07:09:17 UTC</createdTime>
+<generatorID>318BB344-CCAE-63F3-4E18-7B481A9B937F</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <engineerTo>
-<item key="F842C108-C0FB-7F60-9F90-94B8CB3CC82C" value="true"/>
+<item key="9436C8AA-4891-20B5-9B08-215ABB28DDE9" value="true"/>
 </engineerTo>
+<referedAttribute>B18E0AB7-35E1-7925-DFB4-2588E1F01614</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>16 CHAR</dataTypeSize>
+<logicalDatatype>LOGDT011</logicalDatatype>
 </Attribute>
 </attributes>
 </Entity>

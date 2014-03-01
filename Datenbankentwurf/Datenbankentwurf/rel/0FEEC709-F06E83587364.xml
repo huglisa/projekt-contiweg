@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="B12A98B7-0687-7B94-4769-BF1319EF05AF" mainViewID="31B6DB37-9944-6848-EFF7-E1A057306E08">
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="0FEEC709-FEDD-C48E-4627-F06E83587364" mainViewID="978547FB-B2A4-C688-F0EA-F26049C7CF81">
 <createdBy>Lisa</createdBy>
-<createdTime>2013-11-07 12:36:55 UTC</createdTime>
+<createdTime>2014-03-01 07:10:33 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <shouldBeOpen>false</shouldBeOpen>

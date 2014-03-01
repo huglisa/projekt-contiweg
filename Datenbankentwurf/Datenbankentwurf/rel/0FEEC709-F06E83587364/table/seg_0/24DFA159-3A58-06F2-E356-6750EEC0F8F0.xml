@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" id="6069924F-8477-4F58-3E25-8F5E482965AB" directorySegmentName="seg_0" name="person">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="24DFA159-3A58-06F2-E356-6750EEC0F8F0" directorySegmentName="seg_0" name="person">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>964C70B7-1860-A55E-8BC0-7B67F11E53FC</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <pkName>Person PK</pkName>
@@ -41,9 +41,9 @@
 </FontObject>
 </fonts>
 <columns>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="personenid" id="A1EE02A2-988F-BCE1-D171-FB572A7BFB00">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="personenid" id="92EE6A91-DFDD-7684-336C-886C46BFFC25">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>DCD34F60-9DA6-2FF0-8EF9-0F9C7ABCBFA1</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -52,9 +52,9 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="vorname" id="7D9F6EFD-C012-1266-9DEC-CD9497AC7005">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="vorname" id="F4F8B9FA-0B1E-B919-AA56-1A3950224A69">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>0FF7A60E-66DD-65F7-112C-E9C44560A33A</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -64,9 +64,9 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="nachname" id="39440AAC-8CC5-9BF0-03A0-8498CCD331B0">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="nachname" id="E837B7F0-03BC-3459-C4AC-138A172C1A0E">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>A12AAB09-DCC4-2287-5FC7-05000D814693</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -76,9 +76,9 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="email" id="1D55CA24-E209-D1FB-B2BC-1611BD3C449B">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="email" id="4F55188C-DEC8-C598-7B59-E9CC709CD151">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>64993771-3AB9-3BF5-725F-1AD10694ED26</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -88,17 +88,29 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="passwort" id="6099AF28-B5CC-47FB-54EE-BA0C2132DA31">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
+<generatorID>38ED5756-0050-0EC0-34FB-1A1CC8A44F8F</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes>
-<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="A274278B-FA98-F983-FC0C-D5FE022E05CE" name="Person PK">
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="8CE627E9-9614-0772-012B-C77B28B90356" name="Person PK">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>C4D5FBA7-CCF8-E833-6ECF-705CE3135F85</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <indexColumnUsage>
-<colUsage columnID="A1EE02A2-988F-BCE1-D171-FB572A7BFB00"/>
+<colUsage columnID="92EE6A91-DFDD-7684-336C-886C46BFFC25"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

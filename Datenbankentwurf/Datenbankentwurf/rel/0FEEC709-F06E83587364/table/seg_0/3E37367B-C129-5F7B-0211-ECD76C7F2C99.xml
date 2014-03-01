@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" id="4BB27919-6396-A9BA-D2EB-366110E09983" directorySegmentName="seg_0" name="kurs">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="3E37367B-C129-5F7B-0211-ECD76C7F2C99" directorySegmentName="seg_0" name="kurs">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>E2D188D9-849F-664D-D37D-92CE28DED30A</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <pkName>Kurse PK</pkName>
@@ -41,9 +41,9 @@
 </FontObject>
 </fonts>
 <columns>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="kursid" id="9C339A58-9453-F7CC-D571-D96F74B14DA5">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="kursid" id="70F0E209-B6D5-A0D6-9B00-DA7BACF843FC">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>B657B8AD-8008-A925-FA5C-8D2DAE152BC8</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -52,9 +52,9 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="kursname" id="A8B015B6-8BB1-8BAE-559F-B305F2ECB7A3">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="kursname" id="5EB98E14-382A-D19C-70AD-C6BE92611592">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>37302920-46A2-577F-C510-9A0BBEF062FB</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -64,9 +64,9 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="veranstaltungsort" id="BD19F28F-DEFD-5D25-EDFF-AFC4C8135B56">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="veranstaltungsort" id="0F8145EB-3439-5B99-AD3D-7EC82C016D36">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>1FE4BD4B-055C-66D0-B5AD-3E86B6005DF6</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -76,9 +76,9 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="teilnehmeranzahl" id="BDA1E2F4-4505-7870-7985-D54375EF771E">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="teilnehmeranzahl" id="CFCA7342-AC4F-ADE7-BBFC-6C733DA6E281">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>8AF7A5C9-0AD4-1651-07D5-712CD32597A7</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -87,9 +87,9 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="anmeldefrist" id="272ED7DF-FA62-66CF-4379-1FB29BC7D962">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="anmeldefrist" id="A13E4BBE-A19B-EE57-C405-A1E4AA541994">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>B5245DAF-D766-179A-DEA3-D8D079F570AD</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -98,9 +98,9 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="kursbeginn" id="181343C8-B8BF-0348-513E-E792B02656A6">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="kursbeginn" id="9FBF52FE-3540-EA8C-3516-7E6550A86D09">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>F93CFBC4-278F-DB52-3B58-AB2C736249A2</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -109,9 +109,9 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="kursende" id="BA83615B-2201-1794-8137-795A5887EDED">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="kursende" id="98B617EE-DFA0-D308-D796-A38BE1B31122">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>29D64A2F-1EFC-FA29-443D-7B0169BBDFD7</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -120,9 +120,9 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="sonstigeinformationen" id="51755827-2982-1320-4C45-78A0B4DFA3E7">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="sonstigeinformationen" id="5A7DEACC-129E-BF8A-91B3-62C7AE8157F9">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>6D018B53-B648-5859-241E-08C5F107A1D6</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -133,9 +133,9 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="klassenbeschränkung" id="3C0C8BA3-8077-32B8-1EAF-EAE9CE0C2CA7">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="klassenbeschränkung" id="76720053-4E0F-7A42-421E-B3D01E0F3E22">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>47870DC4-FDCA-9F69-9BDF-F07F32B93687</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -146,42 +146,42 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="kursleiter_personenid" id="35D8BDF9-A228-9097-2F99-8807DA6A9DF2">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="kursleiter_personenid" id="B9AE50C6-3778-64AD-0E73-47CF4E28715F">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>0E3D63C9-5D2F-A58B-EAD1-6FD40E2D6629</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<delegate>FAE3D831-3009-7510-444E-788D5E47439E</delegate>
+<delegate>CD4B1B7E-EE35-95F2-D5AE-E6A56896045D</delegate>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="A0905A2A-A1D7-4294-B738-EA60634E65EF" referredColumn="FAE3D831-3009-7510-444E-788D5E47439E"/>
+<colAssociation fkAssociation="4C04B0CA-661C-C4CA-C5DB-851BD8F091BA" referredColumn="CD4B1B7E-EE35-95F2-D5AE-E6A56896045D"/>
 </associations>
 </Column>
 </columns>
 <indexes>
-<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="5D1FDB95-5E40-7DC6-C956-7B23511DDABF" name="Kurse PK">
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="916BB5B4-89E4-35EC-5C45-725B968FD86B" name="Kurse PK">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>BBA3DA97-6041-0608-CF14-B0E635E4151C</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <indexColumnUsage>
-<colUsage columnID="9C339A58-9453-F7CC-D571-D96F74B14DA5"/>
+<colUsage columnID="70F0E209-B6D5-A0D6-9B00-DA7BACF843FC"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="A9996325-3C39-FCE9-4D7C-2B8F20E11EC1" name="Kurs_Kurs-Leiter">
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="DA6F9CEE-1A60-54F2-FB91-EE5779D6FFD0" name="Kurs_Kurs-Leiter">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>F901D900-0C32-9EE8-ABA2-37CFBCC30190</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <indexColumnUsage>
-<colUsage columnID="35D8BDF9-A228-9097-2F99-8807DA6A9DF2"/>
+<colUsage columnID="B9AE50C6-3778-64AD-0E73-47CF4E28715F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

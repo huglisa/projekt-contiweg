@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="2F5EC764-F705-5FF8-8EEE-2AD80B5953DC" name="administrator" seqName="seg_0"/>
+   <object objectType="Table" objectID="2476FC87-6F7D-8E4E-68CB-22884284227B" name="klasse" seqName="seg_0"/>
+   <object objectType="Table" objectID="3E37367B-C129-5F7B-0211-ECD76C7F2C99" name="kurs" seqName="seg_0"/>
+   <object objectType="Table" objectID="7834725B-E28D-26BA-B9AD-F404E1BEA350" name="kursleiter" seqName="seg_0"/>
+   <object objectType="Table" objectID="24DFA159-3A58-06F2-E356-6750EEC0F8F0" name="person" seqName="seg_0"/>
+   <object objectType="Table" objectID="D44646D6-D652-7CC0-0B6A-0233F1795C97" name="schueler" seqName="seg_0"/>
+   <object objectType="Table" objectID="390C73CB-A2B2-5A4C-8986-35F16E5C817C" name="schuelerkurs" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="9E9EE5AF-0E23-C063-6D7C-EFDAF900EF22" name="FK_ASS_1" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="AA8BECD6-A84E-CB74-3A1D-7C0A6D2B2A35" name="FK_ASS_2" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="41B9061B-7F89-6606-5427-C9CB32FA61F4" name="FK_ASS_3" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="E3980FEC-C1AB-2EF5-F3F2-F21DAB80A5E8" name="FK_ASS_6" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="98FCBE7C-E897-7820-7009-EEA345403317" name="FK_ASS_7" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="4C04B0CA-661C-C4CA-C5DB-851BD8F091BA" name="Kurs_Kurs-Leiter" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="1DBF5F2A-90C3-5521-F67B-5DB1025D99F1" name="schueler_klasse" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

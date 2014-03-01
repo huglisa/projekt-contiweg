@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" id="DE0F6697-ECE5-9EB2-AA2A-353D09F6719B" directorySegmentName="seg_0" name="schueler">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="D44646D6-D652-7CC0-0B6A-0233F1795C97" directorySegmentName="seg_0" name="schueler">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>05D90588-8782-93B1-30A7-38C40E6DE8B2</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <pkName>schueler_PK</pkName>
@@ -41,54 +41,67 @@
 </FontObject>
 </fonts>
 <columns>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="klasse" id="F141AF0D-801B-0985-FE0F-7D2949CABDAD">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="klassenID" id="71E19189-85C2-80F1-028B-D6EDDAEDC4D9">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
-<generatorID>4590D6A1-9E37-7E30-8331-27C5A15905A8</generatorID>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
+<generatorID>071A4AC7-796B-DF73-C0B0-DA74295B5A14</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>16 CHAR</dataTypeSize>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>C27AEBEB-32E3-29B7-A187-5A8DBBBBF5C2</delegate>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1DBF5F2A-90C3-5521-F67B-5DB1025D99F1" referredColumn="C27AEBEB-32E3-29B7-A187-5A8DBBBBF5C2"/>
+</associations>
 </Column>
-<Column class="oracle.dbtools.crest.model.design.relational.Column" name="personenid" id="E5FE4AC0-BD03-E7CF-F70D-9C91B5ED3EA5">
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="person_personenid" id="3525B3F5-C54C-67B3-247D-455386FD6D1D">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<delegate>A1EE02A2-988F-BCE1-D171-FB572A7BFB00</delegate>
+<delegate>92EE6A91-DFDD-7684-336C-886C46BFFC25</delegate>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="1AA52522-108C-19FD-F4A9-1430F51497D7" referredColumn="A1EE02A2-988F-BCE1-D171-FB572A7BFB00"/>
+<colAssociation fkAssociation="9E9EE5AF-0E23-C063-6D7C-EFDAF900EF22" referredColumn="92EE6A91-DFDD-7684-336C-886C46BFFC25"/>
 </associations>
 </Column>
 </columns>
 <indexes>
-<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="FE6A3CCD-6153-B9CE-6300-3F06A744EAEB" name="schueler_PK">
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="0F72190E-FF68-CB54-74FA-5BBEF3C920EB" name="schueler_PK">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <indexColumnUsage>
-<colUsage columnID="E5FE4AC0-BD03-E7CF-F70D-9C91B5ED3EA5"/>
+<colUsage columnID="3525B3F5-C54C-67B3-247D-455386FD6D1D"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="DFB56340-A735-08A1-6859-9EA6FBD6A810" name="FK_ASS_1">
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="87DCEF84-9114-C401-7EDD-13D7BAA3AA13" name="FK_ASS_1">
 <createdBy>Lisa</createdBy>
-<createdTime>2014-01-21 15:18:49 UTC</createdTime>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
 <generatorID>B84321E0-F4F0-0078-804F-837F41992917</generatorID>
 <ownerDesignName>Datenbankentwurf</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <indexColumnUsage>
-<colUsage columnID="E5FE4AC0-BD03-E7CF-F70D-9C91B5ED3EA5"/>
+<colUsage columnID="3525B3F5-C54C-67B3-247D-455386FD6D1D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="0FD37AAB-ECC2-525E-81A3-F619B6FD2371" name="schueler_klasse">
+<createdBy>Lisa</createdBy>
+<createdTime>2014-03-01 07:10:39 UTC</createdTime>
+<generatorID>318BB344-CCAE-63F3-4E18-7B481A9B937F</generatorID>
+<ownerDesignName>Datenbankentwurf</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="71E19189-85C2-80F1-028B-D6EDDAEDC4D9"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
