@@ -1,3 +1,19 @@
+<style>
+button
+{
+	background-image: linear-gradient(to left, #FFFFFF 0%, #F69F2B 100%);
+    border: 1px solid #F69F2B;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+}
+
+button:active
+{
+	background-image: linear-gradient(to right, #FFFFFF 0%, #F69F2B 100%);
+}
+</style>
+
 <div class="registrieren">
 	<h2 style="text-align:center; color:#F69F2B">Registrieren</h2>
 	
@@ -50,7 +66,7 @@
 		</div>
 	</div>
 	<br>
-	<input type="submit" value="Registrieren">
+	<button name="registrieren" type="submit">Registrieren</button>
 	<br>
 	<a href="/contiuni/index.php" style="color:#F69F2B; text-decoration:none;">Zurück zur Anmeldung</a>
 	
