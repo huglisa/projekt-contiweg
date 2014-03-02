@@ -72,6 +72,55 @@ button:active
 				if($row["password"] == $passwort)
 				{
 					echo "<br>" . 'Passwort richtig!';
+					
+					$sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $email . "\";";
+					$result = $db->query($sqlpersonenid);
+					$row = mysqli_fetch_array($result);
+					$personenid = $row["personenid"];
+					echo $personenid;
+					
+					$sqlschueler = "select personenid from joem2_contiuni_schueler where personenid =\"". $personenid . "\";";
+					$resultschueler = $db->query($sqlschueler);
+					$rowschueler = mysqli_fetch_array($resultschueler);
+					$personenidschueler = $rowschueler["personenid"];
+					if($personenidschueler == $personenid)
+					{
+						echo 'IST SCHÜLER';
+						?>
+						<script type="text/javascript">
+							window.location = "/contiuni/schuelerbereich.php";
+						</script>
+						<?php
+					}
+					
+					$sqlkursleiter = "select personenid from joem2_contiuni_kursleiter where personenid =\"". $personenid . "\";";
+					$resultkursleiter = $db->query($sqlkursleiter);
+					$rowkursleiter = mysqli_fetch_array($resultkursleiter);
+					$personenidkursleiter = $rowkursleiter["personenid"];
+					if($personenidkursleiter == $personenid)
+					{
+						echo 'IST Kursleiter';
+						?>
+						<script type="text/javascript">
+							window.location = "/contiuni/kursleiterbereich.php";
+						</script>
+						<?php
+					}
+					
+					$sqladmin = "select personenid from joem2_contiuni_administrator where personenid =\"". $personenid . "\";";
+					$resultadmin = $db->query($sqladmin);
+					$rowadmin = mysqli_fetch_array($resultadmin);
+					$personenidadmin = $rowadmin["personenid"];
+					if($personenidadmin == $personenid)
+					{
+						echo 'IST Admin';
+						?>
+						<script type="text/javascript">
+							window.location = "/contiuni/administratorenbereich.php";
+						</script>
+						<?php
+					}
+					
 				}
 				else
 				{
