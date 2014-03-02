@@ -22,7 +22,7 @@ button:active
 			<label id="username-lbl">E-Mail Adresse *</label>						
 		</div>
 		<div>
-			<input type="email" required size="30" id="anmeldeemail" name="anmeldeemail" placeholder="E-Mail Adresse" value=" ">
+			<input type="email" required size="30" id="anmeldeemail" name="anmeldeemail" placeholder="test@hotmail.com" value=" ">
 		</div>
 	</div>
 	<div>
@@ -30,7 +30,7 @@ button:active
 			<label id="password-lbl">Passwort *</label>
 		</div>
 		<div>
-			<input type="password" required size="30" id="anmeldepasswort" name="anmeldepasswort" placeholder="Passwort" value="">						
+			<input type="password" required size="30" id="anmeldepasswort" name="anmeldepasswort" placeholder="passwort" value="">						
 		</div>
 	</div>		
 	<br>
@@ -62,7 +62,6 @@ button:active
 		if(!$result)
 		{
 			echo "<br>" . 'Email Adresse existiert nicht!';
-			
 		}
 		else
 		{	
@@ -83,10 +82,9 @@ button:active
 			{
 				echo "<br>" . 'Email Adresse existiert nicht!';
 			}
-			
 		}
-
 		
+		$db->close();
 	}		
 	?>
 

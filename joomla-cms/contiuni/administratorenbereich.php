@@ -63,7 +63,8 @@ function toggle(control){
 			<button>Administrator löschen</button>
 		</fieldset>
 	</div>
-
+	
+	<span>Schüler aus csv datei importieren und klassen erstellen</span>
 	<br>
 
 	<a href="javascript:toggle('kurseverwalten')" style="text-decoration:none; border-bottom:dotted #F69F2B; color:black;">Kurse verwalten</a>
@@ -170,6 +171,7 @@ function toggle(control){
 	<div id="endeContiUNI" style="display: none">
 		<br>
 		<button>alle Kursleiter löschen</button>
+		<button>alle Klassen löschen</button>
 		<button>alle Schülerdaten löschen</button>
 		<button>alle Kurse löschen</button>
 	</div>
