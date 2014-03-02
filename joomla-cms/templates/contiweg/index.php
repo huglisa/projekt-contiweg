@@ -1221,6 +1221,7 @@ JHtml::_('behavior.framework', true);
 			if (jQuery(".art-hmenu").width() > 1000) 
 			{
 				jQuery(".art-post").css('height', 620);
+				
 			
 				jQuery(".alles").css('width', 735);
 				jQuery(".alles").css('height', 475);
@@ -1620,7 +1621,16 @@ JHtml::_('behavior.framework', true);
                 jQuery('.art-post').css('height', "auto");
             }
 			
+			jQuery(".wrappercontuni").css('height', jQuery(".art-post").height());
+
+			if(jQuery(".wrappercontuni").length > 0)
+			{
+				jQuery('.art-post').css('height', (jQuery(".art-post").height()) + 40);  
+			}
+			
 		}
+		
+		
 		
 		onresize = resize;
 
