@@ -560,8 +560,10 @@ JHtml::_('behavior.framework', true);
 			// Untermenüpunkte von Schulteam anpassen
 			if (jQuery(".art-hmenu").width() > 1020) 
 			{
-				jQuery(".schulteam_alles").css('height', 613);
-				jQuery(".schulteam_alles").css('width', 254);
+				jQuery("#schulteam_absolventinnen").replaceWith('<a id="schulteam_absolventinnen">Absolvent - innen</a>');
+				
+				jQuery(".schulteam_alles").css('height', 445);
+				jQuery(".schulteam_alles").css('width', 255);
 				
 				jQuery(".schulteam_alles > a").css('height', 50);
 				jQuery(".schulteam_alles > a").css('width', 125);
@@ -576,38 +578,32 @@ JHtml::_('behavior.framework', true);
 				jQuery("#schulteam_schuelerinnen").css('line-height', 4);
 				jQuery("#schulteam_schuelerinnen").css('top', 112);
 				
-				jQuery("#schulteam_sekretariat").css('line-height', 4);
-				jQuery("#schulteam_sekretariat").css('left', 127);
-				jQuery("#schulteam_sekretariat").css('top', 168);
-				
-				jQuery("#schulteam_schulwart").css('line-height', 4);
-				jQuery("#schulteam_schulwart").css('top', 224);
-				
 				jQuery("#schulteam_psychologin").css('line-height', 4);
 				jQuery("#schulteam_psychologin").css('left', 127);
-				jQuery("#schulteam_psychologin").css('top', 280);
+				jQuery("#schulteam_psychologin").css('top', 168);
 				
 				jQuery("#schulteam_schulaerztin").css('line-height', 4);
-				jQuery("#schulteam_schulaerztin").css('top', 336);
+				jQuery("#schulteam_schulaerztin").css('top', 224);
 				
 				jQuery("#schulteam_betreuungslehrerin").css('left', 127);
-				jQuery("#schulteam_betreuungslehrerin").css('top', 392);
+				jQuery("#schulteam_betreuungslehrerin").css('top', 280);
 				jQuery("#schulteam_betreuungslehrerin").css('padding-top', 0);
 				
-				jQuery("#schulteam_bildungslehrerin").css('top', 448);
-				jQuery("#schulteam_bildungslehrerin").css('padding-top', 0);
-				
-				jQuery("#schulteam_bildungsberaterinnen").css('left', 127);
-				jQuery("#schulteam_bildungsberaterinnen").css('top', 504);
+				jQuery("#schulteam_bildungsberaterinnen").css('top', 336);
 				jQuery("#schulteam_bildungsberaterinnen").css('padding-top', 0);
 				
-				jQuery("#schulteam_absolventinnen").css('top', 560);
+				jQuery("#schulteam_absolventinnen").css('left', 127);
+				jQuery("#schulteam_absolventinnen").css('top', 392);
 				jQuery("#schulteam_absolventinnen").css('padding-top', 0);
+				jQuery("#schulteam_absolventinnen").css('line-height', 2);
 				
 				if(jQuery(".art-hmenu").width() > 1400)
 				{			
+					jQuery("#schulteam_absolventinnen").replaceWith('<a id="schulteam_absolventinnen">Absolventinnen</a>');
+					jQuery("#schulteam_betreuungslehrerin").replaceWith('<a id="schulteam_betreuungslehrerin">Betreuungs - lehrerin</a>');
+					jQuery("#schulteam_bildungsberaterinnen").replaceWith('<a id="schulteam_bildungsberaterinnen">Bildungsbe- raterinnen</a>');
 					
-					jQuery(".schulteam_alles").css('height', 723);
+					jQuery(".schulteam_alles").css('height', 526);
 					jQuery(".schulteam_alles").css('width', 308);
 				
 					jQuery(".schulteam_alles > a").css('height', 60);
@@ -622,42 +618,32 @@ JHtml::_('behavior.framework', true);
 				
 					jQuery("#schulteam_schuelerinnen").css('line-height', 4.5);
 					jQuery("#schulteam_schuelerinnen").css('top', 132);
-				
-					jQuery("#schulteam_sekretariat").css('line-height', 4.5);
-					jQuery("#schulteam_sekretariat").css('left', 154);
-					jQuery("#schulteam_sekretariat").css('top', 198);
-				
-					jQuery("#schulteam_schulwart").css('line-height', 4.5);
-					jQuery("#schulteam_schulwart").css('top', 264);
-				
+								
 					jQuery("#schulteam_psychologin").css('line-height', 4.5);
 					jQuery("#schulteam_psychologin").css('left', 154);
-					jQuery("#schulteam_psychologin").css('top', 330);
+					jQuery("#schulteam_psychologin").css('top', 198);
 				
 					jQuery("#schulteam_schulaerztin").css('line-height', 4.5);
-					jQuery("#schulteam_schulaerztin").css('top', 396);
+					jQuery("#schulteam_schulaerztin").css('top', 264);
 				
 					jQuery("#schulteam_betreuungslehrerin").css('left', 154);
-					jQuery("#schulteam_betreuungslehrerin").css('top', 462);
-					jQuery("#schulteam_betreuungslehrerin").css('height', 52);
-					jQuery("#schulteam_betreuungslehrerin").css('padding-top', 8);
+					jQuery("#schulteam_betreuungslehrerin").css('top', 330);
+					jQuery("#schulteam_betreuungslehrerin").css('line-height', 2);
 				
-					jQuery("#schulteam_bildungslehrerin").css('top', 528);
-					jQuery("#schulteam_bildungslehrerin").css('height', 52);
-					jQuery("#schulteam_bildungslehrerin").css('padding-top', 8);
-					
-					jQuery("#schulteam_bildungsberaterinnen").css('left', 154);
-					jQuery("#schulteam_bildungsberaterinnen").css('top', 594);
-					jQuery("#schulteam_bildungsberaterinnen").css('height', 52);
-					jQuery("#schulteam_bildungsberaterinnen").css('padding-top', 8);
+					jQuery("#schulteam_bildungsberaterinnen").css('top', 396);
+					jQuery("#schulteam_bildungsberaterinnen").css('line-height', 2);
 				
-					jQuery("#schulteam_absolventinnen").css('top', 660);
-					jQuery("#schulteam_absolventinnen").css('height', 52);
-					jQuery("#schulteam_absolventinnen").css('padding-top', 8);
+					jQuery("#schulteam_absolventinnen").css('left', 154);
+					jQuery("#schulteam_absolventinnen").css('top', 462);
+					jQuery("#schulteam_absolventinnen").css('line-height', 4.5);
 				
 					if(jQuery(".art-hmenu").width() > 1700)
 					{
-						jQuery(".schulteam_alles").css('height', 945);
+						jQuery("#schulteam_absolventinnen").replaceWith('<a id="schulteam_absolventinnen">Absolventinnen</a>');
+						jQuery("#schulteam_betreuungslehrerin").replaceWith('<a id="schulteam_betreuungslehrerin">Betreuungslehrerin</a>');
+						jQuery("#schulteam_bildungsberaterinnen").replaceWith('<a id="schulteam_bildungsberaterinnen">Bildungsberaterinnen</a>');
+					
+						jQuery(".schulteam_alles").css('height', 690);
 						jQuery(".schulteam_alles").css('width', 413);
 				
 						jQuery(".schulteam_alles > a").css('height', 80);
@@ -672,38 +658,24 @@ JHtml::_('behavior.framework', true);
 				
 						jQuery("#schulteam_schuelerinnen").css('line-height', 6);
 						jQuery("#schulteam_schuelerinnen").css('top', 172);
-				
-						jQuery("#schulteam_sekretariat").css('line-height', 6);
-						jQuery("#schulteam_sekretariat").css('left', 207);
-						jQuery("#schulteam_sekretariat").css('top', 258);
-				
-						jQuery("#schulteam_schulwart").css('line-height', 6);
-						jQuery("#schulteam_schulwart").css('top', 344);
-					
+
 						jQuery("#schulteam_psychologin").css('line-height', 6);
 						jQuery("#schulteam_psychologin").css('left', 207);
-						jQuery("#schulteam_psychologin").css('top', 430);
+						jQuery("#schulteam_psychologin").css('top', 258);
 				
 						jQuery("#schulteam_schulaerztin").css('line-height', 6);
-						jQuery("#schulteam_schulaerztin").css('top', 516);
+						jQuery("#schulteam_schulaerztin").css('top', 344);
 				
 						jQuery("#schulteam_betreuungslehrerin").css('left', 207);
-						jQuery("#schulteam_betreuungslehrerin").css('top', 602);
-						jQuery("#schulteam_betreuungslehrerin").css('height', 62);
-						jQuery("#schulteam_betreuungslehrerin").css('padding-top', 18);
+						jQuery("#schulteam_betreuungslehrerin").css('top', 430);
+						jQuery("#schulteam_betreuungslehrerin").css('line-height', 6);
 				
-						jQuery("#schulteam_bildungslehrerin").css('top', 688);
-						jQuery("#schulteam_bildungslehrerin").css('height', 62);
-						jQuery("#schulteam_bildungslehrerin").css('padding-top', 18);
-					
-						jQuery("#schulteam_bildungsberaterinnen").css('left', 207);
-						jQuery("#schulteam_bildungsberaterinnen").css('top', 774);
-						jQuery("#schulteam_bildungsberaterinnen").css('height', 62);
-						jQuery("#schulteam_bildungsberaterinnen").css('padding-top', 18);
+						jQuery("#schulteam_bildungsberaterinnen").css('top', 516);
+						jQuery("#schulteam_bildungsberaterinnen").css('line-height', 6);
 				
-						jQuery("#schulteam_absolventinnen").css('top', 860);
-						jQuery("#schulteam_absolventinnen").css('height', 62);
-						jQuery("#schulteam_absolventinnen").css('padding-top', 18);
+						jQuery("#schulteam_absolventinnen").css('left', 207);
+						jQuery("#schulteam_absolventinnen").css('top', 602);
+						jQuery("#schulteam_absolventinnen").css('line-height', 6);
 					}
 				}
 				
@@ -711,7 +683,7 @@ JHtml::_('behavior.framework', true);
 			else if(jQuery(".art-hmenu").width() < 1020)
 			{
 				
-				jQuery(".schulteam_alles").css('height', 564);
+				jQuery(".schulteam_alles").css('height', 410);
 				jQuery(".schulteam_alles").css('width', 204);
 				
 				jQuery(".schulteam_alles > a").css('height', 45);
@@ -727,37 +699,28 @@ JHtml::_('behavior.framework', true);
 				jQuery("#schulteam_schuelerinnen").css('line-height', 4);
 				jQuery("#schulteam_schuelerinnen").css('top', 102);
 				
-				jQuery("#schulteam_sekretariat").css('line-height', 4);
-				jQuery("#schulteam_sekretariat").css('left', 102);
-				jQuery("#schulteam_sekretariat").css('top', 152);
-				
-				jQuery("#schulteam_schulwart").css('line-height', 4);
-				jQuery("#schulteam_schulwart").css('top', 204);
-				
 				jQuery("#schulteam_psychologin").css('line-height', 4);
 				jQuery("#schulteam_psychologin").css('left', 102);
-				jQuery("#schulteam_psychologin").css('top', 255);
+				jQuery("#schulteam_psychologin").css('top', 152);
 				
 				jQuery("#schulteam_schulaerztin").css('line-height', 4);
-				jQuery("#schulteam_schulaerztin").css('top', 307);
+				jQuery("#schulteam_schulaerztin").css('top', 204);
 				
 				jQuery("#schulteam_betreuungslehrerin").css('left', 102);
-				jQuery("#schulteam_betreuungslehrerin").css('top', 362);
+				jQuery("#schulteam_betreuungslehrerin").css('top', 255);
 				jQuery("#schulteam_betreuungslehrerin").css('padding-top', 0);
 				
-				jQuery("#schulteam_bildungslehrerin").css('top', 412);
-				jQuery("#schulteam_bildungslehrerin").css('padding-top', 0);
-				
-				jQuery("#schulteam_bildungsberaterinnen").css('left', 102);
-				jQuery("#schulteam_bildungsberaterinnen").css('top', 464);
+				jQuery("#schulteam_bildungsberaterinnen").css('top', 307);
 				jQuery("#schulteam_bildungsberaterinnen").css('padding-top', 0);
 				
-				jQuery("#schulteam_absolventinnen").css('top', 517);
+				jQuery("#schulteam_absolventinnen").css('left', 102);
+				jQuery("#schulteam_absolventinnen").css('top', 362);
 				jQuery("#schulteam_absolventinnen").css('padding-top', 0);
+				jQuery("#schulteam_absolventinnen").css('line-height', 2);
 				
 				if(jQuery(".art-hmenu").width() < 800)
 				{
-					jQuery(".schulteam_alles").css('height', 564);
+					jQuery(".schulteam_alles").css('height', 410);
 					jQuery(".schulteam_alles").css('width', 184);
 				
 					jQuery(".schulteam_alles > a").css('height', 45);
@@ -773,44 +736,34 @@ JHtml::_('behavior.framework', true);
 					jQuery("#schulteam_schuelerinnen").css('line-height', 4);
 					jQuery("#schulteam_schuelerinnen").css('top', 102);
 				
-					jQuery("#schulteam_sekretariat").css('line-height', 4);
-					jQuery("#schulteam_sekretariat").css('left', 92);
-					jQuery("#schulteam_sekretariat").css('top', 152);
-				
-					jQuery("#schulteam_schulwart").css('line-height', 4);
-					jQuery("#schulteam_schulwart").css('top', 204);
-				
 					jQuery("#schulteam_psychologin").css('line-height', 4);
 					jQuery("#schulteam_psychologin").css('left', 92);
-					jQuery("#schulteam_psychologin").css('top', 255);
+					jQuery("#schulteam_psychologin").css('top', 152);
 				
 					jQuery("#schulteam_schulaerztin").css('line-height', 4);
-					jQuery("#schulteam_schulaerztin").css('top', 307);
+					jQuery("#schulteam_schulaerztin").css('top', 204);
 				
 					jQuery("#schulteam_betreuungslehrerin").css('left', 92);
-					jQuery("#schulteam_betreuungslehrerin").css('top', 362);
+					jQuery("#schulteam_betreuungslehrerin").css('top', 255);
 					jQuery("#schulteam_betreuungslehrerin").css('height', 41);
 					jQuery("#schulteam_betreuungslehrerin").css('padding-top', 4);
 				
-					jQuery("#schulteam_bildungslehrerin").css('top', 412);
-					jQuery("#schulteam_bildungslehrerin").css('height', 41);
-					jQuery("#schulteam_bildungslehrerin").css('padding-top', 4);
-				
-					jQuery("#schulteam_bildungsberaterinnen").css('left', 92);
-					jQuery("#schulteam_bildungsberaterinnen").css('top', 464);
+					jQuery("#schulteam_bildungsberaterinnen").css('top', 307);
 					jQuery("#schulteam_bildungsberaterinnen").css('height', 41);
 					jQuery("#schulteam_bildungsberaterinnen").css('padding-top', 4);
 				
-					jQuery("#schulteam_absolventinnen").css('top', 517);
+					jQuery("#schulteam_absolventinnen").css('left', 92);
+					jQuery("#schulteam_absolventinnen").css('top', 362);
 					jQuery("#schulteam_absolventinnen").css('height', 41);
 					jQuery("#schulteam_absolventinnen").css('padding-top', 4);
+					jQuery("#schulteam_absolventinnen").css('line-height', 2);
 				}
 			}
 			
 			// Untermenüpunkte von Schulpartner anpassen
 			if (jQuery(".art-hmenu").width() > 1020) 
 			{
-				jQuery(".schulpartner_alles").css('height', 165);
+				jQuery(".schulpartner_alles").css('height', 276);
 				jQuery(".schulpartner_alles").css('width', 255);
 				
 				jQuery(".schulpartner_alles > a").css('height', 50);
@@ -819,18 +772,24 @@ JHtml::_('behavior.framework', true);
 				
 				jQuery("#schulpartner_sga").css('line-height', 4);
 				
+				jQuery("#schulpartner_elternvereinneu").css('line-height', 2);
+				jQuery("#schulpartner_elternvereinneu").css('left', 127);
+				jQuery("#schulpartner_elternvereinneu").css('top', 56);
+				
 				jQuery("#schulpartner_sponsoren").css('line-height', 4);
-				jQuery("#schulpartner_sponsoren").css('left', 127);
-				jQuery("#schulpartner_sponsoren").css('top', 56);
+				jQuery("#schulpartner_sponsoren").css('top', 112);
 				
 				jQuery("#schulpartner_links").css('line-height', 4);
-				jQuery("#schulpartner_links").css('top', 112);
+				jQuery("#schulpartner_links").css('top', 168);
+				jQuery("#schulpartner_links").css('left', 127);
 							
+				jQuery("#schulpartner_buffet").css('line-height', 4);
+				jQuery("#schulpartner_buffet").css('top', 224);
 				
 				if(jQuery(".art-hmenu").width() > 1400)
 				{			
 					
-					jQuery(".schulpartner_alles").css('height', 197);
+					jQuery(".schulpartner_alles").css('height', 330);
 					jQuery(".schulpartner_alles").css('width', 308);
 				
 					jQuery(".schulpartner_alles > a").css('height', 60);
@@ -839,17 +798,23 @@ JHtml::_('behavior.framework', true);
 				
 					jQuery("#schulpartner_sga").css('line-height', 4.5);
 				
+					jQuery("#schulpartner_elternvereinneu").css('line-height', 4.5);
+					jQuery("#schulpartner_elternvereinneu").css('left', 154);
+					jQuery("#schulpartner_elternvereinneu").css('top', 66);
+				
 					jQuery("#schulpartner_sponsoren").css('line-height', 4.5);
-					jQuery("#schulpartner_sponsoren").css('left', 154);
-					jQuery("#schulpartner_sponsoren").css('top', 66);
+					jQuery("#schulpartner_sponsoren").css('top', 132);
 				
 					jQuery("#schulpartner_links").css('line-height', 4.5);
-					jQuery("#schulpartner_links").css('top', 132);
+					jQuery("#schulpartner_links").css('top', 198);
+					jQuery("#schulpartner_links").css('left', 154);
 				
+					jQuery("#schulpartner_buffet").css('line-height', 4.5);
+					jQuery("#schulpartner_buffet").css('top', 264);
 				
 					if(jQuery(".art-hmenu").width() > 1700)
 					{
-						jQuery(".schulpartner_alles").css('height', 259);
+						jQuery(".schulpartner_alles").css('height', 430);
 						jQuery(".schulpartner_alles").css('width', 413);
 				
 						jQuery(".schulpartner_alles > a").css('height', 80);
@@ -858,12 +823,19 @@ JHtml::_('behavior.framework', true);
 				
 						jQuery("#schulpartner_sga").css('line-height', 6);
 				
+						jQuery("#schulpartner_elternvereinneu").css('line-height', 6);
+						jQuery("#schulpartner_elternvereinneu").css('left', 207);
+						jQuery("#schulpartner_elternvereinneu").css('top', 86);
+				
 						jQuery("#schulpartner_sponsoren").css('line-height', 6);
-						jQuery("#schulpartner_sponsoren").css('left', 207);
-						jQuery("#schulpartner_sponsoren").css('top', 86);
+						jQuery("#schulpartner_sponsoren").css('top', 172);
 				
 						jQuery("#schulpartner_links").css('line-height', 6);
-						jQuery("#schulpartner_links").css('top', 172);
+						jQuery("#schulpartner_links").css('top', 258);
+						jQuery("#schulpartner_links").css('left', 207);
+						
+						jQuery("#schulpartner_buffet").css('line-height', 6);
+						jQuery("#schulpartner_buffet").css('top', 344);
 					}
 				}
 				
@@ -871,7 +843,7 @@ JHtml::_('behavior.framework', true);
 			else if(jQuery(".art-hmenu").width() < 1020)
 			{
 				
-				jQuery(".schulpartner_alles").css('height', 150);
+				jQuery(".schulpartner_alles").css('height', 252);
 				jQuery(".schulpartner_alles").css('width', 204);
 				
 				jQuery(".schulpartner_alles > a").css('height', 45);
@@ -880,17 +852,24 @@ JHtml::_('behavior.framework', true);
 				
 				jQuery("#schulpartner_sga").css('line-height', 4);
 				
+				jQuery("#schulpartner_elternvereinneu").css('line-height', 2);
+				jQuery("#schulpartner_elternvereinneu").css('left', 102);
+				jQuery("#schulpartner_elternvereinneu").css('top', 51);
+				
 				jQuery("#schulpartner_sponsoren").css('line-height', 4);
-				jQuery("#schulpartner_sponsoren").css('left', 102);
-				jQuery("#schulpartner_sponsoren").css('top', 51);
+				jQuery("#schulpartner_sponsoren").css('top', 102);
+				jQuery("#schulpartner_sponsoren").css('font-size', 11);
 				
 				jQuery("#schulpartner_links").css('line-height', 4);
-				jQuery("#schulpartner_links").css('top', 102);
+				jQuery("#schulpartner_links").css('top', 152);
+				jQuery("#schulpartner_links").css('left', 102);
 			
+				jQuery("#schulpartner_buffet").css('line-height', 4);
+				jQuery("#schulpartner_buffet").css('top', 204);
 				
 				if(jQuery(".art-hmenu").width() < 800)
 				{
-					jQuery(".schulpartner_alles").css('height', 148);
+					jQuery(".schulpartner_alles").css('height', 251);
 					jQuery(".schulpartner_alles").css('width', 184);
 				
 					jQuery(".schulpartner_alles > a").css('height', 45);
@@ -899,12 +878,20 @@ JHtml::_('behavior.framework', true);
 				
 					jQuery("#schulpartner_sga").css('line-height', 4);
 				
+					jQuery("#schulpartner_elternvereinneu").css('line-height', 2);
+					jQuery("#schulpartner_elternvereinneu").css('left', 92);
+					jQuery("#schulpartner_elternvereinneu").css('top', 51);
+				
 					jQuery("#schulpartner_sponsoren").css('line-height', 4);
-					jQuery("#schulpartner_sponsoren").css('left', 92);
-					jQuery("#schulpartner_sponsoren").css('top', 51);
+					jQuery("#schulpartner_sponsoren").css('top', 102);
+					jQuery("#schulpartner_sponsoren").css('font-size', 10);
 				
 					jQuery("#schulpartner_links").css('line-height', 4);
-					jQuery("#schulpartner_links").css('top', 102);
+					jQuery("#schulpartner_links").css('top', 152);
+					jQuery("#schulpartner_links").css('left', 92);
+				
+					jQuery("#schulpartner_buffet").css('line-height', 4);
+					jQuery("#schulpartner_buffet").css('top', 204);
 				
 				}
 			}
@@ -1025,13 +1012,142 @@ JHtml::_('behavior.framework', true);
 				}
 			}
 			
+			//Untermenüpunkte von Erfolge anpassen
+			if (jQuery(".art-hmenu").width() > 1020) 
+			{
+				jQuery(".erfolge_alles").css('height', 220);
+				jQuery(".erfolge_alles").css('width', 254);
+				
+				jQuery(".erfolge_alles > a").css('height', 50);
+				jQuery(".erfolge_alles > a").css('width', 125);
+				jQuery(".erfolge_alles > a").css('font-size', 13);
+				
+				jQuery("#erfolge_projekte").css('line-height', 4);
+				
+				jQuery("#erfolge_aktivitaeten").css('left', 127);
+				jQuery("#erfolge_aktivitaeten").css('top', 56);
+				jQuery("#erfolge_aktivitaeten").css('line-height', 4);
+				
+				jQuery("#erfolge_studentoftheyear").css('top', 112);
+				jQuery("#erfolge_studentoftheyear").css('height', 41);
+				jQuery("#erfolge_studentoftheyear").css('padding-top', 9);
+				jQuery("#erfolge_studentoftheyear").css('line-height', 1.5);
+				
+				jQuery("#erfolge_creativeaward").css('left', 127);
+				jQuery("#erfolge_creativeaward").css('top', 168);
+				jQuery("#erfolge_creativeaward").css('line-height', 4);
+				
+				if(jQuery(".art-hmenu").width() > 1400)
+				{						
+					jQuery(".erfolge_alles").css('height', 262);
+					jQuery(".erfolge_alles").css('width', 308);
+				
+					jQuery(".erfolge_alles > a").css('height', 60);
+					jQuery(".erfolge_alles > a").css('width', 150);
+					jQuery(".erfolge_alles > a").css('font-size', 13);
+				
+					jQuery("#erfolge_projekte").css('line-height', 4.5);
+				
+					jQuery("#erfolge_aktivitaeten").css('left', 154);
+					jQuery("#erfolge_aktivitaeten").css('top', 66);
+					jQuery("#erfolge_aktivitaeten").css('line-height', 4.5);
+					
+					jQuery("#erfolge_studentoftheyear").css('top', 132);
+					jQuery("#erfolge_studentoftheyear").css('height', 52);
+					jQuery("#erfolge_studentoftheyear").css('padding-top', 8);	
+					jQuery("#erfolge_studentoftheyear").css('line-height', 2);					
+				
+					jQuery("#erfolge_creativeaward").css('left', 154);
+					jQuery("#erfolge_creativeaward").css('top', 198);
+					jQuery("#erfolge_creativeaward").css('line-height', 4.5);
+				
+					if(jQuery(".art-hmenu").width() > 1700)
+					{
+						jQuery(".erfolge_alles").css('height', 345);
+						jQuery(".erfolge_alles").css('width', 413);
+				
+						jQuery(".erfolge_alles > a").css('height', 80);
+						jQuery(".erfolge_alles > a").css('width', 200);
+						jQuery(".erfolge_alles > a").css('font-size', 13);
+				
+						jQuery("#erfolge_projekte").css('line-height', 6);
+				
+						jQuery("#erfolge_aktivitaeten").css('left', 207);
+						jQuery("#erfolge_aktivitaeten").css('top', 86);
+						jQuery("#erfolge_aktivitaeten").css('line-height', 6);
+				
+						jQuery("#erfolge_studentoftheyear").css('line-height', 6);
+						jQuery("#erfolge_studentoftheyear").css('top', 172);
+						jQuery("#erfolge_studentoftheyear").css('padding-top', 0);
+				
+						jQuery("#erfolge_creativeaward").css('left', 207);
+						jQuery("#erfolge_creativeaward").css('top', 258);
+						jQuery("#erfolge_creativeaward").css('line-height', 6);
+				
+					}
+				}
+				
+			}
+			else if(jQuery(".art-hmenu").width() < 1020)
+			{
+				
+				jQuery(".erfolge_alles").css('height', 200);
+				jQuery(".erfolge_alles").css('width', 204);
+				
+				jQuery(".erfolge_alles > a").css('height', 45);
+				jQuery(".erfolge_alles > a").css('width', 100);
+				jQuery(".erfolge_alles > a").css('font-size', 12);
+				
+				jQuery("#erfolge_projekte").css('line-height', 4);
+				
+				jQuery("#erfolge_aktivitaeten").css('left', 102);
+				jQuery("#erfolge_aktivitaeten").css('top', 51);
+				jQuery("#erfolge_aktivitaeten").css('line-height', 4);
+				
+				jQuery("#erfolge_studentoftheyear").css('top', 102);
+				jQuery("#erfolge_studentoftheyear").css('line-height', 2);
+				jQuery("#erfolge_studentoftheyear").css('padding-top', 0);
+				
+				jQuery("#erfolge_creativeaward").css('left', 102);
+				jQuery("#erfolge_creativeaward").css('top', 152);
+				jQuery("#erfolge_creativeaward").css('height', 41);
+				jQuery("#erfolge_creativeaward").css('padding-top', 4);
+				jQuery("#erfolge_creativeaward").css('line-height', 1.5);
+				
+				if(jQuery(".art-hmenu").width() < 800)
+				{
+					jQuery(".erfolge_alles").css('height', 199);
+					jQuery(".erfolge_alles").css('width', 184);
+				
+					jQuery(".erfolge_alles > a").css('height', 45);
+					jQuery(".erfolge_alles > a").css('width', 90);
+					jQuery(".erfolge_alles > a").css('font-size', 11);
+				
+					jQuery("#erfolge_projekte").css('line-height', 4);
+				
+					jQuery("#erfolge_aktivitaeten").css('left', 92);
+					jQuery("#erfolge_aktivitaeten").css('top', 51);
+					jQuery("#erfolge_aktivitaeten").css('line-height', 4);
+				
+					jQuery("#erfolge_studentoftheyear").css('top', 102);
+					jQuery("#erfolge_studentoftheyear").css('height', 41);
+					jQuery("#erfolge_studentoftheyear").css('padding-top', 5);
+				
+					jQuery("#erfolge_creativeaward").css('left', 92);
+					jQuery("#erfolge_creativeaward").css('top', 152);
+					jQuery("#erfolge_creativeaward").css('line-height', 2);
+				
+				}
+			}
+			
+			
 			// Untermenüpunkte von Service anpassen
 			if (jQuery(".art-hmenu").width() > 1020) 
 			{
 				jQuery("#service_formulare").replaceWith('<a id="service_formulare">Formulare und Downloads</a>');
 				jQuery("#service_sprechstunden").replaceWith('<a id="service_sprechstunden">Sprechstunden</a>');
 
-				jQuery(".service_alles").css('height', 389);
+				jQuery(".service_alles").css('height', 445);
 				jQuery(".service_alles").css('width', 255);
 				
 				jQuery(".service_alles > a").css('height', 50);
@@ -1047,26 +1163,30 @@ JHtml::_('behavior.framework', true);
 				jQuery("#service_sprechstunden").css('line-height', 4);
 				jQuery("#service_sprechstunden").css('top', 112);
 				
-				jQuery("#service_formulare").css('left', 127);
-				jQuery("#service_formulare").css('top', 168);
+				jQuery("#service_unterrichtszeiten").css('left', 127);
+				jQuery("#service_unterrichtszeiten").css('top', 168);
+				jQuery("#service_unterrichtszeiten").css('padding-top', 0);
+				
+				jQuery("#service_formulare").css('top', 224);
 				jQuery("#service_formulare").css('padding-top', 0);
 				
+				jQuery("#service_hausordnung").css('left', 127);
 				jQuery("#service_hausordnung").css('line-height', 4);
-				jQuery("#service_hausordnung").css('top', 224);
+				jQuery("#service_hausordnung").css('top', 280);
 				
-				jQuery("#service_massnahmenkatalog").css('left', 127);
-				jQuery("#service_massnahmenkatalog").css('top', 280);
+				jQuery("#service_massnahmenkatalog").css('top', 336);
 				jQuery("#service_massnahmenkatalog").css('padding-top', 0);
 				
+				jQuery("#service_impressum").css('left', 127);
 				jQuery("#service_impressum").css('line-height', 4);
-				jQuery("#service_impressum").css('top', 336);
+				jQuery("#service_impressum").css('top', 392);
 				
 				
 				if(jQuery(".art-hmenu").width() > 1400)
 				{			
 					jQuery("#service_massnahmenkatalog").replaceWith('<a id="service_massnahmenkatalog">Maßnahmen - katalog</a>');
 					
-					jQuery(".service_alles").css('height', 460);
+					jQuery(".service_alles").css('height', 530);
 					jQuery(".service_alles").css('width', 308);
 				
 					jQuery(".service_alles > a").css('height', 60);
@@ -1082,27 +1202,32 @@ JHtml::_('behavior.framework', true);
 					jQuery("#service_sprechstunden").css('line-height', 4.5);
 					jQuery("#service_sprechstunden").css('top', 132);
 				
-					jQuery("#service_formulare").css('left', 154);
-					jQuery("#service_formulare").css('top', 198);
+					jQuery("#service_unterrichtszeiten").css('left', 154);
+					jQuery("#service_unterrichtszeiten").css('top', 198);
+					jQuery("#service_unterrichtszeiten").css('height', 52);
+					jQuery("#service_unterrichtszeiten").css('padding-top', 8);
+				
+					jQuery("#service_formulare").css('top', 264);
 					jQuery("#service_formulare").css('height', 52);
 					jQuery("#service_formulare").css('padding-top', 8);
 				
+					jQuery("#service_hausordnung").css('left', 154);
 					jQuery("#service_hausordnung").css('line-height', 4.5);
-					jQuery("#service_hausordnung").css('top', 264);
+					jQuery("#service_hausordnung").css('top', 330);
 
-					jQuery("#service_massnahmenkatalog").css('left', 154);
-					jQuery("#service_massnahmenkatalog").css('top', 330);
+					jQuery("#service_massnahmenkatalog").css('top', 396);
 					jQuery("#service_massnahmenkatalog").css('height', 52);
 					jQuery("#service_massnahmenkatalog").css('padding-top', 8);
 				
+					jQuery("#service_impressum").css('left', 154);
 					jQuery("#service_impressum").css('line-height', 4.5);
-					jQuery("#service_impressum").css('top', 396);
+					jQuery("#service_impressum").css('top', 462);
 									
 					if(jQuery(".art-hmenu").width() > 1700)
 					{
 						jQuery("#service_massnahmenkatalog").replaceWith('<a id="service_massnahmenkatalog">Maßnahmenkatalog</a>');
 						
-						jQuery(".service_alles").css('height', 600);
+						jQuery(".service_alles").css('height', 690);
 						jQuery(".service_alles").css('width', 413);
 				
 						jQuery(".service_alles > a").css('height', 80);
@@ -1118,20 +1243,25 @@ JHtml::_('behavior.framework', true);
 						jQuery("#service_sprechstunden").css('line-height', 6);
 						jQuery("#service_sprechstunden").css('top', 172);
 				
-						jQuery("#service_formulare").css('left', 207);
-						jQuery("#service_formulare").css('top', 258);
+						jQuery("#service_unterrichtszeiten").css('left', 207);
+						jQuery("#service_unterrichtszeiten").css('top', 258);
+						jQuery("#service_unterrichtszeiten").css('height', 62);
+						jQuery("#service_unterrichtszeiten").css('padding-top', 18);
+				
+						jQuery("#service_formulare").css('top', 344);
 						jQuery("#service_formulare").css('height', 62);
 						jQuery("#service_formulare").css('padding-top', 18);
 				
+						jQuery("#service_hausordnung").css('left', 207);
 						jQuery("#service_hausordnung").css('line-height', 6);
-						jQuery("#service_hausordnung").css('top', 344);
+						jQuery("#service_hausordnung").css('top', 430);
 						
 						jQuery("#service_massnahmenkatalog").css('line-height', 6);
-						jQuery("#service_massnahmenkatalog").css('left', 207);
-						jQuery("#service_massnahmenkatalog").css('top', 430);
+						jQuery("#service_massnahmenkatalog").css('top', 516);
 				
+						jQuery("#service_impressum").css('left', 207);
 						jQuery("#service_impressum").css('line-height', 6);
-						jQuery("#service_impressum").css('top', 516);
+						jQuery("#service_impressum").css('top', 602);
 						
 				
 					}
@@ -1143,7 +1273,7 @@ JHtml::_('behavior.framework', true);
 				jQuery("#service_formulare").replaceWith('<a id="service_formulare">Formulare u. Downloads</a>');
 				jQuery("#service_sprechstunden").replaceWith('<a id="service_sprechstunden">Sprech - stunden</a>');
 				
-				jQuery(".service_alles").css('height', 354);
+				jQuery(".service_alles").css('height', 410);
 				jQuery(".service_alles").css('width', 204);
 				
 				jQuery(".service_alles > a").css('height', 45);
@@ -1160,26 +1290,30 @@ JHtml::_('behavior.framework', true);
 				jQuery("#service_sprechstunden").css('top', 102);
 				jQuery("#service_sprechstunden").css('padding-top', 0);
 				
-				jQuery("#service_formulare").css('left', 102);
-				jQuery("#service_formulare").css('top', 152);
+				jQuery("#service_unterrichtszeiten").css('left', 102);
+				jQuery("#service_unterrichtszeiten").css('top', 152);
+				jQuery("#service_unterrichtszeiten").css('padding-top', 0);
+				
+				jQuery("#service_formulare").css('top', 204);
 				jQuery("#service_formulare").css('padding-top', 0);
 				
+				jQuery("#service_hausordnung").css('left', 102);
 				jQuery("#service_hausordnung").css('line-height', 4);
-				jQuery("#service_hausordnung").css('top', 204);
+				jQuery("#service_hausordnung").css('top', 255);
 				
-				jQuery("#service_massnahmenkatalog").css('left', 102);
-				jQuery("#service_massnahmenkatalog").css('top', 255);
+				jQuery("#service_massnahmenkatalog").css('top', 307);
 				jQuery("#service_massnahmenkatalog").css('padding-top', 0);
 				
+				jQuery("#service_impressum").css('left', 102);
 				jQuery("#service_impressum").css('line-height', 4);
-				jQuery("#service_impressum").css('top', 307);
+				jQuery("#service_impressum").css('top', 362);
 				
 				if(jQuery(".art-hmenu").width() < 800)
 				{
 					jQuery("#service_formulare").replaceWith('<a id="service_formulare">Formulare u. Downloads</a>');
 					jQuery("#service_sprechstunden").replaceWith('<a id="service_sprechstunden">Sprech - stunden</a>');
 					
-					jQuery(".service_alles").css('height', 352);
+					jQuery(".service_alles").css('height', 410);
 					jQuery(".service_alles").css('width', 184);
 				
 					jQuery(".service_alles > a").css('height', 45);
@@ -1197,21 +1331,26 @@ JHtml::_('behavior.framework', true);
 					jQuery("#service_sprechstunden").css('height', 41);
 					jQuery("#service_sprechstunden").css('padding-top', 4);
 				
-					jQuery("#service_formulare").css('left', 92);
-					jQuery("#service_formulare").css('top', 152);
+					jQuery("#service_unterrichtszeiten").css('left', 92);
+					jQuery("#service_unterrichtszeiten").css('top', 152);
+					jQuery("#service_unterrichtszeiten").css('height', 41);
+					jQuery("#service_unterrichtszeiten").css('padding-top', 4);
+				
+					jQuery("#service_formulare").css('top', 204);
 					jQuery("#service_formulare").css('height', 41);
 					jQuery("#service_formulare").css('padding-top', 4);
 				
+					jQuery("#service_hausordnung").css('left', 92);
 					jQuery("#service_hausordnung").css('line-height', 4);
-					jQuery("#service_hausordnung").css('top', 204);
+					jQuery("#service_hausordnung").css('top', 255);
 					
-					jQuery("#service_massnahmenkatalog").css('left', 92);
-					jQuery("#service_massnahmenkatalog").css('top', 255);
+					jQuery("#service_massnahmenkatalog").css('top', 307);
 					jQuery("#service_massnahmenkatalog").css('height', 41);
 					jQuery("#service_massnahmenkatalog").css('padding-top', 4);
 				
+					jQuery("#service_impressum").css('left', 92);
 					jQuery("#service_impressum").css('line-height', 4);
-					jQuery("#service_impressum").css('top', 307);
+					jQuery("#service_impressum").css('top', 362);
 					
 				
 				}
@@ -1220,9 +1359,8 @@ JHtml::_('behavior.framework', true);
 			// Startseite und Bilder links und rechts anpassen und height von art-post festlegen(scrollen des Textes)
 			if (jQuery(".art-hmenu").width() > 1000) 
 			{
-				jQuery(".art-post").css('height', 620);
+				jQuery(".art-post").css('height', 590);
 				
-			
 				jQuery(".alles").css('width', 735);
 				jQuery(".alles").css('height', 475);
 				jQuery(".alles").css('margin-top', 100);
@@ -1555,6 +1693,8 @@ JHtml::_('behavior.framework', true);
 				
 				if(jQuery(".art-hmenu").width() < 800)
 				{
+					jQuery(".art-post").css('height', 430);
+					
 					jQuery(".customlinks>p>img").css('width', 170);
 					jQuery(".customrechts>p>img").css('width', 170);
 					jQuery(".art-hmenu>li>a").css('font-size', 11);

@@ -117,57 +117,39 @@ a#schulteam_lehrerinnen{
 }
 
 a#schulteam_schuelerinnen{
-	background-color: #ffff24;
+	background-color: #ffff29;
 	top:112px;
 	line-height: 50px;
 }
 
-a#schulteam_sekretariat{
-	background-color: #ffff36;
+a#schulteam_psychologin{
+	background-color: #ffff40;
 	left:127px;
 	top:168px;
 	line-height: 50px;
 }
 
-a#schulteam_schulwart{
-background-color: #ffff47;
+a#schulteam_schulaerztin{
+	background-color: #ffff61;
 	top:224px;
 	line-height: 50px;
 }
 
-a#schulteam_psychologin{
-	background-color: #ffff59;
+a#schulteam_betreuungslehrerin{
+	background-color: #ffff80;
 	left:127px;
 	top:280px;
-	line-height: 50px;
-}
-
-a#schulteam_schulaerztin{
-	background-color: #ffff6b;
-	top:336px;
-	line-height: 50px;
-}
-
-a#schulteam_betreuungslehrerin{
-	background-color: #ffff7d;
-	left:127px;
-	top:392px;
-}
-
-a#schulteam_bildungslehrerin{
-	background-color: #ffff8f;
-	top:448px;
 }
 
 a#schulteam_bildungsberaterinnen{
 	background-color: #ffffa1;
-	left:127px;
-	top:504px;
+	top:336px;
 }
 
 a#schulteam_absolventinnen{
-	background-color: #ffffb3;
-	top:560px;
+	background-color: #ffffbf;
+	top:392px;
+	left: 127px;
 }
 
 /*anbegot/allgemeine infos*/
@@ -322,6 +304,50 @@ a#oberstufe_zentrale_reifepruefung{
 	top:168px;
 }
 
+/*erfolge*/
+div.erfolge_alles{
+	position:relative;
+	height: 220px;
+	width:254px;
+	margin:auto;
+}
+
+div.erfolge_alles > a
+{
+	height: 50px;
+	width:125px;
+	border: 1px solid black;
+	text-align: center;
+	position: absolute;
+	text-transform: uppercase;
+	color: black !important;	
+}
+
+a#erfolge_projekte{
+	background-color: #ff0066;
+	line-height: 50px;
+}
+
+a#erfolge_aktivitaeten{
+	background-color: #ff267d;
+	left:127px;
+	top:56px;
+	line-height: 50px;
+}
+
+a#erfolge_studentoftheyear{
+	background-color: #ff4d94;
+	top:112px;
+	line-height: 50px;
+}
+
+a#erfolge_creativeaward{
+	background-color: #ff66a3;
+	left:127px;
+	top:168px;
+	line-height: 50px;
+}
+
 /* Schulpartner */
 div.schulpartner_alles{
 	position:relative;
@@ -346,17 +372,29 @@ a#schulpartner_sga{
 	line-height: 50px;
 }
 
-a#schulpartner_sponsoren{
-	background-color: #27c46e;
+a#schulpartner_elternvereinneu{
+	background-color: #1dc469;
 	left:127px;
 	top:56px;
 	line-height: 50px;
 }
 
-a#schulpartner_links{
-	background-color: #4ec484;
+a#schulpartner_sponsoren{
+	background-color: #3bc479;
 	top:112px;
 	line-height: 50px;
+}
+
+a#schulpartner_links{
+	background-color: #58c489;
+	left:127px;
+	top:168px;
+	line-height: 50px;
+}
+
+a#schulpartner_buffet{
+	background-color: #76c499;
+	top:224px;
 }
 
 /* Bibliothek */
@@ -395,6 +433,8 @@ a#bibliothek_oeffnungszeiten{
 	line-height: 50px;
 }
 
+
+
 /*service*/
 
 div.service_alles{
@@ -421,39 +461,45 @@ a#service_kontakt{
 }
 
 a#service_termine{
-	background-color: #1cffff;
+	background-color: #21ffff;
 	left:127px;
 	top:56px;
 	line-height: 50px;
 }
 
 a#service_sprechstunden{
-	background-color: #38ffff;
+	background-color: #36ffff;
 	top:112px;
 	line-height: 50px;
 }
 
-a#service_formulare{
-	background-color: #54ffff;
+a#service_unterrichtszeiten{
+	background-color: #59ffff;
 	left:127px;
 	top:168px;
 }
 
-a#service_hausordnung{
-background-color: #70ffff;
+a#service_formulare{
+	background-color: #78ffff;
 	top:224px;
+}
+
+a#service_hausordnung{
+	background-color: #8cffff;
+	top:280px;
+	left:127px;
 	line-height: 50px;
 }
 
 a#service_massnahmenkatalog{
-	background-color: #8cffff;
-	left:127px;
-	top:280px;
+	background-color: #a6ffff;
+	top:336px;
 }
 
 a#service_impressum{
-	background-color: #a8ffff;
-	top:336px;
+	background-color: #ccffff;
+	top:393px;
+	left:127px;
 	line-height:50px;
 }
 
