@@ -3,7 +3,9 @@
 
 	if (!$db )
 	{
-		echo "<br>" . 'Verbindung fehlgeschlagen';
+		?>
+			<script>alert('Verbindung fehlgeschlagen!')</script>
+		<?php
 	}
 ?>
 
@@ -85,7 +87,9 @@ button:active
 		
 		if(!($passwort == $passwort2))
 		{
-			echo "<br>" . 'Sie haben zwei unterschiedliche Passwörter eingegeben!';
+			?>
+				<script>alert('Sie haben zwei unterschiedliche Passwörter eingegeben!')</script>
+			<?php
 		}
 		else
 		{
@@ -93,13 +97,17 @@ button:active
 			$result = $db->query($sql);
 			if(!$result)
 			{
-				echo "<br>" . 'Email Adresse existiert nicht!';
+				?>
+					<script>alert('Email Adresse existiert nicht!')</script>
+				<?php
 			}
 			else
 			{	
 				if(!($row = mysqli_fetch_array($result))) 
 				{
-					echo "<br>" . 'Email Adresse existiert nicht!';
+				?>
+					<script>alert('Email Adresse existiert nicht!')</script>
+				<?php
 				}
 				else
 				{				

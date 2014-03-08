@@ -54,25 +54,25 @@ button:active
 
 		if (!$db )
 		{
-			echo "<br>" . 'Verbindung fehlgeschlagen';
+		?>
+			<script>alert('Verbindung fehlgeschlagen!')</script>
+		<?php
 		}
 	
 		$sql = "select password from joem2_contiuni_person where email =\"". $email . "\";";
 		$result = $db->query($sql);
 		if(!$result)
 		{
-			echo "<br>" . 'Email Adresse existiert nicht!';
+		?>
+			<script>alert('Email Adresse existiert nicht!')</script>
+		<?php
 		}
 		else
 		{	
 			if($row = mysqli_fetch_array($result)) 
 			{
-				echo "<br>" . 'Email Adresse richtig!';
-
 				if($row["password"] == $passwort)
-				{
-					echo "<br>" . 'Passwort richtig!';
-					
+				{					
 					$sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $email . "\";";
 					$result = $db->query($sqlpersonenid);
 					$row = mysqli_fetch_array($result);
@@ -124,12 +124,16 @@ button:active
 				}
 				else
 				{
-					echo "<br>" . 'Passwort falsch!';
+				?>
+					<script>alert('Passwort falsch!')</script>
+				<?php
 				}				
 			}
 			else
 			{
-				echo "<br>" . 'Email Adresse existiert nicht!';
+				?>
+					<script>alert('Email Adresse existiert nicht!')</script>
+				<?php
 			}
 		}
 		
