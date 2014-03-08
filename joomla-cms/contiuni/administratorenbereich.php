@@ -90,7 +90,7 @@ function administratorenchange(sel)
 
 	<a href="javascript:toggle('personenverwalten')" style="text-decoration:none; border-bottom:dotted #F69F2B; color:black;">Administratoren und Kursleiter verwalten</a>
 	<br>
-	<div id="personenverwalten" style="display: block">
+	<div id="personenverwalten" style="display: none">
 
 	<form action="administratorenbereich.php" method="POST">
 		<fieldset name="kursleiter">
@@ -222,16 +222,49 @@ function administratorenchange(sel)
 	</form>
 	</div>
 	<br>
+	
 	<a href="javascript:toggle('schuelerverwalten')" style="text-decoration:none; border-bottom:dotted #F69F2B; color:black;">Klassen und Schüler erstellen</a>
 	<br>
 	<div id="schuelerverwalten" style="display: none">
+	<form action="administratorenbereich.php" method="POST">
 		<fieldset name="schueler">
 			<legend>Klassen und Schüler</legend>
-			
-			<button>Klassen erstellen</button>
-			<button>Schüler erstellen</button>
+			<table style="margin: auto">
+				<tr>
+					<td width="50%">
+					<span>Alle Klassen:</span><br>
+						<select size="4" name="klassenliste" id="klassenliste">
+							<?php
+								$sql = "select klassenname from joem2_contiuni_klasse;";
+								$result = $db->query($sql);
+								while($row = mysqli_fetch_array($result))
+								{
+								?>
+									<option ><?php echo $row["klassenname"]?></option>
+								<?php
+								}
+							?>
+						</select>
+					</td>
+					<td width="50%">
+						<span>Geben Sie eine Datei an um Schüler zu erstellen:</span><br>
+						<label name="datei-lbl">Dateiname:</label>
+						<input value="" type="text" name="datei">
+						<button name="durchsuchen">Durchsuchen</button><br><br>
+						<button name="schuelererstellen">Schüler erstellen</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label name="klassenname-lbl">Neue Klasse</label><br>
+						<input name="klassennameinput" type="text" value=""><br><br>
+						<button name="klasseerstellen">Klasse erstellen</button>
+						
+					</td>
+				</tr>
+			</table>
 		</fieldset>
-	
+	</form>
 	</div>
 	<br>
 
@@ -623,6 +656,32 @@ function administratorenchange(sel)
 		
 	}
 	
+	//Klasse löschen
+	if(isset($_POST['klasseerstellen']))
+	{
+		$klasse = $_POST['klassennameinput'];	
+		
+		if($klasse == null)
+		{
+		?>
+		<script>
+			alert('Geben Sie einen Klassennamen ein!');
+		</script>
+		<?php
+		}
+		else
+		{
+			$sqlklasse = "insert into joem2_contiuni_klasse (klassenname) values('$klasse');";
+			$db->query($sqlklasse);
+			
+			?>
+			<script>
+				alert('Klasse erstellt!');
+				window.location = "/contiuni/administratorenbereich.php";
+			</script>
+			<?php
+		}
+	}
 
 ?>
 <?php
