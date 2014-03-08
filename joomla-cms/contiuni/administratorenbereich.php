@@ -60,6 +60,29 @@ function kursleiterchange(sel)
 	var elemnachname = document.getElementById('kursleiternachname');
 	elemnachname.value = nachname;
 }
+
+function administratorenchange(sel)
+{
+	//Email Adresse von option value
+	var email = sel.options[sel.selectedIndex].value; 
+
+	//Email in das email feld schreiben
+	var elememail = document.getElementById("administratoremail");
+	elememail.value = email;
+	
+	//Vor und Nachname von option holen und splitten
+	var vornach = sel.options[sel.selectedIndex].text; 
+	var splitted = vornach.split(" ");
+	var vorname = splitted[0];
+	var nachname = splitted[1];
+	
+	//Variablen in die Felder schreiben
+	var elemvorname = document.getElementById('administratorvorname');
+	elemvorname.value = vorname;
+	
+	var elemnachname = document.getElementById('administratornachname');
+	elemnachname.value = nachname;
+}
 </script>
 
 <div class="administratorenbereich">
@@ -134,19 +157,69 @@ function kursleiterchange(sel)
 		</fieldset>
 	</form>
 	
+	<form action="administratorenbereich.php" method="POST">
 		<fieldset name="administratoren">
 			<legend>Administratoren</legend>
-			<select name="administratorenliste" size="4">
-				<option>Admin1</option>
-				<option>Admin2</option>
-				<option>Admin3 mit ganz langen Namen</option>
+			<table style="margin:auto;">
+			<tr>
+			<td style="width: 50%">
+			<select name="administratorenliste" id="administratorenliste" size="4" onchange="administratorenchange(this)">
+			<?php
+				$sqladministratoren = "select concat(vorname, ' ', nachname), email, password from joem2_contiuni_person, joem2_contiuni_administrator where joem2_contiuni_person.personenid = joem2_contiuni_administrator.personenid;";
+				$resultadministratoren = $db->query($sqladministratoren);
+				while($row = mysqli_fetch_array($resultadministratoren))
+				{
+					?>
+						<option value="<?php echo $row["email"]?>"><?php echo $row["concat(vorname, ' ', nachname)"]?></option>
+					<?php
+				}
+			?>
 			</select>
 			<br>
 			<br>
-			<button>Administrator hinzufügen</button>
-			<button>Administrator bearbeiten</button>
-			<button>Administrator löschen</button>
+			<button name="administratorhinzufuegen">Administrator hinzufügen</button><br><br>
+			<button name="administratorbearbeiten">Administrator bearbeiten</button><br><br>
+			<button name="administratorloeschen">Administrator löschen</button>
+			</td>
+			<td style="width; 50%">			
+			
+			<div name="divadministrator" id="divadministrator">
+				<div>
+					<label id="administratorvorname-lbl">Vorname *</label>						
+				</div>
+				<div>
+					<input type="text" required size="60" id="administratorvorname" name="administratorvorname" value="">
+				</div>
+				<div>
+					<label id="administratornachname-lbl">Nachname *</label>						
+				</div>
+				<div>
+					<input type="text" required size="60" id="administratornachname" name="administratornachname" value="">
+				</div>
+				<div>
+					<label id="administratoremail-lbl">E-Mail Adresse *</label>						
+				</div>
+				<div>
+					<input type="email" required size="60" id="administratoremail" name="administratoremail" value="">
+				</div>
+				<div>
+					<label id="administratorpasswort-lbl">Passwort</label>						
+				</div>
+				<div>
+					<input type="password" size="60" id="administratorpasswort" name="administratorpasswort" value="">
+				</div>
+				<div>
+					<label id="administratorpasswort2-lbl">Passwort wiederholen</label>						
+				</div>
+				<div>
+					<input type="password" size="60" id="administratorpasswort2" name="administratorpasswort2" value="">
+				</div>
+			</div>
+			</td>
+			</tr>
+			</table>
 		</fieldset>
+	</form>
 	</div>
 	<br>
 	<a href="javascript:toggle('schuelerverwalten')" style="text-decoration:none; border-bottom:dotted #F69F2B; color:black;">Klassen und Schüler erstellen</a>
@@ -402,6 +475,144 @@ function kursleiterchange(sel)
 					?>
 						<script>
 							alert('Kursleiter bearbeitet!')
+							window.location = "/contiuni/administratorenbereich.php";
+						</script>
+					<?php
+				}
+				
+			}
+		}
+		
+	}
+	
+	//Administrator hinzufügen Button
+	if(isset($_POST['administratorhinzufuegen']))
+	{
+		$vorname = $_POST['administratorvorname'];
+		$nachname = $_POST['administratornachname'];
+		$email = $_POST['administratoremail'];
+		$passwort = $_POST['administratorpasswort'];
+		$passwort2 = $_POST['administratorpasswort2'];
+		
+		if(!($passwort == $passwort2))
+		{
+			?>
+				<script>alert('Sie haben zwei unterschiedliche Passwörter eingegeben!')</script>
+			<?php
+		}
+		else
+		{
+			$sql = "select email from joem2_contiuni_person where email =\"". $email . "\";";
+			$result = $db->query($sql);
+			
+				if(($row = mysqli_fetch_array($result))) 
+				{
+				?>
+					<script>alert('Email Adresse existiert bereits!')</script>
+				<?php
+				}
+				else
+				{
+		
+					$sqlperson = "insert into joem2_contiuni_person (vorname, nachname, email, password) values('$vorname','$nachname', '$email', '$passwort');";
+					$db->query($sqlperson);
+			
+					$sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $email . "\";";
+					$result = $db->query($sqlpersonenid);
+					$row = mysqli_fetch_array($result);
+					$personenid = $row["personenid"];
+			
+					$sqladministrator = "insert into joem2_contiuni_administrator (personenid, isadministrator) values('$personenid', 1);";
+					$db->query($sqladministrator);
+					
+					?>
+					<script>
+						alert('Administrator wurde erfolgreich hinzugefügt!');
+						window.location = "/contiuni/administratorenbereich.php";
+					</script>
+					<?php
+				}
+		}
+	}
+	
+	//Administrator löschen Button
+	if(isset($_POST['administratorloeschen']))
+	{
+		$administrator = $_POST['administratorenliste'];
+		
+		$sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $administrator . "\";";
+		$result = $db->query($sqlpersonenid);
+		$row = mysqli_fetch_array($result);
+		$personenid = $row["personenid"];
+		
+		$sqldeleteadministrator = "delete from joem2_contiuni_administrator where personenid = \"". $personenid . "\";";
+		$db->query($sqldeleteadministrator);
+		
+		$sqldeleteperson = "delete from joem2_contiuni_person where personenid = \"". $personenid . "\";";
+		$db->query($sqldeleteperson);
+		
+		?>
+		<script>
+			alert('Administrator gelöscht!');
+			window.location = "/contiuni/administratorenbereich.php";
+		</script>
+		<?php
+	}
+	
+	//Administrator bearbeiten Button
+	if(isset($_POST['administratorbearbeiten']))
+	{
+		$administrator = $_POST['administratorenliste'];
+		$vorname = $_POST['administratorvorname'];
+		$nachname = $_POST['administratornachname'];
+		$email = $_POST['administratoremail'];
+		$passwort = $_POST['administratorpasswort'];
+		$passwort2 = $_POST['administratorpasswort2'];
+		
+		$sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $administrator . "\";";
+		$result = $db->query($sqlpersonenid);
+		$row = mysqli_fetch_array($result);
+		$personenid = $row["personenid"];
+		
+		if(!($passwort == $passwort2))
+		{
+			?>
+				<script>alert('Sie haben zwei unterschiedliche Passwörter eingegeben!')</script>
+			<?php
+		}
+		else
+		{		
+			$sql = "select email from joem2_contiuni_person where email =\"". $email . "\";";
+			$result = $db->query($sql);
+			
+			if(($row = mysqli_fetch_array($result)) and !($email == $administrator)) 
+			{
+			?>
+				<script>alert('Email Adresse existiert bereits!')</script>
+			<?php
+			}
+			else
+			{
+				if($passwort == null)
+				{
+					$sqlupdateadministrator1 = "update joem2_contiuni_person set vorname = \"" .$vorname . "\", nachname =\"" . $nachname . "\", email = \"" . $email . "\" where personenid = \"". $personenid . "\";";
+					$db->query($sqlupdateadministrator1);
+					
+					?>
+						<script>
+							alert('Administrator bearbeitet!');
+							window.location = "/contiuni/administratorenbereich.php";
+						</script>
+					<?php
+				}
+				else
+				{
+					$sqlupdateadministrator2 = "update joem2_contiuni_person set vorname = \"" .$vorname . "\", nachname =\"" . $nachname . "\", email = \"" . $email . "\", password = \"" . $passwort . "\"  where personenid = \"". $personenid . "\";";
+					$db->query($sqlupdateadministrator2);
+					
+					?>
+						<script>
+							alert('Administrator bearbeitet!')
 							window.location = "/contiuni/administratorenbereich.php";
 						</script>
 					<?php
