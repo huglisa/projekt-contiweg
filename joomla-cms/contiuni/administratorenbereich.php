@@ -83,7 +83,49 @@ function administratorenchange(sel)
 	var elemnachname = document.getElementById('administratornachname');
 	elemnachname.value = nachname;
 }
+
+function kurschange(sel)
+{
+	var kursid = sel.options[sel.selectedIndex].value;
+	var kursname = sel.options[sel.selectedIndex].text;
+	var kursdetails = sel.options[sel.selectedIndex].label;
+	var splitted = kursdetails.split(";");
+	var kursleiterid = splitted[0];
+	var veranstaltungsort = splitted[1];
+	var teilnehmeranzahl = splitted[2];
+	var anmeldefrist = splitted[3];
+	var kursstart = splitted[4];
+	var kursende = splitted[5];
+	var sonstigeinformationen = splitted[6];
+	var klassenbeschraenkung = splitted[7];
+	
+	var elemkursname = document.getElementById('kursname');
+	elemkursname.value = kursname;
+	
+	var elemveranstaltungsort = document.getElementById('veranstaltungsort');
+	elemveranstaltungsort.value = veranstaltungsort;
+	
+	var elemteilnehmeranzahl = document.getElementById('teilnehmeranzahl');
+	elemteilnehmeranzahl.value = teilnehmeranzahl;
+	
+	var elemanmeldefrist = document.getElementById('anmeldefrist');
+	elemanmeldefrist.value = anmeldefrist;
+	
+	var elemkursstart = document.getElementById('kursstart');
+	elemkursstart.value = kursstart;
+	
+	var elemkursende = document.getElementById('kursende');
+	elemkursende.value = kursende;
+	
+	var elemsonstigeinformationen = document.getElementById('sonstigeinformationen');
+	elemsonstigeinformationen.value = sonstigeinformationen;
+	
+	var elemklassenbeschraenkung = document.getElementById('klassenbeschraenkung');
+	elemklassenbeschraenkung.value = klassenbeschraenkung;
+	
+}
 </script>
+
 
 <div class="administratorenbereich">
 	<h2 style="text-align:center; color:#F69F2B">Administratorenbereich</h2>
@@ -116,7 +158,7 @@ function administratorenchange(sel)
 			<button name="kursleiterbearbeiten">Kursleiter bearbeiten</button><br><br>
 			<button name="kursleiterloeschen">Kursleiter löschen</button>
 			</td>
-			<td style="width; 50%">			
+			<td style="width: 50%">			
 			
 			<div name="divkursleiter" id="divkursleiter">
 				<div>
@@ -181,7 +223,7 @@ function administratorenchange(sel)
 			<button name="administratorbearbeiten">Administrator bearbeiten</button><br><br>
 			<button name="administratorloeschen">Administrator löschen</button>
 			</td>
-			<td style="width; 50%">			
+			<td style="width: 50%">			
 			
 			<div name="divadministrator" id="divadministrator">
 				<div>
@@ -247,10 +289,8 @@ function administratorenchange(sel)
 						</select>
 					</td>
 					<td width="50%">
-						<span>Geben Sie eine Datei an um Schüler zu erstellen:</span><br>
-						<label name="datei-lbl">Dateiname:</label>
-						<input value="" type="text" name="datei">
-						<button name="durchsuchen">Durchsuchen</button><br><br>
+						<span>Geben Sie eine csv-Datei an um Schüler zu erstellen:</span><br>
+						<input type="file" name="csv" value="Durchsuchen"><br><br>
 						<button name="schuelererstellen">Schüler erstellen</button>
 					</td>
 				</tr>
@@ -271,20 +311,103 @@ function administratorenchange(sel)
 	<a href="javascript:toggle('kurseverwalten')" style="text-decoration:none; border-bottom:dotted #F69F2B; color:black;">Kurse verwalten</a>
 	<br>
 	<div id="kurseverwalten" style="display: none">
+	<form action="administratorenbereich.php" method="POST"> 
 		<fieldset name="kurse">
 			<legend>Kurse</legend>
-			<select name="kursliste" size="4">
-				<option>Kurs1</option>
-				<option>Kurs2</option>
-				<option>kurs3 mit ganz langen Namen</option>
+			<table style="margin:auto;">
+			<tr>
+			<td style="width: 50%">
+			<select name="kursliste" id="kursliste" size="6" onchange="kurschange(this)">
+				<?php
+					$sqlkurse = "select concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), kursid, kursname from joem2_contiuni_kurs";
+					$resultkurse = $db->query($sqlkurse);
+					while($row = mysqli_fetch_array($resultkurse))
+					{
+						?>
+						<option label="<?php echo $row["concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung)"]?>" value="<?php echo $row['kursid'];?>"><?php echo $row["kursname"]?></option>
+						<?php
+					}
+				?>
 			</select>
 			<br>
 			<br>
-			<button>Kurs hinzufügen</button>
-			<button>Kurs bearbeiten</button>
-			<button>Kurs löschen</button>
-			
+			<button name="kurshinzufuegen">Kurs hinzufügen</button><br><br>
+			<button name="kursbearbeiten">Kurs bearbeiten</button><br><br>
+			<button name="kursloeschen">Kurs löschen</button>
+			</td>
+			<td style="width:50%">
+			<div name="divkurse" id="divkurse">
+				<div>
+					<label id="kursname-lbl">Kursname *</label>						
+				</div>
+				<div>
+					<input type="text" required size="60" id="kursname" name="kursname" value="">
+				</div>
+				<div>
+					<label id="kursleiter-lbl">Kursleiter *</label>						
+				</div>
+				<div>
+					<select name="kursleiterlistekurs" id="kursleiterlistekurs" size="1">
+					<?php
+					$sqlkursleiter = "select concat(vorname, ' ', nachname), joem2_contiuni_person.personenid from joem2_contiuni_person, joem2_contiuni_kursleiter where joem2_contiuni_person.personenid = joem2_contiuni_kursleiter.personenid;";
+					$resultkursleiter = $db->query($sqlkursleiter);
+					while($row = mysqli_fetch_array($resultkursleiter))
+					{
+						?>
+						<option value="<?php echo $row['personenid']?>"><?php echo $row["concat(vorname, ' ', nachname)"]?></option>
+						<?php
+					}
+					?>
+					</select>
+				</div>
+				<div>
+					<label id="veranstaltungsort-lbl">Veranstaltungsort *</label>						
+				</div>
+				<div>
+					<input type="text" required size="60" id="veranstaltungsort" name="veranstaltungsort" value="">
+				</div>
+				<div>
+					<label id="teilnehmer-lbl">Teilnehmeranzahl *</label>						
+				</div>
+				<div>
+					<input type="number" required size="60" id="teilnehmeranzahl" name="teilnehmeranzahl" value="">
+				</div>
+				<div>
+					<label id="anmeldefrist-lbl">Anmeldefrist * </label>						
+				</div>
+				<div>
+					<input type="datetime-local" required size="60" id="anmeldefrist" name="anmeldefrist" value="">
+				</div>
+				<div>
+					<label id="kursstart-lbl">Kursstart * </label>						
+				</div>
+				<div>
+					<input type="datetime-local" required size="60" id="kursstart" name="kursstart" value="">
+				</div>
+				<div>
+					<label id="kursende-lbl">Kursende * </label>						
+				</div>
+				<div>
+					<input type="datetime-local" required size="60" id="kursende" name="kursende" value="">
+				</div>
+				<div>
+					<label id="sonstigeinformationen-lbl">Sonstige Informationen</label>						
+				</div>
+				<div>
+					<input type="text" size="60" id="sonstigeinformationen" name="sonstigeinformationen" value="">
+				</div>
+				<div>
+					<label id="klassenbeschränkung-lbl">Klassenbeschränkung (mehrere Klassen mit ; getrennt angeben)</label>						
+				</div>
+				<div>
+					<input type="text" size="60" id="klassenbeschraenkung" name="klassenbeschraenkung" value="">
+				</div>
+			</div>
+			</td>
+			</tr>
+			</table>
 		</fieldset>
+	</form>
 	</div>
 
 	<br>
@@ -656,7 +779,7 @@ function administratorenchange(sel)
 		
 	}
 	
-	//Klasse löschen
+	//Klasse erstellen
 	if(isset($_POST['klasseerstellen']))
 	{
 		$klasse = $_POST['klassennameinput'];	
@@ -683,7 +806,123 @@ function administratorenchange(sel)
 		}
 	}
 
-?>
+	
+	//Schüler erstellen - evt noch ein Dateiupload
+	if(isset($_POST['schuelererstellen']))
+	{	
+		
+		$datei = fopen("Mappe1.csv", "r");
+		$daten = fgetcsv($datei, 1000);
+		while ($daten) 
+		{
+			echo implode(" – ", $daten) . "<br>";
+			$daten = fgetcsv($datei, 1000);
+		}
+	}
+
+	//Kurs hinzufügen
+	if(isset($_POST['kurshinzufuegen']))
+	{	
+		$kursname = $_POST['kursname'];
+		$kursleiterid = $_POST['kursleiterlistekurs'];
+		$veranstaltungsort = $_POST['veranstaltungsort'];
+		$teilnehmeranzahl = $_POST['teilnehmeranzahl'];
+		$anmeldefrist = $_POST['anmeldefrist'];
+		$kursbeginn = $_POST['kursstart'];
+		$kursende = $_POST['kursende'];
+		$sonstigeinformationen = $_POST['sonstigeinformationen'];
+		$klassenbeschraenkung = $_POST['klassenbeschraenkung'];
+		
+		if($sonstigeinformationen == null)
+		{
+			$sonstigeinformationen = "";
+		}
+		
+		if($klassenbeschraenkung == null)
+		{
+			$klassenbeschraenkung = "";
+		}
+		
+		$sqlkurs = "insert into joem2_contiuni_kurs (kursname, kursleiter, veranstaltungsort, teilnehmeranzahl, anmeldefrist, kursbeginn, kursende, sonstigeinformationen, klassenbeschraenkung) values('$kursname', '$kursleiterid', '$veranstaltungsort', '$teilnehmeranzahl', '$anmeldefrist', '$kursbeginn', '$kursende', '$sonstigeinformationen', '$klassenbeschraenkung');";
+		$db->query($sqlkurs);
+		
+		?>
+		<script>
+			alert('Kurs erstellt!');
+			window.location = "/contiuni/administratorenbereich.php";
+		</script>
+		<?php
+		
+	}
+	
+	//Kurs bearbeiten
+	if(isset($_POST['kursbearbeiten']))
+	{
+		$kursid = $_POST['kursliste'];
+		$kursname = $_POST['kursname'];
+		$kursleiterid = $_POST['kursleiterlistekurs'];
+		$veranstaltungsort = $_POST['veranstaltungsort'];
+		$teilnehmeranzahl = $_POST['teilnehmeranzahl'];
+		$anmeldefrist = $_POST['anmeldefrist'];
+		$kursbeginn = $_POST['kursstart'];
+		$kursende = $_POST['kursende'];
+		$sonstigeinformationen = $_POST['sonstigeinformationen'];
+		$klassenbeschraenkung = $_POST['klassenbeschraenkung'];
+		
+		if($sonstigeinformationen == null)
+		{
+			$sonstigeinformationen = "";
+		}
+		
+		if($klassenbeschraenkung == null)
+		{
+			$klassenbeschraenkung = "";
+		}
+		
+		$sqlkursupdate = "update joem2_contiuni_kurs set kursname =\"" . $kursname . "\", kursleiter= \"" .$kursleiterid . "\", veranstaltungsort= \"" . $veranstaltungsort . "\", teilnehmeranzahl=\"" .$teilnehmeranzahl . "\", anmeldefrist= \"" .$anmeldefrist . "\", kursbeginn=\"" . $kursbeginn . "\", kursende=\"" . $kursende . "\", sonstigeinformationen=\"" . $sonstigeinformationen . "\", klassenbeschraenkung=\"" .$klassenbeschraenkung . "\" where kursid = \"" . $kursid . "\";";
+		
+		$db->query($sqlkursupdate);
+		
+		?>
+		<script>
+			alert('Kurs bearbeitet!');
+			window.location = "/contiuni/administratorenbereich.php";
+		</script>
+		<?php
+	}
+
+	//Kurs löschen
+	if(isset($_POST['kursloeschen']))
+	{
+		$kursid = $_POST['kursliste'];
+		
+		$sqlselectkurs = "select kursid from joem2_contiuni_schuelerkurs where kursid = \"" . $kursid . "\";";
+		$result = $db->query($sqlselectkurs);
+		$row = mysqli_fetch_array($result);
+		$schuelerkurs = $row["kursid"];
+		
+		if($schuelerkurs)
+		{
+			?>
+			<script>
+				alert('Es ist noch ein Schüler bei diesem Kurs angemeldet!');
+			</script>
+			<?php
+		}
+		else
+		{
+			$sqlkursdelete = "delete from joem2_contiuni_kurs where kursid = \"" .$kursid . "\";";
+			$db->query($sqlkursdelete);
+			
+			?>
+			<script>
+				alert('Kurs gelöscht!');
+				window.location = "/contiuni/administratorenbereich.php";
+			</script>
+		<?php
+		}
+	}
+	?>
 <?php
 
 $db->close();
