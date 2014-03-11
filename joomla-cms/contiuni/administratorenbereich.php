@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
 
 	if (!$db )
@@ -122,7 +122,18 @@ function kurschange(sel)
 	
 	var elemklassenbeschraenkung = document.getElementById('klassenbeschraenkung');
 	elemklassenbeschraenkung.value = klassenbeschraenkung;
+
+	var opt = document.getElementById('blockrandom').contentWindow.document.getElementById('kursleiterlistekurs');
+
+	alert(kursleiterid);
 	
+	for (var i = 0; i < opt.length; i++){
+		if(opt[i].value == kursleiterid){
+			opt[i].setAttribute("selected", "selected");
+		}else{
+			opt[i].removeAttribute("selected", "selected");
+		}
+	}
 }
 </script>
 
@@ -321,9 +332,11 @@ function kurschange(sel)
 				<?php
 					$sqlkurse = "select concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), kursid, kursname from joem2_contiuni_kurs";
 					$resultkurse = $db->query($sqlkurse);
+					$i = 0;
 					while($row = mysqli_fetch_array($resultkurse))
 					{
 						?>
+						if($i==0){
 						<option label="<?php echo $row["concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung)"]?>" value="<?php echo $row['kursid'];?>"><?php echo $row["kursname"]?></option>
 						<?php
 					}
@@ -352,9 +365,9 @@ function kurschange(sel)
 					$sqlkursleiter = "select concat(vorname, ' ', nachname), joem2_contiuni_person.personenid from joem2_contiuni_person, joem2_contiuni_kursleiter where joem2_contiuni_person.personenid = joem2_contiuni_kursleiter.personenid;";
 					$resultkursleiter = $db->query($sqlkursleiter);
 					while($row = mysqli_fetch_array($resultkursleiter))
-					{
-						?>
+					{ ?>
 						<option value="<?php echo $row['personenid']?>"><?php echo $row["concat(vorname, ' ', nachname)"]?></option>
+						
 						<?php
 					}
 					?>
