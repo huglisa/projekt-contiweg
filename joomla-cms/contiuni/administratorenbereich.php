@@ -127,14 +127,21 @@ function kurschange(sel)
 
 	alert(kursleiterid);
 	
-	for (var i = 0; i < opt.length; i++){
-		if(opt[i].value == kursleiterid){
+	for (var i = 0; i < opt.length; i++)
+	{
+		if(opt[i].value == kursleiterid)
+		{
 			opt[i].setAttribute("selected", "selected");
-		}else{
+		}
+		else
+		{
 			opt[i].removeAttribute("selected", "selected");
 		}
 	}
+	
 }
+
+
 </script>
 
 
@@ -332,12 +339,11 @@ function kurschange(sel)
 				<?php
 					$sqlkurse = "select concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), kursid, kursname from joem2_contiuni_kurs";
 					$resultkurse = $db->query($sqlkurse);
-					$i = 0;
 					while($row = mysqli_fetch_array($resultkurse))
 					{
 						?>
-						if($i==0){
 						<option label="<?php echo $row["concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung)"]?>" value="<?php echo $row['kursid'];?>"><?php echo $row["kursname"]?></option>
+						
 						<?php
 					}
 				?>
@@ -386,19 +392,19 @@ function kurschange(sel)
 					<input type="number" required size="60" id="teilnehmeranzahl" name="teilnehmeranzahl" value="">
 				</div>
 				<div>
-					<label id="anmeldefrist-lbl">Anmeldefrist * </label>						
+					<label id="anmeldefrist-lbl">Anmeldefrist * (Form: YYYY-MM-DD)</label>						
 				</div>
 				<div>
 					<input type="datetime-local" required size="60" id="anmeldefrist" name="anmeldefrist" value="">
 				</div>
 				<div>
-					<label id="kursstart-lbl">Kursstart * </label>						
+					<label id="kursstart-lbl">Kursstart * (Form: YYYY-MM-DD)</label>						
 				</div>
 				<div>
 					<input type="datetime-local" required size="60" id="kursstart" name="kursstart" value="">
 				</div>
 				<div>
-					<label id="kursende-lbl">Kursende * </label>						
+					<label id="kursende-lbl">Kursende * (Form: YYYY-MM-DD)</label>						
 				</div>
 				<div>
 					<input type="datetime-local" required size="60" id="kursende" name="kursende" value="">
@@ -506,11 +512,13 @@ function kurschange(sel)
 	<a href="javascript:toggle('endeContiUNI')" style="text-decoration:none; border-bottom:dotted #F69F2B; color:black;">Am Ende der ContiUNI</a>
 	<br>
 	<div id="endeContiUNI" style="display: none">
+	<form action="administratorenbereich.php" method="POST"> 
 		<br>
-		<button>alle Kursleiter löschen</button>
-		<button>alle Klassen löschen</button>
-		<button>alle Schülerdaten löschen</button>
-		<button>alle Kurse löschen</button>
+		<button name="allekurseloeschen">alle Kurse löschen</button>
+		<button name="allekursleiterloeschen">alle Kursleiter löschen</button>
+		<button name="alleklassenloeschen">alle Klassen löschen</button>
+		<button name="alleschuelerloeschen">alle Schülerdaten löschen</button>
+	</form>
 	</div>
 
 </div>
@@ -935,7 +943,86 @@ function kurschange(sel)
 		<?php
 		}
 	}
+	
+	
+	//Alle Kurse löschen
+	if(isset($_POST['allekurseloeschen']))
+	{
+		$sqldeletekurse = "delete from joem2_contiuni_kurs;";
+		$db->query($sqldeletekurse);
+		
+		?>
+		<script>
+			alert('Alle Kurse wurden gelöscht!');
+			window.location = "/contiuni/administratorenbereich.php";
+		</script>
+		<?php
+	}
+	
+	//Alle Kursleiter löschen
+	if(isset($_POST['allekursleiterloeschen']))
+	{
+		$sqlkursleiter = "select joem2_contiuni_kursleiter.personenid from joem2_contiuni_person, joem2_contiuni_kursleiter where joem2_contiuni_person.personenid = joem2_contiuni_kursleiter.personenid;";
+		$resultkursleiter = $db->query($sqlkursleiter);
+		while($row = mysqli_fetch_array($resultkursleiter))
+		{
+			$sqldeletekursleiter = "delete from joem2_contiuni_kursleiter where personenid = \"" . $row['personenid'] . "\";";
+			$db->query($sqldeletekursleiter);
+			$sqldeleteperson = "delete from joem2_contiuni_person where personenid = \"" . $row['personenid'] . "\";";
+			$db->query($sqldeleteperson);
+		}
+				
+		
+		?>
+		<script>
+			alert('Alle Kursleiter wurden gelöscht!');
+			window.location = "/contiuni/administratorenbereich.php";
+		</script>
+		<?php
+	}
+	
+	//Alle Klassen löschen
+	if(isset($_POST['alleklassenloeschen']))
+	{
+		$sqldeleteklassen = "delete from joem2_contiuni_klasse;";
+		$db->query($sqldeleteklassen);
+		
+		?>
+		<script>
+			alert('Alle Klassen wurden gelöscht!');
+			window.location = "/contiuni/administratorenbereich.php";
+		</script>
+		<?php
+	}
+	
+	//Alle Schüler löschen
+	if(isset($_POST['alleschuelerloeschen']))
+	{
+		$sqlschuelerkurs = "delete from joem2_contiuni_schuelerkurs;";
+		$db->query($sqlschuelerkurs);
+	
+		$sqlschueler = "select joem2_contiuni_schueler.personenid from joem2_contiuni_person, joem2_contiuni_schueler where joem2_contiuni_person.personenid = joem2_contiuni_schueler.personenid;";
+		$resultschueler = $db->query($sqlschueler);
+		while($row = mysqli_fetch_array($resultschueler))
+		{
+			$sqldeleteschueler = "delete from joem2_contiuni_schueler where personenid = \"" . $row['personenid'] . "\";";
+			$db->query($sqldeleteschueler);
+			$sqldeleteperson = "delete from joem2_contiuni_person where personenid = \"" . $row['personenid'] . "\";";
+			$db->query($sqldeleteperson);
+		}
+				
+		
+		?>
+		<script>
+			alert('Alle Schüler wurden gelöscht!');
+			window.location = "/contiuni/administratorenbereich.php";
+		</script>
+		<?php
+	}
+	
 	?>
+	
+
 <?php
 
 $db->close();

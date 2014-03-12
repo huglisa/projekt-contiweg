@@ -37,10 +37,6 @@ button:active
 	<button type="submit" name="anmelden" onclick="anmeldenklick()">Anmelden</button>
 
 </form>
-	<a href="/contiuni/administratorenbereich.php" style="color:#F69F2B; text-decoration:none;">Administratorenbereich </a>
-	<a href="/contiuni/schuelerbereich.php" style="color:#F69F2B; text-decoration:none;">Schülerbereich </a>
-	<a href="/contiuni/kursleiterbereich.php" style="color:#F69F2B; text-decoration:none;">Kursleiterbereich</a>
-	<br>
 	<a href="/contiuni/registrieren.php" style="color:#F69F2B; text-decoration:none;">Registrieren</a>
 
 	<?php
@@ -77,7 +73,6 @@ button:active
 					$result = $db->query($sqlpersonenid);
 					$row = mysqli_fetch_array($result);
 					$personenid = $row["personenid"];
-					echo $personenid;
 					
 					$sqlschueler = "select personenid from joem2_contiuni_schueler where personenid =\"". $personenid . "\";";
 					$resultschueler = $db->query($sqlschueler);
@@ -85,7 +80,6 @@ button:active
 					$personenidschueler = $rowschueler["personenid"];
 					if($personenidschueler == $personenid)
 					{
-						echo 'IST SCHÜLER';
 						?>
 						<script type="text/javascript">
 							window.location = "/contiuni/schuelerbereich.php";
@@ -99,7 +93,6 @@ button:active
 					$personenidkursleiter = $rowkursleiter["personenid"];
 					if($personenidkursleiter == $personenid)
 					{
-						echo 'IST Kursleiter';
 						?>
 						<script type="text/javascript">
 							window.location = "/contiuni/kursleiterbereich.php";
@@ -113,7 +106,6 @@ button:active
 					$personenidadmin = $rowadmin["personenid"];
 					if($personenidadmin == $personenid)
 					{
-						echo 'IST Admin';
 						?>
 						<script type="text/javascript">
 							window.location = "/contiuni/administratorenbereich.php";
