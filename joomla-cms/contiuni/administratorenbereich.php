@@ -123,18 +123,13 @@ function kurschange(sel)
 	var elemklassenbeschraenkung = document.getElementById('klassenbeschraenkung');
 	elemklassenbeschraenkung.value = klassenbeschraenkung;
 
-	var opt = document.getElementById('blockrandom').contentWindow.document.getElementById('kursleiterlistekurs');
-
-	alert(kursleiterid);
+	var opt = document.getElementById('kursleiterlistekurs');
 	
-	for (var i = 0; i < opt.length; i++)
-	{
-		if(opt[i].value == kursleiterid)
-		{
+	
+	for (var i = 0; i < opt.length; i++){
+		if(opt[i].value == kursleiterid){
 			opt[i].setAttribute("selected", "selected");
-		}
-		else
-		{
+		}else{
 			opt[i].removeAttribute("selected", "selected");
 		}
 	}
