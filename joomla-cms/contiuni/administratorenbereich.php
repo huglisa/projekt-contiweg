@@ -136,7 +136,6 @@ function kurschange(sel)
 	
 }
 
-
 </script>
 
 
@@ -430,76 +429,61 @@ function kurschange(sel)
 	<br>
 	<div id="schuelerlisten" style="display: none">
 	
-		<a href="javascript:toggle('nichtregistrierteschueler')" style="text-decoration:none;  color:black;">Alle noch nicht registrierten Schüler</a>
-		<br>
-				
-		<fieldset id="nichtregistrierteschueler" style="display: none">
-			<table border="1">
-				<tr>
-					<th>Vorname</th>
-					<th>Nachname</th>
-					<th>Klasse</th>
-				</tr>
-				<tr>
-					
-				</tr>
-			</table>
-			<br>
-			<a>Liste drucken</a>
-		</fieldset>
+		<span>Alle noch nicht registrierten Schüler</span>
+		<br>	
+		<form action="listen.php" method="POST">
+			<fieldset id="nichtregistrierteschueler" style="display: block">
+				<button name="nichtregistrierteschueler">Schüler anzeigen</button>
+			</fieldset>
+		</form>
 		
-		<a href="javascript:toggle('schuelerprokurs')" style="text-decoration:none;  color:black;">Alle Schüler pro Kurs</a>
+		<span>Alle Schüler pro Kurs</span>
 		<br>
-		<fieldset id="schuelerprokurs" style="display: none">
-			<span>Kurs auswählen</span>
+		<form action="listen.php" method="POST">
+		<fieldset id="schuelerprokurs" style="display: block">
+			<span>Kurs auswählen:</span>
 			<br>
-			<select name="schuelerprokursliste" size="4">
-				<option>Kurs1</option>
-				<option>Kurs2</option>
-				<option>kurs3 mit ganz langen Namen</option>
+			<select name="schuelerkursliste" id="schuelerkursliste" size="4">
+				<?php
+					$sqlkurse = "select  concat(kursid, ':', kursname), kursname from joem2_contiuni_kurs";
+					$resultkurse = $db->query($sqlkurse);
+					while($row = mysqli_fetch_array($resultkurse))
+					{
+						?>
+						<option value="<?php echo $row["concat(kursid, ':', kursname)"];?>"><?php echo $row["kursname"]?></option>
+						<?php
+					}
+				?>
 			</select>
+			<br><br>
+			<button name="schuelerkurs">Schüler anzeigen</button>
 			<br>
-			<br>
-			<table border="1">
-				<tr>
-					<th>Vorname</th>
-					<th>Nachname</th>
-					<th>Klasse</th>
-				</tr>
-				<tr>
-				
-				</tr>
-			</table>
-			<br>
-			<a>Liste drucken</a>
 		</fieldset>
+		</form>
 		
-		<a href="javascript:toggle('schuelerproklasse')" style="text-decoration:none; color:black;">Alle Schüler einer Klasse</a>
+		<span>Alle Schüler einer Klasse</span>
 		<br>
-		<fieldset id="schuelerproklasse" style="display: none">
-			<span>Klasse auswählen:</span>
-			<br>
-			<select name="schuelerproklasseliste" size="4">
-				<option>Klasse1</option>
-				<option>Klasse2</option>
-				<option>Klasse3</option>
-			</select>
-			<br>
-			<br>
-			<table border="1 ">
-				<tr>
-					<th>Vorname</th>
-					<th>Nachname</th>
-					<th>Kurs</th>
-				</tr>
-				<tr>
-				
-				</tr>
-			</table>
-			<br>
-			<a>Liste drucken</a>
-		</fieldset>
-		
+		<form action="listen.php" method="POST">
+			<fieldset id="schuelerproklasse" style="display: block">
+				<span>Klasse auswählen:</span>
+				<br>
+				<select size="4" name="schuelerklassenliste" id="schuelerklassenliste">
+					<?php
+						$sql = "select concat(klassenid, ':', klassenname),klassenname from joem2_contiuni_klasse;";
+						$result = $db->query($sql);
+						while($row = mysqli_fetch_array($result))
+						{
+							?>
+							<option value="<?php echo $row["concat(klassenid, ':', klassenname)"];?>"><?php echo $row["klassenname"]?></option>
+							<?php
+						}
+					?>
+				</select>
+				<br><br>
+				<button name="schuelerklasse">Schüler anzeigen</button>
+				<br>
+			</fieldset>
+		</form>
 	</div>
 
 	<br>
@@ -1015,6 +999,7 @@ function kurschange(sel)
 		<?php
 	}
 	
+
 	?>
 	
 
