@@ -350,55 +350,71 @@ function kurschange(sel)
 			</td>
 			<td style="width:50%">
 			<div name="divkurse" id="divkurse">
-				<div>
-					<label id="kursname-lbl">Kursname *</label>						
-				</div>
-				<div>
-					<input type="text" required size="60" id="kursname" name="kursname" value="">
-				</div>
-				<div>
-					<label id="veranstaltungsort-lbl">Veranstaltungsort *</label>						
-				</div>
-				<div>
-					<input type="text" required size="60" id="veranstaltungsort" name="veranstaltungsort" value="">
-				</div>
-				<div>
-					<label id="teilnehmer-lbl">Teilnehmeranzahl *</label>						
-				</div>
-				<div>
-					<input type="number" required size="60" id="teilnehmeranzahl" name="teilnehmeranzahl" value="">
-				</div>
-				<div>
-					<label id="anmeldefrist-lbl">Anmeldefrist * (Form: YYYY-MM-DD)</label>						
-				</div>
-				<div>
-					<input type="datetime-local" required size="60" id="anmeldefrist" name="anmeldefrist" value="">
-				</div>
-				<div>
-					<label id="kursstart-lbl">Kursstart * (Form: YYYY-MM-DD)</label>						
-				</div>
-				<div>
-					<input type="datetime-local" required size="60" id="kursstart" name="kursstart" value="">
-				</div>
-				<div>
-					<label id="kursende-lbl">Kursende * (Form: YYYY-MM-DD)</label>						
-				</div>
-				<div>
-					<input type="datetime-local" required size="60" id="kursende" name="kursende" value="">
-				</div>
-				<div>
-					<label id="sonstigeinformationen-lbl">Sonstige Informationen</label>						
-				</div>
-				<div>
-					<input type="text" size="60" id="sonstigeinformationen" name="sonstigeinformationen" value="">
-				</div>
-				<div>
-					<label id="klassenbeschränkung-lbl">Klassenbeschränkung (mehrere Klassen mit ; getrennt angeben)</label>						
-				</div>
-				<div>
-					<input type="text" size="60" id="klassenbeschraenkung" name="klassenbeschraenkung" value="">
-				</div>
+			<div>
+				<label id="kursname-lbl">Kursname *</label>						
 			</div>
+			<div>
+				<input type="text" required size="60" id="kursname" name="kursname" value="">
+			</div>
+			<div>
+				<label id="kursleiter-lbl">Kursleiter *</label>
+			</div>
+			<div>
+				<select name="kursleiterlistekurs" id="kursleiterlistekurs" size="1">
+				<?php
+				$sqlkursleiter = "select concat(vorname, ' ', nachname), joem2_contiuni_person.personenid from joem2_contiuni_person, joem2_contiuni_kursleiter where joem2_contiuni_person.personenid = joem2_contiuni_kursleiter.personenid;";
+				$resultkursleiter = $db->query($sqlkursleiter);
+				while($row = mysqli_fetch_array($resultkursleiter))
+				{ ?>
+					<option value="<?php echo $row['personenid']?>"><?php echo $row["concat(vorname, ' ', nachname)"]?></option>
+				<?php
+				}
+				?>
+				</select>
+			</div>
+			<div>
+				<label id="veranstaltungsort-lbl">Veranstaltungsort *</label>						
+			</div>
+			<div>
+				<input type="text" required size="60" id="veranstaltungsort" name="veranstaltungsort" value="">
+			</div>
+			<div>
+				<label id="teilnehmer-lbl">Teilnehmeranzahl *</label>						
+			</div>
+			<div>
+				<input type="number" required size="60" id="teilnehmeranzahl" name="teilnehmeranzahl" value="">
+			</div>
+			<div>
+				<label id="anmeldefrist-lbl">Anmeldefrist * (Form: YYYY-MM-DD)</label>						
+			</div>
+			<div>
+				<input type="datetime-local" required size="60" id="anmeldefrist" name="anmeldefrist" value="">
+			</div>
+			<div>
+				<label id="kursstart-lbl">Kursstart * (Form: YYYY-MM-DD)</label>						
+			</div>
+			<div>
+				<input type="datetime-local" required size="60" id="kursstart" name="kursstart" value="">
+			</div>
+			<div>
+				<label id="kursende-lbl">Kursende * (Form: YYYY-MM-DD)</label>						
+			</div>
+			<div>
+				<input type="datetime-local" required size="60" id="kursende" name="kursende" value="">
+			</div>
+			<div>
+				<label id="sonstigeinformationen-lbl">Sonstige Informationen</label>						
+			</div>
+			<div>
+				<input type="text" size="60" id="sonstigeinformationen" name="sonstigeinformationen" value="">
+			</div>
+			<div>
+				<label id="klassenbeschränkung-lbl">Klassenbeschränkung (mehrere Klassen mit ; getrennt angeben)</label>						
+			</div>
+			<div>
+				<input type="text" size="60" id="klassenbeschraenkung" name="klassenbeschraenkung" value="">
+			</div>
+		</div>
 			</td>
 			</tr>
 			</table>

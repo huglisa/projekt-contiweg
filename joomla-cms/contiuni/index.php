@@ -82,7 +82,8 @@ button:active
 					{
 						?>
 						<script type="text/javascript">
-							window.location = "/contiuni/schuelerbereich.php";
+							var personenid = "<?php echo $personenid ?>";
+							window.location = "/contiuni/schuelerbereich.php?personenid=" + personenid + "";
 						</script>
 						<?php
 					}

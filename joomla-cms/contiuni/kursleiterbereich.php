@@ -79,7 +79,7 @@ function kurschange(sel)
 		$personenid = htmlspecialchars($_GET["personenid"]);
 	?>
 	
-	<select name="kursliste" id="kursliste" size="6" onchange="kurschange(this)">
+	<select name="kursliste" id="kursliste"  size="6" onchange="kurschange(this)">
 		<?php
 			$sqlkurse = "select concat(kursid, ':', kursname), concat(veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), kursid, kursname from joem2_contiuni_kurs where joem2_contiuni_kurs.kursleiter = \"" . $personenid . "\"";
 			$resultkurse = $db->query($sqlkurse);
@@ -100,49 +100,49 @@ function kurschange(sel)
 					<label id="kursname-lbl">Kursname</label>						
 				</div>
 				<div>
-					<input type="text" required size="60" id="kursname" name="kursname" value="">
+					<input type="text" readonly size="60" id="kursname" name="kursname" value="">
 				</div>
 				<div>
 					<label id="veranstaltungsort-lbl">Veranstaltungsort</label>						
 				</div>
 				<div>
-					<input type="text" required size="60" id="veranstaltungsort" name="veranstaltungsort" value="">
+					<input type="text" readonly size="60" id="veranstaltungsort" name="veranstaltungsort" value="">
 				</div>
 				<div>
 					<label id="teilnehmer-lbl">Teilnehmeranzahl</label>						
 				</div>
 				<div>
-					<input type="number" required size="60" id="teilnehmeranzahl" name="teilnehmeranzahl" value="">
+					<input type="number" readonly size="60" id="teilnehmeranzahl" name="teilnehmeranzahl" value="">
 				</div>
 				<div>
 					<label id="anmeldefrist-lbl">Anmeldefrist</label>						
 				</div>
 				<div>
-					<input type="datetime-local" required size="60" id="anmeldefrist" name="anmeldefrist" value="">
+					<input type="datetime-local" readonly size="60" id="anmeldefrist" name="anmeldefrist" value="">
 				</div>
 				<div>
 					<label id="kursstart-lbl">Kursstart</label>						
 				</div>
 				<div>
-					<input type="datetime-local" required size="60" id="kursstart" name="kursstart" value="">
+					<input type="datetime-local" readonly size="60" id="kursstart" name="kursstart" value="">
 				</div>
 				<div>
 					<label id="kursende-lbl">Kursende</label>						
 				</div>
 				<div>
-					<input type="datetime-local" required size="60" id="kursende" name="kursende" value="">
+					<input type="datetime-local" readonly size="60" id="kursende" name="kursende" value="">
 				</div>
 				<div>
 					<label id="sonstigeinformationen-lbl">Sonstige Informationen</label>						
 				</div>
 				<div>
-					<input type="text" size="60" id="sonstigeinformationen" name="sonstigeinformationen" value="">
+					<input type="text" readonly size="60" id="sonstigeinformationen" name="sonstigeinformationen" value="">
 				</div>
 				<div>
 					<label id="klassenbeschränkung-lbl">Klassenbeschränkung</label>						
 				</div>
 				<div>
-					<input type="text" size="60" id="klassenbeschraenkung" name="klassenbeschraenkung" value="">
+					<input type="text" readonly size="60" id="klassenbeschraenkung" name="klassenbeschraenkung" value="">
 				</div>
 			</div>
 	<br>
