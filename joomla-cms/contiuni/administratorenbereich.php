@@ -357,23 +357,6 @@ function kurschange(sel)
 					<input type="text" required size="60" id="kursname" name="kursname" value="">
 				</div>
 				<div>
-					<label id="kursleiter-lbl">Kursleiter *</label>						
-				</div>
-				<div>
-					<select name="kursleiterlistekurs" id="kursleiterlistekurs" size="1">
-					<?php
-					$sqlkursleiter = "select concat(vorname, ' ', nachname), joem2_contiuni_person.personenid from joem2_contiuni_person, joem2_contiuni_kursleiter where joem2_contiuni_person.personenid = joem2_contiuni_kursleiter.personenid;";
-					$resultkursleiter = $db->query($sqlkursleiter);
-					while($row = mysqli_fetch_array($resultkursleiter))
-					{ ?>
-						<option value="<?php echo $row['personenid']?>"><?php echo $row["concat(vorname, ' ', nachname)"]?></option>
-						
-						<?php
-					}
-					?>
-					</select>
-				</div>
-				<div>
 					<label id="veranstaltungsort-lbl">Veranstaltungsort *</label>						
 				</div>
 				<div>

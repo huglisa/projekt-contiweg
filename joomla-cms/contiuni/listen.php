@@ -110,6 +110,42 @@
 			</table>
 		<?php
 	}
+	
+	//Tabelle mit allen Schüler eines Kurses anzeigen (Kursleiterbereich)
+	if(isset($_POST['schuelerkurskursleiter']))
+	{
+		$kurs = $_POST['kursliste'];
+		$test = explode(':', $_POST['kursliste']);
+		$kursid = $test[0];
+		$kursname = $test[1];
+		
+		?>
+		<span>Alle Schüler von <?php echo $kursname;?></span>
+			<table border="1" cellspacing="0" cellpadding="5">
+				<tr>
+					<th>Vorname</th>
+					<th>Nachname</th>
+					<th>Klasse</th>
+				</tr>
+				<?php
+				$sqlschueler = "select joem2_contiuni_klasse.klassenname, joem2_contiuni_person.vorname, joem2_contiuni_person.nachname from joem2_contiuni_person, joem2_contiuni_schueler, joem2_contiuni_klasse, joem2_contiuni_schuelerkurs where joem2_contiuni_person.personenid = joem2_contiuni_schueler.personenid and joem2_contiuni_klasse.klassenid = joem2_contiuni_schueler.klassenid and joem2_contiuni_schuelerkurs.schuelerid = joem2_contiuni_schueler.personenid and joem2_contiuni_schuelerkurs.kursid = \"" . $kursid . "\";";
+				$resultschueler = $db->query($sqlschueler);
+				while($row = mysqli_fetch_array($resultschueler))
+				{
+				?>
+					<tr>
+						<td><?php echo $row["vorname"];?></td>
+						<td><?php echo $row["nachname"];?></td>
+						<td><?php echo $row["klassenname"];?></td>
+					</tr>
+				<?php
+				}
+				?>
+			</table>
+		</script>
+		<?php
+	}
+
 ?>
 </div>
 
