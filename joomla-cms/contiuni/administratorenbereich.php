@@ -1,7 +1,7 @@
 ﻿<?php
 if ($_SESSION['benutzerangemeldet'] == 'true'){
 
-	$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
+$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
 
 	if (!$db )
 	{
@@ -385,7 +385,7 @@ function kurschange(sel)
 				<label id="kursende-lbl">Kursende * (Form: YYYY-MM-DD)</label>						
 			</div>
 			<div>
-				<input type="datet" required size="60" id="kursende" name="kursende" value="">
+				<input type="date" required size="60" id="kursende" name="kursende" value="">
 			</div>
 			<div>
 				<label id="sonstigeinformationen-lbl">Sonstige Informationen</label>						
@@ -415,7 +415,7 @@ function kurschange(sel)
 	
 		<span>Alle noch nicht registrierten Schüler</span>
 		<br>	
-		<form action="listen.php" method="POST">
+		<form action="index.php" method="POST">
 			<fieldset id="nichtregistrierteschueler" style="display: block">
 				<button name="nichtregistrierteschueler">Schüler anzeigen</button>
 			</fieldset>
@@ -423,7 +423,7 @@ function kurschange(sel)
 		
 		<span>Alle Schüler pro Kurs</span>
 		<br>
-		<form action="listen.php" method="POST">
+		<form action="index.php" method="POST">
 		<fieldset id="schuelerprokurs" style="display: block">
 			<span>Kurs auswählen:</span>
 			<br>
@@ -447,7 +447,7 @@ function kurschange(sel)
 		
 		<span>Alle Schüler einer Klasse</span>
 		<br>
-		<form action="listen.php" method="POST">
+		<form action="index.php" method="POST">
 			<fieldset id="schuelerproklasse" style="display: block">
 				<span>Klasse auswählen:</span>
 				<br>
@@ -542,23 +542,40 @@ function kurschange(sel)
 	{
 		$kursleiter = $_POST['kursleiterliste'];
 		
-		$sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $kursleiter . "\";";
-		$result = $db->query($sqlpersonenid);
+    /*$sqlselectkurs = "select k.kursleiter from joem2_contiuni_kurs k, joem2_contiuni_kursleiter kl, joem2_contiuni_person p
+                       where p.email = \"" . $kursleiter . "\" and kl.personenid = p.personenid ;";*/
+    $sqlselectkurs = "SELECT k.kursleiter FROM joem2_contiuni_kurs k JOIN joem2_contiuni_kursleiter kl ON k.kursleiter = kl.personenid 
+                        JOIN joem2_contiuni_person p ON p.personenid = kl.personenid
+                        WHERE p.email = '".$kursleiter."'";
+		$result = $db->query($sqlselectkurs);
 		$row = mysqli_fetch_array($result);
-		$personenid = $row["personenid"];
-		
-		$sqldeletekursleiter = "delete from joem2_contiuni_kursleiter where personenid = \"". $personenid . "\";";
-		$db->query($sqldeletekursleiter);
-		
-		$sqldeleteperson = "delete from joem2_contiuni_person where personenid = \"". $personenid . "\";";
-		$db->query($sqldeleteperson);
-		
+		$kursleiterkurs = $row["kursleiter"];
+
+    if (!$kursleiterkurs){
+      $sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $kursleiter . "\";";
+      $result = $db->query($sqlpersonenid);
+      $row = mysqli_fetch_array($result);
+      $personenid = $row["personenid"];
+      
+      $sqldeletekursleiter = "delete from joem2_contiuni_kursleiter where personenid = \"". $personenid . "\";";
+      $db->query($sqldeletekursleiter);
+      
+      $sqldeleteperson = "delete from joem2_contiuni_person where personenid = \"". $personenid . "\";";
+      $db->query($sqldeleteperson);
+      		?>
+      <script>
+        alert('Kursleiter gelöscht!');
+        window.location = "/contiuni/index.php";
+      </script>
+      <?php
+		}else{
 		?>
 		<script>
-			alert('Kursleiter gelöscht!');
+			alert('Kursleiter kann nicht gelöscht werden, da er noch bei einem Kurs als Kursleiter fungiert.');
 			window.location = "/contiuni/index.php";
 		</script>
 		<?php
+    }
 	}
 	
 	//Kursleiter bearbeiten Button
@@ -807,6 +824,7 @@ function kurschange(sel)
 	//Kurs hinzufügen
 	if(isset($_POST['kurshinzufuegen']))
 	{	
+    $gueltigerkurs = true;
 		$kursname = $_POST['kursname'];
 		$kursleiterid = $_POST['kursleiterlistekurs'];
 		$veranstaltungsort = $_POST['veranstaltungsort'];
@@ -827,21 +845,42 @@ function kurschange(sel)
 			$klassenbeschraenkung = "";
 		}
 		
-		$sqlkurs = "insert into joem2_contiuni_kurs (kursname, kursleiter, veranstaltungsort, teilnehmeranzahl, anmeldefrist, kursbeginn, kursende, sonstigeinformationen, klassenbeschraenkung) values('$kursname', '$kursleiterid', '$veranstaltungsort', '$teilnehmeranzahl', '$anmeldefrist', '$kursbeginn', '$kursende', '$sonstigeinformationen', '$klassenbeschraenkung');";
-		$db->query($sqlkurs);
-		
-		?>
-		<script>
-			alert('Kurs erstellt!');
-			window.location = "/contiuni/index.php";
-		</script>
-		<?php
+    if ($anmeldefrist > $kursbeginn){
+      ?>
+      <script>
+        alert('Die Anmeldefrist endet nach dem Kursbeginn.');
+      </script>
+      <?php
+      $gueltigerkurs = false;
+    }
+    
+    if ($kursbeginn > $kursende){
+      ?>
+      <script>
+        alert('Der Kursende endet vor dem Kursbeginn.');
+      </script>
+      <?php
+      $gueltigerkurs = false;
+    }
+    
+    if ($gueltigerkurs){
+      $sqlkurs = "insert into joem2_contiuni_kurs (kursname, kursleiter, veranstaltungsort, teilnehmeranzahl, anmeldefrist, kursbeginn, kursende, sonstigeinformationen, klassenbeschraenkung) values('$kursname', '$kursleiterid', '$veranstaltungsort', '$teilnehmeranzahl', '$anmeldefrist', '$kursbeginn', '$kursende', '$sonstigeinformationen', '$klassenbeschraenkung');";
+      $db->query($sqlkurs);
+      
+      ?>
+      <script>
+        alert('Kurs erstellt!');
+        window.location = "/contiuni/index.php";
+      </script>
+      <?php
+    }
 		
 	}
 	
 	//Kurs bearbeiten
 	if(isset($_POST['kursbearbeiten']))
 	{
+    $gueltigerkurs = true;
 		$kursid = $_POST['kursliste'];
 		$kursname = $_POST['kursname'];
 		$kursleiterid = $_POST['kursleiterlistekurs'];
@@ -863,16 +902,37 @@ function kurschange(sel)
 			$klassenbeschraenkung = "";
 		}
 		
-		$sqlkursupdate = "update joem2_contiuni_kurs set kursname =\"" . $kursname . "\", kursleiter= \"" .$kursleiterid . "\", veranstaltungsort= \"" . $veranstaltungsort . "\", teilnehmeranzahl=\"" .$teilnehmeranzahl . "\", anmeldefrist= \"" .$anmeldefrist . "\", kursbeginn=\"" . $kursbeginn . "\", kursende=\"" . $kursende . "\", sonstigeinformationen=\"" . $sonstigeinformationen . "\", klassenbeschraenkung=\"" .$klassenbeschraenkung . "\" where kursid = \"" . $kursid . "\";";
-		
-		$db->query($sqlkursupdate);
-		
-		?>
-		<script>
-			alert('Kurs bearbeitet!');
-			window.location = "/contiuni/index.php";
-		</script>
-		<?php
+    if ($anmeldefrist > $kursbeginn){
+      ?>
+      <script>
+        alert('Die Anmeldefrist endet nach dem Kursbeginn.');
+      </script>
+      <?php
+      $gueltigerkurs = false;
+    }
+    
+    if ($kursbeginn > $kursende){
+      ?>
+      <script>
+        alert('Der Kursende endet vor dem Kursbeginn.');
+      </script>
+      <?php
+      $gueltigerkurs = false;
+    }
+    
+    
+    if ($gueltigerkurs){ 
+      $sqlkursupdate = "update joem2_contiuni_kurs set kursname =\"" . $kursname . "\", kursleiter= \"" .$kursleiterid . "\", veranstaltungsort= \"" . $veranstaltungsort . "\", teilnehmeranzahl=\"" .$teilnehmeranzahl . "\", anmeldefrist= \"" .$anmeldefrist . "\", kursbeginn=\"" . $kursbeginn . "\", kursende=\"" . $kursende . "\", sonstigeinformationen=\"" . $sonstigeinformationen . "\", klassenbeschraenkung=\"" .$klassenbeschraenkung . "\" where kursid = \"" . $kursid . "\";";
+      
+      $db->query($sqlkursupdate);
+      
+      ?>
+      <script>
+        alert('Kurs bearbeitet!');
+        window.location = "/contiuni/index.php";
+      </script>
+      <?php
+    }
 	}
 
 	//Kurs löschen
@@ -925,6 +985,7 @@ function kurschange(sel)
 	//Alle Kursleiter löschen
 	if(isset($_POST['allekursleiterloeschen']))
 	{
+  
 		$sqlkursleiter = "select joem2_contiuni_kursleiter.personenid from joem2_contiuni_person, joem2_contiuni_kursleiter where joem2_contiuni_person.personenid = joem2_contiuni_kursleiter.personenid;";
 		$resultkursleiter = $db->query($sqlkursleiter);
 		while($row = mysqli_fetch_array($resultkursleiter))

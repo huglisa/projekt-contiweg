@@ -1,7 +1,7 @@
 ﻿<?php
 if ($_SESSION['benutzerangemeldet'] == 'true'){
 
-	$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
+$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
 	if (!$db )
 	{
 	?>
@@ -119,7 +119,7 @@ function kurschange2(sel)
 </script>
 
 <div class="schuelerbereich">
-	<h2 style="text-align:center; color:#F69F2B">Schülerbereich - du bist #<?php echo $_SESSION["personenid"]; ?> und heißt <?php echo $vorname . " " .$_SESSION['nachname']; ?></h2>
+	<h2 style="text-align:center; color:#F69F2B">Schülerbereich</h2>
 	
 	<form action="index.php" method="POST">
 	
@@ -133,12 +133,22 @@ function kurschange2(sel)
 				Klassenbeschränkung
 				wo der Schüler bereits angemeldet ist - wird in der db eh nicht gespeichert-->
 			<?php
-			
-				$sqlkurse = "
+			  $sqlkurse3 = "
+				select joem2_contiuni_kurs.kursid as KID
+				from joem2_contiuni_kurs, joem2_contiuni_schuelerkurs where joem2_contiuni_kurs.kursid = joem2_contiuni_schuelerkurs.kursid and joem2_contiuni_schuelerkurs.schuelerid = ".$_SESSION['personenid']."; ";
+      
+      
+				/*$sqlkurse = "
 				select concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), kursid, kursname 
 				from joem2_contiuni_kurs
 				where teilnehmeranzahl > (select count(*) from joem2_contiuni_schuelerkurs where joem2_contiuni_schuelerkurs.kursid = joem2_contiuni_kurs.kursid)
-				and anmeldefrist >= curdate();";
+				and anmeldefrist >= curdate();";*/
+        $sqlkurse = "
+				select concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), kursid, kursname 
+				from joem2_contiuni_kurs
+				where teilnehmeranzahl > (select count(*) from joem2_contiuni_schuelerkurs where joem2_contiuni_schuelerkurs.kursid = joem2_contiuni_kurs.kursid)
+				and anmeldefrist >= curdate() and joem2_contiuni_kurs.kursid != (".$sqlkurse3.");";
+        
 				$resultkurse = $db->query($sqlkurse);
 				while($row = mysqli_fetch_array($resultkurse))
 				{
@@ -194,19 +204,19 @@ function kurschange2(sel)
 				<label id="anmeldefrist-lbl">Anmeldefrist</label>						
 			</div>
 			<div>
-				<input type="datetime-local" readonly size="60" id="anmeldefristan" name="anmeldefristan" value="">
+				<input type="date" readonly size="60" id="anmeldefristan" name="anmeldefristan" value="">
 			</div>
 			<div>
 				<label id="kursstart-lbl">Kursstart</label>						
 			</div>
 			<div>
-				<input type="datetime-local" readonly size="60" id="kursstartan" name="kursstartan" value="">
+				<input type="date" readonly size="60" id="kursstartan" name="kursstartan" value="">
 			</div>
 			<div>
 				<label id="kursende-lbl">Kursende</label>						
 			</div>
 			<div>
-				<input type="datetime-local" readonly size="60" id="kursendean" name="kursendean" value="">
+				<input type="date" readonly size="60" id="kursendean" name="kursendean" value="">
 			</div>
 			<div>
 				<label id="sonstigeinformationen-lbl">Sonstige Informationen</label>						
@@ -287,19 +297,19 @@ function kurschange2(sel)
 				<label id="anmeldefrist-lbl">Anmeldefrist</label>						
 			</div>
 			<div>
-				<input type="datetime-local" readonly size="60" id="anmeldefristab" name="anmeldefristab" value="">
+				<input type="date" readonly size="60" id="anmeldefristab" name="anmeldefristab" value="">
 			</div>
 			<div>
 				<label id="kursstart-lbl">Kursstart</label>						
 			</div>
 			<div>
-				<input type="datetime-local" readonly size="60" id="kursstartab" name="kursstartab" value="">
+				<input type="date" readonly size="60" id="kursstartab" name="kursstartab" value="">
 			</div>
 			<div>
 				<label id="kursende-lbl">Kursende</label>						
 			</div>
 			<div>
-				<input type="datetime-local" readonly size="60" id="kursendeab" name="kursendeab" value="">
+				<input type="date" readonly size="60" id="kursendeab" name="kursendeab" value="">
 			</div>
 			<div>
 				<label id="sonstigeinformationen-lbl">Sonstige Informationen</label>						

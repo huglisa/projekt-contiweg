@@ -10,14 +10,15 @@ if ($_GET['session'] == 'print'){
   print_r($_SESSION);
 }
 
-if (isset($_POST['logoff'])){
-  $_SESSION = array();
-  session_destroy();
-  echo "session destroyed";
-}
+
 if ($_GET['session'] == 'printpost'){
   print_r($_POST);
 }*/
+
+if (isset($_POST['logoff'])){
+  $_SESSION = array();
+  session_destroy();
+}
 
 ?>
 
@@ -28,10 +29,14 @@ if ($_GET['session'] == 'printpost'){
 <body>
 <?php if($_SESSION['benutzerangemeldet'] == 'true'){?>
     <div class="abmelden">
-    <form action="index.php" method="POST">
-      <button type="submit" name="logoff">Abmelden</button>
-    </form>
-  </div><?php
+      <form action="index.php" method="POST">
+        <button type="submit" name="logoff">Abmelden</button>
+      </form>
+      <?php if (isset($_POST['nichtregistrierteschueler']) || isset($_POST['schuelerkurs']) || isset($_POST['schuelerklasse'])){ ?>
+        <a href="/contiuni/index.php" style="color:#F69F2B; text-decoration:none;">Zurück</a>
+      <?php } ?>
+
+    </div><?php
   
   
   switch ($_SESSION['benutzertyp']){
@@ -42,7 +47,11 @@ if ($_GET['session'] == 'printpost'){
       include "kursleiterbereich.php";
       break;
     case 'administrator':
-      include "administratorenbereich.php";
+      if (isset($_POST['nichtregistrierteschueler']) || isset($_POST['schuelerkurs']) || isset($_POST['schuelerklasse'])){
+        include "listen.php";
+      }else{
+        include "administratorenbereich.php";
+      }
       break;
     default:
       echo "ungültige Seite";
@@ -82,7 +91,7 @@ if ($_GET['session'] == 'printpost'){
 		$_SESSION['email'] = $_POST['anmeldeemail'];
 		$_SESSION['passwort'] = $_POST['anmeldepasswort'];
 		
-	  $db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
+	  $db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
 
 		if (!$db )
 		{
