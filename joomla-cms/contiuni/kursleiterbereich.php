@@ -1,6 +1,7 @@
-<?php
-	$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+﻿<?php
+if ($_SESSION['benutzerangemeldet'] == 'true'){
 
+	$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
 	if (!$db )
 	{
 	?>
@@ -8,23 +9,6 @@
 	<?php
 	}
 ?>
-
-<style>
-button
-{
-	background-image: linear-gradient(to left, #FFFFFF 0%, #F69F2B 100%);
-    border: 1px solid #F69F2B;
-    border-radius: 5px;
-    padding: 5px;
-    width: 200px;
-}
-
-button:active
-{
-	background-image: linear-gradient(to right, #FFFFFF 0%, #F69F2B 100%);
-}
-
-</style>
 
 <script>
 function kurschange(sel)
@@ -81,7 +65,7 @@ function kurschange(sel)
 	
 	<select name="kursliste" id="kursliste"  size="6" onchange="kurschange(this)">
 		<?php
-			$sqlkurse = "select concat(kursid, ':', kursname), concat(veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), kursid, kursname from joem2_contiuni_kurs where joem2_contiuni_kurs.kursleiter = \"" . $personenid . "\"";
+			$sqlkurse = "select concat(kursid, ':', kursname), concat(veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), kursid, kursname from joem2_contiuni_kurs where joem2_contiuni_kurs.kursleiter = \"" . $_SESSION['personenid'] . "\"";
 			$resultkurse = $db->query($sqlkurse);
 			while($row = mysqli_fetch_array($resultkurse))
 			{
@@ -118,19 +102,19 @@ function kurschange(sel)
 					<label id="anmeldefrist-lbl">Anmeldefrist</label>						
 				</div>
 				<div>
-					<input type="datetime-local" readonly size="60" id="anmeldefrist" name="anmeldefrist" value="">
+					<input type="date" readonly size="60" id="anmeldefrist" name="anmeldefrist" value="">
 				</div>
 				<div>
 					<label id="kursstart-lbl">Kursstart</label>						
 				</div>
 				<div>
-					<input type="datetime-local" readonly size="60" id="kursstart" name="kursstart" value="">
+					<input type="date" readonly size="60" id="kursstart" name="kursstart" value="">
 				</div>
 				<div>
 					<label id="kursende-lbl">Kursende</label>						
 				</div>
 				<div>
-					<input type="datetime-local" readonly size="60" id="kursende" name="kursende" value="">
+					<input type="date" readonly size="60" id="kursende" name="kursende" value="">
 				</div>
 				<div>
 					<label id="sonstigeinformationen-lbl">Sonstige Informationen</label>						
@@ -163,4 +147,8 @@ function kurschange(sel)
 <?php
 
 $db->close();
+
+}else{
+?><script>window.location = "/contiuni/index.php";</script><?php
+}
 ?>

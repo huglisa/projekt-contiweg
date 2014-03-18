@@ -1,33 +1,14 @@
-<?php
-	$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+﻿<?php
+if ($_SESSION['benutzerangemeldet'] == 'true'){
 
+	$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
 	if (!$db )
 	{
 	?>
 		<script>alert('Verbindung fehlgeschlagen!')</script>
 	<?php
 	}
-?>
-
-<style>
-button
-{
-	background-image: linear-gradient(to left, #FFFFFF 0%, #F69F2B 100%);
-    border: 1px solid #F69F2B;
-    border-radius: 5px;
-    padding: 5px;
-    width: 200px;
-}
-
-button:active
-{
-	background-image: linear-gradient(to right, #FFFFFF 0%, #F69F2B 100%);
-}
-
-</style>
-
-<?php
-	$personenid = htmlspecialchars($_GET["personenid"]);
+  
 ?>
 
 <script>
@@ -138,9 +119,9 @@ function kurschange2(sel)
 </script>
 
 <div class="schuelerbereich">
-	<h2 style="text-align:center; color:#F69F2B">Schülerbereich</h2>
+	<h2 style="text-align:center; color:#F69F2B">Schülerbereich - du bist #<?php echo $_SESSION["personenid"]; ?> und heißt <?php echo $vorname . " " .$_SESSION['nachname']; ?></h2>
 	
-	<form action="schuelerbereich.php" method="POST">
+	<form action="index.php" method="POST">
 	
 	<fieldset>
 		<legend>Alle Kurse welche noch ausgewählt werden können:</legend>
@@ -243,21 +224,19 @@ function kurschange2(sel)
 		<br>
 		<button name="anmelden">Anmelden</button>
 	</fieldset>
-	</form>
-	<br>
-	<form action="schuelerbereich.php" method="POST">
+
 	<fieldset>
 		<legend>Alle Kurse welche bereits ausgewählt wurden:</legend>
 		<select name="kursliste2" id="kursliste2" size="6" onchange="kurschange2(this)">
 			<?php
 				$sqlkurse2 = "
-				select concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), joem2_contiuni_kurs.kursid, kursname 
-				from joem2_contiuni_kurs, joem2_contiuni_schuelerkurs where joem2_contiuni_kurs.kursid = joem2_contiuni_schuelerkurs.kursid and joem2_contiuni_schuelerkurs.schuelerid = 37; ";
+				select concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), joem2_contiuni_kurs.kursid as KID, kursname 
+				from joem2_contiuni_kurs, joem2_contiuni_schuelerkurs where joem2_contiuni_kurs.kursid = joem2_contiuni_schuelerkurs.kursid and joem2_contiuni_schuelerkurs.schuelerid = ".$_SESSION['personenid']."; ";
 				$resultkurse2 = $db->query($sqlkurse2);
 				while($row2 = mysqli_fetch_array($resultkurse2))
 				{
 					?>
-					<option label="<?php echo $row2["concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung)"]?>" value="<?php echo $row2['joem2_contiuni_kurs.kursid'];?>"><?php echo $row2["kursname"]?></option>
+					<option label="<?php echo $row2["concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung)"]?>" value="<?php echo $row2['KID'];?>"><?php echo $row2["kursname"]?></option>
 						
 					<?php
 				}
@@ -341,40 +320,31 @@ function kurschange2(sel)
 	</form>
 </div>
 
-<?php 
+<?php
+ 
 //anmelden
 if(isset($_POST['anmelden']))
 {
 	$kurs = $_POST['kursliste'];
 	
-	$sqlinsertschuelerkurs = "insert into joem2_contiuni_schuelerkurs values( \"" .$kurs . "\", 37);";
+	$sqlinsertschuelerkurs = 'insert into joem2_contiuni_schuelerkurs values('.$kurs.', '.$_SESSION["personenid"].');';
 	$db->query($sqlinsertschuelerkurs);
 		
 	?>
 	<script>
-		window.location = "/contiuni/schuelerbereich.php";
+		window.location = "/contiuni/index.php";
 	</script>
 	<?php
 }
-
-//abmelden
-if(isset($_POST['abmelden']))
-{
+else if(isset($_POST['abmelden']))
+{ //abmelden
 	$kurs2 = $_POST['kursliste2'];
-	?>
-	<script>
-		alert(<? echo $kurs2; ?>);
-	</script>
-	<?php
 	
-	$sqldeleteschuelerkurs = "delete from joem2_contiuni_schuelerkurs where joem2_contiuni_schuelerkurs.kursid = \"". $kurs2 . "\" and joem2_contiuni_schuelerkurs.schuelerid = 37;";
+	$sqldeleteschuelerkurs = "delete from joem2_contiuni_schuelerkurs where joem2_contiuni_schuelerkurs.kursid = \"". $kurs2 . "\" and joem2_contiuni_schuelerkurs.schuelerid = ".$_SESSION['personenid'].";";
 	$db->query($sqldeleteschuelerkurs);
-		
-	?>
-	<script>
-		window.location = "/contiuni/schuelerbereich.php";
-	</script>
-	<?php
+	
+	?><script>window.location = "/contiuni/index.php";</script><?php
+	
 }
 
 ?>
@@ -382,4 +352,8 @@ if(isset($_POST['abmelden']))
 <?php
 
 $db->close();
+
+}else{
+?><script>window.location = "/contiuni/index.php";</script><?php
+}
 ?>

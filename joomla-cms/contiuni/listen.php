@@ -1,6 +1,7 @@
-<?php
-	$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+﻿<?php
+if ($_SESSION['benutzerangemeldet'] == 'true'){
 
+	$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
 	if (!$db )
 	{
 	?>
@@ -152,4 +153,7 @@
 <?php
 
 $db->close();
+}else{
+?><script>window.location = "/contiuni/index.php";</script><?php
+}
 ?>

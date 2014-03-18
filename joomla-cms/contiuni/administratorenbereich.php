@@ -1,5 +1,7 @@
 ﻿<?php
-	$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+if ($_SESSION['benutzerangemeldet'] == 'true'){
+
+	$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
 
 	if (!$db )
 	{
@@ -8,23 +10,6 @@
 	<?php
 	}
 ?>
-
-<style>
-button
-{
-	background-image: linear-gradient(to left, #FFFFFF 0%, #F69F2B 100%);
-    border: 1px solid #F69F2B;
-    border-radius: 5px;
-    padding: 5px;
-    width: 200px;
-}
-
-button:active
-{
-	background-image: linear-gradient(to right, #FFFFFF 0%, #F69F2B 100%);
-}
-
-</style>
 
 
 <script type="text/javascript">
@@ -146,7 +131,7 @@ function kurschange(sel)
 	<br>
 	<div id="personenverwalten" style="display: none">
 
-	<form action="administratorenbereich.php" method="POST">
+	<form action="index.php" method="POST">
 		<fieldset name="kursleiter">
 			<legend>Kursleiter</legend>
 			<table style="margin:auto;">
@@ -211,7 +196,7 @@ function kurschange(sel)
 		</fieldset>
 	</form>
 	
-	<form action="administratorenbereich.php" method="POST">
+	<form action="index.php" method="POST">
 		<fieldset name="administratoren">
 			<legend>Administratoren</legend>
 			<table style="margin:auto;">
@@ -280,7 +265,7 @@ function kurschange(sel)
 	<a href="javascript:toggle('schuelerverwalten')" style="text-decoration:none; border-bottom:dotted #F69F2B; color:black;">Klassen und Schüler erstellen</a>
 	<br>
 	<div id="schuelerverwalten" style="display: none">
-	<form action="administratorenbereich.php" method="POST">
+	<form action="index.php" method="POST">
 		<fieldset name="schueler">
 			<legend>Klassen und Schüler</legend>
 			<table style="margin: auto">
@@ -323,7 +308,7 @@ function kurschange(sel)
 	<a href="javascript:toggle('kurseverwalten')" style="text-decoration:none; border-bottom:dotted #F69F2B; color:black;">Kurse verwalten</a>
 	<br>
 	<div id="kurseverwalten" style="display: none">
-	<form action="administratorenbereich.php" method="POST"> 
+	<form action="index.php" method="POST"> 
 		<fieldset name="kurse">
 			<legend>Kurse</legend>
 			<table style="margin:auto;">
@@ -388,19 +373,19 @@ function kurschange(sel)
 				<label id="anmeldefrist-lbl">Anmeldefrist * (Form: YYYY-MM-DD)</label>						
 			</div>
 			<div>
-				<input type="datetime-local" required size="60" id="anmeldefrist" name="anmeldefrist" value="">
+				<input type="date" required size="60" id="anmeldefrist" name="anmeldefrist" value="">
 			</div>
 			<div>
 				<label id="kursstart-lbl">Kursstart * (Form: YYYY-MM-DD)</label>						
 			</div>
 			<div>
-				<input type="datetime-local" required size="60" id="kursstart" name="kursstart" value="">
+				<input type="date" required size="60" id="kursstart" name="kursstart" value="">
 			</div>
 			<div>
 				<label id="kursende-lbl">Kursende * (Form: YYYY-MM-DD)</label>						
 			</div>
 			<div>
-				<input type="datetime-local" required size="60" id="kursende" name="kursende" value="">
+				<input type="datet" required size="60" id="kursende" name="kursende" value="">
 			</div>
 			<div>
 				<label id="sonstigeinformationen-lbl">Sonstige Informationen</label>						
@@ -490,7 +475,7 @@ function kurschange(sel)
 	<a href="javascript:toggle('endeContiUNI')" style="text-decoration:none; border-bottom:dotted #F69F2B; color:black;">Am Ende der ContiUNI</a>
 	<br>
 	<div id="endeContiUNI" style="display: none">
-	<form action="administratorenbereich.php" method="POST"> 
+	<form action="index.php" method="POST"> 
 		<br>
 		<button name="allekurseloeschen">alle Kurse löschen</button>
 		<button name="allekursleiterloeschen">alle Kursleiter löschen</button>
@@ -545,7 +530,7 @@ function kurschange(sel)
 					?>
 					<script>
 						alert('Kursleiter wurde erfolgreich hinzugefügt!');
-						window.location = "/contiuni/administratorenbereich.php";
+						window.location = "/contiuni/index.php";
 					</script>
 					<?php
 				}
@@ -571,7 +556,7 @@ function kurschange(sel)
 		?>
 		<script>
 			alert('Kursleiter gelöscht!');
-			window.location = "/contiuni/administratorenbereich.php";
+			window.location = "/contiuni/index.php";
 		</script>
 		<?php
 	}
@@ -618,7 +603,7 @@ function kurschange(sel)
 					?>
 						<script>
 							alert('Kursleiter bearbeitet!');
-							window.location = "/contiuni/administratorenbereich.php";
+							window.location = "/contiuni/index.php";
 						</script>
 					<?php
 				}
@@ -630,7 +615,7 @@ function kurschange(sel)
 					?>
 						<script>
 							alert('Kursleiter bearbeitet!')
-							window.location = "/contiuni/administratorenbereich.php";
+							window.location = "/contiuni/index.php";
 						</script>
 					<?php
 				}
@@ -683,7 +668,7 @@ function kurschange(sel)
 					?>
 					<script>
 						alert('Administrator wurde erfolgreich hinzugefügt!');
-						window.location = "/contiuni/administratorenbereich.php";
+						window.location = "/contiuni/index.php";
 					</script>
 					<?php
 				}
@@ -709,7 +694,7 @@ function kurschange(sel)
 		?>
 		<script>
 			alert('Administrator gelöscht!');
-			window.location = "/contiuni/administratorenbereich.php";
+			window.location = "/contiuni/index.php";
 		</script>
 		<?php
 	}
@@ -756,7 +741,7 @@ function kurschange(sel)
 					?>
 						<script>
 							alert('Administrator bearbeitet!');
-							window.location = "/contiuni/administratorenbereich.php";
+							window.location = "/contiuni/index.php";
 						</script>
 					<?php
 				}
@@ -768,7 +753,7 @@ function kurschange(sel)
 					?>
 						<script>
 							alert('Administrator bearbeitet!')
-							window.location = "/contiuni/administratorenbereich.php";
+							window.location = "/contiuni/index.php";
 						</script>
 					<?php
 				}
@@ -793,13 +778,13 @@ function kurschange(sel)
 		}
 		else
 		{
-			$sqlklasse = "insert into joem2_contiuni_klasse (klassenname) values('$klasse');";
+			$sqlklasse = "insert into joem2_contiuni_klasse (klassenname) values('".$klasse."');";
 			$db->query($sqlklasse);
 			
 			?>
 			<script>
 				alert('Klasse erstellt!');
-				window.location = "/contiuni/administratorenbereich.php";
+				window.location = "/contiuni/index.php";
 			</script>
 			<?php
 		}
@@ -848,7 +833,7 @@ function kurschange(sel)
 		?>
 		<script>
 			alert('Kurs erstellt!');
-			window.location = "/contiuni/administratorenbereich.php";
+			window.location = "/contiuni/index.php";
 		</script>
 		<?php
 		
@@ -885,7 +870,7 @@ function kurschange(sel)
 		?>
 		<script>
 			alert('Kurs bearbeitet!');
-			window.location = "/contiuni/administratorenbereich.php";
+			window.location = "/contiuni/index.php";
 		</script>
 		<?php
 	}
@@ -916,7 +901,7 @@ function kurschange(sel)
 			?>
 			<script>
 				alert('Kurs gelöscht!');
-				window.location = "/contiuni/administratorenbereich.php";
+				window.location = "/contiuni/index.php";
 			</script>
 		<?php
 		}
@@ -932,7 +917,7 @@ function kurschange(sel)
 		?>
 		<script>
 			alert('Alle Kurse wurden gelöscht!');
-			window.location = "/contiuni/administratorenbereich.php";
+			window.location = "/contiuni/index.php";
 		</script>
 		<?php
 	}
@@ -954,7 +939,7 @@ function kurschange(sel)
 		?>
 		<script>
 			alert('Alle Kursleiter wurden gelöscht!');
-			window.location = "/contiuni/administratorenbereich.php";
+			window.location = "/contiuni/index.php";
 		</script>
 		<?php
 	}
@@ -968,7 +953,7 @@ function kurschange(sel)
 		?>
 		<script>
 			alert('Alle Klassen wurden gelöscht!');
-			window.location = "/contiuni/administratorenbereich.php";
+			window.location = "/contiuni/index.php";
 		</script>
 		<?php
 	}
@@ -993,7 +978,7 @@ function kurschange(sel)
 		?>
 		<script>
 			alert('Alle Schüler wurden gelöscht!');
-			window.location = "/contiuni/administratorenbereich.php";
+			window.location = "/contiuni/index.php";
 		</script>
 		<?php
 	}
@@ -1005,4 +990,7 @@ function kurschange(sel)
 <?php
 
 $db->close();
+}else{
+?><script>window.location = "/contiuni/index.php";</script><?php
+}
 ?>

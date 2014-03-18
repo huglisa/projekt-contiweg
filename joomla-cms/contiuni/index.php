@@ -1,61 +1,95 @@
-<style>
-button
-{
-	background-image: linear-gradient(to left, #FFFFFF 0%, #F69F2B 100%);
-    border: 1px solid #F69F2B;
-    border-radius: 5px;
-    padding: 5px;
-    width: 200px;
+﻿<?php
+session_start();
+/*
+if ($_GET['session'] == 'rm'){
+  $_SESSION = array();
+  session_destroy();
+  echo "session destroyed";
+}
+if ($_GET['session'] == 'print'){
+  print_r($_SESSION);
 }
 
-button:active
-{
-	background-image: linear-gradient(to right, #FFFFFF 0%, #F69F2B 100%);
+if (isset($_POST['logoff'])){
+  $_SESSION = array();
+  session_destroy();
+  echo "session destroyed";
 }
-</style>
+if ($_GET['session'] == 'printpost'){
+  print_r($_POST);
+}*/
 
-<div class="anmelden">
-<h1 style="text-align:center; color:#F69F2B">ContiUNI</h1>
-<form action="index.php" method="POST">
-	<div>
-		<div>
-			<label id="username-lbl">E-Mail Adresse *</label>						
-		</div>
-		<div>
-			<input type="email" required size="30" id="anmeldeemail" name="anmeldeemail" placeholder="test@hotmail.com" value=" ">
-		</div>
-	</div>
-	<div>
-		<div>
-			<label id="password-lbl">Passwort *</label>
-		</div>
-		<div>
-			<input type="password" required size="30" id="anmeldepasswort" name="anmeldepasswort" placeholder="passwort" value="">						
-		</div>
-	</div>		
-	<br>
-	<button type="submit" name="anmelden" onclick="anmeldenklick()">Anmelden</button>
+?>
 
-</form>
-	<a href="/contiuni/registrieren.php" style="color:#F69F2B; text-decoration:none;">Registrieren</a>
-
-	<?php
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<?php if($_SESSION['benutzerangemeldet'] == 'true'){?>
+    <div class="abmelden">
+    <form action="index.php" method="POST">
+      <button type="submit" name="logoff">Abmelden</button>
+    </form>
+  </div><?php
+  
+  
+  switch ($_SESSION['benutzertyp']){
+    case 'schueler':
+      include "schuelerbereich.php";
+      break;
+    case 'kursleiter':
+      include "kursleiterbereich.php";
+      break;
+    case 'administrator':
+      include "administratorenbereich.php";
+      break;
+    default:
+      echo "ungültige Seite";
+      break;
+  }
+}else if($_GET['seite'] == 'registrieren'){
+   include 'registrieren.php';
+}else{ ?>
+  <div class="anmelden">
+    <h1 style="text-align:center; color:#F69F2B">ContiUNI</h1>
+      <form action="index.php" method="POST">
+	      <div>
+		      <div>
+			      <label id="username-lbl">E-Mail Adresse *</label>						
+		      </div>
+		      <div>
+			    <input type="email" required size="30" id="anmeldeemail" name="anmeldeemail" placeholder="test@hotmail.com" value=" ">
+		      </div>
+	     </div>
+	     <div>
+		     <div>
+			      <label id="password-lbl">Passwort *</label>
+		     </div>
+		     <div>
+			     <input type="password" required size="30" id="anmeldepasswort" name="anmeldepasswort" placeholder="passwort" value="">						
+		     </div>
+	     </div>		
+	     <br>
+	     <button type="submit" name="anmelden">Anmelden</button>
+     </form>
+	 <a href="/contiuni/index.php?seite=registrieren" style="color:#F69F2B; text-decoration:none;">Registrieren</a>
+<?php
+}
 	if(isset($_POST['anmelden']))
 	{
 	
-		$email = $_POST['anmeldeemail'];
-		$passwort = $_POST['anmeldepasswort'];
+		$_SESSION['email'] = $_POST['anmeldeemail'];
+		$_SESSION['passwort'] = $_POST['anmeldepasswort'];
 		
-		$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+	  $db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
 
 		if (!$db )
 		{
-		?>
-			<script>alert('Verbindung fehlgeschlagen!')</script>
-		<?php
+      die('Connect Error: ' . mysqli_connect_error());
 		}
 	
-		$sql = "select password from joem2_contiuni_person where email =\"". $email . "\";";
+		$sql = "select password from joem2_contiuni_person where email =\"". $_SESSION['email'] . "\";";
 		$result = $db->query($sql);
 		if(!$result)
 		{
@@ -67,12 +101,17 @@ button:active
 		{	
 			if($row = mysqli_fetch_array($result)) 
 			{
-				if($row["password"] == $passwort)
+				if($row["password"] == $_SESSION['passwort'])
 				{					
-					$sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $email . "\";";
+					$sqlpersonenid = "select personenid, vorname, nachname from joem2_contiuni_person where email =\"". $_SESSION['email'] . "\";";
 					$result = $db->query($sqlpersonenid);
 					$row = mysqli_fetch_array($result);
 					$personenid = $row["personenid"];
+          $_SESSION["personenid"] = $personenid;
+          $_SESSION['benutzerangemeldet'] = 'true';
+          
+          $vorname = $row["vorname"];
+          $_SESSION["nachname"] = $row["nachname"];
 					
 					$sqlschueler = "select personenid from joem2_contiuni_schueler where personenid =\"". $personenid . "\";";
 					$resultschueler = $db->query($sqlschueler);
@@ -82,10 +121,10 @@ button:active
 					{
 						?>
 						<script type="text/javascript">
-							var personenid = "<?php echo $personenid ?>";
-							window.location = "/contiuni/schuelerbereich.php?personenid=" + personenid + "";
+							window.location = "/contiuni/index.php";
 						</script>
 						<?php
+            $_SESSION['benutzertyp'] = 'schueler';
 					}
 					
 					$sqlkursleiter = "select personenid from joem2_contiuni_kursleiter where personenid =\"". $personenid . "\";";
@@ -96,10 +135,10 @@ button:active
 					{
 						?>
 						<script type="text/javascript">
-							var personenid = "<?php echo $personenid ?>";
-							window.location = "/contiuni/kursleiterbereich.php?personenid=" + personenid + "";
+							window.location = "/contiuni/index.php";
 						</script>
 						<?php
+            $_SESSION['benutzertyp'] = 'kursleiter';
 					}
 					
 					$sqladmin = "select personenid from joem2_contiuni_administrator where personenid =\"". $personenid . "\";";
@@ -110,9 +149,10 @@ button:active
 					{
 						?>
 						<script type="text/javascript">
-							window.location = "/contiuni/administratorenbereich.php";
+							window.location = "/contiuni/index.php";
 						</script>
 						<?php
+            $_SESSION['benutzertyp'] = 'administrator';
 					}
 					
 				}
@@ -136,3 +176,5 @@ button:active
 	?>
 
 </div>
+</body>
+</html>

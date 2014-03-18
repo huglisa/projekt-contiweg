@@ -1,6 +1,5 @@
-<?php
-	$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
-
+﻿<?php
+	$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
 	if (!$db )
 	{
 		?>
@@ -9,21 +8,6 @@
 	}
 ?>
 
-<style>
-button
-{
-	background-image: linear-gradient(to left, #FFFFFF 0%, #F69F2B 100%);
-    border: 1px solid #F69F2B;
-    border-radius: 5px;
-    padding: 5px;
-    width: 200px;
-}
-
-button:active
-{
-	background-image: linear-gradient(to right, #FFFFFF 0%, #F69F2B 100%);
-}
-</style>
 
 <div class="registrieren">
 	<h2 style="text-align:center; color:#F69F2B">Registrieren</h2>
