@@ -68,7 +68,7 @@ if (isset($_POST['logoff'])){
 			      <label id="username-lbl">E-Mail Adresse *</label>						
 		      </div>
 		      <div>
-			    <input type="email" required size="30" id="anmeldeemail" name="anmeldeemail" placeholder="test@hotmail.com" value=" ">
+			    <input type="email" required size="30" id="anmeldeemail" name="anmeldeemail" placeholder="test@hotmail.com" value="<?php echo $_POST['anmeldeemail']; ?>">
 		      </div>
 	     </div>
 	     <div>
@@ -92,11 +92,13 @@ if (isset($_POST['logoff'])){
 		$_SESSION['passwort'] = $_POST['anmeldepasswort'];
 		
 	  $db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
-
+    
+    
 		if (!$db )
-		{
-      die('Connect Error: ' . mysqli_connect_error());
-		}
+		{?>
+      <script>alert('Verbindung fehlgeschlagen!')</script>
+		<?php
+    }
 	
 		$sql = "select password from joem2_contiuni_person where email =\"". $_SESSION['email'] . "\";";
 		$result = $db->query($sql);

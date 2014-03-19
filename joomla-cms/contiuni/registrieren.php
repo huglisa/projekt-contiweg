@@ -1,6 +1,6 @@
 ﻿<?php
 	$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
-	if (!$db )
+  if (!$db )
 	{
 		?>
 			<script>alert('Verbindung fehlgeschlagen!')</script>
@@ -17,7 +17,7 @@
 			<label id="email-lbl">E-Mail Adresse *</label>						
 		</div>
 		<div>
-			<input type="email" required size="60" id="registrierenemail" name="registrierenemail" placeholder="maxi09@hotmail.com" value=" ">
+			<input type="email" required size="60" id="registrierenemail" name="registrierenemail" placeholder="maxi09@hotmail.com" value="<?php echo $_POST['registrierenemail']; ?>">
 		</div>
 	</div>
 	<div>

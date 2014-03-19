@@ -2,7 +2,7 @@
 if ($_SESSION['benutzerangemeldet'] == 'true'){
 
 	$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
-	if (!$db )
+  if (!$db )
 	{
 	?>
 		<script>alert('Verbindung fehlgeschlagen!')</script>
@@ -57,7 +57,7 @@ function kurschange(sel)
 <div class="kursleiterbereich">
 	<h2 style="text-align:center; color:#F69F2B">Kursleiterbereich</h2>
 
-	<form action="listen.php" method="POST">
+	<form action="index.php" method="POST">
 	
 	<?php
 		$personenid = htmlspecialchars($_GET["personenid"]);

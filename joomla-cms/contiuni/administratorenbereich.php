@@ -2,7 +2,6 @@
 if ($_SESSION['benutzerangemeldet'] == 'true'){
 
 $db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
-
 	if (!$db )
 	{
 	?>
@@ -162,19 +161,19 @@ function kurschange(sel)
 					<label id="kursleitervorname-lbl">Vorname *</label>						
 				</div>
 				<div>
-					<input type="text" required size="60" id="kursleitervorname" name="kursleitervorname" value="">
+					<input type="text" required size="60" id="kursleitervorname" name="kursleitervorname" value="<?php echo $_POST['kursleitervorname']; ?>">
 				</div>
 				<div>
 					<label id="kursleiternachname-lbl">Nachname *</label>						
 				</div>
 				<div>
-					<input type="text" required size="60" id="kursleiternachname" name="kursleiternachname" value="">
+					<input type="text" required size="60" id="kursleiternachname" name="kursleiternachname" value="<?php echo $_POST['kursleiternachname']; ?>">
 				</div>
 				<div>
 					<label id="kursleiteremail-lbl">E-Mail Adresse *</label>						
 				</div>
 				<div>
-					<input type="email" required size="60" id="kursleiteremail" name="kursleiteremail" value="">
+					<input type="email" required size="60" id="kursleiteremail" name="kursleiteremail" value="<?php echo $_POST['kursleiteremail']; ?>">
 				</div>
 				<div>
 					<label id="kursleiterpasswort-lbl">Passwort</label>						
@@ -227,19 +226,19 @@ function kurschange(sel)
 					<label id="administratorvorname-lbl">Vorname *</label>						
 				</div>
 				<div>
-					<input type="text" required size="60" id="administratorvorname" name="administratorvorname" value="">
+					<input type="text" required size="60" id="administratorvorname" name="administratorvorname" value="<?php echo $_POST['administratorvorname']; ?>">
 				</div>
 				<div>
 					<label id="administratornachname-lbl">Nachname *</label>						
 				</div>
 				<div>
-					<input type="text" required size="60" id="administratornachname" name="administratornachname" value="">
+					<input type="text" required size="60" id="administratornachname" name="administratornachname" value="<?php echo $_POST['administratornachname']; ?>">
 				</div>
 				<div>
 					<label id="administratoremail-lbl">E-Mail Adresse *</label>						
 				</div>
 				<div>
-					<input type="email" required size="60" id="administratoremail" name="administratoremail" value="">
+					<input type="email" required size="60" id="administratoremail" name="administratoremail" value="<?php echo $_POST['administratoremail']; ?>">
 				</div>
 				<div>
 					<label id="administratorpasswort-lbl">Passwort</label>						
@@ -339,7 +338,7 @@ function kurschange(sel)
 				<label id="kursname-lbl">Kursname *</label>						
 			</div>
 			<div>
-				<input type="text" required size="60" id="kursname" name="kursname" value="">
+				<input type="text" required size="60" id="kursname" name="kursname" value="<?php echo $_POST['kursname']; ?>">
 			</div>
 			<div>
 				<label id="kursleiter-lbl">Kursleiter *</label>
@@ -361,43 +360,43 @@ function kurschange(sel)
 				<label id="veranstaltungsort-lbl">Veranstaltungsort *</label>						
 			</div>
 			<div>
-				<input type="text" required size="60" id="veranstaltungsort" name="veranstaltungsort" value="">
+				<input type="text" required size="60" id="veranstaltungsort" name="veranstaltungsort" value="<?php echo $_POST['veranstaltungsort']; ?>">
 			</div>
 			<div>
 				<label id="teilnehmer-lbl">Teilnehmeranzahl *</label>						
 			</div>
 			<div>
-				<input type="number" required size="60" id="teilnehmeranzahl" name="teilnehmeranzahl" value="">
+				<input type="number" required size="60" id="teilnehmeranzahl" name="teilnehmeranzahl" value="<?php echo $_POST['teilnehmeranzahl']; ?>">
 			</div>
 			<div>
 				<label id="anmeldefrist-lbl">Anmeldefrist * (Form: YYYY-MM-DD)</label>						
 			</div>
 			<div>
-				<input type="date" required size="60" id="anmeldefrist" name="anmeldefrist" value="">
+				<input type="date" required size="60" id="anmeldefrist" name="anmeldefrist" value="<?php echo $_POST['anmeldefrist']; ?>">
 			</div>
 			<div>
 				<label id="kursstart-lbl">Kursstart * (Form: YYYY-MM-DD)</label>						
 			</div>
 			<div>
-				<input type="date" required size="60" id="kursstart" name="kursstart" value="">
+				<input type="date" required size="60" id="kursstart" name="kursstart" value="<?php echo $_POST['kursstart']; ?>">
 			</div>
 			<div>
 				<label id="kursende-lbl">Kursende * (Form: YYYY-MM-DD)</label>						
 			</div>
 			<div>
-				<input type="date" required size="60" id="kursende" name="kursende" value="">
+				<input type="date" required size="60" id="kursende" name="kursende" value="<?php echo $_POST['kursende']; ?>">
 			</div>
 			<div>
 				<label id="sonstigeinformationen-lbl">Sonstige Informationen</label>						
 			</div>
 			<div>
-				<input type="text" size="60" id="sonstigeinformationen" name="sonstigeinformationen" value="">
+				<input type="text" size="60" id="sonstigeinformationen" name="sonstigeinformationen" value="<?php echo $_POST['sonstigeinformationen']; ?>">
 			</div>
 			<div>
 				<label id="klassenbeschränkung-lbl">Klassenbeschränkung (mehrere Klassen mit ; getrennt angeben)</label>						
 			</div>
 			<div>
-				<input type="text" size="60" id="klassenbeschraenkung" name="klassenbeschraenkung" value="">
+				<input type="text" size="60" id="klassenbeschraenkung" name="klassenbeschraenkung" value="<?php echo $_POST['klassenbeschraenkung']; ?>">
 			</div>
 		</div>
 			</td>

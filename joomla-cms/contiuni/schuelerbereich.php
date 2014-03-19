@@ -2,6 +2,7 @@
 if ($_SESSION['benutzerangemeldet'] == 'true'){
 
 $db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+
 	if (!$db )
 	{
 	?>
