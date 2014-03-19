@@ -711,7 +711,7 @@ a#contiuni {
 #art-main
 {
   margin: 0 auto;
-  font-size: 13px;
+  font-size: 11pt;
   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
@@ -726,7 +726,7 @@ a#contiuni {
 
 table, ul.art-hmenu
 {
-  font-size: 13px;
+  font-size: 11pt;
   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
@@ -806,20 +806,20 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
   color: #6A7D90;
   margin: 10px 0 0;
   font-size: 26px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-blockcontent h1
 {
   margin: 10px 0 0;
   font-size: 26px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-postcontent h1 a, .art-postcontent h1 a:link, .art-postcontent h1 a:hover, .art-postcontent h1 a:visited, .art-blockcontent h1 a, .art-blockcontent h1 a:link, .art-blockcontent h1 a:hover, .art-blockcontent h1 a:visited
 {
   font-size: 26px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-postcontent h2
@@ -827,20 +827,20 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
   color: #8A99A8;
   margin: 10px 0 0;
   font-size: 22px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-blockcontent h2
 {
   margin: 10px 0 0;
   font-size: 22px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-postcontent h2 a, .art-postcontent h2 a:link, .art-postcontent h2 a:hover, .art-postcontent h2 a:visited, .art-blockcontent h2 a, .art-blockcontent h2 a:link, .art-blockcontent h2 a:hover, .art-blockcontent h2 a:visited
 {
   font-size: 22px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-postcontent h3
@@ -848,20 +848,20 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
   color: #FB7837;
   margin: 10px 0 0;
   font-size: 20px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-blockcontent h3
 {
   margin: 10px 0 0;
   font-size: 20px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-postcontent h3 a, .art-postcontent h3 a:link, .art-postcontent h3 a:hover, .art-postcontent h3 a:visited, .art-blockcontent h3 a, .art-blockcontent h3 a:link, .art-blockcontent h3 a:hover, .art-blockcontent h3 a:visited
 {
   font-size: 20px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-postcontent h4
@@ -869,20 +869,20 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
   color: #4D6580;
   margin: 10px 0 0;
   font-size: 18px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-blockcontent h4
 {
   margin: 10px 0 0;
   font-size: 18px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-postcontent h4 a, .art-postcontent h4 a:link, .art-postcontent h4 a:hover, .art-postcontent h4 a:visited, .art-blockcontent h4 a, .art-blockcontent h4 a:link, .art-blockcontent h4 a:hover, .art-blockcontent h4 a:visited
 {
   font-size: 18px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-postcontent h5
@@ -890,20 +890,20 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
   color: #4D6580;
   margin: 10px 0 0;
   font-size: 15px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-blockcontent h5
 {
   margin: 10px 0 0;
   font-size: 15px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-postcontent h5 a, .art-postcontent h5 a:link, .art-postcontent h5 a:hover, .art-postcontent h5 a:visited, .art-blockcontent h5 a, .art-blockcontent h5 a:link, .art-blockcontent h5 a:hover, .art-blockcontent h5 a:visited
 {
   font-size: 15px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+ font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-postcontent h6
@@ -911,20 +911,20 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
   color: #9FB2C6;
   margin: 10px 0 0;
   font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-blockcontent h6
 {
   margin: 10px 0 0;
   font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-postcontent h6 a, .art-postcontent h6 a:link, .art-postcontent h6 a:hover, .art-postcontent h6 a:visited, .art-blockcontent h6 a, .art-blockcontent h6 a:link, .art-blockcontent h6 a:hover, .art-blockcontent h6 a:visited
 {
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 13px; 
+  font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 header, footer, article, nav, #art-hmenu-bg, .art-sheet, .art-hmenu a, .art-vmenu a, .art-slidenavigator > a, .art-checkbox:before, .art-radiobutton:before
@@ -1254,8 +1254,8 @@ ul.art-hmenu>li>a
 
 .art-hmenu a, .art-hmenu a:link, .art-hmenu a:visited, .art-hmenu a.active, .art-hmenu a:hover
 {
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   text-decoration: none;
@@ -1341,8 +1341,8 @@ ul.art-hmenu li li ul>li:last-child
   text-align: left;
   line-height: 24px;
   color: #6A7D90;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
   margin: 0;
 }
@@ -1352,8 +1352,8 @@ ul.art-hmenu li li ul>li:last-child
   text-align: left;
   line-height: 24px;
   color: #6A7D90;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
   margin: 0;
 }
@@ -1567,7 +1567,7 @@ div.art-vmenublock img
 {
   color: #FA6114;
   font-size: 20px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   margin: 0 10px;
@@ -1627,7 +1627,7 @@ ul.art-vmenu a
   cursor: pointer;
   z-index: 1;
   font-size: 18px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   text-decoration: none;
@@ -1728,7 +1728,7 @@ ul.art-vmenu ul a
   line-height: 22px;
   color: #FA6114;
   font-size: 16px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   text-decoration: none;
@@ -1741,7 +1741,7 @@ ul.art-vmenu ul a:visited, ul.art-vmenu ul a.active:hover, ul.art-vmenu ul a:hov
   line-height: 22px;
   color: #FA6114;
   font-size: 16px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   text-decoration: none;
@@ -1827,7 +1827,7 @@ div.art-block img
 {
   color: #6F8295;
   font-size: 20px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   margin: 0 5px;
@@ -1838,16 +1838,16 @@ div.art-block img
   padding: 5px;
   margin: 0 auto;
   color: #2E3D4C;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   line-height: 175%;
 }
 
 .art-blockcontent table, .art-blockcontent li, .art-blockcontent a, .art-blockcontent a:link, .art-blockcontent a:visited, .art-blockcontent a:hover
 {
   color: #2E3D4C;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   line-height: 175%;
 }
 
@@ -1859,20 +1859,20 @@ div.art-block img
 .art-blockcontent a, .art-blockcontent a:link
 {
   color: #FB7837;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-blockcontent a:visited, .art-blockcontent a.visited
 {
   color: #A3B4C8;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
 }
 
 .art-blockcontent a:hover, .art-blockcontent a.hover
 {
   color: #F55505;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
 }
 
@@ -1896,8 +1896,8 @@ div.art-block img
 
 .art-block li
 {
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   line-height: 175%;
   color: #4D6580;
   margin: 5px 0 0 10px;
@@ -1921,8 +1921,8 @@ div.art-block img
 a.art-button, a.art-button:link, a:link.art-button:link, body a.art-button:link, a.art-button:visited, body a.art-button:visited, input.art-button, button.art-button
 {
   text-decoration: none;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   position: relative;
@@ -1956,8 +1956,8 @@ a.art-button, a.art-button:link, a:link.art-button:link, body a.art-button:link,
 input, select, textarea, a.art-search-button span
 {
   vertical-align: middle;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -2019,8 +2019,8 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
   width: 100%;
   padding: 4px 0;
   color: #3D5166 !important;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   text-shadow: none;
@@ -2036,8 +2036,8 @@ input.art-error, textarea.art-error
 input.art-error, textarea.art-error
 {
   color: #3D5166 !important;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -2056,8 +2056,8 @@ form.art-search input[type="text"]
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   color: #364049 !important;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -2127,8 +2127,8 @@ label.art-checkbox:before
 label.art-checkbox
 {
   cursor: pointer;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   line-height: 16px;
@@ -2182,8 +2182,8 @@ label.art-radiobutton:before
 label.art-radiobutton
 {
   cursor: pointer;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   line-height: 12px;
@@ -2265,7 +2265,7 @@ label.art-radiobutton.hovered:before
 {
   padding: 10px 0;
   color: #2E3D4C;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-comment
@@ -2281,19 +2281,19 @@ label.art-radiobutton.hovered:before
 .art-comment-header
 {
   color: #23292F;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   line-height: 100%;
 }
 
 .art-comment-header a, .art-comment-header a:link, .art-comment-header a:visited, .art-comment-header a.visited, .art-comment-header a:hover, .art-comment-header a.hovered
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   line-height: 100%;
 }
 
 .art-comment-header a, .art-comment-header a:link
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: bold;
   font-style: normal;
   color: #6F8295;
@@ -2301,36 +2301,36 @@ label.art-radiobutton.hovered:before
 
 .art-comment-header a:visited, .art-comment-header a.visited
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #6F8295;
 }
 
 .art-comment-header a:hover, .art-comment-header a.hovered
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #6F8295;
 }
 
 .art-comment-content a, .art-comment-content a:link, .art-comment-content a:visited, .art-comment-content a.visited, .art-comment-content a:hover, .art-comment-content a.hovered
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-comment-content a, .art-comment-content a:link
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #C84504;
 }
 
 .art-comment-content a:visited, .art-comment-content a.visited
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #3D5166;
 }
 
 .art-comment-content a:hover, .art-comment-content a.hovered
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #C84504;
 }
 
@@ -2368,7 +2368,7 @@ label.art-radiobutton.hovered:before
 
 .art-pager a:link, .art-pager a:visited
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
   color: #1C2126;
 }
@@ -2559,7 +2559,7 @@ pre
   color: #4D6580;
   margin: 5px 10px;
   font-size: 24px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -2567,14 +2567,14 @@ pre
 .art-postheader a, .art-postheader a:link, .art-postheader a:visited, .art-postheader a.visited, .art-postheader a:hover, .art-postheader a.hovered
 {
   font-size: 24px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
 }
 
 .art-postheader a, .art-postheader a:link
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
   text-align: left;
   color: #FB7837;
@@ -2582,7 +2582,7 @@ pre
 
 .art-postheader a:visited, .art-postheader a.visited
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
   text-align: left;
   color: #6986A5;
@@ -2590,7 +2590,7 @@ pre
 
 .art-postheader a:hover, .art-postheader a.hovered
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
   text-align: left;
   color: #FB7837;
@@ -2598,7 +2598,7 @@ pre
 
 .art-postheadericons, .art-postheadericons a, .art-postheadericons a:link, .art-postheadericons a:visited, .art-postheadericons a:hover
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  f font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #4D6580;
 }
 
@@ -2610,14 +2610,14 @@ pre
 
 .art-postheadericons a, .art-postheadericons a:link
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
   color: #FB6E28;
 }
 
 .art-postheadericons a:visited, .art-postheadericons a.visited
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   text-decoration: none;
@@ -2626,7 +2626,7 @@ pre
 
 .art-postheadericons a:hover, .art-postheadericons a.hover
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: normal;
   text-decoration: underline;
@@ -2703,7 +2703,7 @@ pre
 
 .art-postcontent li, .art-post li, .art-textblock li
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #303F50;
   margin: 3px 0 0 11px;
 }
@@ -2755,7 +2755,7 @@ blockquote
   padding: 10px 10px 10px 47px;
   margin: 10px 0 0 25px;
   color: #0D1216;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: italic;
   text-align: left;
@@ -2766,7 +2766,7 @@ blockquote
 blockquote a, .art-postcontent blockquote a, .art-blockcontent blockquote a, .art-footer blockquote a, blockquote a:link, .art-postcontent blockquote a:link, .art-blockcontent blockquote a:link, .art-footer blockquote a:link, blockquote a:visited, .art-postcontent blockquote a:visited, .art-blockcontent blockquote a:visited, .art-footer blockquote a:visited, blockquote a:hover, .art-postcontent blockquote a:hover, .art-blockcontent blockquote a:hover, .art-footer blockquote a:hover
 {
   color: #0D1216;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight: normal;
   font-style: italic;
   text-align: left;
@@ -2793,31 +2793,31 @@ blockquote p, .art-postcontent blockquote p, .art-blockcontent blockquote p, .ar
 .Sorter a
 {
   position: relative;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #627384;
 }
 
 .Sorter a:link
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #627384;
 }
 
 .Sorter a:visited, .Sorter a.visited
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #627384;
 }
 
 .Sorter a:hover, .Sorter a.hover
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #4A5764;
 }
 
 .Sorter
 {
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #343D46;
 }
 
@@ -2827,8 +2827,8 @@ blockquote p, .art-postcontent blockquote p, .art-blockcontent blockquote p, .ar
   margin: 0 auto;
   position: relative;
   color: #6381A1;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   line-height: 175%;
   text-align: center;
 }
@@ -2836,8 +2836,8 @@ blockquote p, .art-postcontent blockquote p, .art-blockcontent blockquote p, .ar
 .art-footer a, .art-footer a:link, .art-footer a:visited, .art-footer a:hover, .art-footer td, .art-footer th, .art-footer caption
 {
   color: #6381A1;
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   line-height: 175%;
 }
 
@@ -2850,58 +2850,58 @@ blockquote p, .art-postcontent blockquote p, .art-blockcontent blockquote p, .ar
 .art-footer a, .art-footer a:link
 {
   color: #8098B3;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
 }
 
 .art-footer a:visited
 {
   color: #5E7C9C;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
 }
 
 .art-footer a:hover
 {
   color: #FB7837;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: underline;
 }
 
 .art-footer h1
 {
   color: #8A99A8;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-footer h2
 {
   color: #A1ADBA;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-footer h3
 {
   color: #FA681E;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-footer h4
 {
   color: #9CAFC4;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-footer h5
 {
   color: #9CAFC4;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-footer h6
 {
   color: #9CAFC4;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
 .art-footer img
@@ -2978,8 +2978,8 @@ blockquote p, .art-postcontent blockquote p, .art-blockcontent blockquote p, .ar
 
 .art-footer li
 {
-  font-size: 13px;
-  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-size: 11pt;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   color: #A03703;
 }
 
@@ -2995,7 +2995,7 @@ blockquote p, .art-postcontent blockquote p, .art-blockcontent blockquote p, .ar
 
 .art-page-footer, .art-page-footer a, .art-page-footer a:link, .art-page-footer a:visited, .art-page-footer a:hover
 {
-  font-family: Arial;
+   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-size: 10px;
   letter-spacing: normal;
   word-spacing: normal;
