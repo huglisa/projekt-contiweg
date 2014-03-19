@@ -228,9 +228,9 @@ JHtml::_('behavior.framework', true);
 			// Untermenüpunkte von angebot/unterstufe anpassen
 			if (jQuery(".art-hmenu").width() > 1020) 
 			{
-				jQuery("#unterstufe_mittagsbetreuung").replaceWith('<a id="unterstufe_mittagsbetreuung">Mittags-betreuung</a>');
-				jQuery("#unterstufe_tagesbetreuung").replaceWith('<a id="unterstufe_tagesbetreuung">Tagesbetreuung</a>');
-				jQuery("#unterstufe_besonderheiten").replaceWith('<a id="unterstufe_besonderheiten">Besonderheiten</a>');
+				jQuery("#unterstufe_mittagsbetreuung").replaceWith('<a id="unterstufe_mittagsbetreuung" href="/index.php/angebot/unterstufe/mittagsbetreuung">Mittags-betreuung</a>');
+				jQuery("#unterstufe_tagesbetreuung").replaceWith('<a id="unterstufe_tagesbetreuung" href="/index.php/angebot/unterstufe/tagesbetreuung">Tagesbetreuung</a>');
+				jQuery("#unterstufe_besonderheiten").replaceWith('<a id="unterstufe_besonderheiten" href="/index.php/angebot/unterstufe/besonderheiten">Besonderheiten</a>');
 			
 				jQuery(".unterstufe_alles").css('height', 389);
 				jQuery(".unterstufe_alles").css('width', 255);
@@ -269,7 +269,7 @@ JHtml::_('behavior.framework', true);
 				
 				if(jQuery(".art-hmenu").width() > 1400)
 				{			
-					jQuery("#unterstufe_mittagsbetreuung").replaceWith('<a id="unterstufe_mittagsbetreuung">Mittagsbetreuung</a>');
+					jQuery("#unterstufe_mittagsbetreuung").replaceWith('<a id="unterstufe_mittagsbetreuung" href="/index.php/angebot/unterstufe/mittagsbetreuung">Mittagsbetreuung</a>');
 					
 					jQuery(".unterstufe_alles").css('height', 460);
 					jQuery(".unterstufe_alles").css('width', 308);
@@ -308,7 +308,7 @@ JHtml::_('behavior.framework', true);
 				
 					if(jQuery(".art-hmenu").width() > 1700)
 					{
-						jQuery("#unterstufe_mittagsbetreuung").replaceWith('<a id="unterstufe_mittagsbetreuung">Mittagsbetreuung</a>');
+						jQuery("#unterstufe_mittagsbetreuung").replaceWith('<a id="unterstufe_mittagsbetreuung" href="/index.php/angebot/unterstufe/mittagsbetreuung">Mittagsbetreuung</a>');
 					
 						jQuery(".unterstufe_alles").css('height', 600);
 						jQuery(".unterstufe_alles").css('width', 413);
@@ -348,8 +348,8 @@ JHtml::_('behavior.framework', true);
 			}
 			else if(jQuery(".art-hmenu").width() < 1020)
 			{
-				jQuery("#unterstufe_tagesbetreuung").replaceWith('<a id="unterstufe_tagesbetreuung">Tages-betreuung</a>');
-				jQuery("#unterstufe_besonderheiten").replaceWith('<a id="unterstufe_besonderheiten">Besonder-heiten</a>');
+				jQuery("#unterstufe_tagesbetreuung").replaceWith('<a id="unterstufe_tagesbetreuung" href="/index.php/angebot/unterstufe/tagesbetreuung">Tages-betreuung</a>');
+				jQuery("#unterstufe_besonderheiten").replaceWith('<a id="unterstufe_besonderheiten" href="/index.php/angebot/unterstufe/besonderheiten">Besonder-heiten</a>');
 			
 				jQuery(".unterstufe_alles").css('height', 354);
 				jQuery(".unterstufe_alles").css('width', 204);
@@ -387,8 +387,8 @@ JHtml::_('behavior.framework', true);
 				
 				if(jQuery(".art-hmenu").width() < 800)
 				{
-					jQuery("#unterstufe_tagesbetreuung").replaceWith('<a id="unterstufe_tagesbetreuung">Tages-betreuung</a>');
-					jQuery("#unterstufe_besonderheiten").replaceWith('<a id="unterstufe_besonderheiten">Besonder-heiten</a>');
+					jQuery("#unterstufe_tagesbetreuung").replaceWith('<a id="unterstufe_tagesbetreuung" href="/index.php/angebot/unterstufe/tagesbetreuung">Tages-betreuung</a>');
+					jQuery("#unterstufe_besonderheiten").replaceWith('<a id="unterstufe_besonderheiten" href="/index.php/angebot/unterstufe/besonderheiten">Besonder-heiten</a>');
 				
 					jQuery(".unterstufe_alles").css('height', 353);
 					jQuery(".unterstufe_alles").css('width', 184);
@@ -560,7 +560,7 @@ JHtml::_('behavior.framework', true);
 			// Untermenüpunkte von Schulteam anpassen
 			if (jQuery(".art-hmenu").width() > 1020) 
 			{
-				jQuery("#schulteam_absolventinnen").replaceWith('<a id="schulteam_absolventinnen">Absolvent - innen</a>');
+				jQuery("#schulteam_absolventinnen").replaceWith('<a id="schulteam_absolventinnen" href="index.php/schulteam/absolventinnen">Absolvent - innen</a>');
 				
 				jQuery(".schulteam_alles").css('height', 445);
 				jQuery(".schulteam_alles").css('width', 255);
@@ -599,9 +599,9 @@ JHtml::_('behavior.framework', true);
 				
 				if(jQuery(".art-hmenu").width() > 1400)
 				{			
-					jQuery("#schulteam_absolventinnen").replaceWith('<a id="schulteam_absolventinnen">Absolventinnen</a>');
-					jQuery("#schulteam_betreuungslehrerin").replaceWith('<a id="schulteam_betreuungslehrerin">Betreuungs - lehrerin</a>');
-					jQuery("#schulteam_bildungsberaterinnen").replaceWith('<a id="schulteam_bildungsberaterinnen">Bildungsbe- raterinnen</a>');
+					jQuery("#schulteam_absolventinnen").replaceWith('<a id="schulteam_absolventinnen" href="index.php/schulteam/absolventinnen">Absolventinnen</a>');
+					jQuery("#schulteam_betreuungslehrerin").replaceWith('<a id="schulteam_betreuungslehrerin" href="index.php/schulteam/betreuungslehrerin">Betreuungs - lehrerin</a>');
+					jQuery("#schulteam_bildungsberaterinnen").replaceWith('<a id="schulteam_bildungsberaterinnen" href="index.php/schulteam/bildungsberaterinnen">Bildungsbe- raterinnen</a>');
 					
 					jQuery(".schulteam_alles").css('height', 526);
 					jQuery(".schulteam_alles").css('width', 308);
@@ -639,9 +639,9 @@ JHtml::_('behavior.framework', true);
 				
 					if(jQuery(".art-hmenu").width() > 1700)
 					{
-						jQuery("#schulteam_absolventinnen").replaceWith('<a id="schulteam_absolventinnen">Absolventinnen</a>');
-						jQuery("#schulteam_betreuungslehrerin").replaceWith('<a id="schulteam_betreuungslehrerin">Betreuungslehrerin</a>');
-						jQuery("#schulteam_bildungsberaterinnen").replaceWith('<a id="schulteam_bildungsberaterinnen">Bildungsberaterinnen</a>');
+						jQuery("#schulteam_absolventinnen").replaceWith('<a id="schulteam_absolventinnen" href="index.php/schulteam/absolventinnen">Absolventinnen</a>');
+						jQuery("#schulteam_betreuungslehrerin").replaceWith('<a id="schulteam_betreuungslehrerin" href="index.php/schulteam/betreuungslehrerin">Betreuungslehrerin</a>');
+						jQuery("#schulteam_bildungsberaterinnen").replaceWith('<a id="schulteam_bildungsberaterinnen" href="index.php/schulteam/bildungsberaterinnen">Bildungsberaterinnen</a>');
 					
 						jQuery(".schulteam_alles").css('height', 690);
 						jQuery(".schulteam_alles").css('width', 413);
@@ -899,7 +899,7 @@ JHtml::_('behavior.framework', true);
 			// Untermenüpunkte von Bibliothek anpassen
 			if (jQuery(".art-hmenu").width() > 1020) 
 			{
-				jQuery("#bibliothek_oeffnungszeiten").replaceWith('<a id="bibliothek_oeffnungszeiten">Öffnungszeiten</a>');
+				jQuery("#bibliothek_oeffnungszeiten").replaceWith('<a id="bibliothek_oeffnungszeiten" href="index.php/bibliothek/oeffnungszeiten">Öffnungszeiten</a>');
 
 			
 				jQuery(".bibliothek_alles").css('height', 165);
@@ -966,7 +966,7 @@ JHtml::_('behavior.framework', true);
 			}
 			else if(jQuery(".art-hmenu").width() < 1020)
 			{
-				jQuery("#bibliothek_oeffnungszeiten").replaceWith('<a id="bibliothek_oeffnungszeiten">Öffnungs-zeiten</a>');
+				jQuery("#bibliothek_oeffnungszeiten").replaceWith('<a id="bibliothek_oeffnungszeiten" href="index.php/bibliothek/oeffnungszeiten">Öffnungs-zeiten</a>');
 				
 				jQuery(".bibliothek_alles").css('height', 150);
 				jQuery(".bibliothek_alles").css('width', 204);
@@ -987,7 +987,7 @@ JHtml::_('behavior.framework', true);
 				
 				if(jQuery(".art-hmenu").width() < 800)
 				{
-					jQuery("#bibliothek_oeffnungszeiten").replaceWith('<a id="bibliothek_oeffnungszeiten">Öffnungs-zeiten</a>');
+					jQuery("#bibliothek_oeffnungszeiten").replaceWith('<a id="bibliothek_oeffnungszeiten" href="index.php/bibliothek/oeffnungszeiten">Öffnungs-zeiten</a>');
 				
 					jQuery(".bibliothek_alles").css('height', 148);
 					jQuery(".bibliothek_alles").css('width', 184);
@@ -1144,8 +1144,8 @@ JHtml::_('behavior.framework', true);
 			// Untermenüpunkte von Service anpassen
 			if (jQuery(".art-hmenu").width() > 1020) 
 			{
-				jQuery("#service_formulare").replaceWith('<a id="service_formulare">Formulare und Downloads</a>');
-				jQuery("#service_sprechstunden").replaceWith('<a id="service_sprechstunden">Sprechstunden</a>');
+				jQuery("#service_formulare").replaceWith('<a id="service_formulare" href="index.php/service/formulare-und-downloads">Formulare und Downloads</a>');
+				jQuery("#service_sprechstunden").replaceWith('<a id="service_sprechstunden" href="index.php/service/sprechstunden">Sprechstunden</a>');
 
 				jQuery(".service_alles").css('height', 445);
 				jQuery(".service_alles").css('width', 255);
@@ -1184,7 +1184,7 @@ JHtml::_('behavior.framework', true);
 				
 				if(jQuery(".art-hmenu").width() > 1400)
 				{			
-					jQuery("#service_massnahmenkatalog").replaceWith('<a id="service_massnahmenkatalog">Maßnahmen - katalog</a>');
+					jQuery("#service_massnahmenkatalog").replaceWith('<a id="service_massnahmenkatalog" href="index.php/service/massnahmenkatalog">Maßnahmen - katalog</a>');
 					
 					jQuery(".service_alles").css('height', 530);
 					jQuery(".service_alles").css('width', 308);
@@ -1225,7 +1225,7 @@ JHtml::_('behavior.framework', true);
 									
 					if(jQuery(".art-hmenu").width() > 1700)
 					{
-						jQuery("#service_massnahmenkatalog").replaceWith('<a id="service_massnahmenkatalog">Maßnahmenkatalog</a>');
+						jQuery("#service_massnahmenkatalog").replaceWith('<a id="service_massnahmenkatalog" href="index.php/service/massnahmenkatalog">Maßnahmenkatalog</a>');
 						
 						jQuery(".service_alles").css('height', 690);
 						jQuery(".service_alles").css('width', 413);
@@ -1270,8 +1270,8 @@ JHtml::_('behavior.framework', true);
 			}
 			else if(jQuery(".art-hmenu").width() < 1020)
 			{
-				jQuery("#service_formulare").replaceWith('<a id="service_formulare">Formulare u. Downloads</a>');
-				jQuery("#service_sprechstunden").replaceWith('<a id="service_sprechstunden">Sprech - stunden</a>');
+				jQuery("#service_formulare").replaceWith('<a id="service_formulare" href="index.php/service/formulare-und-downloads">Formulare u. Downloads</a>');
+				jQuery("#service_sprechstunden").replaceWith('<a id="service_sprechstunden" href="index.php/service/sprechstunden">Sprech - stunden</a>');
 				
 				jQuery(".service_alles").css('height', 410);
 				jQuery(".service_alles").css('width', 204);
@@ -1310,8 +1310,8 @@ JHtml::_('behavior.framework', true);
 				
 				if(jQuery(".art-hmenu").width() < 800)
 				{
-					jQuery("#service_formulare").replaceWith('<a id="service_formulare">Formulare u. Downloads</a>');
-					jQuery("#service_sprechstunden").replaceWith('<a id="service_sprechstunden">Sprech - stunden</a>');
+					jQuery("#service_formulare").replaceWith('<a id="service_formulare" href="index.php/service/formulare-und-downloads">Formulare u. Downloads</a>');
+					jQuery("#service_sprechstunden").replaceWith('<a id="service_sprechstunden" href="index.php/service/sprechstunden">Sprech - stunden</a>');
 					
 					jQuery(".service_alles").css('height', 410);
 					jQuery(".service_alles").css('width', 184);
