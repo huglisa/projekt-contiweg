@@ -86,13 +86,18 @@
 						$db->query($sqlperson);
 			
 						?>
-							<script>alert('Erfolgreich registriert!')</script>
+							<script>
+								alert('Erfolgreich registriert!')
+								window.location = "/contiuni/index.php";
+							</script>
 						<?php
 					}
 					else
 					{
 						?>
-							<script>alert('Passwort wurde bereits gesetzt, bitte wenden Sie sich an einen Administrator!')</script>
+							<script>
+								alert('Passwort wurde bereits gesetzt, bitte wenden Sie sich an einen Administrator!')
+							</script>
 						<?php
 					}
 				}

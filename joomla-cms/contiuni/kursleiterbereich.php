@@ -123,7 +123,7 @@ function kurschange(sel)
 					<input type="text" readonly size="60" id="sonstigeinformationen" name="sonstigeinformationen" value="">
 				</div>
 				<div>
-					<label id="klassenbeschränkung-lbl">Klassenbeschränkung</label>						
+					<label id="klassenbeschränkung-lbl">Kursbeschränkung</label>						
 				</div>
 				<div>
 					<input type="text" readonly size="60" id="klassenbeschraenkung" name="klassenbeschraenkung" value="">

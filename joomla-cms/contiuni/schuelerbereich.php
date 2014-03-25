@@ -131,7 +131,7 @@ function kurschange2(sel)
 				Teilnehmeranzahl schon voll - passt
 				Anmeldefrist vorbei - passt
 				Bereits ein anderer Kurs an diesem Tag ausgewählt ist
-				Klassenbeschränkung
+				Kursbeschränkung
 				wo der Schüler bereits angemeldet ist - wird in der db eh nicht gespeichert-->
 			<?php
 			  $sqlkurse3 = "
@@ -226,7 +226,7 @@ function kurschange2(sel)
 				<input type="text" readonly size="60" id="sonstigeinformationenan" name="sonstigeinformationenan" value="">
 			</div>
 			<div>
-				<label id="klassenbeschränkung-lbl">Klassenbeschränkung </label>						
+				<label id="klassenbeschränkung-lbl">Kursbeschränkung </label>						
 			</div>
 			<div>
 				<input type="text" readonly size="60" id="klassenbeschraenkungan" name="klassenbeschraenkungan" value="">

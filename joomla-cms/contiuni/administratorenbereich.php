@@ -297,6 +297,12 @@ function kurschange(sel)
 						<button name="klasseerstellen">Klasse erstellen</button>
 						
 					</td>
+					<td>
+						<br>
+						<label name="passwortreset-lbl">Passwort eines Schülers zurücksetzen</label><br>
+						<input name="passwortreset" type="text" value="" placeholder="schülernummer"><br><br>
+						<button name="passwortreseten">Passwort zurücksetzen</button>
+					</td>
 				</tr>
 			</table>
 		</fieldset>
@@ -393,7 +399,7 @@ function kurschange(sel)
 				<input type="text" size="60" id="sonstigeinformationen" name="sonstigeinformationen" value="<?php echo $_POST['sonstigeinformationen']; ?>">
 			</div>
 			<div>
-				<label id="klassenbeschränkung-lbl">Klassenbeschränkung (mehrere Klassen mit ; getrennt angeben)</label>						
+				<label id="klassenbeschränkung-lbl">Kursbeschränkung (mehrere Beschränkungen mit ; getrennt angeben z.B. w;1A;6.Schulstufe)</label>						
 			</div>
 			<div>
 				<input type="text" size="60" id="klassenbeschraenkung" name="klassenbeschraenkung" value="<?php echo $_POST['klassenbeschraenkung']; ?>">
@@ -1043,6 +1049,39 @@ function kurschange(sel)
 		<?php
 	}
 	
+	//Passwort des Schülers zurücksetzen
+	if(isset($_POST['passwortreseten']))
+	{
+		$email = $_POST['passwortreset'];
+	
+		$sql = "select email from joem2_contiuni_person where email =\"". $email . "\";";
+		$result = $db->query($sql);
+		if(!$result)
+		{
+			?>
+				<script>alert('Schülernummer existiert nicht!')</script>
+			<?php
+		}
+		else
+		{	
+			if(!($row = mysqli_fetch_array($result))) 
+			{
+			?>
+				<script>alert('Schülernummer existiert nicht!')</script>
+			<?php
+			}
+			else
+			{		
+				$sqlpassword = "update joem2_contiuni_person set password = null where email = \"" . $row['email'] . "\"";
+				echo $sqlpassword;
+				$db->query($sqlpassword);
+				
+				?>
+					<script>alert('Passwort wurde erfolgreich zurückgesetzt. Der Schüler muss sich nun neu registrieren!')</script>
+				<?php
+			}
+		}
+	}
 
 	?>
 	
