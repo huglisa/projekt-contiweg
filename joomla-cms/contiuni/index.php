@@ -65,10 +65,10 @@ if (isset($_POST['logoff'])){
       <form action="index.php" method="POST">
 	      <div>
 		      <div>
-			      <label id="username-lbl">E-Mail Adresse *</label>						
+			      <label id="username-lbl">Schülernummer oder E-Mail Adresse *</label>						
 		      </div>
 		      <div>
-			    <input type="email" required size="30" id="anmeldeemail" name="anmeldeemail" placeholder="test@hotmail.com" value="<?php echo $_POST['anmeldeemail']; ?>">
+			    <input type="text" required size="30" id="anmeldeemail" name="anmeldeemail" placeholder="56325 oder test@hotmail.com" value="<?php echo $_POST['anmeldeemail']; ?>">
 		      </div>
 	     </div>
 	     <div>
@@ -76,7 +76,7 @@ if (isset($_POST['logoff'])){
 			      <label id="password-lbl">Passwort *</label>
 		     </div>
 		     <div>
-			     <input type="password" required size="30" id="anmeldepasswort" name="anmeldepasswort" placeholder="passwort" value="">						
+			     <input type="password" required size="30" id="anmeldepasswort" name="anmeldepasswort" placeholder="maxi09" value="">						
 		     </div>
 	     </div>		
 	     <br>

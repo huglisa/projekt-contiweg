@@ -14,10 +14,10 @@
 <form action="registrieren.php" method="POST">
 	<div>
 		<div>
-			<label id="email-lbl">E-Mail Adresse *</label>						
+			<label id="email-lbl">Schülernummer *</label>						
 		</div>
 		<div>
-			<input type="email" required size="60" id="registrierenemail" name="registrierenemail" placeholder="maxi09@hotmail.com" value="<?php echo $_POST['registrierenemail']; ?>">
+			<input type="text" required size="60" id="registrierenemail" name="registrierenemail" placeholder="56234" value="<?php echo $_POST['registrierenemail']; ?>">
 		</div>
 	</div>
 	<div>
@@ -36,25 +36,6 @@
 			<input type="password" required size="60" id="registrierenpasswort2" name="registrierenpasswort2" placeholder="maxi09" value="">						
 		</div>
 	</div>
-	<div>
-		<div>
-			<label id="klasse-lbl">Klasse auswählen *</label>
-		</div>
-		<div>
-			<select size="1" name="klasse">
-				<?php
-					$sql = "select klassenname from joem2_contiuni_klasse;";
-					$result = $db->query($sql);
-					while($row = mysqli_fetch_array($result))
-					{
-					?>
-						<option><?php echo $row["klassenname"]?></option>
-					<?php
-					}
-				?>
-			</select>
-		</div>
-	</div>
 	<br>
 	<button name="registrieren" type="submit">Registrieren</button>
 </form>
@@ -67,7 +48,6 @@
 		$passwort = $_POST['registrierenpasswort'];
 		$passwort2 = $_POST['registrierenpasswort2'];
 		$email = $_POST['registrierenemail'];
-		$klasse = $_POST['klasse'];
 		
 		if(!($passwort == $passwort2))
 		{
@@ -82,7 +62,7 @@
 			if(!$result)
 			{
 				?>
-					<script>alert('Email Adresse existiert nicht!')</script>
+					<script>alert('Schülernummer existiert nicht!')</script>
 				<?php
 			}
 			else
@@ -90,27 +70,31 @@
 				if(!($row = mysqli_fetch_array($result))) 
 				{
 				?>
-					<script>alert('Email Adresse existiert nicht!')</script>
+					<script>alert('Schülernummer existiert nicht!')</script>
 				<?php
 				}
 				else
-				{				
-					$sqlperson = "update joem2_contiuni_person set password = '$passwort' where email =\"". $email . "\";";
-					$db->query($sqlperson);
+				{		
+					$sqlpassword = "select password from joem2_contiuni_person where email =\"". $email . "\";";
+					$resultpassword = $db->query($sqlpassword);
+					$rowpassword = mysqli_fetch_array($resultpassword);
 					
-					$sqlklasse = "select klassenid from joem2_contiuni_klasse where klassenname =\"". $klasse . "\";";
-					$result = $db->query($sqlklasse);
-					$row = mysqli_fetch_array($result);
-					$klassenid = $row["klassenid"];
+					if ($rowpassword['password'] == null)
+					{
 					
-					$sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $email . "\";";
-					$result = $db->query($sqlpersonenid);
-					$row = mysqli_fetch_array($result);
-					$personenid = $row["personenid"];
+						$sqlperson = "update joem2_contiuni_person set password = '$passwort' where email =\"". $email . "\";";
+						$db->query($sqlperson);
 			
-					$sqlschueler = "insert into joem2_contiuni_schueler (personenid, klassenid) values('$personenid','$klassenid');";
-					$db->query($sqlschueler);
-					
+						?>
+							<script>alert('Erfolgreich registriert!')</script>
+						<?php
+					}
+					else
+					{
+						?>
+							<script>alert('Passwort wurde bereits gesetzt, bitte wenden Sie sich an einen Administrator!')</script>
+						<?php
+					}
 				}
 			}
 		}
