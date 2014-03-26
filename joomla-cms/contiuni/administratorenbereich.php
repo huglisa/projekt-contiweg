@@ -264,7 +264,7 @@ function kurschange(sel)
 	<a href="javascript:toggle('schuelerverwalten')" style="text-decoration:none; border-bottom:dotted #F69F2B; color:black;">Klassen und Schüler erstellen</a>
 	<br>
 	<div id="schuelerverwalten" style="display: none">
-	<form action="index.php" method="POST">
+	<form action="index.php" method="POST" enctype="multipart/form-data">
 		<fieldset name="schueler">
 			<legend>Klassen und Schüler</legend>
 			<table style="margin: auto">
@@ -285,9 +285,9 @@ function kurschange(sel)
 						</select>
 					</td>
 					<td width="50%">
-						<span>Geben Sie eine csv-Datei an um Schüler zu erstellen:</span><br>
-						<input type="file" name="csv" value="Durchsuchen"><br><br>
-						<button name="schuelererstellen">Schüler erstellen</button>
+						<span>Geben Sie eine csv Datei mit den Schülerdaten an.</span></br>
+						<input name="uploaded" type="file" /><br />
+						<button type="submit"  name="csvsubmit">Schüler erstellen</button>
 					</td>
 				</tr>
 				<tr>
@@ -547,40 +547,40 @@ function kurschange(sel)
 	{
 		$kursleiter = $_POST['kursleiterliste'];
 		
-    /*$sqlselectkurs = "select k.kursleiter from joem2_contiuni_kurs k, joem2_contiuni_kursleiter kl, joem2_contiuni_person p
-                       where p.email = \"" . $kursleiter . "\" and kl.personenid = p.personenid ;";*/
-    $sqlselectkurs = "SELECT k.kursleiter FROM joem2_contiuni_kurs k JOIN joem2_contiuni_kursleiter kl ON k.kursleiter = kl.personenid 
-                        JOIN joem2_contiuni_person p ON p.personenid = kl.personenid
-                        WHERE p.email = '".$kursleiter."'";
+		$sqlselectkurs = "select k.kursleiter from joem2_contiuni_kurs k join joem2_contiuni_kursleiter kl on k.kursleiter = kl.personenid join joem2_contiuni_person p on p.personenid = kl.personenid where p.email = '".$kursleiter."'";
 		$result = $db->query($sqlselectkurs);
 		$row = mysqli_fetch_array($result);
 		$kursleiterkurs = $row["kursleiter"];
 
-    if (!$kursleiterkurs){
-      $sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $kursleiter . "\";";
-      $result = $db->query($sqlpersonenid);
-      $row = mysqli_fetch_array($result);
-      $personenid = $row["personenid"];
+		if (!$kursleiterkurs)
+		{
+			$sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $kursleiter . "\";";
+			$result = $db->query($sqlpersonenid);
+			$row = mysqli_fetch_array($result);
+			$personenid = $row["personenid"];
       
-      $sqldeletekursleiter = "delete from joem2_contiuni_kursleiter where personenid = \"". $personenid . "\";";
-      $db->query($sqldeletekursleiter);
+			$sqldeletekursleiter = "delete from joem2_contiuni_kursleiter where personenid = \"". $personenid . "\";";
+			$db->query($sqldeletekursleiter);
       
-      $sqldeleteperson = "delete from joem2_contiuni_person where personenid = \"". $personenid . "\";";
-      $db->query($sqldeleteperson);
-      		?>
-      <script>
-        alert('Kursleiter gelöscht!');
-        window.location = "/contiuni/index.php";
-      </script>
-      <?php
-		}else{
-		?>
-		<script>
-			alert('Kursleiter kann nicht gelöscht werden, da er noch bei einem Kurs als Kursleiter fungiert.');
-			window.location = "/contiuni/index.php";
-		</script>
-		<?php
-    }
+			$sqldeleteperson = "delete from joem2_contiuni_person where personenid = \"". $personenid . "\";";
+			$db->query($sqldeleteperson);
+			
+			?>
+			<script>
+				alert('Kursleiter gelöscht!');
+				window.location = "/contiuni/index.php";
+			</script>
+			<?php
+		}
+		else
+		{
+			?>
+			<script>
+				alert('Kursleiter kann nicht gelöscht werden, da er noch bei einem Kurs als Kursleiter fungiert.');
+				window.location = "/contiuni/index.php";
+			</script>
+			<?php
+		}
 	}
 	
 	//Kursleiter bearbeiten Button
@@ -812,19 +812,6 @@ function kurschange(sel)
 		}
 	}
 
-	
-	//Schüler erstellen - evt noch ein Dateiupload
-	if(isset($_POST['schuelererstellen']))
-	{	
-		
-		$datei = fopen("Mappe1.csv", "r");
-		$daten = fgetcsv($datei, 1000);
-		while ($daten) 
-		{
-			echo implode(" – ", $daten) . "<br>";
-			$daten = fgetcsv($datei, 1000);
-		}
-	}
 
 	//Kurs hinzufügen
 	if(isset($_POST['kurshinzufuegen']))
@@ -978,7 +965,7 @@ function kurschange(sel)
 	{
 		$sqldeletekurse = "delete from joem2_contiuni_kurs;";
 		$db->query($sqldeletekurse);
-		
+				
 		?>
 		<script>
 			alert('Alle Kurse wurden gelöscht!');
@@ -997,6 +984,7 @@ function kurschange(sel)
 		{
 			$sqldeletekursleiter = "delete from joem2_contiuni_kursleiter where personenid = \"" . $row['personenid'] . "\";";
 			$db->query($sqldeletekursleiter);
+			
 			$sqldeleteperson = "delete from joem2_contiuni_person where personenid = \"" . $row['personenid'] . "\";";
 			$db->query($sqldeleteperson);
 		}
@@ -1036,8 +1024,12 @@ function kurschange(sel)
 		{
 			$sqldeleteschueler = "delete from joem2_contiuni_schueler where personenid = \"" . $row['personenid'] . "\";";
 			$db->query($sqldeleteschueler);
+			
 			$sqldeleteperson = "delete from joem2_contiuni_person where personenid = \"" . $row['personenid'] . "\";";
 			$db->query($sqldeleteperson);
+			
+			$sqlautoincrement = "alter table joem2_contiuni_person auto_increment = 0";
+			$db->query($sqlautoincrement);
 		}
 				
 		
@@ -1083,13 +1075,77 @@ function kurschange(sel)
 		}
 	}
 
+	//Schüler erstellen
+	if(isset($_POST['csvsubmit']))
+	{
+		$target = basename( $_FILES['uploaded']['name']) ; 
+		$ok=1; 
+		if(move_uploaded_file($_FILES['uploaded']['tmp_name'], $target)) 
+		{
+		?>
+			<script>
+				alert(<?php echo "Die Datei ". basename( $_FILES['uploaded']['name']). " wurde erfolgreich hochgeladen!";?>);
+			</script>
+		<?php
+			
+			
+			$datei = fopen(basename( $_FILES['uploaded']['name']), "r");
+			$daten = fgetcsv($datei, 1000, ";");
+			$daten = fgetcsv($datei, 1000, ";");
+			
+			while ($daten) 
+			{
+				$vorname = trim($daten[0]);
+				$nachname = trim($daten[1]);
+				$geschlecht = trim($daten[2]);
+				$klasse = trim($daten[3]);
+				$schuelernummer = trim($daten[4]);
+		
+				$sqlinsertperson = "insert into joem2_contiuni_person (vorname, nachname, geschlecht, email) values(\"" . $vorname . "\", \"" . $nachname . "\", \"" . $geschlecht . "\", \"" . $schuelernummer . "\");";
+				$db->query($sqlinsertperson);
+				
+				$sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $schuelernummer . "\";";
+				$result = $db->query($sqlpersonenid);
+				$row = mysqli_fetch_array($result);
+				$personenid = $row["personenid"];
+				
+				$sqlklassenid = "select klassenid from joem2_contiuni_klasse where klassenname = \"" . $klasse . "\";";
+				$result2 = $db->query($sqlklassenid);
+				
+				if($row2 = mysqli_fetch_array($result2))
+				{
+					$klassenid = $row2["klassenid"];
+					
+					$sqlinsertschueler = "insert into joem2_contiuni_schueler (personenid, klassenid) values(\"" . $personenid . "\", \"" . $klassenid . "\");";
+					$db->query($sqlinsertschueler);
+				}
+				else
+				{
+					$sqldeleteperson = "delete from joem2_contiuni_person where personenid = \"". $personenid . "\";";
+					$db->query($sqldeleteperson);				
+				}
+				$daten = fgetcsv($datei, 1000, ";");
+				
+			}
+		} 
+		else 
+		{
+		?>
+			<script>
+				alert(<?php echo "Es ist ein Fehler beim Dateiupload aufgetreten";?>);
+			</script>
+		<?php
+		}
+	}
 	?>
 	
 
 <?php
 
 $db->close();
-}else{
-?><script>window.location = "/contiuni/index.php";</script><?php
+}
+else
+{
+	?><script>window.location = "/contiuni/index.php";</script><?php
 }
 ?>

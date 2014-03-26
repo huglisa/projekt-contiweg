@@ -97,6 +97,7 @@
 						?>
 							<script>
 								alert('Passwort wurde bereits gesetzt, bitte wenden Sie sich an einen Administrator!')
+								window.location = "/contiuni/index.php?seite=registrieren";
 							</script>
 						<?php
 					}

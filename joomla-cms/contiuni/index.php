@@ -177,7 +177,7 @@ if (isset($_POST['logoff'])){
 			else
 			{
 				?>
-					<script>alert('Email Adresse existiert nicht!')</script>
+					<script>alert('Schülernummer oder Email Adresse existiert nicht!')</script>
 				<?php
 			}
 		}
