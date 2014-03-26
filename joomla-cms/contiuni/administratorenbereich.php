@@ -450,7 +450,7 @@ function kurschange(sel)
 		</fieldset>
 		</form>
 		
-		<span>Alle Schüler einer Klasse</span>
+		<span>Alle Schüler einer Klasse mit Kurszuteilung</span>
 		<br>
 		<form action="index.php" method="POST">
 			<fieldset id="schuelerproklasse" style="display: block">

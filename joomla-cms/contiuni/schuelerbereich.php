@@ -133,22 +133,13 @@ function kurschange2(sel)
 				Bereits ein anderer Kurs an diesem Tag ausgewählt ist
 				Kursbeschränkung
 				wo der Schüler bereits angemeldet ist - wird in der db eh nicht gespeichert-->
-			<?php
-			  $sqlkurse3 = "
-				select joem2_contiuni_kurs.kursid as KID
-				from joem2_contiuni_kurs, joem2_contiuni_schuelerkurs where joem2_contiuni_kurs.kursid = joem2_contiuni_schuelerkurs.kursid and joem2_contiuni_schuelerkurs.schuelerid = ".$_SESSION['personenid']."; ";
+			<?php     
       
-      
-				/*$sqlkurse = "
+				$sqlkurse = "
 				select concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), kursid, kursname 
 				from joem2_contiuni_kurs
 				where teilnehmeranzahl > (select count(*) from joem2_contiuni_schuelerkurs where joem2_contiuni_schuelerkurs.kursid = joem2_contiuni_kurs.kursid)
-				and anmeldefrist >= curdate();";*/
-        $sqlkurse = "
-				select concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), kursid, kursname 
-				from joem2_contiuni_kurs
-				where teilnehmeranzahl > (select count(*) from joem2_contiuni_schuelerkurs where joem2_contiuni_schuelerkurs.kursid = joem2_contiuni_kurs.kursid)
-				and anmeldefrist >= curdate() and joem2_contiuni_kurs.kursid != (".$sqlkurse3.");";
+				and anmeldefrist >= curdate();";
         
 				$resultkurse = $db->query($sqlkurse);
 				while($row = mysqli_fetch_array($resultkurse))
