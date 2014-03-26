@@ -484,8 +484,8 @@ function kurschange(sel)
 		<br>
 		<button name="allekurseloeschen">alle Kurse löschen</button>
 		<button name="allekursleiterloeschen">alle Kursleiter löschen</button>
-		<button name="alleklassenloeschen">alle Klassen löschen</button>
 		<button name="alleschuelerloeschen">alle Schülerdaten löschen</button>
+		<button name="alleklassenloeschen">alle Klassen löschen</button>
 	</form>
 	</div>
 
@@ -966,6 +966,9 @@ function kurschange(sel)
 		$sqldeletekurse = "delete from joem2_contiuni_kurs;";
 		$db->query($sqldeletekurse);
 				
+		$sqlautoincrement = "alter table joem2_contiuni_kurs auto_increment = 2";
+		$db->query($sqlautoincrement);
+				
 		?>
 		<script>
 			alert('Alle Kurse wurden gelöscht!');
@@ -1004,6 +1007,9 @@ function kurschange(sel)
 		$sqldeleteklassen = "delete from joem2_contiuni_klasse;";
 		$db->query($sqldeleteklassen);
 		
+		$sqlautoincrement = "alter table joem2_contiuni_klasse auto_increment = 2";
+		$db->query($sqlautoincrement);
+		
 		?>
 		<script>
 			alert('Alle Klassen wurden gelöscht!');
@@ -1027,11 +1033,10 @@ function kurschange(sel)
 			
 			$sqldeleteperson = "delete from joem2_contiuni_person where personenid = \"" . $row['personenid'] . "\";";
 			$db->query($sqldeleteperson);
-			
-			$sqlautoincrement = "alter table joem2_contiuni_person auto_increment = 0";
-			$db->query($sqlautoincrement);
 		}
 				
+		$sqlautoincrement = "alter table joem2_contiuni_person auto_increment = 2";
+		$db->query($sqlautoincrement);
 		
 		?>
 		<script>
