@@ -2,7 +2,7 @@
 if ($_SESSION['benutzerangemeldet'] == 'true'){
 
 $db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
-
+//$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
 	if (!$db )
 	{
 	?>
@@ -125,18 +125,31 @@ function kurschange2(sel)
 	<form action="index.php" method="POST">
 	
 	<fieldset>
-		<legend>Alle Kurse welche noch ausgewählt werden können:</legend>
+		<legend>Alle Kurse:</legend>
+
 		<select name="kursliste" id="kursliste" size="6" onchange="kurschange(this)">
 			<!--Kurs nicht anzeigen wenn:
 				Teilnehmeranzahl schon voll - passt
 				Anmeldefrist vorbei - passt
 				Bereits ein anderer Kurs an diesem Tag ausgewählt ist
-				Kursbeschränkung
-				wo der Schüler bereits angemeldet ist - wird in der db eh nicht gespeichert-->
+				Kursbeschränkung --passt
+				wo der Schüler bereits angemeldet ist - passt -->
 			<?php     
-      
+							
+
+        
+        /* klassenbeschraenkung ?><script>
+        var elemklassenbeschraenkung = document.getElementById('klassenbeschraenkung');
+        var klasse = elemklassenbeschraenkung.value;
+        alert(klasse);
+        </script>
+        <?php*/
+        $sqlbeschraenkungsklasse = "";
+        $sqlbeschraenkungsgeschlecht = "";
+        $sqlbescharenkungsschulstufe = "";
+        
 				$sqlkurse = "
-				select concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), kursid, kursname 
+				select concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), kursid, kursname, klassenbeschraenkung 
 				from joem2_contiuni_kurs
 				where teilnehmeranzahl > (select count(*) from joem2_contiuni_schuelerkurs where joem2_contiuni_schuelerkurs.kursid = joem2_contiuni_kurs.kursid)
 				and anmeldefrist >= curdate();";
@@ -146,11 +159,55 @@ function kurschange2(sel)
 				{
 					?>
 					<option label="<?php echo $row["concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung)"]?>" value="<?php echo $row['kursid'];?>"><?php echo $row["kursname"]?></option>
-						
-					<?php
+          <?php
+          $kursbeschraenkung = $row['klassenbeschraenkung'];
+          $splitkursbeschraenkung = explode(';', $kursbeschraenkung);
+          // wie lange die kursbeschraenkung, per schleife das beschraenkungsarray durchgehen, und auf die kriterien stückweise prüfen
+          // abfrage ob punkt drinn is -> schulstufe -4 für klasse
+          foreach ($splitkursbeschraenkung as $val){
+            /*?><script>alert("Hallo:<?php echo $val ?>");</script><?php*/
+            if (strpos($val, '.') !== false){ //Schulstufe
+              $sqlbeschraenkungsschulstufe = (substr($val, 0, 1) - 4);
+              if ($sqlbeschraenkungsschulstufe == null || $sqlbeschraenkungsschulstufe == "" || (substr($_SESSION['schuelerklasse'], 0, 1) != $sqlbeschraenkungsschulstufe)){
+                ?><script>jQuery("#kursliste option[value="+<?php echo $row['kursid'];?>+"]").remove();</script><?php
+                /*?><script>alert("Schulstufe:<?php echo $sqlbeschraenkungsschulstufe; ?>");</script><?php*/
+              }
+              
+            }else if ((strpos($val, 'm') !== false) || (strpos($val, 'w') !== false)){ //Geschlecht
+              $sqlbeschraenkungsgeschlecht = $val;
+              if ($sqlbeschraenkungsgeschlecht != $_SESSION["schuelergeschlecht"]){
+                ?><script>jQuery("#kursliste option[value="+<?php echo $row['kursid'];?>+"]").remove();</script><?php
+                /*?><script>alert("Geschlecht:<?php echo $sqlbeschraenkungsgeschlecht; ?>");</script><?php*/
+              }
+              
+            }else{ //Klasse
+              $sqlbeschraenkungsklasse = $val;
+              if (($sqlbeschraenkungsklasse == null || $sqlbeschraenkungsklasse == "")){// ||  $_SESSION['schuelerklasse'] != $sqlbeschraenkungsklasse){
+                ?><script>jQuery("#kursliste option[value="+<?php echo $row['kursid'];?>+"]").remove();</script><?php
+                /*?><script>alert("Klasse:<?php echo $sqlbeschraenkungsklasse; ?>");</script><?php*/
+              }
+              
+            }
+          }
 				}
 			?>
 		</select>
+		<?php 
+		$sqlkurse09 = "
+				select joem2_contiuni_kurs.kursid as KID
+				from joem2_contiuni_kurs, joem2_contiuni_schuelerkurs where joem2_contiuni_kurs.kursid = joem2_contiuni_schuelerkurs.kursid and joem2_contiuni_schuelerkurs.schuelerid = ".$_SESSION['personenid']."; ";
+				$resultkurse09 = $db->query($sqlkurse09);
+				while($row09 = mysqli_fetch_array($resultkurse09))
+				{
+					?>
+						<script>var id1 = <?php echo $row09['KID'];?>;
+						jQuery("#kursliste option[value="+id1+"]").remove();
+						</script>
+					<?php 
+				}
+				
+
+		?>
 		<br>
 		<br>
 		<div name="divkurse" id="divkurse">
@@ -328,15 +385,45 @@ function kurschange2(sel)
 if(isset($_POST['anmelden']))
 {
 	$kurs = $_POST['kursliste'];
-	
-	$sqlinsertschuelerkurs = 'insert into joem2_contiuni_schuelerkurs values('.$kurs.', '.$_SESSION["personenid"].');';
-	$db->query($sqlinsertschuelerkurs);
-		
-	?>
-	<script>
-		window.location = "/contiuni/index.php";
-	</script>
-	<?php
+  $nureinkurs = true;
+
+    				$sqlkursausgewaehlt = "
+				select joem2_contiuni_kurs.kursid as KID, kursname, kursbeginn
+				from joem2_contiuni_kurs, joem2_contiuni_schuelerkurs where joem2_contiuni_kurs.kursid = ".$kurs.";";
+				$resultkursausgewaehlt = $db->query($sqlkursausgewaehlt);
+        $kursdatum = "00.00.0000";
+				while($row3 = mysqli_fetch_array($resultkursausgewaehlt))
+				{
+          $kursdatum = $row3['kursbeginn'];
+        }
+  
+  
+  				$sqlkurse3 = "
+				select concat(kursleiter, ';', veranstaltungsort, ';', teilnehmeranzahl, ';', anmeldefrist, ';', kursbeginn, ';', kursende, ';', sonstigeinformationen, ';', klassenbeschraenkung), joem2_contiuni_kurs.kursid as KID, kursname, kursbeginn 
+				from joem2_contiuni_kurs, joem2_contiuni_schuelerkurs where joem2_contiuni_kurs.kursid = joem2_contiuni_schuelerkurs.kursid and joem2_contiuni_schuelerkurs.schuelerid = ".$_SESSION['personenid']."; ";
+				$resultkurse3 = $db->query($sqlkurse3);
+				while($row4 = mysqli_fetch_array($resultkurse3))
+				{
+          if ($kursdatum <= $row4['kursbeginn']){
+            $nureinkurs = false;
+          }
+        }
+  if ($nureinkurs){
+    $sqlinsertschuelerkurs = 'insert into joem2_contiuni_schuelerkurs values('.$kurs.', '.$_SESSION["personenid"].');';
+    $db->query($sqlinsertschuelerkurs);
+    
+    ?>
+    <script>
+      window.location = "/contiuni/index.php";
+    </script>
+    <?php
+  }else{
+    ?>
+    <script>
+      alert("Du bist bereits für einen Kurs an diesem Tag eingetragen.");
+    </script>
+    <?php
+  }
 }
 else if(isset($_POST['abmelden']))
 { //abmelden

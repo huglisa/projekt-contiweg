@@ -25,6 +25,7 @@ if (isset($_POST['logoff'])){
 <html>
 <head>
 <link rel="stylesheet" href="style.css" type="text/css">
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
 <?php if($_SESSION['benutzerangemeldet'] == 'true'){?>
@@ -91,14 +92,15 @@ if (isset($_POST['logoff'])){
 		$_SESSION['email'] = $_POST['anmeldeemail'];
 		$_SESSION['passwort'] = $_POST['anmeldepasswort'];
 		
-	  $db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
-    
+$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+//$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
     
 		if (!$db )
-		{?>
-      <script>alert('Verbindung fehlgeschlagen!')</script>
-		<?php
-    }
+		{
+			?>
+				<script>alert('Verbindung fehlgeschlagen!')</script>
+			<?php
+		}
 	
 		$sql = "select password from joem2_contiuni_person where email =\"". $_SESSION['email'] . "\";";
 		$result = $db->query($sql);
@@ -114,15 +116,16 @@ if (isset($_POST['logoff'])){
 			{
 				if($row["password"] == $_SESSION['passwort'])
 				{					
-					$sqlpersonenid = "select personenid, vorname, nachname from joem2_contiuni_person where email =\"". $_SESSION['email'] . "\";";
+					$sqlpersonenid = "select personenid, vorname, nachname, geschlecht from joem2_contiuni_person where email =\"". $_SESSION['email'] . "\";";
 					$result = $db->query($sqlpersonenid);
 					$row = mysqli_fetch_array($result);
 					$personenid = $row["personenid"];
-          $_SESSION["personenid"] = $personenid;
-          $_SESSION['benutzerangemeldet'] = 'true';
+					$_SESSION["personenid"] = $personenid;
+					$_SESSION['benutzerangemeldet'] = 'true';
           
-          $vorname = $row["vorname"];
-          $_SESSION["nachname"] = $row["nachname"];
+          
+					$vorname = $row["vorname"];
+					$_SESSION["nachname"] = $row["nachname"];
 					
 					$sqlschueler = "select personenid from joem2_contiuni_schueler where personenid =\"". $personenid . "\";";
 					$resultschueler = $db->query($sqlschueler);
@@ -130,12 +133,19 @@ if (isset($_POST['logoff'])){
 					$personenidschueler = $rowschueler["personenid"];
 					if($personenidschueler == $personenid)
 					{
+            $sqlkurseklasse = "select k.klassenname from joem2_contiuni_person p 
+            join joem2_contiuni_schueler s on p.personenid = s.personenid 
+            join joem2_contiuni_klasse k on k.klassenid = s.klassenid where p.personenid = ".$_SESSION['personenid']."";
+            $resultkurseklasse = $db->query($sqlkurseklasse);
+            $row2 = mysqli_fetch_array($resultkurseklasse);
+            $_SESSION['schuelerklasse'] = $row2['klassenname'];
+            $_SESSION['schuelergeschlecht'] = $row['geschlecht'];
 						?>
 						<script type="text/javascript">
 							window.location = "/contiuni/index.php";
 						</script>
 						<?php
-            $_SESSION['benutzertyp'] = 'schueler';
+						$_SESSION['benutzertyp'] = 'schueler';
 					}
 					
 					$sqlkursleiter = "select personenid from joem2_contiuni_kursleiter where personenid =\"". $personenid . "\";";
@@ -149,7 +159,7 @@ if (isset($_POST['logoff'])){
 							window.location = "/contiuni/index.php";
 						</script>
 						<?php
-            $_SESSION['benutzertyp'] = 'kursleiter';
+						$_SESSION['benutzertyp'] = 'kursleiter';
 					}
 					
 					$sqladmin = "select personenid from joem2_contiuni_administrator where personenid =\"". $personenid . "\";";
@@ -163,7 +173,7 @@ if (isset($_POST['logoff'])){
 							window.location = "/contiuni/index.php";
 						</script>
 						<?php
-            $_SESSION['benutzertyp'] = 'administrator';
+						$_SESSION['benutzertyp'] = 'administrator';
 					}
 					
 				}
