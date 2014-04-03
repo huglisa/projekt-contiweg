@@ -90,10 +90,10 @@ if (isset($_POST['logoff'])){
 	{
 	
 		$_SESSION['email'] = $_POST['anmeldeemail'];
-		$_SESSION['passwort'] = $_POST['anmeldepasswort'];
+		$_SESSION['passwort'] = sha1($_POST['anmeldepasswort']);
 		
-$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
-//$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
+//$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
     
 		if (!$db )
 		{

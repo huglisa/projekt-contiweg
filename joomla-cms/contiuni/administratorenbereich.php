@@ -1,7 +1,8 @@
 ﻿<?php
 if ($_SESSION['benutzerangemeldet'] == 'true'){
 
-$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+//$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
 	if (!$db )
 	{
 	?>
@@ -498,8 +499,8 @@ function kurschange(sel)
 		$vorname = $_POST['kursleitervorname'];
 		$nachname = $_POST['kursleiternachname'];
 		$email = $_POST['kursleiteremail'];
-		$passwort = $_POST['kursleiterpasswort'];
-		$passwort2 = $_POST['kursleiterpasswort2'];
+		$passwort = sha1($_POST['kursleiterpasswort']);
+		$passwort2 = sha1($_POST['kursleiterpasswort2']);
 		
 		if(!($passwort == $passwort2))
 		{
@@ -590,8 +591,8 @@ function kurschange(sel)
 		$vorname = $_POST['kursleitervorname'];
 		$nachname = $_POST['kursleiternachname'];
 		$email = $_POST['kursleiteremail'];
-		$passwort = $_POST['kursleiterpasswort'];
-		$passwort2 = $_POST['kursleiterpasswort2'];
+		$passwort = sha1($_POST['kursleiterpasswort']);
+		$passwort2 = sha1($_POST['kursleiterpasswort2']);
 		
 		$sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $kursleiter . "\";";
 		$result = $db->query($sqlpersonenid);
@@ -653,8 +654,8 @@ function kurschange(sel)
 		$vorname = $_POST['administratorvorname'];
 		$nachname = $_POST['administratornachname'];
 		$email = $_POST['administratoremail'];
-		$passwort = $_POST['administratorpasswort'];
-		$passwort2 = $_POST['administratorpasswort2'];
+		$passwort = sha1($_POST['administratorpasswort']);
+		$passwort2 = sha1($_POST['administratorpasswort2']);
 		
 		if(!($passwort == $passwort2))
 		{
@@ -728,8 +729,8 @@ function kurschange(sel)
 		$vorname = $_POST['administratorvorname'];
 		$nachname = $_POST['administratornachname'];
 		$email = $_POST['administratoremail'];
-		$passwort = $_POST['administratorpasswort'];
-		$passwort2 = $_POST['administratorpasswort2'];
+		$passwort = sha1($_POST['administratorpasswort']);
+		$passwort2 = sha1($_POST['administratorpasswort2']);
 		
 		$sqlpersonenid = "select personenid from joem2_contiuni_person where email =\"". $administrator . "\";";
 		$result = $db->query($sqlpersonenid);

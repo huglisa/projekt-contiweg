@@ -1,5 +1,6 @@
 ﻿<?php
-	$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+//$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
   if (!$db )
 	{
 		?>
@@ -78,7 +79,7 @@
 					$sqlpassword = "select password from joem2_contiuni_person where email =\"". $email . "\";";
 					$resultpassword = $db->query($sqlpassword);
 					$rowpassword = mysqli_fetch_array($resultpassword);
-					
+					$passwort = sha1($passwort);
 					if ($rowpassword['password'] == null)
 					{
 					
