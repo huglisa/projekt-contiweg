@@ -1,4 +1,4 @@
-/* JCE Editor - 2.3.4.1 | 23 November 2013 | http://www.joomlacontenteditor.net | Copyright (C) 2006 - 2013 Ryan Demmer. All rights reserved | GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html */
+/* JCE Editor - 2.3.4.4 | 12 December 2013 | http://www.joomlacontenteditor.net | Copyright (C) 2006 - 2013 Ryan Demmer. All rights reserved | GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html */
 (function(tinymce){var DOM=tinymce.DOM,Event=tinymce.dom.Event,extend=tinymce.extend,each=tinymce.each,Cookie=tinymce.util.Cookie,lastExtID,explode=tinymce.explode;function getPreviewCss(ed,fmt){var name,previewElm,dom=ed.dom,previewCss='',parentFontSize,previewStylesName;var previewStyles=ed.settings.preview_styles;if(previewStyles===false)
 return'';if(!previewStyles)
 previewStyles='font-family font-size font-weight text-decoration text-transform color background-color';function removeVars(val){return val.replace(/%(\w+)/g,'');}
@@ -35,7 +35,8 @@ return;if(!lo[v]){cl.push({'class':v});lo[v]=1;}});}
 break;case 3:if(r.href.indexOf('://fonts.googleapis.com')>0){var v='@import url('+r.href+');';if(tinymce.inArray(ff,v)===-1){ff.unshift(v);}}
 if(tinymce.isGecko&&r.href.indexOf('://')!=-1){return;}
 parseCSS(r.styleSheet);break;case 5:if(r.cssText){var v=toAbsolute(r.cssText,href);if(tinymce.inArray(ff,v)===-1){ff.push(v);}}
-break;}});};try{each(doc.styleSheets,parseCSS);}catch(ex){}
+break;}});}
+try{each(doc.styleSheets,parseCSS);}catch(ex){}
 if(cl.length>0){self.classes=cl;}
 if(ff.length){try{var DOM=tinymce.DOM,head=DOM.doc.getElementsByTagName('head')[0];var style=DOM.create('style',{type:'text/css'});var css=ff.join("\n");if(style.styleSheet){var setCss=function(){try{style.styleSheet.cssText=css;}catch(e){}};if(style.styleSheet.disabled){setTimeout(setCss,10);}else{setCss();}}else{style.appendChild(DOM.doc.createTextNode(css));}
 head.appendChild(style);self.fontface=true;}catch(e){}}

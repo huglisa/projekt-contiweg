@@ -1,6 +1,5 @@
-﻿<?php
-//$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
-$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
+<?php
+  $db = mysqli_connect ('localhost', 'phpmyadmin', 'St20v7_1', 'phpmyadmin');
   if (!$db )
 	{
 		?>

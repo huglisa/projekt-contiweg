@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="content">
+	<name>plg_content_slideboom</name>
+	<author>Nico van der Neut</author>
+	<creationDate>March 2011</creationDate>
+	<copyright>Copyright (C) 2011 Nico van der Neut ( develop.vdneutonline.nl ). All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>vdneut@gmail.com</authorEmail>
+	<authorUrl>http://develop.vdneutonline.nl</authorUrl>
+	<version>1.1.0</version>
+	<description>PLG_SLIDEBOOM_PLUGINDESCRIPTION</description>
+	<files>
+		<filename plugin="slideboom">slideboom.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_content_slideboom.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_content_slideboom.ini</language>
+		<language tag="nl-NL">nl-NL/nl-NL.plg_content_slideboom.sys.ini</language>
+		<language tag="nl-NL">nl-NL/nl-NL.plg_content_slideboom.ini</language>
+		<language tag="it-IT">it-IT/it-IT.plg_content_slideboom.sys.ini</language>
+		<language tag="it-IT">it-IT/it-IT.plg_content_slideboom.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="width" type="text" default="425" size="6" label="PLG_SLIDEBOOM_PLAYER_WIDTH" description="PLG_SLIDEBOOM_CAN_BE_OVERRULED" >
+				</field>
+
+				<field name="height" type="text" default="370" size="6" label="PLG_SLIDEBOOM_PLAYER_HEIGHT" description="PLG_SLIDEBOOM_CAN_BE_OVERRULED" >
+				</field>
+
+				<field name="fullscreen" type="radio" default="1" label="PLG_SLIDEBOOM_ALLOW_FULL_SCREEN" description="PLG_SLIDEBOOM_CAN_BE_OVERRULED">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="align" type="list" label="PLG_SLIDEBOOM_PLAYER_ALIGNMENT" default="left" description="PLG_SLIDEBOOM_CAN_BE_OVERRULED">
+					<option value="left">JGLOBAL_LEFT</option>
+					<option value="right">JGLOBAL_RIGHT</option>
+					<option value="center">PLG_SLIDEBOOM_CENTER</option>
+				</field>
+
+				<field name="bgcolor" type="text" default="ffffff" size="7" label="PLG_SLIDEBOOM_PLAYER_BACKGROUND_COLOR" description="PLG_SLIDEBOOM_CAN_BE_OVERRULED">
+				</field>
+
+				<field name="quality" type="list" label="PLG_SLIDEBOOM_QUALITY" default="high" description="PLG_SLIDEBOOM_CAN_BE_OVERRULED">
+					<option value="high">PLG_SLIDEBOOM_HIGH</option>
+					<option value="low">PLG_SLIDEBOOM_LOW</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

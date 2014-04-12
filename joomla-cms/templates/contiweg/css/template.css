@@ -91,6 +91,7 @@ div.schulteam_alles{
 	height: 613px;
 	width:254px;
 	margin:auto;
+	margin-top: 30px;
 }
 
 div.schulteam_alles > a
@@ -158,6 +159,7 @@ div.allgemeine_infos_alles{
 	height: 276px;
 	width:255px;
 	margin:auto;
+	margin-top: 30px;
 }
 
 div.allgemeine_infos_alles > a
@@ -207,6 +209,7 @@ div.unterstufe_alles{
 	height: 388px;
 	width:254px;
 	margin:auto;
+	margin-top: 30px;
 }
 
 div.unterstufe_alles > a
@@ -268,6 +271,7 @@ div.oberstufe_alles{
 	height: 220px;
 	width:254px;
 	margin:auto;
+	margin-top: 30px;
 }
 
 div.oberstufe_alles > a
@@ -310,6 +314,7 @@ div.erfolge_alles{
 	height: 220px;
 	width:254px;
 	margin:auto;
+	margin-top: 30px;
 }
 
 div.erfolge_alles > a
@@ -335,18 +340,31 @@ a#erfolge_aktivitaeten{
 	line-height: 50px;
 }
 
-a#erfolge_studentoftheyear{
+a#erfolge_veranstaltungen{
 	background-color: #ff4d94;
 	top:112px;
 	line-height: 50px;
 }
 
-a#erfolge_creativeaward{
-	background-color: #ff66a3;
+a#erfolge_awards{
+	background-color: #ff73ab;
 	left:127px;
 	top:168px;
 	line-height: 50px;
 }
+a#erfolge_schuelerberichte{
+	background-color: #ff8cba;
+	top:224px;
+	line-height: 50px;
+}
+
+a#erfolge_archiv{
+	background-color: #ffa6c9;
+	top:280px;
+	left:127px;
+	line-height: 50px;
+}
+
 
 /* Schulpartner */
 div.schulpartner_alles{
@@ -354,6 +372,7 @@ div.schulpartner_alles{
 	height: 164px;
 	width:254px;
 	margin:auto;
+	margin-top: 30px;
 }
 
 div.schulpartner_alles > a
@@ -404,6 +423,7 @@ div.bibliothek_alles{
 	height: 164px;
 	width:254px;
 	margin:auto;
+	margin-top: 30px;
 }
 
 div.bibliothek_alles > a
@@ -425,6 +445,7 @@ a#bibliothek_buchderwoche{
 	background-color: #bcb3c7;
 	left:127px;
 	top:56px;
+	line-height: 50px;
 }
 
 a#bibliothek_oeffnungszeiten{
@@ -442,6 +463,7 @@ div.service_alles{
 	height: 388px;
 	width:254px;
 	margin:auto;
+	margin-top: 30px;
 }
 
 div.service_alles > a
@@ -763,7 +785,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
 .art-postcontent, .art-postcontent li, .art-postcontent table, .art-postcontent a, .art-postcontent a:link, .art-postcontent a:visited, .art-postcontent a.visited, .art-postcontent a:hover, .art-postcontent a.hovered
 {
   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-  line-height: 175%;
+  line-height: 140%;
 }
 
 .art-postcontent p
@@ -791,7 +813,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
 {
   font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   text-decoration: none;
-  color: #8098B3;
+  color: #F55505;
 }
 
 .art-postcontent  a:hover, .art-postcontent a.hover
@@ -971,6 +993,8 @@ body
 	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(1, #F69F2B));
 	background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #F69F2B 100%);
 	background-image: linear-gradient(to top, #FFFFFF 0%, #F69F2B 100%);
+	filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#F69F2B', endColorstr='#FFFFFF'); /* IE6 & IE7 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#F69F2B', endColorstr='#FFFFFF')"; /* IE8 */
 	background-repeat: repeat-x;
 }
 
@@ -1840,7 +1864,7 @@ div.art-block img
   color: #2E3D4C;
   font-size: 11pt;
    font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-  line-height: 175%;
+  line-height: 140%;
 }
 
 .art-blockcontent table, .art-blockcontent li, .art-blockcontent a, .art-blockcontent a:link, .art-blockcontent a:visited, .art-blockcontent a:hover
@@ -1898,7 +1922,7 @@ div.art-block img
 {
   font-size: 11pt;
    font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-  line-height: 175%;
+  line-height: 140%;
   color: #4D6580;
   margin: 5px 0 0 10px;
 }
@@ -2829,7 +2853,7 @@ blockquote p, .art-postcontent blockquote p, .art-blockcontent blockquote p, .ar
   color: #6381A1;
   font-size: 11pt;
    font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-  line-height: 175%;
+  line-height: 140%;
   text-align: center;
 }
 
@@ -2838,7 +2862,7 @@ blockquote p, .art-postcontent blockquote p, .art-blockcontent blockquote p, .ar
   color: #6381A1;
   font-size: 11pt;
    font-family: Calibri, Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-  line-height: 175%;
+  line-height: 140%;
 }
 
 .art-footer p

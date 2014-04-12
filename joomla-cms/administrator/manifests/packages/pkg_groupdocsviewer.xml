@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="1.3.1">
+ <name>GroupDocs Viewer Plugins</name>
+ <author>GroupDocs Team</author>
+ <creationDate>November 2013</creationDate>
+ <copyright>copyright (c) GroupDocs, 2012. All rights  reserved</copyright>
+ <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+ <packagename>groupdocsviewer</packagename>
+ <version>1.3.1</version>
+ <url>http://groupdocs.com/groupdocsv3/apps/viewer</url>
+ <packager>GroupDocs Team</packager>
+ <packagerurl>http://groupdocs.com/groupdocsv3/apps/viewer</packagerurl>
+ <description>&lt;h2 style=&quot;font-size: 2.5em;&quot;&gt;Thanks for installing the GroupDocs Plugins Package!&lt;/h2&gt; &lt;p style=&quot;font-size:2.0em;&quot;&gt;You now have two new plugins: a Content and an Editor Button Plugin. &lt;span style=&quot;color:red;&quot;&gt;Remember
+ to publish both plugins so you can use them.&lt;/span&gt;</description>
+ <!--<update>http://www.updateurl.com</update>-->
+ <files folder="packages">
+   <file type="plugin" id="grpdocsviewer" group="content">plg_content_grpdocsviewer.zip</file>
+   <file type="plugin" id="grpdocsviewer" group="editors-xtd">plg_editors-xtd_grpdocsviewer.zip</file>
+ </files>
+</extension>

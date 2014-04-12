@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 defined('_JEXEC') or die;
 
 /**
@@ -897,8 +897,8 @@ JHtml::_('behavior.framework', true);
 				
 				jQuery("#bibliothek_buchderwoche").css('left', 127);
 				jQuery("#bibliothek_buchderwoche").css('top', 56);
-				jQuery("#bibliothek_buchderwoche").css('padding-top', 0);
-				
+				jQuery("#bibliothek_buchderwoche").css('line-height', 4);
+					
 				jQuery("#bibliothek_oeffnungszeiten").css('line-height', 4);
 				jQuery("#bibliothek_oeffnungszeiten").css('top', 112);
 							
@@ -918,8 +918,7 @@ JHtml::_('behavior.framework', true);
 				
 					jQuery("#bibliothek_buchderwoche").css('left', 154);
 					jQuery("#bibliothek_buchderwoche").css('top', 66);
-					jQuery("#bibliothek_buchderwoche").css('height', 52);
-					jQuery("#bibliothek_buchderwoche").css('padding-top', 8);
+					jQuery("#bibliothek_buchderwoche").css('line-height', 4.5);
 				
 					jQuery("#bibliothek_oeffnungszeiten").css('line-height', 4.5);
 					jQuery("#bibliothek_oeffnungszeiten").css('top', 132);
@@ -939,8 +938,7 @@ JHtml::_('behavior.framework', true);
 				
 						jQuery("#bibliothek_buchderwoche").css('left', 207);
 						jQuery("#bibliothek_buchderwoche").css('top', 86);
-						jQuery("#bibliothek_buchderwoche").css('height', 62);
-						jQuery("#bibliothek_buchderwoche").css('padding-top', 18);
+						jQuery("#bibliothek_buchderwoche").css('line-height', 6);
 				
 						jQuery("#bibliothek_oeffnungszeiten").css('line-height', 6);
 						jQuery("#bibliothek_oeffnungszeiten").css('top', 172);
@@ -961,7 +959,7 @@ JHtml::_('behavior.framework', true);
 				
 				jQuery("#bibliothek_buchderwoche").css('left', 102);
 				jQuery("#bibliothek_buchderwoche").css('top', 51);
-				jQuery("#bibliothek_buchderwoche").css('padding-top', 0);
+				jQuery("#bibliothek_buchderwoche").css('line-height', 4);
 				
 				jQuery("#bibliothek_oeffnungszeiten").css('line-height', 4);
 				jQuery("#bibliothek_oeffnungszeiten").css('top', 102);
@@ -981,8 +979,7 @@ JHtml::_('behavior.framework', true);
 				
 					jQuery("#bibliothek_buchderwoche").css('left', 92);
 					jQuery("#bibliothek_buchderwoche").css('top', 51);
-					jQuery("#bibliothek_buchderwoche").css('height', 41);
-					jQuery("#bibliothek_buchderwoche").css('padding-top', 4);
+					jQuery("#bibliothek_buchderwoche").css('line-height', 4);
 				
 					jQuery("#bibliothek_oeffnungszeiten").css('line-height', 4);
 					jQuery("#bibliothek_oeffnungszeiten").css('top', 102);
@@ -1006,12 +1003,19 @@ JHtml::_('behavior.framework', true);
 				jQuery("#erfolge_aktivitaeten").css('top', 56);
 				jQuery("#erfolge_aktivitaeten").css('line-height', 4);
 				
-				jQuery("#erfolge_studentoftheyear").css('top', 112);
-				jQuery("#erfolge_studentoftheyear").css('line-height', 4);
+				jQuery("#erfolge_veranstaltungen").css('top', 112);
+				jQuery("#erfolge_veranstaltungen").css('line-height', 4);
 				
-				jQuery("#erfolge_creativeaward").css('left', 127);
-				jQuery("#erfolge_creativeaward").css('top', 168);
-				jQuery("#erfolge_creativeaward").css('line-height', 4);
+				jQuery("#erfolge_awards").css('left', 127);
+				jQuery("#erfolge_awards").css('top', 168);
+				jQuery("#erfolge_awards").css('line-height', 4);
+				
+				jQuery("#erfolge_schuelerberichte").css('line-height', 4);
+				jQuery("#erfolge_schuelerberichte").css('top', 224);
+			
+				jQuery("#erfolge_archiv").css('line-height', 4);
+				jQuery("#erfolge_archiv").css('top', 280);
+				jQuery("#erfolge_archiv").css('left', 127);
 				
 				if(jQuery(".art-hmenu").width() > 1400)
 				{						
@@ -1028,12 +1032,20 @@ JHtml::_('behavior.framework', true);
 					jQuery("#erfolge_aktivitaeten").css('top', 66);
 					jQuery("#erfolge_aktivitaeten").css('line-height', 4.5);
 					
-					jQuery("#erfolge_studentoftheyear").css('top', 132);
-					jQuery("#erfolge_studentoftheyear").css('line-height', 4.5);					
+					jQuery("#erfolge_veranstaltungen").css('top', 132);
+					jQuery("#erfolge_veranstaltungen").css('line-height', 4.5);					
 				
-					jQuery("#erfolge_creativeaward").css('left', 154);
-					jQuery("#erfolge_creativeaward").css('top', 198);
-					jQuery("#erfolge_creativeaward").css('line-height', 4.5);
+					jQuery("#erfolge_awards").css('left', 154);
+					jQuery("#erfolge_awards").css('top', 198);
+					jQuery("#erfolge_awards").css('line-height', 4.5);
+				
+					jQuery("#erfolge_schuelerberichte").css('line-height', 4.5);
+					jQuery("#erfolge_schuelerberichte").css('top', 264);
+				
+					jQuery("#erfolge_archiv").css('line-height', 4.5);
+					jQuery("#erfolge_archiv").css('top', 330);
+					jQuery("#erfolge_archiv").css('left', 154);
+					
 				
 					if(jQuery(".art-hmenu").width() > 1700)
 					{
@@ -1050,14 +1062,20 @@ JHtml::_('behavior.framework', true);
 						jQuery("#erfolge_aktivitaeten").css('top', 86);
 						jQuery("#erfolge_aktivitaeten").css('line-height', 6);
 				
-						jQuery("#erfolge_studentoftheyear").css('line-height', 6);
-						jQuery("#erfolge_studentoftheyear").css('top', 172);
-						jQuery("#erfolge_studentoftheyear").css('padding-top', 0);
+						jQuery("#erfolge_veranstaltungen").css('line-height', 6);
+						jQuery("#erfolge_veranstaltungen").css('top', 172);
+						jQuery("#erfolge_veranstaltungen").css('padding-top', 0);
 				
-						jQuery("#erfolge_creativeaward").css('left', 207);
-						jQuery("#erfolge_creativeaward").css('top', 258);
-						jQuery("#erfolge_creativeaward").css('line-height', 6);
+						jQuery("#erfolge_awards").css('left', 207);
+						jQuery("#erfolge_awards").css('top', 258);
+						jQuery("#erfolge_awards").css('line-height', 6);
 				
+						jQuery("#erfolge_schuelerberichte").css('line-height', 6);
+						jQuery("#erfolge_schuelerberichte").css('top', 344);
+				
+						jQuery("#erfolge_archiv").css('line-height', 6);
+						jQuery("#erfolge_archiv").css('top', 430);
+						jQuery("#erfolge_archiv").css('left', 207);
 					}
 				}
 				
@@ -1078,13 +1096,19 @@ JHtml::_('behavior.framework', true);
 				jQuery("#erfolge_aktivitaeten").css('top', 51);
 				jQuery("#erfolge_aktivitaeten").css('line-height', 4);
 				
-				jQuery("#erfolge_studentoftheyear").css('top', 102);
-				jQuery("#erfolge_studentoftheyear").css('line-height', 2);
-				jQuery("#erfolge_studentoftheyear").css('padding-top', 0);
+				jQuery("#erfolge_veranstaltungen").css('top', 102);
+				jQuery("#erfolge_veranstaltungen").css('line-height', 4);
 				
-				jQuery("#erfolge_creativeaward").css('left', 102);
-				jQuery("#erfolge_creativeaward").css('top', 152);
-				jQuery("#erfolge_creativeaward").css('line-height', 4);
+				jQuery("#erfolge_awards").css('left', 102);
+				jQuery("#erfolge_awards").css('top', 152);
+				jQuery("#erfolge_awards").css('line-height', 4);
+				
+				jQuery("#erfolge_schuelerberichte").css('line-height', 4);
+				jQuery("#erfolge_schuelerberichte").css('top', 203);
+				
+				jQuery("#erfolge_archiv").css('line-height', 4);
+				jQuery("#erfolge_archiv").css('top', 255);
+				jQuery("#erfolge_archiv").css('left', 102);
 				
 				if(jQuery(".art-hmenu").width() < 800)
 				{
@@ -1101,14 +1125,19 @@ JHtml::_('behavior.framework', true);
 					jQuery("#erfolge_aktivitaeten").css('top', 51);
 					jQuery("#erfolge_aktivitaeten").css('line-height', 4);
 				
-					jQuery("#erfolge_studentoftheyear").css('top', 102);
-					jQuery("#erfolge_studentoftheyear").css('height', 41);
-					jQuery("#erfolge_studentoftheyear").css('padding-top', 5);
+					jQuery("#erfolge_veranstaltungen").css('top', 102);
+					jQuery("#erfolge_veranstaltungen").css('line-height', 4);
 				
-					jQuery("#erfolge_creativeaward").css('left', 92);
-					jQuery("#erfolge_creativeaward").css('top', 152);
-					jQuery("#erfolge_creativeaward").css('line-height', 4);
+					jQuery("#erfolge_awards").css('left', 92);
+					jQuery("#erfolge_awards").css('top', 152);
+					jQuery("#erfolge_awards").css('line-height', 4);
 				
+					jQuery("#erfolge_schuelerberichte").css('line-height', 4);
+					jQuery("#erfolge_schuelerberichte").css('top', 203);
+				
+					jQuery("#erfolge_archiv").css('top', 255);
+					jQuery("#erfolge_archiv").css('line-height', 4);
+					jQuery("#erfolge_archiv").css('left', 92);
 				}
 			}
 			
@@ -1329,7 +1358,7 @@ JHtml::_('behavior.framework', true);
 				
 				jQuery(".alles").css('width', 735);
 				jQuery(".alles").css('height', 475);
-				jQuery(".alles").css('margin-top', 100);
+				jQuery(".alles").css('margin-top', 50);
 			
 				jQuery("#angebot").css('width', 200);
 				jQuery("#angebot").css('height', 125);
@@ -1727,12 +1756,15 @@ JHtml::_('behavior.framework', true);
                 jQuery('.art-post').css('height', "auto");
             }
 			
-			jQuery(".wrappercontuni").css('height', jQuery(".art-post").height());
+			jQuery(".contentpanecontiuni").css('height', jQuery(".art-post").height());
 
-			if(jQuery(".wrappercontuni").length > 0)
+			if(jQuery(".contentpanecontiuni").length > 0)
 			{
 				jQuery('.art-post').css('height', (jQuery(".art-post").height()) + 40);  
 			}
+			
+			/*Phoca Download ausblenden*/
+            jQuery(".pd-cb").next().css('display', "none");
 			
 		}
 		

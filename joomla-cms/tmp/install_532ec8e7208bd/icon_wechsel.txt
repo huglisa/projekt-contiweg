@@ -1,0 +1,6 @@
+Icon Wechsel!
+
+- FTP öffnen
+- Ordner /components/com_phocadownload/assets/images öffnen
+- icon-new.png und icon-hot.png überschreiben.
+- fertig!

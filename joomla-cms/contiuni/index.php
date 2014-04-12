@@ -1,19 +1,5 @@
-﻿<?php
+<?php
 session_start();
-/*
-if ($_GET['session'] == 'rm'){
-  $_SESSION = array();
-  session_destroy();
-  echo "session destroyed";
-}
-if ($_GET['session'] == 'print'){
-  print_r($_SESSION);
-}
-
-
-if ($_GET['session'] == 'printpost'){
-  print_r($_POST);
-}*/
 
 if (isset($_POST['logoff'])){
   $_SESSION = array();
@@ -92,9 +78,8 @@ if (isset($_POST['logoff'])){
 		$_SESSION['email'] = $_POST['anmeldeemail'];
 		$_SESSION['passwort'] = sha1($_POST['anmeldepasswort']);
 		
-//$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
-$db = mysqli_connect ('localhost', 'root', 'root', 'contiweg');
-    
+    $db = mysqli_connect ('localhost', 'phpmyadmin', 'St20v7_1', 'phpmyadmin');
+
 		if (!$db )
 		{
 			?>

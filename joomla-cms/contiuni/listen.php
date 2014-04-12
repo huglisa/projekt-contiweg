@@ -1,7 +1,7 @@
-﻿<?php
+<?php
 if ($_SESSION['benutzerangemeldet'] == 'true'){
 
-	$db = mysqli_connect ('IPWEB', 'joomla3', 'g19_m!!KZ5a', 'joomla3');
+  $db = mysqli_connect ('localhost', 'phpmyadmin', 'St20v7_1', 'phpmyadmin');
 	if (!$db )
 	{
 	?>

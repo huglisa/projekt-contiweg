@@ -1,0 +1,22 @@
+<?xml version="1.0" encodind="utf-8"?>
+<extension version="3.1" type="pulgin" group="content">
+	<name>plg_content_contiuni</name>
+	<author>HUG</author>
+	<version>3.1</version>
+	<description>Contiuni</description>
+	<files>
+		<filename>index.html</filename>
+		<filename plugin="contiuni">index.php</filename>
+		<filename plugin="contiuni">contiuni.php</filename>
+		<filename plugin="contiuni">registrieren.php</filename>
+		<filename plugin="contiuni">administratorenbereich.php</filename>
+		<filename plugin="contiuni">schuelerbereich.php</filename>
+		<filename plugin="contiuni">kursleiterbereich.php</filename>
+	</files>
+	<language>
+	</language>
+	<config>
+	</config>
+</extension>
+
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.3.1" type="plugin" group="content">
+	<name>Content - GroupDocs Embedder</name>
+	<author>GroupDocs Team</author>
+	<creationDate>November 2013</creationDate>
+	<copyright>Copyright (C) 2008-2013 soeren. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>support@groupdocs.com</authorEmail>
+	<authorUrl>http://groupdocs.com/groupdocsv3/apps/viewer</authorUrl>
+	<version>1.3.1</version>
+	<description>Embeds GroupDocs document to your Joomla page.
+	</description>
+	<files>
+		<filename plugin="grpdocsviewer">grpdocsviewer.php</filename>
+		<filename>index.html</filename>
+	</files>
+</extension>

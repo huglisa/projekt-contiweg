@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.3.1" type="plugin" group="editors-xtd">
+	<name>Editor Button - GroupDocs Viewer</name>
+	<author>GroupDocs Team</author>
+	<creationDate>November  2013</creationDate>
+	<copyright>copyright (c) GroupDocs, 2012. All rights  reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@groupdocs.com</authorEmail>
+	<authorUrl>virtuemart.net</authorUrl>
+	<version>1.3.1</version>
+	<description>Adds an editor button for GroupDocs Viewer.</description>
+	<files>
+		<filename plugin="grpdocsviewer">grpdocsviewer.php</filename>
+		<filename>grpdocsviewer.png</filename>
+		<filename>grpdocsviewer-dialog.php</filename>
+		<filename>grpdocsviewer.css</filename>
+		<filename>grpdocsviewer.js</filename>
+		<filename>index.html</filename>
+		<folder>tree_viewer</folder>
+	</files>
+	<config>
+		<fields name="params">
+
+			<fieldset name="basic">
+				<field name="groupdocs_client_login" type="text"
+					default=""
+					description="Enter the Client Login from the GroupDocs."
+					label="GroupDocs Client Login"
+					size="40"
+				/>
+				<field name="groupdocs_client_password" type="password"
+					default=""
+					description="Enter the Client Password from the GroupDocs."
+					label="GroupDocs Client Password"
+					size="40"
+				/>
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>

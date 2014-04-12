@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="language" version="1.5.0" client="both" method="upgrade">
+	<name>de-DE.com_phocadownload</name>
+	<tag>de-DE</tag>
+	<version>1.3.7</version>
+	<creationDate>11.11.2010</creationDate>
+	<author>JOOM!WEB-Webservice Olaf Dryja - joomweb.de</author>
+	<authorEmail>info@joomweb.de</authorEmail>
+	<authorUrl>https://joomweb.de</authorUrl>
+	<copyright>(C) 2009-2010 JOOM!WEB - Webservice Olaf Dryja. Alle Rechte vorbehalten.</copyright>
+	<description><![CDATA[Deutsche Sprachdatei für die Komponente: Phoca Download 1.3.7 <br />
+	<strong>Sprache:</strong> Deutsch (formell)<br />
+	<strong>Bereich:</strong> Administrator - Administrationsbereich (Backend) und Site - Benutzerbereich (Frontend)<br />
+	<strong>Autor:</strong> JOOM!WEB - Webservice Olaf Dryja<a target="_blank" href="https://joomweb.de">joomweb.de</a> für <a target="_blank" href="http://phoca.cz">Phoca.CZ</a>.</td>
+	<strong>&Uuml;bersetzungsversion:</strong> 1.3.7_1<br />
+	<font style="color:#008000;">Bitte überprüfen Sie regelmäßig unsere Projektseite. Dort erfahren Sie, ob Änderungen oder neue Versionen zu dieser Übersetzung verfügbar sind.</font>
+    ]]></description>
+
+	<administration>
+		<files folder="language">
+			<filename>de-DE.com_phocadownload.ini</filename>
+			<filename>de-DE.com_phocadownload.menu.ini</filename>
+		</files>
+	</administration>
+  
+	<site>
+		<files folder="language">
+			<filename>de-DE.com_phocadownload.ini</filename>
+			<filename>de-DE.com_phocadownload.menu.ini</filename>
+		</files>
+	</site>
+	<params />
+</install>

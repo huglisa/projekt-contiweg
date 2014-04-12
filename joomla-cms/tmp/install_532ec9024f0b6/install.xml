@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install type="package" version="1.6">
+	<name>Komponente Phoca Download - Deutsche Sprachdateien</name>
+	<packagename>Komponente Sprachdatei Deutsch</packagename>
+	<version>2.1.5</version>
+	<creationDate>08.02.2012</creationDate>
+	<author>JOO!MWEB Webservice Olaf Dryja</author>		
+	<url>https://joomweb.de</url>
+	<packager>JOOM!WEB Webservice Olaf Dryja</packager>
+	<packagerurl>https://joomweb.de</packagerurl>
+	<description><p><strong>Sprachdatei für die Komponente/Version:</strong> Phoca Download 2.1.5(de-DE.com_phocadownload)<br />
+	    <strong>Sprache:</strong> Deutsch (formell)<br />
+	    <strong>Bereich:</strong> Administrator - Administrationsbereich (Backend) und Site - Benutzerbereich (Frontend)<br />
+	    <strong>Autor:</strong> JOOM!WEB - Webservice Olaf Dryja <a target="_blank" href="https://joomweb.de">joomweb.de</a> für <a target="_blank" href="http://phoca.cz">Phoca.CZ</a>.<br />
+	    <strong>Übersetzungsversion:</strong> 2.1.4_1 <br />
+	    <strong><font style="color:#008000;">Bitte überprüfen Sie regelmäßig unsere Projektseite. Dort erfahren Sie, ob Änderungen oder neue Versionen zu dieser Übersetzung verfügbar sind.</font></strong>
+        </p></description>
+	<update></update>
+	<files>
+		<file type="language" id="lng_de-DE" client="site">de-DE.com_phocadownload_site.zip</file>
+		<file type="language" id="lng_de-DE" client="admin">de-DE.com_phocadownload_admin.zip</file>
+	</files>
+</install>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+		<name>Magic Simple Video Player</name>
+		<author>Magic Point</author>
+		<creationDate>March 2011</creationDate>
+		<copyright>Released under GNU/GPL License</copyright>
+		<license>http://www.gnu.org/licenses/gpl-3.0-standalone.html</license>
+		<authorEmail>info@magicpoint.org</authorEmail>
+		<authorUrl>http://www.magicpoint.org/</authorUrl>
+		<version>1.0.4</version>
+		<description><![CDATA[<strong>Thank you for choosing MagicPoint.</strong></br><em>For support or suggestions please use ONLY the form on the support page!</em>
+		<ul>
+			<li><a href="http://www.magicpoint.org" target="_blank">MagicPoint Site</a></li>
+			<li><a href="http://www.magicpoint.org/extensions.html" target="_blank">New Extensions</a></li>
+			<li><a href="http://www.magicpoint.org/documentation.html" target="_blank">Documentation</a></li>
+			<li><a href="http://shop.magicpoint.org/" target="_blank">Shop</a></li>
+			<li><a href="http://www.magicpoint.org/support.html" target="_blank">Support</a></li>
+		</ul>
+		]]></description>
+	<files>
+		<filename module="mod_video">mod_video.php</filename>
+		<filename>video.swf</filename>
+		<filename>index.html</filename>
+		<filename>swfobject.js</filename>
+		<folder>videos</folder>
+		</files>
+		
+		<config>
+		<fields name="params">
+		<fieldset name="basic">
+	    <field type="spacer" name="spacer0" label="__________________________________________________________________________________________________________________________________________________________________________&lt;p style=&quot;color: #ffffff; background-color: #000000; text-align: center;&quot;&gt;&lt;strong&gt;Magic Simple Video Player (version:1.0.4)&lt;/strong&gt;&lt;/p&gt;" />
+	    	<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="A suffix to be applied to the css class of the module (table.moduletable), this allows individual module styling" />
+	    	<field name="vscript" type="radio" default="mod1" label="SWFObject script" description="Mode 1 will use a local copy. Mode 2 will use the file hosted by Google. Mode 3 will disable insertion but it will use the code. Mode 4 will switch to a safe embeding code.">
+  			<option value="mod1">Mode 1 (local)</option>
+  			<option value="mod2">Mode 2 (Google)</option>
+  			<option value="mod3">Mode 3 (disable)</option>
+  			<option value="mod4">Safe</option>
+		</field>
+			<field name="debugMode" type="list" default="0" label="Debug Mode" >
+				<option value="1">Yes</option>
+  				<option value="0">No (Recommended)</option>
+			</field>
+			
+	  <field type="spacer" name="spacer1" label="__________________________________________________________________________________________________________________________________________________________________________&lt;p style=&quot;color: #ffffff; background-color: #787676; text-align: center;&quot;&gt;&lt;strong&gt;Video 1&lt;/strong&gt;&lt;/p&gt;" />
+		<field name="video01" type="list" default="1" label="Show Video" >
+			<option value="1">yes</option> 
+			<option value="2">no</option>
+			</field>
+			<field name="videothumb01" type="text" default="modules/mod_video/videos/thumbs/clip1.jpg" label="Video Thumb" size="50" />
+			<field name="videoimage01" type="text" default="modules/mod_video/videos/images/clip1.jpg" label="Video Image" size="50" />
+			<field name="videosource01" type="text" default="videos/clip1.flv" label="Video Surce" size="50" />
+	
+		<field name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+		<field name="admin_modified" type="hidden" default="1" />
+		</fieldset>
+        </fields>
+    </config>
+</extension>

@@ -1,6 +1,6 @@
-/* JCE Editor - 2.3.4.1 | 23 November 2013 | http://www.joomlacontenteditor.net | Copyright (C) 2006 - 2013 Ryan Demmer. All rights reserved | GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html */
+/* JCE Editor - 2.3.4.4 | 12 December 2013 | http://www.joomlacontenteditor.net | Copyright (C) 2006 - 2013 Ryan Demmer. All rights reserved | GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html */
 (function(){var JSON=tinymce.util.JSON,each=tinymce.each,DOM=tinymce.DOM;tinymce.create('tinymce.plugins.SpellcheckerPlugin',{getInfo:function(){return{longname:'Spellchecker',author:'Moxiecode Systems AB',authorurl:'http://tinymce.moxiecode.com',infourl:'http://wiki.moxiecode.com/index.php/TinyMCE:Plugins/spellchecker',version:tinymce.majorVersion+"."+tinymce.minorVersion};},init:function(ed,url){var t=this,cm;t.url=url;t.editor=ed;t.rpcUrl=ed.getParam('site_url')+'index.php?option=com_jce&view=editor&layout=plugin&plugin=spellchecker'
-t.native_spellchecker=(t.rpcUrl==''||ed.getParam("spellchecker_engine","browser")=='browser');if(t.native_spellchecker){if(tinymce.isIE&&/Trident\/6\.0/.test(navigator.userAgent)===false){if(t.rpcUrl==''){return;}
+t.native_spellchecker=(t.rpcUrl==''||ed.getParam("spellchecker_engine","browser")=='browser');if(t.native_spellchecker){if(tinymce.isIE&&/MSIE [56789]/.test(navigator.userAgent)){if(t.rpcUrl==''){return;}
 t.native_spellchecker=false;}
 t.hasSupport=true;if(ed.getParam("spellchecker_suggestions",true)){ed.onContextMenu.addToTop(function(ed,e){if(t.active)
 return false;});}}

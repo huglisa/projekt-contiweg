@@ -21,7 +21,7 @@ defined('_JEXEC') or die('RESTRICTED');
 class WFEditor extends JObject {
 
     // Editor version
-    protected $_version = '2.3.4.1';
+    protected $_version = '2.3.4.4';
     
     // Editor instance 
     protected static $instance;
