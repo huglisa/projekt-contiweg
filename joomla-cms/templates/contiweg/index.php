@@ -990,6 +990,8 @@ JHtml::_('behavior.framework', true);
 			//Untermenüpunkte von Erfolge anpassen
 			if (jQuery(".art-hmenu").width() > 1020) 
 			{
+				jQuery("#erfolge_schuelerberichte").replaceWith('<a id="erfolge_schuelerberichte" href="index.php/erfolge/schuelerinnenberichte">Schülerinnen - berichte</a>');
+				
 				jQuery(".erfolge_alles").css('height', 220);
 				jQuery(".erfolge_alles").css('width', 254);
 				
@@ -1010,8 +1012,10 @@ JHtml::_('behavior.framework', true);
 				jQuery("#erfolge_awards").css('top', 168);
 				jQuery("#erfolge_awards").css('line-height', 4);
 				
-				jQuery("#erfolge_schuelerberichte").css('line-height', 4);
+				jQuery("#erfolge_schuelerberichte").css('line-height', 1.5);
+				jQuery("#erfolge_schuelerberichte").css('padding-top', 8);
 				jQuery("#erfolge_schuelerberichte").css('top', 224);
+				jQuery("#erfolge_schuelerberichte").css('height', 42);
 			
 				jQuery("#erfolge_archiv").css('line-height', 4);
 				jQuery("#erfolge_archiv").css('top', 280);
@@ -1019,6 +1023,8 @@ JHtml::_('behavior.framework', true);
 				
 				if(jQuery(".art-hmenu").width() > 1400)
 				{						
+					jQuery("#erfolge_schuelerberichte").replaceWith('<a id="erfolge_schuelerberichte" href="index.php/erfolge/schuelerinnenberichte">Schülerinnenberichte</a>');
+				
 					jQuery(".erfolge_alles").css('height', 262);
 					jQuery(".erfolge_alles").css('width', 308);
 				
@@ -1041,6 +1047,7 @@ JHtml::_('behavior.framework', true);
 				
 					jQuery("#erfolge_schuelerberichte").css('line-height', 4.5);
 					jQuery("#erfolge_schuelerberichte").css('top', 264);
+					jQuery("#erfolge_schuelerberichte").css('padding-top', 0);
 				
 					jQuery("#erfolge_archiv").css('line-height', 4.5);
 					jQuery("#erfolge_archiv").css('top', 330);
@@ -1049,6 +1056,8 @@ JHtml::_('behavior.framework', true);
 				
 					if(jQuery(".art-hmenu").width() > 1700)
 					{
+						jQuery("#erfolge_schuelerberichte").replaceWith('<a id="erfolge_schuelerberichte" href="index.php/erfolge/schuelerinnenberichte">Schülerinnenberichte</a>');
+						
 						jQuery(".erfolge_alles").css('height', 345);
 						jQuery(".erfolge_alles").css('width', 413);
 				
@@ -1072,6 +1081,7 @@ JHtml::_('behavior.framework', true);
 				
 						jQuery("#erfolge_schuelerberichte").css('line-height', 6);
 						jQuery("#erfolge_schuelerberichte").css('top', 344);
+						jQuery("#erfolge_schuelerberichte").css('padding-top', 0);
 				
 						jQuery("#erfolge_archiv").css('line-height', 6);
 						jQuery("#erfolge_archiv").css('top', 430);
@@ -1103,8 +1113,10 @@ JHtml::_('behavior.framework', true);
 				jQuery("#erfolge_awards").css('top', 152);
 				jQuery("#erfolge_awards").css('line-height', 4);
 				
-				jQuery("#erfolge_schuelerberichte").css('line-height', 4);
+				jQuery("#erfolge_schuelerberichte").css('line-height', 1.5);
 				jQuery("#erfolge_schuelerberichte").css('top', 203);
+				jQuery("#erfolge_schuelerberichte").css('padding-top', 6);
+				jQuery("#erfolge_schuelerberichte").css('height', 39);
 				
 				jQuery("#erfolge_archiv").css('line-height', 4);
 				jQuery("#erfolge_archiv").css('top', 255);
@@ -1132,8 +1144,10 @@ JHtml::_('behavior.framework', true);
 					jQuery("#erfolge_awards").css('top', 152);
 					jQuery("#erfolge_awards").css('line-height', 4);
 				
-					jQuery("#erfolge_schuelerberichte").css('line-height', 4);
+					jQuery("#erfolge_schuelerberichte").css('line-height', 1.5);
 					jQuery("#erfolge_schuelerberichte").css('top', 203);
+					jQuery("#erfolge_schuelerberichte").css('height', 39);
+					jQuery("#erfolge_schuelerberichte").css('padding-top', 6);
 				
 					jQuery("#erfolge_archiv").css('top', 255);
 					jQuery("#erfolge_archiv").css('line-height', 4);
@@ -1765,6 +1779,12 @@ JHtml::_('behavior.framework', true);
 			
 			/*Phoca Download ausblenden*/
             jQuery(".pd-cb").next().css('display', "none");
+			
+			/*Wenn das Archiv vorhanden ist dann wird die Höhe von art-post auf auto gesetzt*/
+			if (jQuery(".archive").length > 0)
+            {
+                jQuery('.art-post').css('height', "auto");
+            }
 			
 		}
 		
